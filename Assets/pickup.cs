@@ -19,9 +19,13 @@ public class pickup : MonoBehaviour
         {
             l_arm.enabled = false;
             r_arm.enabled = false;
-            spine.enabled = false;
+           //spine.enabled = false;
             spine.m_Damping = 0.229f;
             spine.m_Stiffness = 0.869f;
+            l_arm.m_Damping = 0.229f;
+            l_arm.m_Stiffness = 0.869f;
+            r_arm.m_Damping = 0.229f;
+            r_arm.m_Stiffness = 0.869f;
             animController.SetInteger("action", 1);
 
 
@@ -30,7 +34,7 @@ public class pickup : MonoBehaviour
         {
             //animController.SetInteger("action", 0);
             //l_arm.enabled = true;
-            //r_arm.enabled = true;
+           //r_arm.enabled = true;
         }
     }
 }
