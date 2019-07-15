@@ -12,11 +12,20 @@ public class Item : MonoBehaviour
     bool dustOff = false;
     GameObject clone;
     ParticleSystem ps;
+
+    private Collider m_collider;
+    private Rigidbody m_rigidbody;
+
+    private bool m_isHeld;
+
     // Start is called before the first frame update
     void Start()
     {
         character = GameObject.FindWithTag("Character");
         characterEyes = character.GetComponent<EyeTrackBlink>();
+
+        m_collider = GetComponent<Collider>();
+        m_rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -31,6 +40,23 @@ public class Item : MonoBehaviour
             }
         }
     }
+
+    public void EnableHolding() 
+    {
+        m_collider.enabled = false;
+        m_rigidbody.isKinematic = true;
+
+        m_isHeld = true;
+    }
+
+    public void DisableHolding() 
+    {
+        m_collider.enabled = true;
+        m_rigidbody.isKinematic = false;
+
+        m_isHeld = false;
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "ground")

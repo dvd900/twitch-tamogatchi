@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6040352361065710596}
   - component: {fileID: 6040352361065710594}
   - component: {fileID: 6040352361065710595}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6040352361239964770}
   - component: {fileID: 6040352361239964769}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Plane_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6040352361368940852}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6040352361415676597}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6040352361571315335}
   - component: {fileID: 6040352361571315334}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6040352361647551748}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6040352361938483249}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6040352362167432533}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 6040352362307112986}
   - component: {fileID: 6040352362307112984}
   - component: {fileID: 6040352362307112985}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 6040352362533126857}
   - component: {fileID: 4418957609489614320}
   - component: {fileID: 5457729973632124207}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
