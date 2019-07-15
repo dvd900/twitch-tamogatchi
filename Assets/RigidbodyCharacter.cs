@@ -5,6 +5,7 @@ using UnityEngine;
 public class RigidbodyCharacter : MonoBehaviour
 {
 
+
     public float Speed = 5f;
     public float JumpHeight = 2f;
     public float GroundDistance = 0.2f;
@@ -12,6 +13,7 @@ public class RigidbodyCharacter : MonoBehaviour
     public LayerMask Ground;
     Animator animController;
 
+    private Skin skin;
     private Rigidbody _body;
     private Vector3 _inputs = Vector3.zero;
     private bool _isGrounded = true;
@@ -22,11 +24,13 @@ public class RigidbodyCharacter : MonoBehaviour
         _body = GetComponent<Rigidbody>();
         _groundChecker = transform.GetChild(0);
         animController = gameObject.GetComponent<Animator>();
+        skin = GetComponent<Skin>();
     }
 
     void Update()
     {
-        _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
+        _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, 
+            Ground, QueryTriggerInteraction.Ignore);
 
 
         _inputs = Vector3.zero;
@@ -46,11 +50,22 @@ public class RigidbodyCharacter : MonoBehaviour
         {
             _body.AddForce(Vector3.up * Mathf.Sqrt(JumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
         }
-//        if (Input.GetButtonDown("Dash"))
-     //  {
-        //    Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * _body.drag + 1)) / -Time.deltaTime)));
-        //    _body.AddForce(dashVelocity, ForceMode.VelocityChange);
-       //}
+
+        if(Input.GetButtonDown("Interact")) 
+        {
+            if(skin.pickupController.heldItem != null) 
+            {
+                skin.pickupController.Drop();
+            } 
+            else 
+            {
+                Item item = skin.pickupController.FindPickupCandidate();
+                if(item != null) 
+                {
+                    skin.pickupController.Pickup(item); 
+                }
+            }
+        }
     }
 
 

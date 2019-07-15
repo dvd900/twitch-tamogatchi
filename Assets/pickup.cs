@@ -29,9 +29,6 @@ public class pickup : MonoBehaviour
             r_arm.UpdateParameters();
             l_arm.UpdateParameters();
             animController.SetInteger("action", 1);
-
-
-
         }
         else
         {
