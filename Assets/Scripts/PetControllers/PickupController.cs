@@ -73,6 +73,7 @@ public class PickupController : MonoBehaviour
         skin.animator.SetInteger("action", 1);
 
         item.EnableHolding();
+        item.transform.localRotation = Quaternion.identity;
         item.transform.parent = skin.lHandTransform;
         item.transform.localPosition = Vector3.zero;
 
