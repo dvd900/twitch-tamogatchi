@@ -4,16 +4,34 @@ using System.Collections.Generic;
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
+public delegate void OnNetMsg(NetMsg msg);
+
 public class MessengerBehavior : WebSocketBehavior {
-	
-	public MessengerBehavior() { }
+
+    public class MsgWrapper {
+        public int msgInd;
+        public string data;
+    }
+
+    public MessengerBehavior() { }
 
 	protected override void OnMessage (MessageEventArgs e) {
-        Debug.Log("received : " + e.Data);
-	}
-}
-public class ServiceCheckBehavior : WebSocketBehavior {
+        Debug.Log("recieved message wrapper " + e.Data);
 
+        MsgWrapper wrapper = JsonUtility.FromJson<MsgWrapper>(e.Data);
+
+        NetMsg msg = null;
+        switch(wrapper.msgInd) {
+            case NetMsgInds.ClickMessage:
+                msg = JsonUtility.FromJson<ClickMessage>(wrapper.data);
+                Debug.Log("got click message");
+                break;
+        }
+
+        if(msg != null) {
+            MessengerServer.singleton.HandleMessage(msg, wrapper.msgInd);
+        }
+    }
 }
 
 
@@ -25,20 +43,35 @@ public class MessengerServer : MonoBehaviour {
 
 	public WebSocketServer m_server;
 
+    private Dictionary<int, OnNetMsg> msgHandlers;
+
 	void Awake() {
 		singleton = this;
+
+        msgHandlers = new Dictionary<int, OnNetMsg>();
 	}
 
 	void Start() {
 		m_server = new WebSocketServer (port);
-		m_server.AddWebSocketService<ServiceCheckBehavior> ("/Service");
 		m_server.AddWebSocketService<MessengerBehavior> ("/Chat");
 		m_server.Start ();
-		Console.ReadKey (true);
-
 	}
 
-	void OnDestroy() {
+    public void HandleMessage(NetMsg msg, int msgInd) {
+        if(msgHandlers[msgInd] != null) {
+            msgHandlers[msgInd](msg);
+        }
+    }
+
+    public void SetHandler(int msgInd, OnNetMsg callback) {
+        msgHandlers[msgInd] = callback;
+    }
+
+    public void ClearHandler(int msgInd) {
+        msgHandlers[msgInd] = null;
+    }
+
+    void OnDestroy() {
 		m_server.Stop ();
 	}
 
