@@ -29,7 +29,7 @@ public class MessengerBehavior : WebSocketBehavior {
         }
 
         if(msg != null) {
-            MessengerServer.singleton.HandleMessage(msg, wrapper.msgInd);
+            MessengerServer.singleton.HandleMessage(msg);
         }
     }
 }
@@ -44,11 +44,13 @@ public class MessengerServer : MonoBehaviour {
 	public WebSocketServer m_server;
 
     private Dictionary<int, OnNetMsg> msgHandlers;
+    private Queue<NetMsg> msgQueue;
 
 	void Awake() {
 		singleton = this;
 
         msgHandlers = new Dictionary<int, OnNetMsg>();
+        msgQueue = new Queue<NetMsg>();
 	}
 
 	void Start() {
@@ -57,10 +59,8 @@ public class MessengerServer : MonoBehaviour {
 		m_server.Start ();
 	}
 
-    public void HandleMessage(NetMsg msg, int msgInd) {
-        if(msgHandlers[msgInd] != null) {
-            msgHandlers[msgInd](msg);
-        }
+    public void HandleMessage(NetMsg msg) {
+        msgQueue.Enqueue(msg);
     }
 
     public void SetHandler(int msgInd, OnNetMsg callback) {
@@ -69,6 +69,19 @@ public class MessengerServer : MonoBehaviour {
 
     public void ClearHandler(int msgInd) {
         msgHandlers[msgInd] = null;
+    }
+
+    private void Update() {
+        if(msgQueue.Count != 0) {
+            Debug.Log("Checking nonzero msg queue... Count: " + msgQueue.Count);
+        }
+
+        while (msgQueue.Count != 0) {
+            NetMsg msg = msgQueue.Dequeue();
+            if(msgHandlers[msg.GetMsgInd()] != null) {
+                msgHandlers[msg.GetMsgInd()](msg);
+            }
+        }
     }
 
     void OnDestroy() {

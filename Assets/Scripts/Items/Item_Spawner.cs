@@ -15,6 +15,7 @@ public class Item_Spawner : MonoBehaviour
     private void OnClickMessage(NetMsg msg) {
         ClickMessage click = (ClickMessage)msg;
         Vector3 screenPos = new Vector3(click.x * Screen.width, click.y * Screen.height, 0);
+        SpawnApple(screenPos);
 
     }
 
