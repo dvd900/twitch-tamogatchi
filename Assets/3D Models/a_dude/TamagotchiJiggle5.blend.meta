@@ -31,6 +31,7 @@ ModelImporter:
     100050: Toes_R
     100052: UpperArm_L
     100054: UpperArm_R
+    100056: Sphere
     400000: Armature
     400002: Body
     400004: Foot_L
@@ -59,17 +60,23 @@ ModelImporter:
     400050: Toes_R
     400052: UpperArm_L
     400054: UpperArm_R
+    400056: Sphere
     2100000: Eye_L__Untitled_004
     2100002: Eye_R__Untitled_004
     2100004: Head__Untitled_004
     2100006: Body__Untitled_004
+    2100008: unnamed
+    2300000: Sphere
+    3300000: Sphere
     4300000: Body
+    4300002: Sphere
     7400000: Default Take
     7400002: Idle
     7400004: PickUp
     7400006: Run
     7400008: Run_001
     7400010: Sit
+    7400012: ArmatureAction
     9500000: //RootNode
     13700000: Body
     2186277476908879412: ImportLogs
