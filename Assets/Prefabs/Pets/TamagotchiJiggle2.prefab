@@ -1463,6 +1463,9 @@ GameObject:
   - component: {fileID: 6535536599291748840}
   - component: {fileID: 6535536600307629946}
   - component: {fileID: 6535536600307629950}
+  - component: {fileID: 4270960846077279513}
+  - component: {fileID: 4270960846077279511}
+  - component: {fileID: 7040740833191928943}
   m_Layer: 0
   m_Name: TamagotchiJiggle2
   m_TagString: Untagged
@@ -1517,10 +1520,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!136 &6535536599291748839
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1530,7 +1533,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6535536600307629951}
   m_Material: {fileID: 13400000, guid: 81c49408f963146b6bc77d9bfb402bc6, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.97
   m_Height: 1
   m_Direction: 1
@@ -1542,7 +1545,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6535536600307629951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f502131721114445b0bcfc206bd8141, type: 3}
   m_Name: 
@@ -1580,7 +1583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupController: {fileID: 6535536600307629946}
-  movementController: {fileID: 0}
+  movementController: {fileID: 4270960846077279513}
+  actionController: {fileID: 7040740833191928943}
   animator: {fileID: 6535536600300326101}
   spineBone: {fileID: 6535536600603625882}
   lArmBone: {fileID: 6535536600307629920}
@@ -1588,3 +1592,51 @@ MonoBehaviour:
   feetTransform: {fileID: 6535536600307327775}
   lHandTransform: {fileID: 6535536600307327805}
   rHandTransform: {fileID: 6535536600307327807}
+--- !u!114 &4270960846077279513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535536600307629951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de407ab595624b0e97ec202fe4f8f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 4270960846077279511}
+  wpRange: 5
+--- !u!195 &4270960846077279511
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535536600307629951}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &7040740833191928943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535536600307629951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64ed178b980243359dd635585a2ebc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

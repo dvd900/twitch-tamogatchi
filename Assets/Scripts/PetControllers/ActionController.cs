@@ -11,6 +11,7 @@ public class ActionController : MonoBehaviour {
         }
 
         currentAction = action;
+        currentAction.StartAction();
     }
 
     private void Update() {

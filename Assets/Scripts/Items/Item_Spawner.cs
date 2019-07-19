@@ -25,7 +25,10 @@ public class Item_Spawner : MonoBehaviour
         if(Input.GetButtonDown("Spawn")) {
             float x = Random.value;
             float y = Random.value;
+
             Vector3 mousePos = new Vector3(x * Screen.width, y * Screen.height, 0f);
+
+            SpawnApple(mousePos);
         }
     }
 

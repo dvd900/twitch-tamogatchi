@@ -3,11 +3,7 @@ using System.Collections;
 
 public class PlayerInput : MonoBehaviour {
 
-    private Skin skin;
-
-    void Start() {
-        skin = GetComponent<Skin>();
-    }
+    public Skin skin;
 
     void Update() {
         if (Input.GetButtonDown("Interact")) {
