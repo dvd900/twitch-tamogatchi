@@ -5,6 +5,7 @@ public class Skin : MonoBehaviour
 {
     public PickupController pickupController;
     public MovementController movementController;
+    public ActionController actionController;
     public Animator animator;
 
     public DynamicBone spineBone;

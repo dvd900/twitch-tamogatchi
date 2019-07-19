@@ -22,11 +22,10 @@ public class Item_Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            SpawnApple(mousePos);            
+        if(Input.GetButtonDown("Spawn")) {
+            float x = Random.value;
+            float y = Random.value;
+            Vector3 mousePos = new Vector3(x * Screen.width, y * Screen.height, 0f);
         }
     }
 
