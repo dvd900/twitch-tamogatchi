@@ -5,36 +5,40 @@ using UnityEngine.AI;
 
 public class MovementController : MonoBehaviour
 {
-    [SerializeField] private NavMeshAgent navMeshAgent;
-    [SerializeField] private float wpRange;
+    [SerializeField] private NavMeshAgent _navMeshAgent;
+    [SerializeField] private float _wpRange;
 
-    public bool isWalking { get; private set; }
+    public float walkTargetRange { get { return _walkTargetRange; } }
+    [SerializeField] private float _walkTargetRange;
 
-    private Skin skin;
+    public bool isWalking { get { return _isWalking; } }
+    private bool _isWalking;
+
+    private Skin _skin;
 
     private void Start() {
-        skin = GetComponent<Skin>();
+        _skin = GetComponent<Skin>();
     }
 
     private void Update() {
-        if(isWalking && IsInRange()) {
+        if(_isWalking && IsInRange()) {
             StopWalking();
         }
     }
 
     public void StopWalking() {
-        navMeshAgent.SetDestination(transform.position);
-        skin.animator.SetBool("isIdle", true);
-        isWalking = false;
+        _navMeshAgent.SetDestination(transform.position);
+        _skin.animator.SetBool("isIdle", true);
+        _isWalking = false;
     }
 
     public void WalkToPosition(Vector3 dest) {
-        navMeshAgent.SetDestination(dest);
-        skin.animator.SetBool("isIdle", false);
-        isWalking = true;
+        _navMeshAgent.SetDestination(dest);
+        _skin.animator.SetBool("isIdle", false);
+        _isWalking = true;
     }
 
     private bool IsInRange() {
-        return (navMeshAgent.destination - transform.position).magnitude < wpRange;
+        return (_navMeshAgent.destination - transform.position).magnitude < _wpRange;
     }
 }

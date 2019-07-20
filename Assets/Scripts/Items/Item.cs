@@ -6,28 +6,31 @@ public class Item : MonoBehaviour
 {
     public GameObject[] consumptionStates;
 
+    public float value;
+
     GameObject character;
     EyeTrackBlink characterEyes;
-    public GameObject spawnObject, head;
+    public GameObject spawnObject;
     public float dust_y, life;
     public Vector3 dust_size;
     bool dustOff = false;
     GameObject clone;
     ParticleSystem ps;
 
-    private Collider m_collider;
-    private Rigidbody m_rigidbody;
+    private Collider _collider;
+    private Rigidbody _rigidbody;
 
-    private bool m_isHeld;
-    private int m_consumptionIndex;
+    private int _biteInd;
+    private bool _isHeld;
+    private Skin _holder;
 
     void Start()
     {
         character = GameObject.FindWithTag("Character");
         characterEyes = character.GetComponent<EyeTrackBlink>();
 
-        m_collider = GetComponent<Collider>();
-        m_rigidbody = GetComponent<Rigidbody>();
+        _collider = GetComponent<Collider>();
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -42,32 +45,40 @@ public class Item : MonoBehaviour
         }
     }
 
-    public void Eat() 
+    public void DoEat() 
     {
-        if(++m_consumptionIndex >= consumptionStates.Length) 
+        Debug.Log("DOEAT");
+        if(gameObject == null) {
+            Debug.LogError("GO null");
+            Debug.LogError("current action: " + _holder.actionController.currentAction);
+        }
+
+        if (++_biteInd >= consumptionStates.Length) 
         {
             Destroy(gameObject);
             return;
         }
 
-        consumptionStates[m_consumptionIndex - 1].SetActive(false);
-        consumptionStates[m_consumptionIndex].SetActive(true);
+        consumptionStates[_biteInd - 1].SetActive(false);
+        consumptionStates[_biteInd].SetActive(true);
     }
 
-    public void EnableHolding() 
+    public void EnableHolding(Skin holder) 
     {
-        m_collider.enabled = false;
-        m_rigidbody.isKinematic = true;
+        _collider.enabled = false;
+        _rigidbody.isKinematic = true;
 
-        m_isHeld = true;
+        _holder = holder;
+        _isHeld = true;
     }
 
     public void DisableHolding() 
     {
-        m_collider.enabled = true;
-        m_rigidbody.isKinematic = false;
+        _collider.enabled = true;
+        _rigidbody.isKinematic = false;
 
-        m_isHeld = false;
+        _holder = null;
+        _isHeld = false;
     }
 
     void OnCollisionEnter(Collision collision)

@@ -3,24 +3,27 @@ using System.Collections;
 
 public class ActionController : MonoBehaviour {
 
-    private AIAction currentAction;
+    public AIAction currentAction { get { return _currentAction; } }
+    private AIAction _currentAction;
 
     public void DoAction(AIAction action) {
-        if(currentAction != null) {
-            currentAction.Interrupt();
+        if(_currentAction != null) {
+            _currentAction.Interrupt();
         }
 
-        currentAction = action;
-        currentAction.StartAction();
+        _currentAction = action;
+        _currentAction.StartAction();
+
+        Debug.Log("Doing action: " + action);
     }
 
     private void Update() {
 
-        if(currentAction != null) {
-            currentAction.UpdateAction();
+        if(_currentAction != null) {
+            _currentAction.UpdateAction();
 
-            if(currentAction.IsFinished()) {
-                currentAction = null;
+            if(_currentAction.IsFinished()) {
+                _currentAction = null;
             }
         }
     }

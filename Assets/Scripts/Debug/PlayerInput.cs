@@ -3,16 +3,17 @@ using System.Collections;
 
 public class PlayerInput : MonoBehaviour {
 
-    public Skin skin;
+    public Skin _skin;
+    public Planner _planner;
 
     void Update() {
         if (Input.GetButtonDown("Interact")) {
-            if (skin.pickupController.heldItem != null) {
-                skin.pickupController.heldItem.Eat();
+            if (_skin.itemController.heldItem != null) {
+                _skin.actionController.DoAction(new EatAction(_skin));
             } else {
-                Item item = skin.pickupController.FindPickupCandidate();
+                Item item = _planner.worldData.closestItem;
                 if (item != null) {
-                    skin.pickupController.Pickup(item);
+                    _skin.itemController.Pickup(item);
                 }
             }
         }
@@ -30,9 +31,9 @@ public class PlayerInput : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 1000f)) {
             Item item = hit.transform.GetComponent<Item>();
             if(item != null) {
-                skin.actionController.DoAction(new PickupAction(skin, item));
+                _skin.actionController.DoAction(new PickupAction(_skin, item));
             } else {
-                skin.actionController.DoAction(new WalkToAction(skin, hit.point));
+                _skin.actionController.DoAction(new WalkToAction(_skin, hit.point));
             }
         }
     }

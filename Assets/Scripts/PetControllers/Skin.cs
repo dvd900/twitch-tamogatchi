@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Skin : MonoBehaviour 
 {
-    public PickupController pickupController;
+    public ItemController itemController;
     public MovementController movementController;
     public ActionController actionController;
     public Animator animator;
@@ -15,4 +15,7 @@ public class Skin : MonoBehaviour
     public Transform feetTransform;
     public Transform lHandTransform;
     public Transform rHandTransform;
+
+    private void Start() {
+    }
 }

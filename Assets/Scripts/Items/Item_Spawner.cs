@@ -33,7 +33,6 @@ public class Item_Spawner : MonoBehaviour
     }
 
     private void SpawnApple(Vector3 screenPos) {
-        Debug.Log(screenPos);
         Vector3 wordPos;
         Ray ray = Camera.main.ScreenPointToRay(screenPos);
         RaycastHit hit;

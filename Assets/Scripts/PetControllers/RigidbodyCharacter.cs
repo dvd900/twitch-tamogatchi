@@ -51,22 +51,6 @@ public class RigidbodyCharacter : MonoBehaviour
         {
             _body.AddForce(Vector3.up * Mathf.Sqrt(JumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
         }
-
-        if(Input.GetButtonDown("Interact")) 
-        {
-            if(skin.pickupController.heldItem != null) 
-            {
-                skin.pickupController.heldItem.Eat();
-            } 
-            else 
-            {
-                Item item = skin.pickupController.FindPickupCandidate();
-                if(item != null) 
-                {
-                    skin.pickupController.Pickup(item); 
-                }
-            }
-        }
     }
 
 
