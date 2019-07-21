@@ -30,13 +30,7 @@ public class WalkToAction : AIAction {
     }
 
     public override float Score(AIWorldData data) {
-        Vector2 walkTarget = Random.insideUnitCircle;
-        Vector2 dir = walkTarget.normalized;
-        walkTarget = .5f * dir + .5f * walkTarget;
-        walkTarget *= _skin.movementController.walkTargetRange;
-
-        _dest = _skin.transform.position + new Vector3(walkTarget.x, 0, walkTarget.y);
-
+        _dest = CoordsUtils.RandomWorldPointOnScreen();
         return .25f;
     }
 }

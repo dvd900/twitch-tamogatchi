@@ -20,7 +20,7 @@ TagManager:
   - Noshadow
   - NoClouds
   - Buildings
-  - terrain
+  - Ground
   - thing
   - No_rim
   - ground
