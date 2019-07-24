@@ -5,12 +5,12 @@ public class WalkToAction : AIAction {
 
     private Vector3 _dest;
 
-    public WalkToAction(Skin skin, Vector3 dest) : base(skin) {
-        _dest = dest;
+    public WalkToAction(Skin skin) : base(skin) {
+        _dest = CoordsUtils.RandomWorldPointOnScreen();
     }
 
-    public override AIAction Clone() {
-        return new WalkToAction(_skin, _dest);
+    public override AIAction Generate() {
+        return new WalkToAction(_skin);
     }
 
     public override void Interrupt() {
@@ -30,7 +30,7 @@ public class WalkToAction : AIAction {
     }
 
     public override float Score(AIWorldData data) {
-        _dest = CoordsUtils.RandomWorldPointOnScreen();
+
         return .25f;
     }
 }

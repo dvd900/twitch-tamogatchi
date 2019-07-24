@@ -1,10 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class ActionController : MonoBehaviour {
 
+    public float avgIdleTime { get { return _avgIdleTime; } }
+    [SerializeField] private float _avgIdleTime;
+
     public AIAction currentAction { get { return _currentAction; } }
     private AIAction _currentAction;
+
+    private Skin _skin;
+
+    private void Start() {
+        _skin = GetComponent<Skin>();
+
+        MessengerServer.singleton.SetHandler(NetMsgInds.IdleMessage, OnIdleMsg);
+    }
+
 
     public void DoAction(AIAction action) {
         if(_currentAction != null) {
@@ -26,5 +39,9 @@ public class ActionController : MonoBehaviour {
                 _currentAction = null;
             }
         }
+    }
+
+    private void OnIdleMsg(NetMsg msg) {
+        DoAction(new IdleAction(_skin));
     }
 }

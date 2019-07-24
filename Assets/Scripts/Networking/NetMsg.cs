@@ -1,5 +1,3 @@
 ﻿
-public abstract class NetMsg 
-{
-    public abstract int GetMsgInd();
+public abstract class NetMsg {
 }

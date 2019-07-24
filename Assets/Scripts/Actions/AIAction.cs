@@ -13,5 +13,5 @@ public abstract class AIAction {
     public abstract void Interrupt();
 
     public abstract float Score(AIWorldData data);
-    public abstract AIAction Clone();
+    public abstract AIAction Generate();
 }

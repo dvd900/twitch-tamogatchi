@@ -1,14 +1,16 @@
 ﻿
 public class PickupAction : AIAction {
 
+    private static Item bestItem;
+
     private Item _item;
 
-    public PickupAction(Skin skin, Item item) : base(skin) {
-        _item = item;
+    public PickupAction(Skin skin) : base(skin) {
+        _item = bestItem;
     }
 
-    public override AIAction Clone() {
-        return new PickupAction(_skin, _item);
+    public override AIAction Generate() {
+        return new PickupAction(_skin);
     }
 
     public override void Interrupt() {
@@ -35,7 +37,7 @@ public class PickupAction : AIAction {
         }
 
         float bestScore = ScoreItem(data.closestItem);
-        Item bestItem = data.closestItem;
+        bestItem = data.closestItem;
 
         foreach(Item item in data.itemsInRange) {
             if(item.value <= data.closestItem.value) {
@@ -49,7 +51,6 @@ public class PickupAction : AIAction {
             }
         }
 
-        _item = bestItem;
         return bestScore;
     }
 

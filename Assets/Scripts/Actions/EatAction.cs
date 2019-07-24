@@ -7,7 +7,7 @@ public class EatAction : AIAction {
 
     }
 
-    public override AIAction Clone() {
+    public override AIAction Generate() {
         return new EatAction(_skin);
     }
 

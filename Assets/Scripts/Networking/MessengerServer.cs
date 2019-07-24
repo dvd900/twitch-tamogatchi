@@ -8,49 +8,40 @@ public delegate void OnNetMsg(NetMsg msg);
 
 public class MessengerBehavior : WebSocketBehavior {
 
-    public class MsgWrapper {
-        public int msgInd;
-        public string data;
-    }
+
 
     public MessengerBehavior() { }
 
 	protected override void OnMessage (MessageEventArgs e) {
-        Debug.Log("recieved message wrapper " + e.Data);
 
-        MsgWrapper wrapper = JsonUtility.FromJson<MsgWrapper>(e.Data);
+        MessengerServer.MsgWrapper wrapper = JsonUtility.FromJson<MessengerServer.MsgWrapper>(e.Data);
 
-        NetMsg msg = null;
-        switch(wrapper.msgInd) {
-            case NetMsgInds.ClickMessage:
-                msg = JsonUtility.FromJson<ClickMessage>(wrapper.data);
-                Debug.Log("got click message");
-                break;
-        }
-
-        if(msg != null) {
-            MessengerServer.singleton.HandleMessage(msg);
-        }
+        MessengerServer.singleton.HandleMessage(wrapper);
     }
 }
 
 
 public class MessengerServer : MonoBehaviour {
 
-	public static MessengerServer singleton;
+    public class MsgWrapper {
+        public int msgInd;
+        public string data;
+    }
+
+    public static MessengerServer singleton;
 
 	public int port; 
 
 	public WebSocketServer m_server;
 
     private Dictionary<int, OnNetMsg> msgHandlers;
-    private Queue<NetMsg> msgQueue;
+    private Queue<MsgWrapper> msgQueue;
 
 	void Awake() {
 		singleton = this;
 
         msgHandlers = new Dictionary<int, OnNetMsg>();
-        msgQueue = new Queue<NetMsg>();
+        msgQueue = new Queue<MsgWrapper>();
 	}
 
 	void Start() {
@@ -59,7 +50,7 @@ public class MessengerServer : MonoBehaviour {
 		m_server.Start ();
 	}
 
-    public void HandleMessage(NetMsg msg) {
+    public void HandleMessage(MsgWrapper msg) {
         msgQueue.Enqueue(msg);
     }
 
@@ -77,9 +68,11 @@ public class MessengerServer : MonoBehaviour {
         }
 
         while (msgQueue.Count != 0) {
-            NetMsg msg = msgQueue.Dequeue();
-            if(msgHandlers[msg.GetMsgInd()] != null) {
-                msgHandlers[msg.GetMsgInd()](msg);
+            MsgWrapper wrapper = msgQueue.Dequeue();
+
+            if(msgHandlers[wrapper.msgInd] != null) {
+                NetMsg msg = JsonUtility.FromJson<NetMsg>(wrapper.data);
+                msgHandlers[wrapper.msgInd](msg);
             }
         }
     }

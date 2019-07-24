@@ -30,11 +30,11 @@ public class PlayerInput : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, 1000f)) {
             Item item = hit.transform.GetComponent<Item>();
-            if(item != null) {
-                _skin.actionController.DoAction(new PickupAction(_skin, item));
-            } else {
-                _skin.actionController.DoAction(new WalkToAction(_skin, hit.point));
-            }
+            //if(item != null) {
+            //    _skin.actionController.DoAction(new PickupAction(_skin, item));
+            //} else {
+            //    _skin.actionController.DoAction(new WalkToAction(_skin, hit.point));
+            //}
         }
     }
 

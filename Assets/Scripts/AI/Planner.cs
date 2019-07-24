@@ -18,9 +18,10 @@ public class Planner : MonoBehaviour {
     void Start() {
         _actions = new List<AIAction>();
 
-        _actions.Add(new PickupAction(_pet, null));
-        _actions.Add(new WalkToAction(_pet, Vector3.zero));
+        _actions.Add(new PickupAction(_pet));
+        _actions.Add(new WalkToAction(_pet));
         _actions.Add(new EatAction(_pet));
+        _actions.Add(new IdleAction(_pet));
 
         _worldData = new AIWorldData(_pet);
     }
@@ -50,7 +51,7 @@ public class Planner : MonoBehaviour {
             }
         }
 
-        AIAction newAction = bestAction.Clone();
+        AIAction newAction = bestAction.Generate();
         _pet.actionController.DoAction(newAction);
         _lastAction = newAction;
     }
