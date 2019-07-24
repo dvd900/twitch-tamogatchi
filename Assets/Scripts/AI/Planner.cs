@@ -24,6 +24,8 @@ public class Planner : MonoBehaviour {
         _actions.Add(new IdleAction(_pet));
 
         _worldData = new AIWorldData(_pet);
+
+        _lastAction = _actions[0];
     }
 
     void Update() {
@@ -45,7 +47,14 @@ public class Planner : MonoBehaviour {
         AIAction bestAction = null;
         foreach(AIAction action in _actions) {
             float score = action.Score(_worldData);
-            if(score > maxScore) {
+
+            if(action.GetType() == _lastAction.GetType()) {
+                score *= .5f;
+            }
+
+            score += _pet.actionController.actionRandomness * (Random.value - .5f);
+
+            if (score > maxScore) {
                 maxScore = score;
                 bestAction = action;
             }

@@ -7,6 +7,9 @@ public class ActionController : MonoBehaviour {
     public float avgIdleTime { get { return _avgIdleTime; } }
     [SerializeField] private float _avgIdleTime;
 
+    public float actionRandomness { get { return _actionRandomness; } }
+    [SerializeField] private float _actionRandomness;
+
     public AIAction currentAction { get { return _currentAction; } }
     private AIAction _currentAction;
 

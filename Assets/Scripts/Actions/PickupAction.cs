@@ -1,4 +1,6 @@
 ﻿
+using UnityEngine;
+
 public class PickupAction : AIAction {
 
     private static Item bestItem;
@@ -26,7 +28,9 @@ public class PickupAction : AIAction {
     }
 
     public override void UpdateAction() {
-        if (!_skin.movementController.isWalking && _skin.itemController.heldItem == null) {
+        if (!_skin.movementController.isWalking && !_skin.itemController.isPickingUp 
+            && _skin.itemController.heldItem != _item) {
+
             _skin.itemController.Pickup(_item);
         }
     }
@@ -50,14 +54,24 @@ public class PickupAction : AIAction {
                 bestItem = item;
             }
         }
-
+        Debug.Log(bestScore);
         return bestScore;
     }
 
     private float ScoreItem(Item item) {
         float d = (item.transform.position - _skin.transform.position).magnitude;
-        float distMult = .8f + .2f * (1 - d / _skin.itemController.pickupRange);
+        float distMult = .3f + .2f * (1.0f - d / _skin.itemController.pickupRange);
 
-        return item.value * distMult;
+        float heldItemMod = 0.0f;
+        if(_skin.itemController.heldItem != null) {
+            heldItemMod += .2f;
+
+            // eventually incorporate modifier for same type item
+            //if(_skin.itemController.heldItem == item) {
+            //    heldItemMod += .05f;
+            //}
+        }
+
+        return (item.value + .5f) * distMult - heldItemMod;
     }
 }

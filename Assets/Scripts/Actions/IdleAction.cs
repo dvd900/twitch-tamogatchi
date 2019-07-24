@@ -8,7 +8,7 @@ public class IdleAction : AIAction {
 
     public IdleAction(Skin skin) : base(skin) {
         _waitTime = _skin.actionController.avgIdleTime
-            + _skin.actionController.avgIdleTime * (Random.value - 1.0f);
+            + _skin.actionController.avgIdleTime * (Random.value - .5f);
     }
 
     public override AIAction Generate() {
@@ -22,7 +22,7 @@ public class IdleAction : AIAction {
     }
 
     public override float Score(AIWorldData data) {
-        return .1f;
+        return .3f;
     }
 
     public override void StartAction() {

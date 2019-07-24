@@ -28,7 +28,7 @@ public class EatAction : AIAction {
 
     public override float Score(AIWorldData data) {
         if(_skin.itemController.heldItem != null) {
-            return 1.0f;
+            return .55f;
         } else {
             return 0.0f;
         }

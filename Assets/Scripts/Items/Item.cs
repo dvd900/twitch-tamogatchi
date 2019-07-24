@@ -21,7 +21,9 @@ public class Item : MonoBehaviour
     private Rigidbody _rigidbody;
 
     private int _biteInd;
-    private bool _isHeld;
+
+    public bool isHeld { get { return _holder != null; } }
+
     private Skin _holder;
 
     void Start()
@@ -69,7 +71,6 @@ public class Item : MonoBehaviour
         _rigidbody.isKinematic = true;
 
         _holder = holder;
-        _isHeld = true;
     }
 
     public void DisableHolding() 
@@ -78,7 +79,6 @@ public class Item : MonoBehaviour
         _rigidbody.isKinematic = false;
 
         _holder = null;
-        _isHeld = false;
     }
 
     void OnCollisionEnter(Collision collision)

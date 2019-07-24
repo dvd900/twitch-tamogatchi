@@ -30,7 +30,6 @@ public class WalkToAction : AIAction {
     }
 
     public override float Score(AIWorldData data) {
-
-        return .25f;
+        return .3f;
     }
 }

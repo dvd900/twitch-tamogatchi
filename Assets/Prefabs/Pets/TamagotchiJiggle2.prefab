@@ -1586,6 +1586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64ed178b980243359dd635585a2ebc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _avgIdleTime: 2
+  _actionRandomness: 0.1
 --- !u!114 &1485893148324196261
 MonoBehaviour:
   m_ObjectHideFlags: 0

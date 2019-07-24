@@ -25,6 +25,7 @@ public class AIWorldData {
 
     private void UpdateItems() {
         _itemsInRange.Clear();
+        _closestItem = null;
 
         int numHits = Physics.OverlapSphereNonAlloc(_pet.feetTransform.position,
             _pet.itemController.pickupRange, _castColliders, VBLayerMask.Item);
@@ -37,13 +38,16 @@ public class AIWorldData {
         float minD = float.MaxValue;
         for (int i = 0; i < numHits; i++) {
             Item item = _castColliders[i].GetComponent<Item>();
-            _itemsInRange.Add(item);
 
-            Vector3 d = item.transform.position - _pet.feetTransform.position;
-            float dMag = d.sqrMagnitude;
-            if (dMag < minD) {
-                minD = dMag;
-                _closestItem = item;
+            if (item != null && !item.isHeld) {
+                _itemsInRange.Add(item);
+
+                Vector3 d = item.transform.position - _pet.feetTransform.position;
+                float dMag = d.sqrMagnitude;
+                if (dMag < minD) {
+                    minD = dMag;
+                    _closestItem = item;
+                }
             }
         }
     }
