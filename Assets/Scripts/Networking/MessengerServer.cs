@@ -8,8 +8,6 @@ public delegate void OnNetMsg(NetMsg msg);
 
 public class MessengerBehavior : WebSocketBehavior {
 
-
-
     public MessengerBehavior() { }
 
 	protected override void OnMessage (MessageEventArgs e) {
@@ -24,7 +22,7 @@ public class MessengerBehavior : WebSocketBehavior {
 public class MessengerServer : MonoBehaviour {
 
     public class MsgWrapper {
-        public int msgInd;
+        public int messageInd;
         public string data;
     }
 
@@ -70,9 +68,9 @@ public class MessengerServer : MonoBehaviour {
         while (msgQueue.Count != 0) {
             MsgWrapper wrapper = msgQueue.Dequeue();
 
-            if(msgHandlers[wrapper.msgInd] != null) {
+            if(msgHandlers[wrapper.messageInd] != null) {
                 NetMsg msg = JsonUtility.FromJson<NetMsg>(wrapper.data);
-                msgHandlers[wrapper.msgInd](msg);
+                msgHandlers[wrapper.messageInd](msg);
             }
         }
     }

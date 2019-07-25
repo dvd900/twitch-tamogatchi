@@ -41,19 +41,19 @@ public class rotateHandler : MonoBehaviour {
 	#if !UNITY_STANDALONE_LINUX || UNITY_EDITOR_OSX
 	void Update () {
 		if (down == true) {
-			transform.Rotate (Vector3.down * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.down * (1 / 60.0f) * speed);
 		} else if (up == true) {
-			transform.Rotate (Vector3.up * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.up * (1 / 60.0f) * speed);
 		}
 		if (left == true) {
-			transform.Rotate (Vector3.left * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.left * (1 / 60.0f) * speed);
 		} else if (right == true) {
-			transform.Rotate (Vector3.right * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.right * (1 / 60.0f) * speed);
 		}
 		if (forward == true) {
-			transform.Rotate (Vector3.forward * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.forward * (1 / 60.0f) * speed);
 		} else if (back == true) {
-			transform.Rotate (Vector3.back * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.back * (1 / 60.0f) * speed);
 		}
 	}
 	#endif
