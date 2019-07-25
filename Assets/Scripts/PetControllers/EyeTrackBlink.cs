@@ -54,12 +54,12 @@ public class EyeTrackBlink : MonoBehaviour
         }
 
     }
-    public void EmoteNormal()
+    public void DoNormalEyes()
     {
         eyeRend.material = eyeMat[0];
         eyeRend2.materials[1] = eyeMat[1];
     }
-    public void EmoteDiscomfort(float endTime)
+    public void DoDiscomfortEyes(float endTime)
     {
         isEmoting = true;
         eyeRend.material = eyeMat[2];
@@ -93,7 +93,7 @@ public class EyeTrackBlink : MonoBehaviour
     IEnumerator Ouch(float time)
     {
         yield return new WaitForSeconds(time);
-        EmoteNormal();
+        DoNormalEyes();
         isEmoting = false;
     }
 }

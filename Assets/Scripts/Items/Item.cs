@@ -8,8 +8,6 @@ public class Item : MonoBehaviour
 
     public float value;
 
-    GameObject character;
-    EyeTrackBlink characterEyes;
     public GameObject spawnObject;
     public float dust_y, life;
     public Vector3 dust_size;
@@ -28,9 +26,6 @@ public class Item : MonoBehaviour
 
     void Start()
     {
-        character = GameObject.FindWithTag("Character");
-        characterEyes = character.GetComponent<EyeTrackBlink>();
-
         _collider = GetComponent<Collider>();
         _rigidbody = GetComponent<Rigidbody>();
     }
@@ -93,14 +88,15 @@ public class Item : MonoBehaviour
                 ps = clone.GetComponent<ParticleSystem>();
                 life = ps.startLifetime/3; //divide by simulation speed
             }
-           //ps.Play();
+           //ps.Play(); 
         }
         foreach (ContactPoint c in collision.contacts)
         {
-            if(c.otherCollider.name == "Head")
+            if(c.otherCollider.tag == "Head")
             {
-                iTween.PunchScale(c.otherCollider.gameObject, iTween.Hash("amount", new Vector3(0f, 0.2f, 0.2f), "time", 4.0f));
-                characterEyes.EmoteDiscomfort(1f);
+                EmoteController emote = c.otherCollider.gameObject.GetComponentInParent<EmoteController>();
+
+                emote.DiscomfortEmote();
             }
  
         }
