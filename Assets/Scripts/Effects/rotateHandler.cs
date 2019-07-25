@@ -38,25 +38,25 @@ public class rotateHandler : MonoBehaviour {
 	}
 
 #else
-	#if !UNITY_STANDALONE_LINUX || UNITY_EDITOR_OSX
+#if !UNITY_STANDALONE_LINUX || UNITY_EDITOR_OSX
 	void Update () {
 		if (down == true) {
-			transform.Rotate (Vector3.down * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.down * Time.deltaTime * speed);
 		} else if (up == true) {
-			transform.Rotate (Vector3.up * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.up * Time.deltaTime * speed);
 		}
 		if (left == true) {
-			transform.Rotate (Vector3.left * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.left * Time.deltaTime * speed);
 		} else if (right == true) {
-			transform.Rotate (Vector3.right * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.right * Time.deltaTime * speed);
 		}
 		if (forward == true) {
-			transform.Rotate (Vector3.forward * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.forward * Time.deltaTime * speed);
 		} else if (back == true) {
-			transform.Rotate (Vector3.back * WizTime.deltaTime * speed);
+			transform.Rotate (Vector3.back * Time.deltaTime * speed);
 		}
 	}
-	#endif
+#endif
 #endif
 
 
