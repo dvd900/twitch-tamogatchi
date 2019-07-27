@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemSpawner : MonoBehaviour
 {
     public GameObject item;
-
+    public SpeechManager speech;
     void Start() {
 
         MessengerServer.singleton.SetHandler(NetMsgInds.SpawnMessage, OnSpawnMessage);
@@ -17,6 +17,8 @@ public class ItemSpawner : MonoBehaviour
         ClickMessage click = (ClickMessage)msg;
         Vector3 screenPos = new Vector3(click.x * Screen.width, click.y * Screen.height, 0);
         SpawnApple(CoordsUtils.ScreenToWorldPos(screenPos));
+
+
 
     }
 
@@ -36,7 +38,7 @@ public class ItemSpawner : MonoBehaviour
 
     private void SpawnApple(Vector3 worldPos) {
         Debug.Log("Spawning apple at: " + worldPos);
-
+        speech.Speak("Thanks for the apple");
         GameObject clone;
 
         clone = Instantiate(item, new Vector3(worldPos.x, worldPos.y + 10, worldPos.z), 
