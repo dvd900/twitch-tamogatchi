@@ -13,6 +13,9 @@
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 
+# these constantly get modified & i dont think they do anything
+[Aa]ssets/AmplifyShaderEditor/**/*.meta
+
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
