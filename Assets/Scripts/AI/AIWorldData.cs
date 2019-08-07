@@ -37,7 +37,7 @@ public class AIWorldData {
 
         float minD = float.MaxValue;
         for (int i = 0; i < numHits; i++) {
-            Item item = _castColliders[i].GetComponent<Item>();
+            Item item = _castColliders[i].GetComponentInParent<Item>();
 
             if (item != null && !item.isHeld) {
                 _itemsInRange.Add(item);

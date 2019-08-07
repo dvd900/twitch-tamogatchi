@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    public GameObject item;
+    public GameObject[] _items;
 
     void Start() {
 
@@ -37,12 +37,15 @@ public class ItemSpawner : MonoBehaviour
     public void SpawnApple(Vector3 worldPos) {
         Debug.Log("Spawning apple at: " + worldPos);
 
-        GameObject clone;
+        GameObject clone = _items[UnityEngine.Random.Range(0, _items.Length)];
 
-        clone = Instantiate(item, new Vector3(worldPos.x, worldPos.y + 30, worldPos.z), 
+        clone = Instantiate(clone, new Vector3(worldPos.x, worldPos.y + 30, worldPos.z), 
             Quaternion.Euler(new Vector3(0, UnityEngine.Random.Range(0, 360), 0)));
 
-        iTween.ScaleTo(clone.gameObject, iTween.Hash("scale", new Vector3(2.5f, 2.5f, 2.5f), 
+        Vector3 originalScale = clone.transform.localScale;
+        clone.transform.localScale = (1 / 2.5f) * originalScale;
+
+        iTween.ScaleTo(clone.gameObject, iTween.Hash("scale", originalScale, 
             "time", 1.0f, "easetype", iTween.EaseType.easeOutElastic));
 
         iTween.RotateBy(clone.gameObject, iTween.Hash("amount", new Vector3(0, 1, 0),
