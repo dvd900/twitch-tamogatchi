@@ -5,7 +5,14 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    public GameObject[] _items;
+    public static ItemSpawner singleton;
+
+    [SerializeField] private GameObject[] _items;
+    [SerializeField] private GameObject _dust;
+
+    private void Awake() {
+        singleton = this;
+    }
 
     void Start() {
 
@@ -16,27 +23,25 @@ public class ItemSpawner : MonoBehaviour
     private void OnClickMessage(NetMsg msg) {
         ClickMessage click = (ClickMessage)msg;
         Vector3 screenPos = new Vector3(click.x * Screen.width, click.y * Screen.height, 0);
-        SpawnApple(CoordsUtils.ScreenToWorldPos(screenPos));
+        SpawnRandomItem(CoordsUtils.ScreenToWorldPos(screenPos));
 
     }
 
     private void OnSpawnMessage(NetMsg msg) {
-        SpawnRandomApple();
+        SpawnItemAtRandomPos();
     }
 
     void Update() {
         if(Input.GetButtonDown("Spawn")) {
-            SpawnRandomApple();
+            SpawnItemAtRandomPos();
         }
     }
 
-    private void SpawnRandomApple() {
-        SpawnApple(CoordsUtils.RandomWorldPointOnScreen());
+    private void SpawnItemAtRandomPos() {
+        SpawnRandomItem(CoordsUtils.RandomWorldPointOnScreen());
     }
 
-    public void SpawnApple(Vector3 worldPos) {
-        Debug.Log("Spawning apple at: " + worldPos);
-
+    public void SpawnRandomItem(Vector3 worldPos) {
         GameObject clone = _items[UnityEngine.Random.Range(0, _items.Length)];
 
         clone = Instantiate(clone, new Vector3(worldPos.x, worldPos.y + 30, worldPos.z), 
@@ -51,5 +56,16 @@ public class ItemSpawner : MonoBehaviour
         iTween.RotateBy(clone.gameObject, iTween.Hash("amount", new Vector3(0, 1, 0),
             "time", 1f, "easetype", iTween.EaseType.easeOutSine));
 
+    }
+
+    public GameObject MakeDust() { 
+
+        GameObject clone = Instantiate(_dust, new Vector3(transform.position.x, 
+            transform.position.y - 1.5f, transform.position.z),
+            Quaternion.Euler(new Vector3(90, 0, 0)), null) as GameObject;
+
+        clone.transform.localScale = 2.0f * Vector3.one;
+
+        return clone;
     }
 }

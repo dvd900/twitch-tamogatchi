@@ -8,6 +8,7 @@ public class Skin : MonoBehaviour {
     public ActionController actionController;
     public EmoteController emoteController;
     public FaceController faceController;
+    public StatsController statsController;
 
     public Animator animator;
 

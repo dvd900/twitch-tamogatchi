@@ -7,10 +7,7 @@ public class Item : MonoBehaviour
     public float value { get { return _value; } }
     [SerializeField] private float _value;
 
-    [SerializeField] private GameObject _dust;
-
-    public float dust_y, life;
-    public Vector3 dust_size;
+    private float life;
     bool dustOff = false;
     GameObject clone;
     ParticleSystem ps;
@@ -63,8 +60,7 @@ public class Item : MonoBehaviour
             if (dustOff == false)
             {
                 dustOff = true;
-                clone = Instantiate(_dust, new Vector3(transform.position.x, transform.position.y + dust_y, transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)), null) as GameObject;
-                clone.transform.localScale = dust_size;
+                clone = ItemSpawner.singleton.MakeDust();
                 ps = clone.GetComponent<ParticleSystem>();
                 life = ps.startLifetime/3; //divide by simulation speed
             }
