@@ -35,7 +35,6 @@ public class EyeTrackBlink : MonoBehaviour
             if (blinkTimerR <= 0.0f)
             {
                 StartCoroutine(Blink());
-
             }
 
             eyeOffset = new Vector2(transform.localPosition.x, -transform.localPosition.z);
@@ -54,11 +53,13 @@ public class EyeTrackBlink : MonoBehaviour
         }
 
     }
+
     public void DoNormalEyes()
     {
         eyeRend.material = eyeMat[0];
         eyeRend2.materials[1] = eyeMat[1];
     }
+
     public void DoDiscomfortEyes(float endTime)
     {
         isEmoting = true;

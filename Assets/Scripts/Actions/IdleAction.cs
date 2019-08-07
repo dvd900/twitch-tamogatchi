@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class IdleAction : AIAction {
 
+    public float waitTime { get { return _waitTime; } set { _waitTime = value; } }
     private float _waitTime;
     private float _timer;
 

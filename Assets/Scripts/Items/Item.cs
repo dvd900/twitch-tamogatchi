@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public GameObject[] consumptionStates;
+    public float value { get { return _value; } }
+    [SerializeField] private float _value;
 
-    public float value;
+    [SerializeField] private GameObject _dust;
 
-    public GameObject spawnObject;
     public float dust_y, life;
     public Vector3 dust_size;
     bool dustOff = false;
     GameObject clone;
     ParticleSystem ps;
 
-    private Collider _collider;
-    private Rigidbody _rigidbody;
-
-    private int _biteInd;
+    protected Collider _collider;
+    protected Rigidbody _rigidbody;
 
     public bool isHeld { get { return _holder != null; } }
 
-    private Skin _holder;
+    protected Skin _holder;
 
     void Start()
     {
@@ -40,24 +38,6 @@ public class Item : MonoBehaviour
                 Destroy(clone.gameObject);
             }
         }
-    }
-
-    public void DoEat() 
-    {
-        Debug.Log("DOEAT");
-        if(gameObject == null) {
-            Debug.LogError("GO null");
-            Debug.LogError("current action: " + _holder.actionController.currentAction);
-        }
-
-        if (++_biteInd >= consumptionStates.Length) 
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        consumptionStates[_biteInd - 1].SetActive(false);
-        consumptionStates[_biteInd].SetActive(true);
     }
 
     public void EnableHolding(Skin holder) 
@@ -83,7 +63,7 @@ public class Item : MonoBehaviour
             if (dustOff == false)
             {
                 dustOff = true;
-                clone = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + dust_y, transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)), null) as GameObject;
+                clone = Instantiate(_dust, new Vector3(transform.position.x, transform.position.y + dust_y, transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)), null) as GameObject;
                 clone.transform.localScale = dust_size;
                 ps = clone.GetComponent<ParticleSystem>();
                 life = ps.startLifetime/3; //divide by simulation speed

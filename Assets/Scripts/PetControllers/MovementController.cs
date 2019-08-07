@@ -39,6 +39,7 @@ public class MovementController : MonoBehaviour
     }
 
     private bool IsInRange() {
-        return (_navMeshAgent.destination - transform.position).magnitude < _wpRange;
+        return !_navMeshAgent.pathPending && 
+            (_navMeshAgent.destination - transform.position).magnitude < _wpRange;
     }
 }

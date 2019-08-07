@@ -7,8 +7,11 @@ public class Skin : MonoBehaviour {
     public MovementController movementController;
     public ActionController actionController;
     public EmoteController emoteController;
+    public FaceController faceController;
 
     public Animator animator;
+
+    new public SkinnedMeshRenderer renderer;
 
     public DynamicBone spineBone;
     public DynamicBone lArmBone;
