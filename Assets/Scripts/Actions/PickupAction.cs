@@ -54,7 +54,7 @@ public class PickupAction : AIAction {
                 bestItem = item;
             }
         }
-        Debug.Log(bestScore);
+
         return bestScore;
     }
 

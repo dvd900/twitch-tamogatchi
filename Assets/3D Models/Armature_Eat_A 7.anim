@@ -19611,36 +19611,15 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
-    functionName: EyesDefault
+  - time: 2.2142856
+    functionName: AE_TakeBite
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.1428572
-    functionName: EyesClosed
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1.5
-    functionName: MouthEating
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 2.7857144
-    functionName: MouthDefault
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 2.9285715
-    functionName: EyesDefault
+  - time: 3.142857
+    functionName: AE_EatDone
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

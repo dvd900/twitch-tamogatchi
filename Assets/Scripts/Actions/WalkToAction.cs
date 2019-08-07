@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class WalkToAction : AIAction {
 
+    public Vector3 dest { get { return _dest; } set { _dest = value; } }
     private Vector3 _dest;
 
     public WalkToAction(Skin skin) : base(skin) {

@@ -25,7 +25,7 @@ public static class CoordsUtils {
     }
 
     public static Vector3 ScreenToWorldPos(Vector3 screenPos) {
-        Ray ray = Camera.main.ScreenPointToRay(screenPos);
+        Ray ray = LevelRefs.singleton.worldCam.ScreenPointToRay(screenPos);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000f, VBLayerMask.Ground)) {
             return hit.point;

@@ -101,7 +101,7 @@ public class ItemController : MonoBehaviour {
 
     public void AE_TakeBite() {
         Debug.Log("AE take pite");
-        _heldItem.DoEat();
+        ((Consumable)_heldItem).DoEat();
     }
 
     public void AE_EatDone() {
@@ -116,6 +116,7 @@ public class ItemController : MonoBehaviour {
         }
 
         _skin.animator.SetTrigger("eat");
+        _skin.emoteController.ChewEmote();
         _isEating = true;
     }
 

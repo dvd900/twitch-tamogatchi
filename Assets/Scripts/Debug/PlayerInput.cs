@@ -5,8 +5,11 @@ public class PlayerInput : MonoBehaviour {
 
     public Skin _skin;
     public Planner _planner;
+    public ItemSpawner _itemSpawner;
 
-    void Update() {
+    private void Update() {
+        Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+
         if (Input.GetButtonDown("Interact")) {
             if (_skin.itemController.heldItem != null) {
                 _skin.actionController.DoAction(new EatAction(_skin));
@@ -18,24 +21,48 @@ public class PlayerInput : MonoBehaviour {
             }
         }
 
+        if(Input.GetButtonDown("Idle")) {
+            DoIdle();
+        }
+
         if (Input.GetButtonDown("Fire1")) {
-            Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             DoClick(mousePos);
         }
+
+        if(Input.GetButtonDown("Fire2")) {
+            DoRightClick(mousePos);
+        }
+
+        _skin.faceController.DoLookAt(CoordsUtils.ScreenToWorldPos(mousePos));
+    }
+
+    public void DoIdle() {
+        IdleAction action = new IdleAction(_skin);
+        action.waitTime = 5.0f;
+        _skin.actionController.DoAction(action);
+    }
+
+    public void DoRightClick(Vector2 screenPos) {
+        Vector3 worldPos = CoordsUtils.ScreenToWorldPos(screenPos);
+        _itemSpawner.SpawnApple(worldPos);
     }
 
     public void DoClick(Vector2 screenPos) {
-        Ray ray = Camera.main.ScreenPointToRay(screenPos);
-        RaycastHit hit;
+        Vector3 worldPoint = CoordsUtils.ScreenToWorldPos(screenPos);
+        WalkToAction action = new WalkToAction(_skin);
+        action.dest = worldPoint;
+        _skin.actionController.DoAction(action);
+        //Ray ray = Camera.main.ScreenPointToRay(screenPos);
+        //RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 1000f)) {
-            Item item = hit.transform.GetComponent<Item>();
+        //if (Physics.Raycast(ray, out hit, 1000f)) {
+            //Item item = hit.transform.GetComponent<Item>();
             //if(item != null) {
             //    _skin.actionController.DoAction(new PickupAction(_skin, item));
             //} else {
             //    _skin.actionController.DoAction(new WalkToAction(_skin, hit.point));
             //}
-        }
+        //}
     }
 
 }
