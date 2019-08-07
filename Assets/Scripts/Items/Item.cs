@@ -24,8 +24,8 @@ public class Item : MonoBehaviour
 
     void Start()
     {
-        _collider = GetComponentInChildren<Collider>();
-        _rigidbody = GetComponentInChildren<Rigidbody>();
+        _collider = GetComponent<Collider>();
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()

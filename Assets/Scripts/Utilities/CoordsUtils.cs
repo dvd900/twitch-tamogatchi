@@ -30,8 +30,7 @@ public static class CoordsUtils {
         if (Physics.Raycast(ray, out hit, 1000f, VBLayerMask.Ground)) {
             return hit.point;
         } else {
-            return Vector3.zero;
-            //throw new Exception("Ground does not cover screen??");
+            throw new Exception("Ground does not cover screen??");
         }
     }
 }
