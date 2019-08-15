@@ -1076,8 +1076,9 @@ GameObject:
   - component: {fileID: 1693407923742929470}
   - component: {fileID: 1693407923742929468}
   - component: {fileID: 1693407923742929459}
+  - component: {fileID: 8185179523709058615}
   m_Layer: 0
-  m_Name: sw33Tango
+  m_Name: p.SweeTango
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1151,6 +1152,7 @@ MonoBehaviour:
   actionController: {fileID: 1693407923742929464}
   emoteController: {fileID: 1693407923742929459}
   faceController: {fileID: 1693407923742929468}
+  statsController: {fileID: 8185179523709058615}
   animator: {fileID: 1693407923735594811}
   renderer: {fileID: 1693407923739720187}
   spineBone: {fileID: 1693407923742929466}
@@ -1262,6 +1264,26 @@ MonoBehaviour:
   ouchLMat: {fileID: 2100000, guid: 383a9e7be1adf4bf1aa41b6f0406aef7, type: 2}
   _discomfortTime: 0.4
   _chewTime: 4
+--- !u!114 &8185179523709058615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693407923742897381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b55f8d686c1634e0b8680ce16f240dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _staminaDrain: 1
+  _hungerInc: 1
+  _staminaHappinessDrain: 1
+  _hungerHappinessDrain: 1
+  _healthHappinessDrain: 1
+  _hungerThreshold: 60
+  _staminaThreshold: 30
+  _healthThreshold: 30
 --- !u!1 &1693407923742897383
 GameObject:
   m_ObjectHideFlags: 0

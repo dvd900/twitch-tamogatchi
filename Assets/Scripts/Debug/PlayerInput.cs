@@ -33,7 +33,7 @@ public class PlayerInput : MonoBehaviour {
             DoRightClick(mousePos);
         }
 
-        _skin.faceController.DoLookAt(CoordsUtils.ScreenToWorldPos(mousePos));
+        //_skin.faceController.DoLookAt(CoordsUtils.ScreenToWorldPos(mousePos));
     }
 
     public void DoIdle() {
