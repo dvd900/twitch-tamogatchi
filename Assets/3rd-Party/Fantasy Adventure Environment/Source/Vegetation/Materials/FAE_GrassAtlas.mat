@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: FAE_GrassAtlas
   m_Shader: {fileID: 4800000, guid: 1e36dfca605fba6499e6817389a06b01, type: 3}
-  m_ShaderKeywords: GEOM_TYPE_LEAF _ALPHATEST_ON
+  m_ShaderKeywords: GEOM_TYPE_LEAF _ALPHATEST_ON _VS_TOUCHBEND_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -126,13 +126,13 @@ Material:
     - _BendingRadius: 1.5
     - _BendingStiffness: 1
     - _BendingStrength: 20
-    - _BendingTint: -0.027
+    - _BendingTint: 0.1
     - _BiDirectionality: 1
     - _BlendSpeed: 0
     - _BumpScale: 1
     - _ColorVariation: 0
     - _Colorvariation: 0.729
-    - _Cutoff: 0.558
+    - _Cutoff: 0.465
     - _Debug: 0
     - _DetailNormalMapScale: 1
     - _Detailstrength: 1
@@ -157,7 +157,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PigmentMapBrightness: 1
-    - _PigmentMapHeight: 0.621
+    - _PigmentMapHeight: 0.645
     - _PigmentMapInfluence: 1
     - _PigmentMapSize: 0.05
     - _Roughness: 0.5
@@ -175,7 +175,7 @@ Material:
     - _Transmissionsize: 0
     - _UVSec: 0
     - _Uselightcolor: 0
-    - _VS_TOUCHBEND: 0
+    - _VS_TOUCHBEND: 1
     - _WindAmplitudeMultiplier: 1
     - _WindGusting: 1
     - _WindSpeed: 0.116

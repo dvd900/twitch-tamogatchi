@@ -33,7 +33,7 @@ MonoBehaviour:
     UseAutomaticDensityScale: 0
     LodIndex: 2
     Seed: 34
-    LODFactor: 2.9
+    LODFactor: 5.6
     DisableLOD: 0
     DisableShadows: 1
     VegetationTumbnail: {fileID: 0}
