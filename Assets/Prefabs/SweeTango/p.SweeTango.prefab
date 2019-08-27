@@ -1203,6 +1203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickupRange: 400
+  _grabRange: 10
 --- !u!195 &1693407923742929470
 NavMeshAgent:
   m_ObjectHideFlags: 0

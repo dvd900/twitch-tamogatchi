@@ -7,6 +7,18 @@ namespace ItemSystem
 
 namespace ItemSystem
 {//#VID-2ISNB
+	public enum ConsumableItems
+	{
+		None = 0,
+		Apple = 50413427,
+		Meat = -1370315301,
+		Riceball = -694024983,
+		Soda = 766657084,
+	}
+	public enum ItemItems
+	{
+		None = 0,
+	}
 }//#VID-2ISNE
 
 namespace ItemSystem.Database
@@ -18,6 +30,8 @@ namespace ItemSystem.Database
         public static readonly string itemListsName = "VIDItemListsV32";
 
         //#VID-ICB
+		public List<ItemProfile> autoItem = new List<ItemProfile>();
+		public List<ConsumableProfile> autoConsumable = new List<ConsumableProfile>();
         //#VID-ICE
 
         /*Those two lists are 'parallel', one shouldn't be changed without the other*/

@@ -4,7 +4,14 @@ using System;
 
 public class ItemController : MonoBehaviour {
     public float pickupRange { get { return _pickupRange; } }
+    /// <summary>
+    /// Maximum distance that you can see items to go pick em up
+    /// </summary>
     [SerializeField] private float _pickupRange;
+    /// <summary>
+    /// How close you have to be to the item to grab it
+    /// </summary>
+    [SerializeField] private float _grabRange;
 
     public Item heldItem { get { return _heldItem; } }
     private Item _heldItem;
@@ -97,6 +104,12 @@ public class ItemController : MonoBehaviour {
         _isPickingUp = false;
 
         _heldItem = null;
+    }
+
+    public bool IsInRange(Item item) {
+        Vector3 d = item.transform.position - transform.position;
+        d.y = 0;
+        return d.magnitude < _grabRange;
     }
 
     public void AE_TakeBite() {

@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 5449372084360845706}
   - component: {fileID: 8140748531008687389}
   m_Layer: 18
-  m_Name: apple
+  m_Name: p.Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,11 +692,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a1e5534791e4840916b56e59391c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 0.5
-  _healthMod: 0
-  _staminaMod: 0
-  _hungerMod: 0
-  _happinessMod: 0
+  _profilePrefab: {fileID: 7333897835067991224, guid: ce3fbaa0463cf49dbab80dc7f825b61e,
+    type: 3}
   _consumptionStates:
   - {fileID: 5449372084578372440}
   - {fileID: 1761940383438395442}

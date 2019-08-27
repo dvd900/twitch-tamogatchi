@@ -31,7 +31,12 @@ public class PickupAction : AIAction {
         if (!_skin.movementController.isWalking && !_skin.itemController.isPickingUp 
             && _skin.itemController.heldItem != _item) {
 
-            _skin.itemController.Pickup(_item);
+            if(_skin.itemController.IsInRange(_item)) {
+                _skin.itemController.Pickup(_item);
+            } else {
+                _skin.movementController.WalkToPosition(_item.transform.position);
+            }
+
         }
     }
 

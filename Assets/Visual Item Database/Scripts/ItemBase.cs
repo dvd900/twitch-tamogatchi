@@ -7,20 +7,21 @@ namespace ItemSystem
     {
         [Header("Generic properties")]
         public string itemName = string.Empty;  //To make sure its defaulted to "", to avoid some weird button name problems
-        [TextArea(1, 10)]
-        public string itemDescription;
+        //[TextArea(1, 10)]
+        //public string itemDescription;
 
         /// <summary>Unique item ID, should ONLY be changed by the item database!!</summary>
         [HideInInspector]
         public int itemID;
-        public bool stackable;
-        public int maxStackAmount;
+        //public bool stackable;
+        //public int maxStackAmount;
 
-        [Range(0, 1000)]
-        public float weight = 1;
-        [Range(0, 200)]
-        public float volume = 1;    //If you want to make an inventory based on item volume
-        public Sprite itemSprite, itemIcon;
+        //[Range(0, 1000)]
+        //public float weight = 1;
+        //[Range(0, 200)]
+        //public float volume = 1;    //If you want to make an inventory based on item volume
+        //public Sprite itemSprite, 
+        public Sprite itemIcon;
 
         //[Header("Equipping settings")]
         //public bool headEquip;
@@ -42,13 +43,13 @@ namespace ItemSystem
         {
             //Updates generic properties
             itemName = itemToChangeTo.itemName;
-            itemDescription = itemToChangeTo.itemDescription;
+            //itemDescription = itemToChangeTo.itemDescription;
             itemID = itemToChangeTo.itemID;
-            stackable = itemToChangeTo.stackable;
-            maxStackAmount = itemToChangeTo.maxStackAmount;
-            volume = itemToChangeTo.volume;
-            weight = itemToChangeTo.weight;
-            itemSprite = itemToChangeTo.itemSprite;
+            //stackable = itemToChangeTo.stackable;
+            //maxStackAmount = itemToChangeTo.maxStackAmount;
+            //volume = itemToChangeTo.volume;
+            //weight = itemToChangeTo.weight;
+            //itemSprite = itemToChangeTo.itemSprite;
             itemIcon = itemToChangeTo.itemIcon;
             itemType = itemToChangeTo.itemType;
         }
@@ -64,19 +65,8 @@ namespace ItemSystem
     }
 
     public enum ItemType
-    {//#VID-ITB
-        Generic,
-        MeleeWeapon,
-        RangedWeapon,
-        Armor,
-        Consumable,
+    {//#VID-ITB,
+		Item,
+		Consumable,
     };//#VID-ITE
-
-    public enum ElementalDamage
-    {
-        None,
-        FireDamage,
-        IceDamage,
-        EarthDamage,
-    };
 }

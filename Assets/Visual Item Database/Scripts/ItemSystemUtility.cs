@@ -39,6 +39,12 @@ namespace ItemSystem
             //Instantiate item of proper type
             switch (type)
             {//#VID-GICB
+				case ItemType.Item:
+					item = new ItemProfile();
+					break;
+				case ItemType.Consumable:
+					item = new ConsumableProfile();
+					break;
             }//#VID-GICE
 
             //This is because in game we don't need this check, since we assume that the ItemSystemUtility is attached to a gameobject
@@ -71,6 +77,12 @@ namespace ItemSystem
             //Instantiate item of proper type
             switch (type)
             {//#VID-2GICB
+				case ItemType.Item:
+					item = new ItemProfile();
+					break;
+				case ItemType.Consumable:
+					item = new ConsumableProfile();
+					break;
             }//#VID-2GICE
 
 #if UNITY_EDITOR
@@ -102,6 +114,12 @@ namespace ItemSystem
             //Instantiate item of proper type
             switch (type)
             {//#VID-GRICB
+				case ItemType.Item:
+					item = new ItemProfile();
+					break;
+				case ItemType.Consumable:
+					item = new ConsumableProfile();
+					break;
             }//#VID-GRICE
 
 #if UNITY_EDITOR
@@ -132,6 +150,12 @@ namespace ItemSystem
 
             switch (mainType)
             {//#VID-2GRICB
+				case ItemType.Item:
+					item = new ItemProfile();
+					break;
+				case ItemType.Consumable:
+					item = new ConsumableProfile();
+					break;
             }//#VID-2GRICE
 
 #if UNITY_EDITOR
@@ -302,6 +326,24 @@ namespace ItemSystem
             //Iterate directly over all the items of the wanted type, make instances of them and add them to the list
             switch (type)
             {//#VID-GATIB
+				case ItemType.Item:
+					for (int i = 0; i < vidLists.autoItem.Count; i++)
+					{
+						instance = new T();
+						instance.UpdateGenericProperties(vidLists.autoItem[i]);
+						instance.UpdateUniqueProperties(vidLists.autoItem[i]);
+						items.Add(instance);
+					}
+					break;
+				case ItemType.Consumable:
+					for (int i = 0; i < vidLists.autoConsumable.Count; i++)
+					{
+						instance = new T();
+						instance.UpdateGenericProperties(vidLists.autoConsumable[i]);
+						instance.UpdateUniqueProperties(vidLists.autoConsumable[i]);
+						items.Add(instance);
+					}
+					break;
             }//#VID-GATIE
 
             //Finally we return the wanted list, no casting required ;)
@@ -386,6 +428,36 @@ namespace ItemSystem
             //Each time an item is added check to see if we got all the items we wanted, if we have everything return since there is no point in further iteration.
             switch (mainType)
             {//#VID-GASIB
+				case ItemType.Item:
+					for (int i = 0; i < vidLists.autoItem.Count; i++)
+					{
+						if (vidLists.subtypes[subtypeIndex].itemIDs.Contains(vidLists.autoItem[i].itemID))
+						{
+							instance = new T();
+							instance.UpdateGenericProperties(vidLists.autoItem[i]);
+							instance.UpdateUniqueProperties(vidLists.autoItem[i]);
+							items.Add(instance);
+							
+							if (items.Count == vidLists.subtypes[subtypeIndex].itemIDs.Count)
+								return items;
+						}
+					}
+					break;
+				case ItemType.Consumable:
+					for (int i = 0; i < vidLists.autoConsumable.Count; i++)
+					{
+						if (vidLists.subtypes[subtypeIndex].itemIDs.Contains(vidLists.autoConsumable[i].itemID))
+						{
+							instance = new T();
+							instance.UpdateGenericProperties(vidLists.autoConsumable[i]);
+							instance.UpdateUniqueProperties(vidLists.autoConsumable[i]);
+							items.Add(instance);
+							
+							if (items.Count == vidLists.subtypes[subtypeIndex].itemIDs.Count)
+								return items;
+						}
+					}
+					break;
             }//#VID-GASIE
 
             return items;

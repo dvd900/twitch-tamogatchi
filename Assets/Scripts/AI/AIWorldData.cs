@@ -39,7 +39,7 @@ public class AIWorldData {
         for (int i = 0; i < numHits; i++) {
             Item item = _castColliders[i].GetComponentInParent<Item>();
 
-            if (item != null && !item.isHeld) {
+            if (item != null && item.CanBePickedUp()) {
                 _itemsInRange.Add(item);
 
                 Vector3 d = item.transform.position - _pet.feetTransform.position;

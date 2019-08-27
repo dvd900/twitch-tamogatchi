@@ -9,6 +9,8 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
 {
     SerializedObject databaseSerialized, vidListsSerialized;
 
+	SerializedProperty autoItem;
+	SerializedProperty autoConsumable;
     //#VID-SP
 
     SerializedProperty[] itemLists = new SerializedProperty[System.Enum.GetNames(typeof(ItemType)).Length];//#VID-LSP
@@ -121,10 +123,14 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
         databaseSerialized = new SerializedObject(database);
         vidListsSerialized = new SerializedObject(autoVidLists);
 
+		autoItem = vidListsSerialized.FindProperty("autoItem");
+		autoConsumable = vidListsSerialized.FindProperty("autoConsumable");
         //Get a serialized object and a property for the items list
         //#VID-ASPE
 
         //#VID-SPLAB
+		itemLists[(int)ItemType.Item] = autoItem;
+		itemLists[(int)ItemType.Consumable] = autoConsumable;
         //#VID-SPLAE
 
         UpdateGategoryData();
@@ -736,6 +742,12 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
                 //but I didn't use them in a few critical places because with large databases they are so slow they basically hang the editor!)
                 switch (itemToShow.listIndex)
                 {
+					case (int)ItemType.Item:
+						autoVidLists.autoItem.RemoveAt(index);
+						break;
+					case (int)ItemType.Consumable:
+						autoVidLists.autoConsumable.RemoveAt(index);
+						break;
                 }//#VID-MSB
 
                 itemWasDeleted = true;
@@ -770,6 +782,12 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
             //Finally insert the item into the correct item list(category)
             switch (itemToDuplicate.itemType)
             {
+				case ItemType.Item:
+					autoVidLists.autoItem.Insert(index, (ItemProfile)itemCont.item);
+					break;
+				case ItemType.Consumable:
+					autoVidLists.autoConsumable.Insert(index, (ConsumableProfile)itemCont.item);
+					break;
             }//#VID-2MSB
 
             DestroyImmediate(itemCont.gameObject);   //Destroy the temp object
@@ -925,6 +943,24 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
         Undo.RecordObject(autoVidLists, "Add Item");
         switch (((ItemType)itemToShow.listIndex))
         {
+
+			case ItemType.Item:
+				ItemProfile autoItemVAR = new ItemProfile();
+				autoItemVAR.itemID = database.GetNewID(ItemType.Item);
+				autoItemVAR.itemType = ItemType.Item;
+				
+				autoVidLists.autoItem.Add(autoItemVAR);
+				itemToShow.itemToShowIndex = autoVidLists.autoItem.Count - 1;
+				break;
+
+			case ItemType.Consumable:
+				ConsumableProfile autoConsumableVAR = new ConsumableProfile();
+				autoConsumableVAR.itemID = database.GetNewID(ItemType.Consumable);
+				autoConsumableVAR.itemType = ItemType.Consumable;
+				
+				autoVidLists.autoConsumable.Add(autoConsumableVAR);
+				itemToShow.itemToShowIndex = autoVidLists.autoConsumable.Count - 1;
+				break;
         }//#VID-AIE
 
         //First add the new item to the subtype(works since show index is now the new item and we are forcing main type) and then since we are showing a subtype
@@ -962,6 +998,10 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
         {
             switch (itemToShow.listIndex)
             {
+			case (int)ItemType.Item:
+				return autoVidLists.autoItem[index];
+			case (int)ItemType.Consumable:
+				return autoVidLists.autoConsumable[index];
             }//#VID-GIAIE
         }
 
@@ -1261,6 +1301,40 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
 
         switch (t)
         {//#VID-GFNLB
+			case ItemType.Item:
+				for (int i = 0; i < autoVidLists.autoItem.Count; i++)
+				{
+					itemName = autoVidLists.autoItem[i].itemName.Trim();
+					
+					if (itemName == string.Empty)
+						continue;
+					
+					if (!hash.Add(itemName) || !char.IsLetter(itemName[0]))
+					{
+						invalidList.Add(itemName);
+						continue;
+					}
+					
+						itemNames.Add("\t\t" + itemName.Replace(" ", "") + " = " + autoVidLists.autoItem[i].itemID + ",");
+				}
+				break;
+			case ItemType.Consumable:
+				for (int i = 0; i < autoVidLists.autoConsumable.Count; i++)
+				{
+					itemName = autoVidLists.autoConsumable[i].itemName.Trim();
+					
+					if (itemName == string.Empty)
+						continue;
+					
+					if (!hash.Add(itemName) || !char.IsLetter(itemName[0]))
+					{
+						invalidList.Add(itemName);
+						continue;
+					}
+					
+						itemNames.Add("\t\t" + itemName.Replace(" ", "") + " = " + autoVidLists.autoConsumable[i].itemID + ",");
+				}
+				break;
         }//#VID-GFNLE
 
         return itemNames;

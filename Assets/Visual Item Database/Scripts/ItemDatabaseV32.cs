@@ -124,6 +124,22 @@ namespace ItemSystem.Database
             //Check which type and search repective list
             switch (item.itemType)
             {//#VID-GIIB
+
+				case ItemType.Item:
+					for (int i = 0; i < autoVidLists.autoItem.Count; i++)
+					{
+						if (autoVidLists.autoItem[i].itemID == item.itemID)
+							return i;
+					}
+					break;
+
+				case ItemType.Consumable:
+					for (int i = 0; i < autoVidLists.autoConsumable.Count; i++)
+					{
+						if (autoVidLists.autoConsumable[i].itemID == item.itemID)
+							return i;
+					}
+					break;
             }//#VID-GIIE
 
             return -1;
@@ -143,6 +159,22 @@ namespace ItemSystem.Database
             //Check which type and search repective list
             switch (type)
             {//#VID-2GIIB
+
+				case ItemType.Item:
+					for (int i = 0; i < autoVidLists.autoItem.Count; i++)
+					{
+						if (autoVidLists.autoItem[i].itemID == id)
+							return i;
+					}
+					break;
+
+				case ItemType.Consumable:
+					for (int i = 0; i < autoVidLists.autoConsumable.Count; i++)
+					{
+						if (autoVidLists.autoConsumable[i].itemID == id)
+							return i;
+					}
+					break;
             }//#VID-2GIIE
 
             return -1;
@@ -158,6 +190,22 @@ namespace ItemSystem.Database
 
             switch (type)
             {//#VID-GIB
+
+				case ItemType.Item:
+					for (int i = 0; i < autoVidLists.autoItem.Count; i++)
+					{
+						if (autoVidLists.autoItem[i].itemID == id)
+							return autoVidLists.autoItem[i];
+					}
+					break;
+
+				case ItemType.Consumable:
+					for (int i = 0; i < autoVidLists.autoConsumable.Count; i++)
+					{
+						if (autoVidLists.autoConsumable[i].itemID == id)
+							return autoVidLists.autoConsumable[i];
+					}
+					break;
             }//#VID-GIE
 
             Debug.LogError(string.Format("Item of Type '{0}' and of ID '{1}' Does NOT exist", type.ToString(), id));
@@ -168,6 +216,22 @@ namespace ItemSystem.Database
         {
             switch (type)
             {//#VID-2GIB
+
+				case ItemType.Item:
+					for (int i = 0; i < autoVidLists.autoItem.Count; i++)
+					{
+						if (autoVidLists.autoItem[i].itemName == itemName)
+							return autoVidLists.autoItem[i];
+					}
+					break;
+
+				case ItemType.Consumable:
+					for (int i = 0; i < autoVidLists.autoConsumable.Count; i++)
+					{
+						if (autoVidLists.autoConsumable[i].itemName == itemName)
+							return autoVidLists.autoConsumable[i];
+					}
+					break;
             }//#VID-2GIE
 
             Debug.LogError(string.Format("Item of Type '{0}' and of Name '{1}' Does NOT exist", type.ToString(), itemName));
@@ -183,6 +247,22 @@ namespace ItemSystem.Database
         {
             switch (type)
             {//#VID-GRIB
+
+				case ItemType.Item:
+					if (autoVidLists.autoItem.Count == 0)
+					{
+						Debug.LogError(type.ToString() + " has no items in it");
+						return null;
+					}
+					return autoVidLists.autoItem[Random.Range(0, autoVidLists.autoItem.Count)];
+
+				case ItemType.Consumable:
+					if (autoVidLists.autoConsumable.Count == 0)
+					{
+						Debug.LogError(type.ToString() + " has no items in it");
+						return null;
+					}
+					return autoVidLists.autoConsumable[Random.Range(0, autoVidLists.autoConsumable.Count)];
             }//#VID-GRIE
 
             Debug.LogError(type.ToString() + " type was not found, did you forget to add a check for it?");
@@ -203,6 +283,16 @@ namespace ItemSystem.Database
 
         void AddMissingIDs()
         {//#VID-AMIDB
+
+			//Item items
+			for (int i = 0; i < autoVidLists.autoItem.Count; i++)
+				if (!ItemExists(autoVidLists.autoItem[i].itemID))
+					AddID(autoVidLists.autoItem[i].itemID, ItemType.Item);
+
+			//Consumable items
+			for (int i = 0; i < autoVidLists.autoConsumable.Count; i++)
+				if (!ItemExists(autoVidLists.autoConsumable[i].itemID))
+					AddID(autoVidLists.autoConsumable[i].itemID, ItemType.Consumable);
         }//#VID-AMIDE
 
         void RemoveExtraIDs()
@@ -217,6 +307,30 @@ namespace ItemSystem.Database
 
                 switch (autoVidLists.typesOfUsedIDs[i])
                 {//#VID-REIDB
+
+					//Item
+					case ItemType.Item:
+						for (int j = 0; j < autoVidLists.autoItem.Count; j++)
+						{
+							if (autoVidLists.autoItem[j].itemID == autoVidLists.usedIDs[i])
+							{
+								removeKey = false;
+								break;
+							}
+						}
+						break;
+
+					//Consumable
+					case ItemType.Consumable:
+						for (int j = 0; j < autoVidLists.autoConsumable.Count; j++)
+						{
+							if (autoVidLists.autoConsumable[j].itemID == autoVidLists.usedIDs[i])
+							{
+								removeKey = false;
+								break;
+							}
+						}
+						break;
                 }//#VID-REIDE
 
                 //If the key isn't used in its respective list then remove it from our list of keys

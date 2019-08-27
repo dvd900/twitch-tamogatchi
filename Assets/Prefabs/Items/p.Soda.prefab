@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 6094988711907459489}
   - component: {fileID: 3043759529568718479}
   m_Layer: 18
-  m_Name: Soda
+  m_Name: p.Soda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,11 +74,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a1e5534791e4840916b56e59391c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 0.5
-  _dust: {fileID: 193270998811095793, guid: b7b8f4ee2be284c89977a22aeb701158, type: 3}
-  dust_y: -1.5
-  life: 0
-  dust_size: {x: 2, y: 2, z: 2}
+  _profilePrefab: {fileID: 8571892496887101950, guid: 80eb588b1a062452a8a5a179b16ba477,
+    type: 3}
   _consumptionStates: []
 --- !u!1001 &7305388439052817583
 PrefabInstance:

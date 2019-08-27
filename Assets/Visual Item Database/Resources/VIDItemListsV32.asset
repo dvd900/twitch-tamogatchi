@@ -3,15 +3,56 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cc3822cb97ac36429fbfb4cd8789bb5, type: 3}
   m_Name: VIDItemListsV32
   m_EditorClassIdentifier: 
-  usedIDs: 
-  typesOfUsedIDs: 
+  autoItem: []
+  autoConsumable:
+  - itemName: Apple
+    itemID: 50413427
+    itemIcon: {fileID: 0}
+    itemType: 1
+    _value: 10
+    _healthMod: 10
+    _staminaMod: 10
+    _hungerMod: 10
+    _happinessMod: 10
+  - itemName: Meat
+    itemID: -1370315301
+    itemIcon: {fileID: 0}
+    itemType: 1
+    _value: 20
+    _healthMod: 10
+    _staminaMod: 50
+    _hungerMod: 30
+    _happinessMod: 0
+  - itemName: Riceball
+    itemID: -694024983
+    itemIcon: {fileID: 0}
+    itemType: 1
+    _value: 5
+    _healthMod: 2
+    _staminaMod: 5
+    _hungerMod: 3
+    _happinessMod: 20
+  - itemName: Soda
+    itemID: 766657084
+    itemIcon: {fileID: 0}
+    itemType: 1
+    _value: 50
+    _healthMod: -10
+    _staminaMod: 60
+    _hungerMod: 0
+    _happinessMod: 80
+  usedIDs: 733f0103dba552aee904a2d63c42b22d
+  typesOfUsedIDs: 01000000010000000100000001000000
   subtypes: []
-  typeGroups: []
+  typeGroups:
+  - name: Items
+    types: 01000000

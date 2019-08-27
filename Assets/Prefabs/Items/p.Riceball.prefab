@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3137750644168700976}
   - component: {fileID: 7823634866234586253}
   m_Layer: 18
-  m_Name: Riceball
+  m_Name: p.Riceball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,11 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a1e5534791e4840916b56e59391c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 0.5
-  _dust: {fileID: 193270998811095793, guid: b7b8f4ee2be284c89977a22aeb701158, type: 3}
-  dust_y: -1.5
-  life: 0
-  dust_size: {x: 2, y: 2, z: 2}
+  _profilePrefab: {fileID: 8571892496887101950, guid: 534862cd2a2de45c98e30bbf49e21df3,
+    type: 3}
   _consumptionStates: []
 --- !u!54 &3137750644168700976
 Rigidbody:
