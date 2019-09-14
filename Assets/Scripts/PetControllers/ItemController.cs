@@ -28,6 +28,7 @@ public class ItemController : MonoBehaviour {
 
     private float _defaultArmStiffness;
     private float _defaultArmDamping;
+    private Quaternion _heldItemRot;
 
     private void Start() {
         _skin = GetComponent<Skin>();
@@ -44,7 +45,7 @@ public class ItemController : MonoBehaviour {
 
     private void UpdateHeldItemPos() {
         _heldItem.transform.position = _skin.lHandTransform.position;
-        _heldItem.transform.rotation = _skin.lHandTransform.rotation;
+        _heldItem.transform.rotation = _skin.lHandTransform.rotation * _heldItemRot;
     }
 
     public void Pickup(Item item) {
@@ -54,7 +55,7 @@ public class ItemController : MonoBehaviour {
 
         Debug.Log("picking up");
 
-        _skin.animator.SetTrigger("pickup");
+        _skin.animator.SetBool("pickup", true);
 
         _itemToPickup = item;
         _isPickingUp = true;
@@ -62,6 +63,9 @@ public class ItemController : MonoBehaviour {
 
     public void AE_PutItemInHand() {
         Debug.Log("AE put item in hadn");
+
+        _skin.animator.SetBool("pickup", false);
+
         _skin.lArmBone.m_Damping = 1f;
         _skin.lArmBone.m_Stiffness = 1f;
         _skin.lArmBone.UpdateParameters();
@@ -72,6 +76,8 @@ public class ItemController : MonoBehaviour {
 
         _heldItem = _itemToPickup;
         _itemToPickup = null;
+        //_heldItemRot = Quaternion.AngleAxis(90, Vector3.right);
+        _heldItemRot = Quaternion.Inverse(_skin.lHandTransform.rotation) * _heldItem.transform.rotation;
         _heldItem.EnableHolding(_skin);
 
         UpdateHeldItemPos();
@@ -109,11 +115,18 @@ public class ItemController : MonoBehaviour {
     public bool IsInRange(Item item) {
         Vector3 d = item.transform.position - transform.position;
         d.y = 0;
-        return d.magnitude < _grabRange;
+        return d.magnitude < _grabRange + _skin.movementController.WPRange + CoordsUtils.EPSILON;
+    }
+
+    public Vector3 GetPickupDest(Item item) {
+        Vector3 d = transform.position - item.transform.position;
+        d.y = 0;
+        return item.transform.position + _grabRange * d.normalized;
     }
 
     public void AE_TakeBite() {
         Debug.Log("AE take pite");
+        _skin.animator.SetBool("eat", false);
         ((Consumable)_heldItem).DoEat();
     }
 
@@ -128,7 +141,7 @@ public class ItemController : MonoBehaviour {
             return;
         }
 
-        _skin.animator.SetTrigger("eat");
+        _skin.animator.SetBool("eat", true);
         _skin.emoteController.ChewEmote();
         _isEating = true;
     }

@@ -26,12 +26,12 @@ public class Item : MonoBehaviour
     private void Awake() {
         ItemBase item = _profilePrefab.item as ItemBase;
         _profile = (ItemProfile)ItemSystemUtility.GetItemCopy(item.itemID, item.itemType);
+        _collider = GetComponentInChildren<Collider>();
+        _rigidbody = GetComponentInChildren<Rigidbody>();
     }
 
     void Start()
     {
-        _collider = GetComponentInChildren<Collider>();
-        _rigidbody = GetComponentInChildren<Rigidbody>();
     }
 
     void Update()

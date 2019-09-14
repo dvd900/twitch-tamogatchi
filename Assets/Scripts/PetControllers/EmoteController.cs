@@ -7,6 +7,7 @@ public class EmoteController : MonoBehaviour {
 
     [SerializeField] private float _discomfortTime;
     [SerializeField] private float _chewTime;
+    [SerializeField] private float _chewDelay;
 
     private Skin _skin;
 
@@ -29,7 +30,6 @@ public class EmoteController : MonoBehaviour {
 
     public void ChewEmote() {
         _skin.faceController.DoClosedEyes();
-        _skin.faceController.DoChewMouth();
         _eyeTimer = _chewTime;
         _mouthTimer = _chewTime;
     }
@@ -44,7 +44,12 @@ public class EmoteController : MonoBehaviour {
 
         if(_mouthTimer > 0) {
             _mouthTimer -= Time.deltaTime;
-            if(_mouthTimer < 0) {
+            // slight delay before chew starts
+            if (_mouthTimer < _chewTime - _chewDelay && !_skin.faceController.IsChewing) {
+                _skin.faceController.DoChewMouth();
+            }
+
+            if (_mouthTimer < 0) {
                 _skin.faceController.DoNormalMouth();
             }
         }

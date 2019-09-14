@@ -6,13 +6,24 @@ using UnityEngine.AI;
 public class MovementController : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _navMeshAgent;
+    /// <summary>
+    /// How close he has to be to the wp to stop
+    /// </summary>
     [SerializeField] private float _wpRange;
+    public float WPRange { get { return _wpRange; } }
 
-    public float walkTargetRange { get { return _walkTargetRange; } }
-    [SerializeField] private float _walkTargetRange;
+    /// <summary>
+    /// speed at which he turns to look at something
+    /// </summary>
+    [SerializeField] private float _turnSpeed;
 
-    public bool isWalking { get { return _isWalking; } }
+    public bool IsWalking { get { return _isWalking; } }
     private bool _isWalking;
+
+    public bool IsTurning { get { return _turnTimer > 0; } }
+
+    private int _rotDir;
+    private float _turnTimer;
 
     private Skin _skin;
 
@@ -23,6 +34,14 @@ public class MovementController : MonoBehaviour
     private void Update() {
         if(_isWalking && IsInRange()) {
             StopWalking();
+        }
+    }
+
+    private void LateUpdate() {
+        if (_turnTimer > 0) {
+            _turnTimer -= Time.deltaTime;
+            float rotAmt = _turnSpeed * Time.deltaTime;
+            transform.rotation *= Quaternion.AngleAxis(rotAmt, _rotDir * Vector3.up);
         }
     }
 
@@ -38,6 +57,14 @@ public class MovementController : MonoBehaviour
         _skin.animator.SetBool("isIdle", false);
         _skin.faceController.DoLookAt(dest);
         _isWalking = true;
+    }
+
+    public void LookAtPosition(Vector3 dest) {
+        Quaternion endRot = Quaternion.LookRotation(dest - transform.position, Vector3.up);
+        _turnTimer = Quaternion.Angle(transform.rotation, endRot) / _turnSpeed;
+        float da = Mathf.DeltaAngle(endRot.eulerAngles.y, transform.rotation.eulerAngles.y);
+        _rotDir = -(int)Mathf.Sign(da);
+        Debug.Log("Turning, time: " + _turnTimer);
     }
 
     private bool IsInRange() {

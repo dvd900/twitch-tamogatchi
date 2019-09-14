@@ -19,7 +19,7 @@ public class WalkToAction : AIAction {
     }
 
     public override bool IsFinished() {
-        return !_skin.movementController.isWalking;
+        return !_skin.movementController.IsWalking;
     }
 
     public override void StartAction() {

@@ -5,6 +5,7 @@ public static class CoordsUtils {
 
     // Percentage of the screen not used so pet doesn't go off screen
     private const float BUFFER_PERCENTAGE = .1f;
+    public const float EPSILON = .3f;
 
     public static Vector3 RandomScreenPoint() {
         float x = UnityEngine.Random.value;

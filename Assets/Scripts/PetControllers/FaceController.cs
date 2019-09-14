@@ -32,6 +32,8 @@ public class FaceController : MonoBehaviour {
     private Vector3 _lookAtPoint;
     private bool _isLooking;
 
+    public bool IsChewing { get { return _chewing; } }
+
     private void Start() {
         _skin = GetComponent<Skin>();
 
@@ -78,11 +80,11 @@ public class FaceController : MonoBehaviour {
         _skin.renderer.materials[0].SetTextureOffset(VBShaderUtils.P_DETAIL_TEX, offset);
         _skin.renderer.materials[1].SetTextureOffset(VBShaderUtils.P_DETAIL_TEX, offset);
 
-        _headBone.LookAt(_lookAtPoint);
+        //_headBone.LookAt(_lookAtPoint);
         //_headBone.rotation = Quaternion.FromToRotation(-transform.right, d);
         //_headBone.LookAt(_lookAtPoint);
-        _headBone.RotateAround(Vector3.up, 90);
-        _headBone.localRotation = Quaternion.Lerp(Quaternion.identity, _headBone.localRotation, .5f);
+        //_headBone.RotateAround(Vector3.up, 90);
+        //_headBone.localRotation = Quaternion.Lerp(Quaternion.identity, _headBone.localRotation, .5f);
     }
 
     public void DoNormalEyes() {
@@ -121,7 +123,7 @@ public class FaceController : MonoBehaviour {
     public void DoNormalMouth() {
         Debug.Log("normal mouth");
         _chewAnim.ResetAnim();
-        _chewing = true;
+        _chewing = false;
     }
 
     private void StartBlink() {

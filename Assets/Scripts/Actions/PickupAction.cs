@@ -6,6 +6,10 @@ public class PickupAction : AIAction {
     private static Item bestItem;
 
     private Item _item;
+    /// <summary>
+    /// Did we start turning to face the item were gona pick up?
+    /// </summary>
+    private bool _turnStarted;
 
     public PickupAction(Skin skin) : base(skin) {
         _item = bestItem;
@@ -24,20 +28,32 @@ public class PickupAction : AIAction {
     }
 
     public override void StartAction() {
-        _skin.movementController.WalkToPosition(_item.transform.position);
+        WalkToItem();
     }
 
     public override void UpdateAction() {
-        if (!_skin.movementController.isWalking && !_skin.itemController.isPickingUp 
+        if (!_skin.movementController.IsWalking && !_skin.itemController.isPickingUp 
             && _skin.itemController.heldItem != _item) {
 
             if(_skin.itemController.IsInRange(_item)) {
-                _skin.itemController.Pickup(_item);
+                if(_turnStarted && !_skin.movementController.IsTurning) {
+                    _skin.itemController.Pickup(_item);
+                }
+                else if (!_turnStarted) {
+                    _skin.movementController.LookAtPosition(_item.transform.position);
+                    _turnStarted = true;
+                }
             } else {
-                _skin.movementController.WalkToPosition(_item.transform.position);
+                WalkToItem();
             }
 
         }
+    }
+
+    private void WalkToItem() {
+        Debug.Log("WALKING TO ITEM");
+        Vector3 dest = _skin.itemController.GetPickupDest(_item);
+        _skin.movementController.WalkToPosition(dest);
     }
 
     public override float Score(AIWorldData data) {
