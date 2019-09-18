@@ -44,7 +44,7 @@ public class PlayerInput : MonoBehaviour {
 
     public void DoRightClick(Vector2 screenPos) {
         Vector3 worldPos = CoordsUtils.ScreenToWorldPos(screenPos);
-        _itemSpawner.SpawnItem(0, worldPos);
+        _itemSpawner.SpawnItem(3, worldPos);
         //_itemSpawner.SpawnRandomItem(worldPos);
     }
 

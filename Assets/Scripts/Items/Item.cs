@@ -8,6 +8,10 @@ public class Item : MonoBehaviour
     public float value { get { return _profile._value; } }
 
     [SerializeField] private ItemContainer _profilePrefab;
+    /// <summary>
+    /// Should it drop in when spawned?
+    /// </summary>
+    [SerializeField] private bool _dropsIn = true;
 
     protected ItemProfile _profile;
 
@@ -20,6 +24,7 @@ public class Item : MonoBehaviour
     protected Collider _collider;
 
     public bool isHeld { get { return _holder != null; } }
+    public bool dropsIn { get { return _dropsIn; } }
 
     protected Skin _holder;
 

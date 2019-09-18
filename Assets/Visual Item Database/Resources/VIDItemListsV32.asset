@@ -50,8 +50,17 @@ MonoBehaviour:
     _staminaMod: 60
     _hungerMod: 0
     _happinessMod: 80
-  usedIDs: 733f0103dba552aee904a2d63c42b22d
-  typesOfUsedIDs: 01000000010000000100000001000000
+  - itemName: Mushroom
+    itemID: -1152645558
+    itemIcon: {fileID: 0}
+    itemType: 1
+    _value: 50
+    _healthMod: 20
+    _staminaMod: 20
+    _hungerMod: 20
+    _happinessMod: 20
+  usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb
+  typesOfUsedIDs: 0100000001000000010000000100000001000000
   subtypes: []
   typeGroups:
   - name: Items

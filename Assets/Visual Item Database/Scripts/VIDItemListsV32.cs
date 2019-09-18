@@ -14,6 +14,7 @@ namespace ItemSystem
 		Meat = -1370315301,
 		Riceball = -694024983,
 		Soda = 766657084,
+		Mushroom = -1152645558,
 	}
 	public enum ItemItems
 	{

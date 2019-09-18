@@ -28,6 +28,7 @@ public class IdleAction : AIAction {
 
     public override void StartAction() {
         _timer = _waitTime;
+        _skin.speechController.SayRandomDialogue();
     }
 
     public override void UpdateAction() {

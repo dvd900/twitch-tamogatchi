@@ -51,10 +51,21 @@ public class ItemSpawner : MonoBehaviour
             throw new IndexOutOfRangeException("Item ind out of range");
         }
 
-        GameObject clone = _items[spawnInd];
+        Item itemPrefab = _items[spawnInd].GetComponent<Item>();
 
-        clone = Instantiate(clone, new Vector3(worldPos.x, worldPos.y + 30, worldPos.z),
-           Quaternion.Euler(new Vector3(0, UnityEngine.Random.Range(0, 360), 0)));
+        Vector3 itemPos = new Vector3(worldPos.x, worldPos.y, worldPos.z);
+        if(itemPrefab.dropsIn) {
+            itemPos.y = itemPos.y + 30;
+        } else {
+            itemPos.y = itemPrefab.transform.position.y;
+        }
+
+        Debug.Log("Itempos: " + itemPos + ", " + itemPrefab.transform.position);
+
+        Quaternion itemRot = Quaternion.AngleAxis(360 * UnityEngine.Random.value, Vector3.up) *
+            itemPrefab.transform.rotation;
+
+        GameObject clone = Instantiate(itemPrefab.gameObject, itemPos, itemRot);
 
         Vector3 originalScale = clone.transform.localScale;
         clone.transform.localScale = (1 / 2.5f) * originalScale;
@@ -62,7 +73,7 @@ public class ItemSpawner : MonoBehaviour
         iTween.ScaleTo(clone.gameObject, iTween.Hash("scale", originalScale,
             "time", 1.0f, "easetype", iTween.EaseType.easeOutElastic));
 
-        iTween.RotateBy(clone.gameObject, iTween.Hash("amount", new Vector3(0, 1, 0),
+        iTween.RotateBy(clone.gameObject, iTween.Hash("amount", _items[spawnInd].transform.up,
             "time", 1f, "easetype", iTween.EaseType.easeOutSine));
     }
 
