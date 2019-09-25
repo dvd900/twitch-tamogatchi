@@ -93,6 +93,6 @@ public class PickupAction : AIAction {
             //}
         }
 
-        return (item.value + .5f) * distMult - heldItemMod;
+        return ((item.value / 100.0f) + .5f) * distMult - heldItemMod;
     }
 }

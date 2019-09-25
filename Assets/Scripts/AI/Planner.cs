@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Planner : MonoBehaviour {
 
@@ -15,8 +16,12 @@ public class Planner : MonoBehaviour {
     private float _planTimer;
     private AIAction _lastAction;
 
+    // DEBUG
+    private List<string> _DEBUG_LastScores;
+
     void Start() {
         _actions = new List<AIAction>();
+        _DEBUG_LastScores = new List<string>();
 
         _actions.Add(new PickupAction(_pet));
         _actions.Add(new WalkToAction(_pet));
@@ -43,21 +48,33 @@ public class Planner : MonoBehaviour {
 
         _worldData.UpdateData();
 
+        _DEBUG_LastScores.Clear();
+
         float maxScore = 0;
         AIAction bestAction = null;
         foreach(AIAction action in _actions) {
             float score = action.Score(_worldData);
 
+            string scoreString = action.ToString() + ": " + score;
+
             if(action.GetType() == _lastAction.GetType()) {
                 score *= .5f;
+
+                scoreString += " * .5f";
             }
 
-            score += _pet.actionController.actionRandomness * (Random.value - .5f);
+            float randomAdjustment = _pet.actionController.actionRandomness * (UnityEngine.Random.value - .5f);
+            score += randomAdjustment;
+
+            scoreString += " + " + randomAdjustment.ToString("F1");
+            scoreString = score.ToString("F1") + ": " + scoreString;
 
             if (score > maxScore) {
                 maxScore = score;
                 bestAction = action;
             }
+
+            _DEBUG_LastScores.Add(scoreString);
         }
 
         AIAction newAction = bestAction.Generate();
