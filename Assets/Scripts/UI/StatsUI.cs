@@ -1,22 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 
 namespace UI { 
     public class StatsUI : MonoBehaviour {
 
-        public StatsController stats;
+        [SerializeField] private StatsController _stats;
 
-        public TMP_Text staminaField;
-        public TMP_Text healthField;
-        public TMP_Text happinessField;
-        public TMP_Text hungerField;
+        [SerializeField] private RectTransform _heartIcon;
+        [SerializeField] private Image _energyIcon;
+        [SerializeField] private Image _hungerIcon;
 
         private void Update() {
-            staminaField.text = stats.stamina.ToString("N0");
-            healthField.text = stats.health.ToString("N0");
-            happinessField.text = stats.happiness.ToString("N0");
-            hungerField.text = stats.hunger.ToString("N0");
+            UpdateHealth(_stats.health / 100.0f);
+            UpdateEnergy(_stats.stamina / 100.0f);
+            UpdateHunger(_stats.hunger / 100.0f);
+        }
+
+        private void UpdateHealth(float p) {
+            _heartIcon.localScale = new Vector3(p, p, p);
+        }
+
+        private void UpdateEnergy(float p) {
+            _energyIcon.fillAmount = p;
+        }
+
+        private void UpdateHunger(float p) {
+            _hungerIcon.fillAmount = p;
         }
     }
 }

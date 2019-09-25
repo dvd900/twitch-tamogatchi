@@ -40,6 +40,7 @@ public class PickupAction : AIAction {
                     _skin.itemController.Pickup(_item);
                 }
                 else if (!_turnStarted) {
+                    _skin.faceController.StopLookingAt();
                     _skin.movementController.LookAtPosition(_item.transform.position);
                     _turnStarted = true;
                 }
@@ -54,6 +55,7 @@ public class PickupAction : AIAction {
         Debug.Log("WALKING TO ITEM");
         Vector3 dest = _skin.itemController.GetPickupDest(_item);
         _skin.movementController.WalkToPosition(dest);
+        _skin.faceController.SetLookAt(_item.transform);
     }
 
     public override float Score(AIWorldData data) {

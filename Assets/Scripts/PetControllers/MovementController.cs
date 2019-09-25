@@ -55,7 +55,7 @@ public class MovementController : MonoBehaviour
     public void WalkToPosition(Vector3 dest) {
         _navMeshAgent.SetDestination(dest);
         _skin.animator.SetBool("isIdle", false);
-        _skin.faceController.DoLookAt(dest);
+        //_skin.faceController.DoLookAt(dest);
         _isWalking = true;
     }
 

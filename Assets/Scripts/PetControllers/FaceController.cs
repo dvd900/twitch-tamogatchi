@@ -29,7 +29,7 @@ public class FaceController : MonoBehaviour {
     private Material _lEyeNormalMat;
     private Material _rEyeNormalMat;
 
-    private Vector3 _lookAtPoint;
+    private Transform _lookTarget;
     private bool _isLooking;
 
     public bool IsChewing { get { return _chewing; } }
@@ -71,7 +71,7 @@ public class FaceController : MonoBehaviour {
     }
 
     private void DoLooking() {
-        Vector3 d = transform.position - _lookAtPoint;
+        Vector3 d = transform.position - _lookTarget.position;
         d.Normalize();
         Vector3 dLocal = transform.InverseTransformVector(d);
 
@@ -105,14 +105,17 @@ public class FaceController : MonoBehaviour {
         SetEyeMats(_lEyeClosedMat, _rEyeClosedMat);
     }
 
-    public void DoLookAt(Vector3 point) {
+    public void SetLookAt(Transform target) {
         _isLooking = true;
-        _lookAtPoint = point;
-        _lookAtPoint.y = _headBone.position.y;
+        _lookTarget = target;
+        _skin.ikController.SetLookAt(target);
+        //_lookAtPoint.y = _headBone.position.y;
     }
 
     public void StopLookingAt() {
         _isLooking = false;
+        _lookTarget = null;
+        _skin.ikController.ClearLookAt();
     }
 
     public void DoChewMouth() {
