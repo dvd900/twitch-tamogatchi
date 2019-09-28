@@ -108,14 +108,14 @@ public class FaceController : MonoBehaviour {
     public void SetLookAt(Transform target) {
         _isLooking = true;
         _lookTarget = target;
-        _skin.ikController.SetLookAt(target);
+        //_skin.ikController.SetLookAt(target);
         //_lookAtPoint.y = _headBone.position.y;
     }
 
     public void StopLookingAt() {
         _isLooking = false;
         _lookTarget = null;
-        _skin.ikController.ClearLookAt();
+        //_skin.ikController.ClearLookAt();
     }
 
     public void DoChewMouth() {

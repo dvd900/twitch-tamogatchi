@@ -37,8 +37,8 @@ namespace DitzelGames.FastIK
         /// </summary>
         [Range(0, 1)]
         public float SnapBackStrength = 1f;
-
-        public bool Blend = false;
+        [Range(0, 1)]
+        public float BlendAmt = 1.0f;
         public float StretchPercentage = 0.0f;
 
 
@@ -137,10 +137,6 @@ namespace DitzelGames.FastIK
         // Update is called once per frame
         void LateUpdate()
         {
-            if(Blend) {
-                SetStartPositions();
-            }
-
             ResolveIK();
         }
 
@@ -240,10 +236,13 @@ namespace DitzelGames.FastIK
 
         private void SetPositionRootSpace(Transform current, Vector3 position)
         {
+            Vector3 newPos;
             if (Root == null)
-                current.position = position;
+                newPos = position;
             else
-                current.position = Root.rotation * position + Root.position;
+                newPos = Root.rotation * position + Root.position;
+
+            current.position = current.position * (1 - BlendAmt) + newPos * BlendAmt;
         }
 
         private Quaternion GetRotationRootSpace(Transform current)
@@ -257,10 +256,13 @@ namespace DitzelGames.FastIK
 
         private void SetRotationRootSpace(Transform current, Quaternion rotation)
         {
+            Quaternion newRot;
             if (Root == null)
-                current.rotation = rotation;
+                newRot = rotation;
             else
-                current.rotation = Root.rotation * rotation;
+                newRot = Root.rotation * rotation;
+
+            current.rotation = Quaternion.Lerp(current.rotation, newRot, BlendAmt);
         }
 
         void OnDrawGizmos()
