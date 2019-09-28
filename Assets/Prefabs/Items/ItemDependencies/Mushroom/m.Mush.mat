@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: m.mush
+  m_Name: m.Mush
   m_Shader: {fileID: 4800000, guid: b7794c3a07d4f47a4a2299cde378b4d9, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
