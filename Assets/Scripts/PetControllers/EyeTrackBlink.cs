@@ -14,17 +14,21 @@ public class EyeTrackBlink : MonoBehaviour
     Vector2 eyelidOffset;
     float blinkOffset;
     float blinkTimerR;
+    float shiftTimerR;
+    float shiftTimer;
     bool isEmoting = false;
 
     void Start()
     {
         eyeRend.material = eyeMat[0];
-        eyeRend2.materials[1] = eyeMat[1];
+        eyeRend2.material = eyeMat[1];
         blinkTimerR = blinkTimer;
+        shiftTimerR = shiftTimer;
         blinkOffset = 1 / blinkingTextureAmount;
-        eyelidOffset = new Vector2(0, 0);
-        lidRend.materials[0].SetTextureScale("_MainTex", new Vector2(blinkOffset, 1));
-        lidRend2.materials[0].SetTextureScale("_MainTex", new Vector2(blinkOffset, 1));
+        eyelidOffset = new Vector2(0.75f, 0);
+        StartCoroutine(EyeShift(0));
+        //lidRend.materials[0].SetTextureScale("_MainTex", new Vector2(blinkOffset, 1));
+        //lidRend2.materials[0].SetTextureScale("_MainTex", new Vector2(blinkOffset, 1));
 
     }
     void Update()
@@ -32,6 +36,7 @@ public class EyeTrackBlink : MonoBehaviour
         if (isEmoting == false)
         {
             blinkTimerR -= Time.deltaTime;
+            shiftTimerR -= Time.deltaTime;
             if (blinkTimerR <= 0.0f)
             {
                 StartCoroutine(Blink());
@@ -48,8 +53,8 @@ public class EyeTrackBlink : MonoBehaviour
                 eyeOffset.y = Mathf.Clamp(eyeOffset.y, -eyeMaxOffset, eyeMaxOffset);
             }
             // send offset to shader
-            eyeRend.material.SetTextureOffset("_DetailAlbedoMap", eyeOffset);
-            eyeRend2.materials[1].SetTextureOffset("_DetailAlbedoMap", eyeOffset);
+            //eyeRend.material.SetTextureOffset("_DetailAlbedoMap", eyeOffset);
+            //eyeRend2.material.SetTextureOffset("_DetailAlbedoMap", eyeOffset);
         }
 
     }
@@ -73,28 +78,44 @@ public class EyeTrackBlink : MonoBehaviour
     {
         // animating 1 - 2 - 3 - 4 - 3 - 1, if you have more or less blinking animation frames, add or delete them here
         blinkTimerR = blinkTimer + Random.Range(-2, 2); // slight randomisation to the blinking
-        lidRend.materials[0].SetTextureOffset("_MainTex", eyelidOffset);
-        lidRend2.materials[1].SetTextureOffset("_MainTex", eyelidOffset); //1
+        lidRend.material.SetTextureOffset("_MainTex", eyelidOffset);
+        lidRend2.material.SetTextureOffset("_MainTex", eyelidOffset); //1
         yield return new WaitForSeconds(blinkTransition);
-        lidRend.materials[0].SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x + blinkOffset, 0)); //2
-        lidRend2.materials[1].SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x + blinkOffset, 0)); //2
+        lidRend.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - blinkOffset, 0)); //2
+        lidRend2.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - blinkOffset, 0)); //2
         yield return new WaitForSeconds(blinkTransition);
-        lidRend.materials[0].SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x + (blinkOffset * 2), 0)); //3
-        lidRend2.materials[1].SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x + (blinkOffset * 2), 0)); //3
+        lidRend.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - (blinkOffset * 2), 0)); //3
+        lidRend2.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - (blinkOffset * 2), 0)); //3
         yield return new WaitForSeconds(blinkTransition);
-        lidRend.materials[0].SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x + (blinkOffset * 2), 0)); //3
-        lidRend2.materials[1].SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x + (blinkOffset * 2), 0)); //3
+        lidRend.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - (blinkOffset * 3), 0)); //4
+        lidRend2.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - (blinkOffset * 3), 0)); //4
         yield return new WaitForSeconds(blinkTransition);
-        lidRend.materials[0].SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x + blinkOffset, 0)); //2
-        lidRend2.materials[1].SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x + blinkOffset, 0)); //2
+        lidRend.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - (blinkOffset * 3), 0)); //4
+        lidRend2.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - (blinkOffset * 3), 0)); //4
         yield return new WaitForSeconds(blinkTransition);
-        lidRend.materials[0].SetTextureOffset("_MainTex", eyelidOffset); //1
-        lidRend2.materials[1].SetTextureOffset("_MainTex", eyelidOffset); //1
+        lidRend.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - (blinkOffset * 2), 0)); //3
+        lidRend2.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - (blinkOffset * 2), 0)); //3
+        yield return new WaitForSeconds(blinkTransition);
+        lidRend.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - blinkOffset, 0)); //2
+        lidRend2.material.SetTextureOffset("_MainTex", new Vector2(eyelidOffset.x - blinkOffset, 0)); //2
+        yield return new WaitForSeconds(blinkTransition);
+        lidRend.material.SetTextureOffset("_MainTex", eyelidOffset); //1
+        lidRend2.material.SetTextureOffset("_MainTex", eyelidOffset); //1
     }
     IEnumerator Ouch(float time)
     {
         yield return new WaitForSeconds(time);
         DoNormalEyes();
         isEmoting = false;
+    }
+    IEnumerator EyeShift(float waitTime)
+    {
+        waitTime = Random.Range(1, 6);
+        float shiftX = Random.Range(-0.01f, 0.01f);
+        float shiftY = Random.Range(-0.01f, 0.01f);
+        eyeRend.material.SetTextureOffset("_DetailAlbedoMap", new Vector2 (shiftX, shiftY));
+        eyeRend2.material.SetTextureOffset("_DetailAlbedoMap", new Vector2(-shiftX, shiftY));
+        yield return new WaitForSeconds(waitTime);
+        StartCoroutine(EyeShift(0));
     }
 }

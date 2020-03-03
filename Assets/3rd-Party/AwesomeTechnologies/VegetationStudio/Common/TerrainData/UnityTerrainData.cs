@@ -177,8 +177,8 @@ namespace AwesomeTechnologies
             _size = _terrain.terrainData.size;
             _heightmapScale = _terrain.terrainData.heightmapScale;
             _terrainPosition = _terrain.transform.position;
-            _heightmapHeight = _terrain.terrainData.heightmapHeight;
-            _heightmapWidth = _terrain.terrainData.heightmapWidth;
+            _heightmapHeight = _terrain.terrainData.heightmapResolution;
+            _heightmapWidth = _terrain.terrainData.heightmapResolution;
 
             _alphamapHeight = _terrain.terrainData.alphamapHeight;
             _alphamapWidth = _terrain.terrainData.alphamapWidth;

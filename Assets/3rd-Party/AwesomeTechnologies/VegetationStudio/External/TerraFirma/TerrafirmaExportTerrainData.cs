@@ -13,8 +13,8 @@ namespace AwesomeTechnologies.External.Terrafirma
         {
             if (terrain)
             {
-                float[,] heights = terrain.terrainData.GetHeights(0, 0, terrain.terrainData.heightmapWidth, terrain.terrainData.heightmapHeight);
-                outputTexture = convertHeightField(heights, terrain.terrainData.heightmapWidth, terrain.terrainData.heightmapHeight);
+                float[,] heights = terrain.terrainData.GetHeights(0, 0, terrain.terrainData.heightmapResolution, terrain.terrainData.heightmapResolution);
+                outputTexture = convertHeightField(heights, terrain.terrainData.heightmapResolution, terrain.terrainData.heightmapResolution);
             }
         } 
 
@@ -27,8 +27,8 @@ namespace AwesomeTechnologies.External.Terrafirma
         {
             if (terrain)
             {
-                float[,] heights = terrain.terrainData.GetHeights(0, 0, terrain.terrainData.heightmapWidth, terrain.terrainData.heightmapHeight);
-                outputTexture = convertHeightField(heights, terrain.terrainData.heightmapWidth, terrain.terrainData.heightmapHeight);
+                float[,] heights = terrain.terrainData.GetHeights(0, 0, terrain.terrainData.heightmapResolution, terrain.terrainData.heightmapResolution);
+                outputTexture = convertHeightField(heights, terrain.terrainData.heightmapResolution, terrain.terrainData.heightmapResolution);
                 SaveTexture(outputTexture, "Assets\\" + terrain.gameObject.name);
             }
         }
