@@ -657,11 +657,11 @@ MonoBehaviour:
     Offset: {x: 0, y: 0, z: 0}
     RotationOffset: {x: -0, y: 0, z: 0}
     Rotation: 3
-    UsePerlinMask: 0
-    PerlinCutoff: 0.529
-    PerlinScale: 1.5
+    UsePerlinMask: 1
+    PerlinCutoff: 0.43
+    PerlinScale: 50
     InversePerlinMask: 1
-    PerlinOffset: {x: 0, y: 0}
+    PerlinOffset: {x: 1, y: 1}
     UseExcludeTextueMask: 0
     ExcludeTextureMaskList: []
     UseIncludeTextueMask: 0
@@ -1329,7 +1329,7 @@ MonoBehaviour:
     Rotation: 0
     UsePerlinMask: 1
     PerlinCutoff: 0.57989705
-    PerlinScale: 3
+    PerlinScale: 1
     InversePerlinMask: 1
     PerlinOffset: {x: 0, y: 0}
     UseExcludeTextueMask: 0
