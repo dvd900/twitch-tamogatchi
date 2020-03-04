@@ -1334,8 +1334,14 @@ MonoBehaviour:
     PerlinOffset: {x: 0, y: 0}
     UseExcludeTextueMask: 0
     ExcludeTextureMaskList: []
-    UseIncludeTextueMask: 0
-    IncludeTextureMaskList: []
+    UseIncludeTextueMask: 1
+    IncludeTextureMaskList:
+    - TextureLayer: 1
+      MinimumValue: 0.1
+      MaximumValue: 1
+    - TextureLayer: 0
+      MinimumValue: 0.1
+      MaximumValue: 1
     UseVegetationMask: 0
     VegetationTypeIndex: 1
     UseExcludeTextueMaskRules: 0
@@ -1355,7 +1361,7 @@ MonoBehaviour:
     Volume: 0.34376025
   UseTerrainTextures: 0
   TerrainTextureList:
-  - Texture: {fileID: 2800000, guid: de5cc7c4241bb9c46a87ed39b7d10005, type: 3}
+  - Texture: {fileID: 2800000, guid: c9a3135bf68ff4f7f9f85dc2b0ee5eee, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: 0ea4eb0de0c23b54abde5b15775d0d33, type: 3}
     TextureNormalsGUID: 
@@ -1365,8 +1371,9 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
-  - Texture: {fileID: 2800000, guid: c0afc3db06067e74d927639bbc04ae4e, type: 3}
+    TerrainLayer: {fileID: 8574412962073106934, guid: 500b9e4086c854786b94ba06e60fb10c,
+      type: 2}
+  - Texture: {fileID: 2800000, guid: 6b08d2a54ccba4eae8f198424c937592, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: d1a4190cdf5305443b36f6cd2498dd93, type: 3}
     TextureNormalsGUID: 
@@ -1376,8 +1383,9 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
-  - Texture: {fileID: 2800000, guid: d2cebf7413e3c944281ee66dfe64149f, type: 3}
+    TerrainLayer: {fileID: 8574412962073106934, guid: a9071d4e14e824e2eba5e4e80b4e2d25,
+      type: 2}
+  - Texture: {fileID: 2800000, guid: 9a9b68cf626d744078744888937f1387, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: 0c9bacd327357a94eb7663433cae1743, type: 3}
     TextureNormalsGUID: 
@@ -1387,8 +1395,9 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
-  - Texture: {fileID: 2800000, guid: 46f048d7d81f5864fa2a8d7fb353e13c, type: 3}
+    TerrainLayer: {fileID: 8574412962073106934, guid: ab2c93d7f31c740c8908177ec51dcb0b,
+      type: 2}
+  - Texture: {fileID: 2800000, guid: 6b08d2a54ccba4eae8f198424c937592, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: 755731fe0fa883748860f1c58877ab0f, type: 3}
     TextureNormalsGUID: 
@@ -1398,8 +1407,9 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
-  - Texture: {fileID: 2800000, guid: f5d1de47f0f760544a5596ceb8cc895f, type: 3}
+    TerrainLayer: {fileID: 8574412962073106934, guid: 639f4662834d44feb904e4db553f7f21,
+      type: 2}
+  - Texture: {fileID: 2800000, guid: 343e644d2204341eaa80ec3ce6575869, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: af579c7a89d15d24eb8c925a43a236cf, type: 3}
     TextureNormalsGUID: 
@@ -1409,8 +1419,9 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
-  - Texture: {fileID: 2800000, guid: 9094edcf722b9e945a30556b7b3c2267, type: 3}
+    TerrainLayer: {fileID: 8574412962073106934, guid: c3879b22f6fb64005b68ff88392795ff,
+      type: 2}
+  - Texture: {fileID: 2800000, guid: c9a3135bf68ff4f7f9f85dc2b0ee5eee, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: 76009dac73d240246aa8d95e1737bc1d, type: 3}
     TextureNormalsGUID: 
@@ -1420,8 +1431,9 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
-  - Texture: {fileID: 2800000, guid: 76a07bcaabfcbc540827c83b89b5d443, type: 3}
+    TerrainLayer: {fileID: 8574412962073106934, guid: d92946fb5fc2a4385bd3e8b60f6ec50a,
+      type: 2}
+  - Texture: {fileID: 2800000, guid: c9a3135bf68ff4f7f9f85dc2b0ee5eee, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: fa98c104902c6a94d9bcf97cf14c6ec9, type: 3}
     TextureNormalsGUID: 
@@ -1431,8 +1443,9 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
-  - Texture: {fileID: 2800000, guid: 12ff3c37d59e28240a8f4643c3ead3d3, type: 3}
+    TerrainLayer: {fileID: 8574412962073106934, guid: da8e61a37f6634483be4977842633fc2,
+      type: 2}
+  - Texture: {fileID: 2800000, guid: c9a3135bf68ff4f7f9f85dc2b0ee5eee, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: e5895469fa6440e4a876bf0672599e59, type: 3}
     TextureNormalsGUID: 
@@ -1442,8 +1455,9 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
-  - Texture: {fileID: 2800000, guid: b10fe397edbc64b46ae592d5c8e44269, type: 3}
+    TerrainLayer: {fileID: 8574412962073106934, guid: 628dc08b743464059943163fa7a538bb,
+      type: 2}
+  - Texture: {fileID: 2800000, guid: 6b08d2a54ccba4eae8f198424c937592, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: 0eb32b1979b56264d85118c821d93d0b, type: 3}
     TextureNormalsGUID: 
@@ -1453,8 +1467,9 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
-  - Texture: {fileID: 2800000, guid: b3a688c8751b80348b50c839645b1893, type: 3}
+    TerrainLayer: {fileID: 8574412962073106934, guid: ad0ba5c1ee7a34bfe8d5ff4baebd83eb,
+      type: 2}
+  - Texture: {fileID: 2800000, guid: 6b08d2a54ccba4eae8f198424c937592, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: 5b605e7f683caf04cbc4b1b74299d86d, type: 3}
     TextureNormalsGUID: 
@@ -1464,8 +1479,9 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
-  - Texture: {fileID: 2800000, guid: 7e207e25b8538e64db92b45fff5202b4, type: 3}
+    TerrainLayer: {fileID: 8574412962073106934, guid: 99e7dbfb86e88486cb3d6c7f40c60df5,
+      type: 2}
+  - Texture: {fileID: 2800000, guid: 6b08d2a54ccba4eae8f198424c937592, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: 16eea386135f4b8439eea16dfd7ca628, type: 3}
     TextureNormalsGUID: 
@@ -1475,8 +1491,9 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
-  - Texture: {fileID: 2800000, guid: 9015343c9bb2cf74083767e91127c98d, type: 3}
+    TerrainLayer: {fileID: 8574412962073106934, guid: 98fbbd3f1185d420aa8fc3908fb362c7,
+      type: 2}
+  - Texture: {fileID: 2800000, guid: 6b08d2a54ccba4eae8f198424c937592, type: 3}
     TextureGUID: 
     TextureNormals: {fileID: 2800000, guid: aaf8aa487d001f44f9726eb6ee77d298, type: 3}
     TextureNormalsGUID: 
@@ -1486,7 +1503,8 @@ MonoBehaviour:
     TextureHeightMapGUID: 
     TileSize: {x: 15, y: 15}
     offset: {x: 0, y: 0}
-    TerrainLayer: {fileID: 0}
+    TerrainLayer: {fileID: 8574412962073106934, guid: 65dee8442b2f848bdb40c2c146314d40,
+      type: 2}
   TextureMaskList: []
   TerrainTextureCount: 12
   MaxCurveHeight: 0
