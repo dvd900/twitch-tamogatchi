@@ -752,7 +752,7 @@ MonoBehaviour:
     VegetationSteepnessType: 0
     VegetationHeightType: 0
     MinimumSteepness: 0
-    MaximumSteepness: 44.210526
+    MaximumSteepness: 28.421051
     SteepnessCurve:
       serializedVersion: 2
       m_Curve:
