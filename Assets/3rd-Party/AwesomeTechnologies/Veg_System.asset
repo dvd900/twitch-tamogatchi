@@ -751,7 +751,7 @@ MonoBehaviour:
     UseCollisionDetection: 0
     VegetationSteepnessType: 0
     VegetationHeightType: 0
-    MinimumSteepness: 0
+    MinimumSteepness: 35
     MaximumSteepness: 35
     SteepnessCurve:
       serializedVersion: 2
@@ -1334,7 +1334,7 @@ MonoBehaviour:
     PerlinOffset: {x: 0, y: 0}
     UseExcludeTextueMask: 0
     ExcludeTextureMaskList: []
-    UseIncludeTextueMask: 1
+    UseIncludeTextueMask: 0
     IncludeTextureMaskList:
     - TextureLayer: 1
       MinimumValue: 0.1

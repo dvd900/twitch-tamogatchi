@@ -90,7 +90,7 @@ Material:
     m_Floats:
     - WindSpeed: 0.3
     - _AO: 0
-    - _AmbientOcclusion: 0.292
+    - _AmbientOcclusion: 0
     - _BendingInfluence: 0.2
     - _BendingRadius: 1.5
     - _BendingStiffness: 0.2
