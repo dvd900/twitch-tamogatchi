@@ -702,7 +702,7 @@ MonoBehaviour:
     MaxVectorScale: {x: 1.2, y: 1.2, z: 1.2}
     UseAutomaticDensityScale: 0
     LodIndex: 2
-    Seed: 61
+    Seed: 44
     LODFactor: 1
     DisableLOD: 0
     DisableShadows: 1
@@ -746,13 +746,13 @@ MonoBehaviour:
     Hue: {r: 1, g: 0.5, b: 0, a: 0.09765625}
     TextureCutoff: 0.2
     YScale: 1
-    SampleDistance: 3.9
+    SampleDistance: 11.8
     Density: 0.092
     UseCollisionDetection: 0
     VegetationSteepnessType: 0
     VegetationHeightType: 0
-    MinimumSteepness: 35
-    MaximumSteepness: 35
+    MinimumSteepness: 0
+    MaximumSteepness: 44.210526
     SteepnessCurve:
       serializedVersion: 2
       m_Curve:

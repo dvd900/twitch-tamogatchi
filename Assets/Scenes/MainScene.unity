@@ -988,7 +988,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 1450542532}
+  m_Cookie: {fileID: 1725734548}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -1499,7 +1499,6 @@ GameObject:
   - component: {fileID: 221927258}
   - component: {fileID: 221927257}
   - component: {fileID: 221927256}
-  - component: {fileID: 221927255}
   - component: {fileID: 221927254}
   m_Layer: 0
   m_Name: Cylinder (3)
@@ -1652,20 +1651,6 @@ MonoBehaviour:
     m_Bits: 0
   VegetationTypeList: []
   ReductionTolerance: 0.2
---- !u!136 &221927255
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 221927253}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &221927256
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1811,7 +1796,7 @@ PrefabInstance:
     - target: {fileID: 5449372084360845705, guid: 97e8065df8a6548ceb502899c523d3b9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 314.7
+      value: 373.5
       objectReference: {fileID: 0}
     - target: {fileID: 5449372084360845705, guid: 97e8065df8a6548ceb502899c523d3b9,
         type: 3}
@@ -1821,7 +1806,7 @@ PrefabInstance:
     - target: {fileID: 5449372084360845705, guid: 97e8065df8a6548ceb502899c523d3b9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 141.7
+      value: 126.47
       objectReference: {fileID: 0}
     - target: {fileID: 5449372084360845705, guid: 97e8065df8a6548ceb502899c523d3b9,
         type: 3}
@@ -1990,7 +1975,7 @@ PrefabInstance:
     - target: {fileID: 6094988711907459489, guid: 6e6a6d0e1653a4f638a9e15753efe350,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 315.7
+      value: 383.6
       objectReference: {fileID: 0}
     - target: {fileID: 6094988711907459489, guid: 6e6a6d0e1653a4f638a9e15753efe350,
         type: 3}
@@ -2000,7 +1985,7 @@ PrefabInstance:
     - target: {fileID: 6094988711907459489, guid: 6e6a6d0e1653a4f638a9e15753efe350,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 129.9
+      value: 118.75
       objectReference: {fileID: 0}
     - target: {fileID: 6094988711907459489, guid: 6e6a6d0e1653a4f638a9e15753efe350,
         type: 3}
@@ -2050,7 +2035,7 @@ PrefabInstance:
     - target: {fileID: 8822956205442739575, guid: 6e6a6d0e1653a4f638a9e15753efe350,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e6a6d0e1653a4f638a9e15753efe350, type: 3}
@@ -2273,6 +2258,46 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!28 &311899624
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 2
+  m_Width: 2
+  m_Height: 2
+  m_CompleteImageSize: 20
+  m_TextureFormat: 4
+  m_MipCount: 2
+  m_IsReadable: 1
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  image data: 20
+  _typelessdata: cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &314085674
 GameObject:
   m_ObjectHideFlags: 0
@@ -4566,8 +4591,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804120237}
-  m_LocalRotation: {x: 0.024099205, y: -0.75443304, z: -0.028317448, w: -0.6553229}
-  m_LocalPosition: {x: 274.29257, y: 49.25959, z: 202.68796}
+  m_LocalRotation: {x: -0.18775006, y: -0.06837152, z: 0.012729544, w: -0.9797516}
+  m_LocalPosition: {x: 309.5727, y: 36.379017, z: 97.4948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1121568677}
@@ -5102,7 +5127,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5001105, y: -0.47839275, z: 0.5001366}
+    Position: {x: -0.50011235, y: -0.47839275, z: 0.50013834}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5374,7 +5399,6 @@ GameObject:
   - component: {fileID: 968982212}
   - component: {fileID: 968982211}
   - component: {fileID: 968982210}
-  - component: {fileID: 968982209}
   - component: {fileID: 968982208}
   m_Layer: 0
   m_Name: Cylinder (1)
@@ -5527,20 +5551,6 @@ MonoBehaviour:
     m_Bits: 0
   VegetationTypeList: []
   ReductionTolerance: 0.2
---- !u!136 &968982209
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968982207}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &968982210
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6716,7 +6726,6 @@ GameObject:
   - component: {fileID: 1070659540}
   - component: {fileID: 1070659539}
   - component: {fileID: 1070659538}
-  - component: {fileID: 1070659537}
   - component: {fileID: 1070659536}
   m_Layer: 0
   m_Name: Cylinder
@@ -6869,20 +6878,6 @@ MonoBehaviour:
     m_Bits: 0
   VegetationTypeList: []
   ReductionTolerance: 0.2
---- !u!136 &1070659537
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070659535}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1070659538
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7771,7 +7766,7 @@ MonoBehaviour:
   MergeBufferKernelHandle: 0
   MergeBufferShader: {fileID: 7200000, guid: 51a742f1facfd234085f43a4404c9333, type: 3}
   RealTimeMaskTexture: {fileID: 0}
-  DummyMaskTexture: {fileID: 1882146389}
+  DummyMaskTexture: {fileID: 311899624}
   RealTimeMaskBand: 1
   RealTimeMaskEnabled: 0
   RealTimeMaskInvert: 0
@@ -7962,7 +7957,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e80518222a0a2436697597af250696d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 310.6
+      value: 336.9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e80518222a0a2436697597af250696d3,
         type: 3}
@@ -7972,7 +7967,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e80518222a0a2436697597af250696d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 155.8
+      value: 181.6
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e80518222a0a2436697597af250696d3,
         type: 3}
@@ -10605,41 +10600,6 @@ Transform:
   m_Father: {fileID: 1956567511}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1450542532
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 57
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1472323843
 GameObject:
   m_ObjectHideFlags: 1
@@ -10745,7 +10705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476694866}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 295.01956, y: -0.0000014305115, z: 198.33986}
+  m_LocalPosition: {x: 0, y: -0.0000014305115, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1536714967}
@@ -10804,12 +10764,12 @@ PrefabInstance:
     - target: {fileID: 6094988711907459489, guid: 6e6a6d0e1653a4f638a9e15753efe350,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 327.9
+      value: 289.94
       objectReference: {fileID: 0}
     - target: {fileID: 6094988711907459489, guid: 6e6a6d0e1653a4f638a9e15753efe350,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.8
+      value: 27.28
       objectReference: {fileID: 0}
     - target: {fileID: 6094988711907459489, guid: 6e6a6d0e1653a4f638a9e15753efe350,
         type: 3}
@@ -11886,12 +11846,12 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5001295, y: -0.47839275, z: -0.5001698}
+    Position: {x: -0.5001307, y: -0.47839275, z: -0.50017154}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5001962, y: -0.47839275, z: 0.50014114}
+    Position: {x: -0.500198, y: -0.47839275, z: 0.50014114}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -12176,6 +12136,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d4318f11f0fa48b2b02d800d969edc0, type: 3}
+--- !u!84 &1725734548
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 57
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1732480611
 GameObject:
   m_ObjectHideFlags: 0
@@ -12276,7 +12271,6 @@ GameObject:
   - component: {fileID: 1733046508}
   - component: {fileID: 1733046507}
   - component: {fileID: 1733046506}
-  - component: {fileID: 1733046505}
   - component: {fileID: 1733046504}
   m_Layer: 0
   m_Name: Cylinder (2)
@@ -12429,20 +12423,6 @@ MonoBehaviour:
     m_Bits: 0
   VegetationTypeList: []
   ReductionTolerance: 0.2
---- !u!136 &1733046505
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733046503}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1733046506
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13247,46 +13227,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1017015008}
   m_PrefabAsset: {fileID: 0}
---- !u!28 &1882146389
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 2
-  m_Width: 2
-  m_Height: 2
-  m_CompleteImageSize: 20
-  m_TextureFormat: 4
-  m_MipCount: 2
-  m_IsReadable: 1
-  m_StreamingMipmaps: 0
-  m_StreamingMipmapsPriority: 0
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  image data: 20
-  _typelessdata: cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1889284756
 GameObject:
   m_ObjectHideFlags: 0
