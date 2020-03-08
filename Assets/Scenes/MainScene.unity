@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.44891423, g: 0.7943407, b: 0.9811321, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.008
@@ -446,7 +446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &37110852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,10 +459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6114847e2729d4cb624f168583b0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VegetationSystemList:
-  - {fileID: 1121568678}
-  TerrainSystemList:
-  - {fileID: 1121568673}
+  VegetationSystemList: []
+  TerrainSystemList: []
 --- !u!4 &37110853
 Transform:
   m_ObjectHideFlags: 0
@@ -988,7 +986,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 2042636329}
+  m_Cookie: {fileID: 370123861}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -1622,7 +1620,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.4044991, y: 0.6346603, z: 0.29389668}
+    Position: {x: -0.4044991, y: 0.62749887, z: 0.29389668}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -1652,42 +1650,42 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.40449643, y: 0.64718866, z: 0.29389668}
+    Position: {x: 0.40449643, y: 0.64725035, z: 0.29389668}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.4755303, y: -0.0920716, z: 0.15450689}
+    Position: {x: 0.4755303, y: -0.09150079, z: 0.15450689}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.4999987, y: -0.21794745, z: 0}
+    Position: {x: 0.4999987, y: -0.21748394, z: 0}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.4755303, y: -0.18829204, z: -0.15450689}
+    Position: {x: 0.4755303, y: -0.18857773, z: -0.15450689}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.40449643, y: -0.09413784, z: -0.29389668}
+    Position: {x: 0.40449643, y: -0.09419954, z: -0.29389668}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.29389447, y: -0.13782212, z: -0.40451023}
+    Position: {x: 0.29389447, y: -0.13782185, z: -0.40451023}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.15451178, y: -0.19722332, z: -0.4755245}
+    Position: {x: 0.15451178, y: -0.19747439, z: -0.4755245}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0, y: -0.23002839, z: -0.50000405}
+    Position: {x: 0, y: -0.22986047, z: -0.50000405}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -2688,6 +2686,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338048820}
   m_CullTransparentMesh: 0
+--- !u!84 &370123861
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 57
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!137 &372985933 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1693407923739720187, guid: 38b33583b71a64ced88cbec8bd369790,
@@ -2736,6 +2769,8 @@ MonoBehaviour:
   ikController: {fileID: 389051639}
   animator: {fileID: 389051650}
   renderer: {fileID: 1474277972}
+  lEyeRend: {fileID: 0}
+  rEyeRend: {fileID: 0}
   spineBone: {fileID: 579332528}
   lArmBone: {fileID: 0}
   rArmBone: {fileID: 0}
@@ -3141,12 +3176,12 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.5, y: -1.2417603, z: -0.4999998}
+    Position: {x: 0.5, y: -1.2417603, z: -0.49999985}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5, y: -1.2417603, z: -0.4999998}
+    Position: {x: -0.5, y: -1.2417603, z: -0.49999985}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -3606,17 +3641,17 @@ MonoBehaviour:
   IncludeVegetationType: 0
   Nodes:
   - Selected: 0
-    Position: {x: 0.0020619424, y: -0.010330736, z: 0.0063713496}
+    Position: {x: 0.0020619424, y: -0.010330736, z: 0.0063755517}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0059192763, y: -0.008820074, z: 0.0064877463}
+    Position: {x: 0.0059192763, y: -0.008820074, z: 0.0065222057}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.00991071, y: -0.004105394, z: 0.006557199}
+    Position: {x: 0.00991071, y: -0.004105394, z: 0.006570196}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -3626,22 +3661,22 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.009818066, y: 0.004099814, z: 0.0063436255}
+    Position: {x: 0.009818066, y: 0.004099814, z: 0.0063126916}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0075547886, y: 0.0075546955, z: 0.0064366926}
+    Position: {x: 0.0075547886, y: 0.0075546955, z: 0.006471736}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0040785274, y: 0.009785209, z: 0.0059322934}
+    Position: {x: 0.0040785274, y: 0.009785209, z: 0.005910687}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0020622185, y: 0.010005944, z: 0.0057610082}
+    Position: {x: -0.0020622185, y: 0.010005944, z: 0.0057439324}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -3656,27 +3691,27 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.010231588, y: 0.00006350752, z: 0.005350866}
+    Position: {x: -0.010231588, y: 0.00006350752, z: 0.0053567286}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.009500501, y: -0.003961667, z: 0.0058533363}
+    Position: {x: -0.009500501, y: -0.003961667, z: 0.005855109}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.007575515, y: -0.007562196, z: 0.0058484366}
+    Position: {x: -0.007575515, y: -0.007562196, z: 0.0058684647}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0040645604, y: -0.009874133, z: 0.0060846843}
+    Position: {x: -0.0040645604, y: -0.009874133, z: 0.0060702115}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0020815532, y: -0.010374575, z: 0.00628029}
+    Position: {x: -0.0020815532, y: -0.010374575, z: 0.0062909494}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -4172,12 +4207,12 @@ MonoBehaviour:
   IncludeVegetationType: 0
   Nodes:
   - Selected: 0
-    Position: {x: 0.0050252075, y: -0.001532575, z: 0.007910665}
+    Position: {x: 0.0050252075, y: -0.001532575, z: 0.007910651}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.008277041, y: -0.0018186187, z: 0.008594437}
+    Position: {x: 0.008277041, y: -0.0018186187, z: 0.008600095}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -4192,17 +4227,17 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.009076201, y: 0.0018953723, z: 0.008213885}
+    Position: {x: 0.009076201, y: 0.0018953723, z: 0.008266596}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0062443535, y: 0.0036627185, z: 0.008021431}
+    Position: {x: 0.0062443535, y: 0.0036627185, z: 0.008017487}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0025701453, y: 0.0053055803, z: 0.007443067}
+    Position: {x: 0.0025701453, y: 0.0053055803, z: 0.0074430807}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -4212,37 +4247,37 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0066427495, y: 0.0068273316, z: 0.0067861443}
+    Position: {x: -0.0066427495, y: 0.0068273316, z: 0.006820995}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.00876052, y: 0.0059126215, z: 0.007021839}
+    Position: {x: -0.00876052, y: 0.0059126215, z: 0.007010508}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.008701839, y: 0.004605412, z: 0.0069887163}
+    Position: {x: -0.008701839, y: 0.004605412, z: 0.0069462345}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0071457867, y: 0.0030306682, z: 0.0068434523}
+    Position: {x: -0.0071457867, y: 0.0030306682, z: 0.0068385415}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0045440206, y: 0.0014394391, z: 0.006777794}
+    Position: {x: -0.0045440206, y: 0.0014394391, z: 0.006825771}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.00080048526, y: -0.00018134149, z: 0.0070565855}
+    Position: {x: -0.0008004853, y: -0.00018134149, z: 0.007086131}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0011383534, y: -0.000812956, z: 0.0072355173}
+    Position: {x: 0.0011383534, y: -0.000812956, z: 0.00727706}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5225,22 +5260,22 @@ MonoBehaviour:
   IncludeVegetationType: 0
   Nodes:
   - Selected: 0
-    Position: {x: 0.500061, y: -1.2417603, z: 0.50008625}
+    Position: {x: 0.50006187, y: -1.2417603, z: 0.50008744}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.5000902, y: -1.2417603, z: -0.50003725}
+    Position: {x: 0.5000915, y: -1.2417603, z: -0.50003946}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5000652, y: -0.47839275, z: -0.50007683}
+    Position: {x: -0.5000661, y: -0.47839275, z: -0.50007814}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5001153, y: -0.47839275, z: 0.5001407}
+    Position: {x: -0.5001222, y: -0.47839275, z: 0.50014716}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5556,22 +5591,22 @@ MonoBehaviour:
   IncludeVegetationType: 0
   Nodes:
   - Selected: 0
-    Position: {x: -0.47553116, y: 0.6824902, z: 0.15450676}
+    Position: {x: -0.47553116, y: 0.6821937, z: 0.15450676}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.4044996, y: 0.68287694, z: 0.29389715}
+    Position: {x: -0.4044996, y: 0.68287724, z: 0.29389715}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.29389504, y: 0.68417263, z: 0.40451008}
+    Position: {x: -0.29389504, y: 0.68386054, z: 0.40451008}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.1545094, y: 0.6884078, z: 0.47552484}
+    Position: {x: -0.1545094, y: 0.68902117, z: 0.47552484}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5581,22 +5616,22 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.1545094, y: 0.68413687, z: 0.47552484}
+    Position: {x: 0.1545094, y: 0.6846165, z: 0.47552484}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.29389504, y: 0.6842194, z: 0.40451008}
+    Position: {x: 0.29389504, y: 0.68500006, z: 0.40451008}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.4044996, y: 0.68386054, z: 0.29389715}
+    Position: {x: 0.4044996, y: 0.68326175, z: 0.29389715}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.47553116, y: 0.68386054, z: 0.15450676}
+    Position: {x: 0.47553116, y: 0.68356365, z: 0.15450676}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5606,7 +5641,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.47553116, y: 0.68125653, z: -0.15450676}
+    Position: {x: 0.47553116, y: 0.680825, z: -0.15450676}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5621,7 +5656,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.1545094, y: 0.6818968, z: -0.47552484}
+    Position: {x: 0.1545094, y: 0.68237615, z: -0.47552484}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5631,7 +5666,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.1545094, y: 0.54826975, z: -0.47552484}
+    Position: {x: -0.1545094, y: 0.5488828, z: -0.47552484}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5641,12 +5676,12 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.4044996, y: 0.6180638, z: -0.29389715}
+    Position: {x: -0.4044996, y: 0.61819345, z: -0.29389715}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.47553116, y: 0.56410754, z: -0.15450676}
+    Position: {x: -0.47553116, y: 0.56367624, z: -0.15450676}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -6184,7 +6219,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: e80518222a0a2436697597af250696d3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2573643627924819160, guid: e80518222a0a2436697597af250696d3,
         type: 3}
@@ -6888,47 +6923,47 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.40450808, y: 0.48780602, z: 0.29389286}
+    Position: {x: -0.40450808, y: 0.48745227, z: 0.29389286}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.29389325, y: 0.4880809, z: 0.40450844}
+    Position: {x: -0.29389325, y: 0.4888722, z: 0.40450844}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.15450731, y: 0.4888181, z: 0.47552782}
+    Position: {x: -0.15450731, y: 0.48921558, z: 0.47552782}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0, y: 0.48869938, z: 0.50000006}
+    Position: {x: 0, y: 0.48863268, z: 0.50000006}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.15450731, y: 0.38944495, z: 0.47552782}
+    Position: {x: 0.15450731, y: 0.38950196, z: 0.47552782}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.29389325, y: 0.4235439, z: 0.40450844}
+    Position: {x: 0.29389325, y: 0.4249591, z: 0.40450844}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.40450808, y: 0.42857784, z: 0.29389286}
+    Position: {x: 0.40450808, y: 0.42822412, z: 0.29389286}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.47552782, y: 0.37490976, z: 0.15450954}
+    Position: {x: 0.47552782, y: 0.37485296, z: 0.15450954}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.5000008, y: 0.48740292, z: 0}
+    Position: {x: 0.5000008, y: 0.48733646, z: 0}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -6938,12 +6973,12 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.40450883, y: 0.48961505, z: -0.29389286}
+    Position: {x: 0.40450883, y: 0.4896153, z: -0.29389286}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.29389325, y: 0.48914573, z: -0.40450844}
+    Position: {x: 0.29389325, y: 0.48949948, z: -0.40450844}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -6953,12 +6988,12 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0, y: 0.48949948, z: -0.50000006}
+    Position: {x: 0, y: 0.48993206, z: -0.50000006}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.15450731, y: 0.49042168, z: -0.4755282}
+    Position: {x: -0.15450731, y: 0.49042144, z: -0.4755282}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -6968,12 +7003,12 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.40450883, y: 0.4916627, z: -0.29389304}
+    Position: {x: -0.40450883, y: 0.49213225, z: -0.29389304}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.47552782, y: 0.48949948, z: -0.15450843}
+    Position: {x: -0.47552782, y: 0.48863786, z: -0.15450843}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -7561,6 +7596,8 @@ MonoBehaviour:
   ikController: {fileID: 1074099224}
   animator: {fileID: 1074099221}
   renderer: {fileID: 1924417926}
+  lEyeRend: {fileID: 0}
+  rEyeRend: {fileID: 0}
   spineBone: {fileID: 173953926}
   lArmBone: {fileID: 1534655446}
   rArmBone: {fileID: 1018813810}
@@ -8137,10 +8174,55 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.5793
       objectReference: {fileID: 0}
+    - target: {fileID: -1491524667182559337, guid: e80518222a0a2436697597af250696d3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1491524667182559337, guid: e80518222a0a2436697597af250696d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00142
+      objectReference: {fileID: 0}
+    - target: {fileID: -1491524667182559337, guid: e80518222a0a2436697597af250696d3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1491524667182559337, guid: e80518222a0a2436697597af250696d3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999517
+      objectReference: {fileID: 0}
+    - target: {fileID: -1491524667182559337, guid: e80518222a0a2436697597af250696d3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.009821996
+      objectReference: {fileID: 0}
+    - target: {fileID: -1491524667182559337, guid: e80518222a0a2436697597af250696d3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00020801491
+      objectReference: {fileID: 0}
+    - target: {fileID: -1491524667182559337, guid: e80518222a0a2436697597af250696d3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00033397708
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: e80518222a0a2436697597af250696d3,
         type: 3}
       propertyPath: m_Name
       value: SweeTango (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e80518222a0a2436697597af250696d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -862456799424919927, guid: e80518222a0a2436697597af250696d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2573643627924819160, guid: e80518222a0a2436697597af250696d3,
         type: 3}
@@ -8982,32 +9064,32 @@ MonoBehaviour:
   IncludeVegetationType: 0
   Nodes:
   - Selected: 0
-    Position: {x: 0.0033046193, y: -0.006641593, z: 0.011166231}
+    Position: {x: 0.0033046193, y: -0.006641593, z: 0.010046906}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0061629047, y: -0.008096637, z: 0.011832672}
+    Position: {x: 0.0061629047, y: -0.008096637, z: 0.011829786}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0092293555, y: -0.0061288136, z: 0.011571129}
+    Position: {x: 0.0092293555, y: -0.0061288136, z: 0.01084088}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.009109957, y: -0.004216975, z: 0.008389579}
+    Position: {x: 0.009109957, y: -0.004216975, z: 0.009045901}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0077545913, y: -0.0020270217, z: 0.006043874}
+    Position: {x: 0.0077545913, y: -0.0020270217, z: 0.005998622}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.005039439, y: 0.000086157386, z: 0.006130254}
+    Position: {x: 0.005039439, y: 0.000086157386, z: 0.0061223726}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -9022,7 +9104,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0077538104, y: 0.0035288997, z: 0.006276377}
+    Position: {x: -0.0077538104, y: 0.0035288997, z: 0.0062810895}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -9037,22 +9119,22 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.008718176, y: -0.0016385415, z: 0.005930951}
+    Position: {x: -0.008718176, y: -0.0016385415, z: 0.0059372303}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.006295069, y: -0.0037594852, z: 0.0058353343}
+    Position: {x: -0.006295069, y: -0.0037594852, z: 0.0059352037}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0025733851, y: -0.0054470478, z: 0.007921817}
+    Position: {x: -0.0025733851, y: -0.0054470478, z: 0.007871958}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.00061626174, y: -0.0060232086, z: 0.0093590105}
+    Position: {x: -0.00061626174, y: -0.0060232086, z: 0.009570532}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -10034,20 +10116,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421728042}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad3b7160f7729472b9da289948b314dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _timeBetweenBlinks: 5
-  _blinkTime: 0.1
+  _blinkTime: 0.03
   _chewFrameLength: 0.3
   _lEyeOuchMat: {fileID: 2100000, guid: 383a9e7be1adf4bf1aa41b6f0406aef7, type: 2}
   _rEyeOuchMat: {fileID: 2100000, guid: cb5e537e3f5f346789fdfb93a5c81b22, type: 2}
   _lEyeClosedMat: {fileID: 2100000, guid: 5d0f5b4e022de4a128fe2dde48a1c8a1, type: 2}
   _rEyeClosedMat: {fileID: 2100000, guid: f932a583b079848859edcee7f36ef19d, type: 2}
   _headBone: {fileID: 936719157}
-  _lookTexOffset: 0.06
+  _lookTexOffset: 0.2
 --- !u!195 &1421728047
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10135,6 +10217,8 @@ MonoBehaviour:
   ikController: {fileID: 0}
   animator: {fileID: 1421728057}
   renderer: {fileID: 372985933}
+  lEyeRend: {fileID: 1908043404}
+  rEyeRend: {fileID: 724098677}
   spineBone: {fileID: 1206080417}
   lArmBone: {fileID: 1439749693}
   rArmBone: {fileID: 967654452}
@@ -10164,18 +10248,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421728042}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d9643e11c77c0d4fb27fbcf6ff4839c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fixTransforms: 1
   solver:
-    IKPosition: {x: 348.59827, y: 27.18182, z: 142.23367}
+    IKPosition: {x: 343.1009, y: 33.47182, z: 182.3573}
     IKPositionWeight: 1
     root: {fileID: 1421728058}
     IKRotationWeight: 1
-    IKRotation: {x: -0.17442365, y: 0.11162108, z: 0.67768544, w: -0.7055915}
+    IKRotation: {x: 0.03512771, y: -0.10338921, z: 0.69889003, w: -0.7068446}
     chest:
       transform: {fileID: 1492198489}
       weight: 1
@@ -10214,31 +10298,31 @@ MonoBehaviour:
     isLeft: 1
     arm:
       bones:
-      - readPosition: {x: 346.204, y: 27.331455, z: 140.80522}
-        readRotation: {x: -0.005074489, y: 0.45677173, z: 0.0026057297, w: 0.8895657}
-        solverPosition: {x: 346.204, y: 27.331455, z: 140.80522}
-        solverRotation: {x: -0.005074489, y: 0.45677173, z: 0.0026057297, w: 0.8895657}
+      - readPosition: {x: 340.31903, y: 33.621456, z: 182.54211}
+        readRotation: {x: -0.0040692785, y: 0.7007789, z: 0.003997654, w: 0.7133557}
+        solverPosition: {x: 340.31903, y: 33.621456, z: 182.54211}
+        solverRotation: {x: -0.0040692785, y: 0.7007789, z: 0.003997654, w: 0.7133557}
         length: 0
         sqrMag: 0
         axis: {x: 0, y: 0, z: 0}
-      - readPosition: {x: 346.204, y: 27.331455, z: 140.80522}
-        readRotation: {x: -0.2614901, y: 0.26315707, z: 0.6135425, w: -0.6970917}
-        solverPosition: {x: 346.204, y: 27.331455, z: 140.80522}
-        solverRotation: {x: -0.2614901, y: 0.26315707, z: 0.6135425, w: -0.6970917}
-        length: 1.3987848
-        sqrMag: 1.9565989
-        axis: {x: 0.0000014660313, y: 1.3987848, z: 0.0000013965529}
-      - readPosition: {x: 347.208, y: 27.485847, z: 141.76686}
-        readRotation: {x: -0.1449638, y: 0.085541874, z: 0.7618941, w: -0.62544847}
-        solverPosition: {x: 347.208, y: 27.485847, z: 141.76686}
-        solverRotation: {x: -0.1449638, y: 0.085541874, z: 0.7618941, w: -0.62544847}
-        length: 1.4977201
-        sqrMag: 2.2431657
-        axis: {x: -0.00000081348725, y: 1.4977207, z: -0.0000011036421}
-      - readPosition: {x: 348.59827, y: 27.18182, z: 142.23367}
-        readRotation: {x: -0.17442365, y: 0.11162108, z: 0.67768544, w: -0.7055915}
-        solverPosition: {x: 348.59827, y: 27.18182, z: 142.23367}
-        solverRotation: {x: -0.17442365, y: 0.11162108, z: 0.67768544, w: -0.7055915}
+      - readPosition: {x: 340.31903, y: 33.621456, z: 182.54211}
+        readRotation: {x: -0.0670812, y: 0.043811943, z: 0.66355985, w: -0.74382055}
+        solverPosition: {x: 340.31903, y: 33.621456, z: 182.54211}
+        solverRotation: {x: -0.0670812, y: 0.043811943, z: 0.66355985, w: -0.74382055}
+        length: 1.3987702
+        sqrMag: 1.9565582
+        axis: {x: -0.00000034827175, y: 1.3987703, z: -0.00000006312706}
+      - readPosition: {x: 341.6916, y: 33.77585, z: 182.76303}
+        readRotation: {x: 0.088310055, y: -0.10443996, z: 0.7705183, w: -0.6225717}
+        solverPosition: {x: 341.6916, y: 33.77585, z: 182.76303}
+        solverRotation: {x: 0.088310055, y: -0.10443996, z: 0.7705183, w: -0.6225717}
+        length: 1.4977256
+        sqrMag: 2.243182
+        axis: {x: -0.0000024758633, y: 1.4977262, z: 0.000009759231}
+      - readPosition: {x: 343.1009, y: 33.47182, z: 182.3573}
+        readRotation: {x: 0.03512771, y: -0.10338921, z: 0.69889003, w: -0.7068446}
+        solverPosition: {x: 343.1009, y: 33.47182, z: 182.3573}
+        solverRotation: {x: 0.03512771, y: -0.10338921, z: 0.69889003, w: -0.7068446}
         length: 0
         sqrMag: 0
         axis: {x: 0, y: 0, z: 0}
@@ -10267,18 +10351,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421728042}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d9643e11c77c0d4fb27fbcf6ff4839c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fixTransforms: 1
   solver:
-    IKPosition: {x: 338.49365, y: 27.181395, z: 134.98772}
+    IKPosition: {x: 330.66876, y: 33.471397, z: 182.1355}
     IKPositionWeight: 1
     root: {fileID: 1421728058}
     IKRotationWeight: 1
-    IKRotation: {x: -0.2531398, y: -0.3204393, z: 0.6523815, w: 0.63846475}
+    IKRotation: {x: -0.047552284, y: -0.11594444, z: 0.69815487, w: 0.704894}
     chest:
       transform: {fileID: 1492198489}
       weight: 1
@@ -10317,35 +10401,35 @@ MonoBehaviour:
     isLeft: 0
     arm:
       bones:
-      - readPosition: {x: 340.6206, y: 27.331455, z: 136.80183}
-        readRotation: {x: 0.0026056091, y: 0.88956565, z: 0.005074669, w: -0.45677185}
-        solverPosition: {x: 340.6206, y: 27.331455, z: 136.80183}
-        solverRotation: {x: 0.0026056091, y: 0.88956565, z: 0.005074669, w: -0.45677185}
+      - readPosition: {x: 333.44977, y: 33.621456, z: 182.41992}
+        readRotation: {x: 0.0039975927, y: 0.71335566, z: 0.0040694866, w: -0.700779}
+        solverPosition: {x: 333.44977, y: 33.621456, z: 182.41992}
+        solverRotation: {x: 0.0039975927, y: 0.71335566, z: 0.0040694866, w: -0.700779}
         length: 0
         sqrMag: 0
         axis: {x: 0, y: 0, z: 0}
-      - readPosition: {x: 340.6206, y: 27.331455, z: 136.80183}
-        readRotation: {x: 0.266909, y: 0.2478148, z: -0.6932414, w: -0.6219035}
-        solverPosition: {x: 340.6206, y: 27.331455, z: 136.80183}
-        solverRotation: {x: 0.266909, y: 0.2478148, z: -0.6932414, w: -0.6219035}
-        length: 1.3217466
-        sqrMag: 1.747014
-        axis: {x: -0.0000005548585, y: 1.3217468, z: 0.000011966187}
-      - readPosition: {x: 339.65576, y: 27.194458, z: 135.9089}
-        readRotation: {x: -0.23347718, y: -0.23164707, z: 0.6707407, w: 0.6647818}
-        solverPosition: {x: 339.65576, y: 27.194458, z: 135.9089}
-        solverRotation: {x: -0.23347718, y: -0.23164707, z: 0.6707407, w: 0.6647818}
-        length: 1.4829892
-        sqrMag: 2.199257
-        axis: {x: 0.0000008794142, y: 1.4829891, z: 0.0000057326383}
-      - readPosition: {x: 338.49365, y: 27.181395, z: 134.98772}
-        readRotation: {x: -0.2531398, y: -0.3204393, z: 0.6523815, w: 0.63846475}
-        solverPosition: {x: 338.49365, y: 27.181395, z: 134.98772}
-        solverRotation: {x: -0.2531398, y: -0.3204393, z: 0.6523815, w: 0.63846475}
+      - readPosition: {x: 333.44977, y: 33.621456, z: 182.41992}
+        readRotation: {x: 0.048539624, y: 0.05153747, z: -0.7412611, w: -0.66747284}
+        solverPosition: {x: 333.44977, y: 33.621456, z: 182.41992}
+        solverRotation: {x: 0.048539624, y: 0.05153747, z: -0.7412611, w: -0.66747284}
+        length: 1.3217341
+        sqrMag: 1.7469809
+        axis: {x: -0.00000178786, y: 1.3217344, z: 0.0000028583818}
+      - readPosition: {x: 332.14847, y: 33.48446, z: 182.23329}
+        readRotation: {x: -0.023317402, y: -0.0233433, z: 0.70983166, w: 0.70359814}
+        solverPosition: {x: 332.14847, y: 33.48446, z: 182.23329}
+        solverRotation: {x: -0.023317402, y: -0.0233433, z: 0.70983166, w: 0.70359814}
+        length: 1.4829915
+        sqrMag: 2.1992636
+        axis: {x: 0.0000026032692, y: 1.4829913, z: 0.000012379165}
+      - readPosition: {x: 330.66876, y: 33.471397, z: 182.1355}
+        readRotation: {x: -0.047552284, y: -0.11594444, z: 0.69815487, w: 0.704894}
+        solverPosition: {x: 330.66876, y: 33.471397, z: 182.1355}
+        solverRotation: {x: -0.047552284, y: -0.11594444, z: 0.69815487, w: 0.704894}
         length: 0
         sqrMag: 0
         axis: {x: 0, y: 0, z: 0}
-      target: {fileID: 0}
+      target: {fileID: 1856443963}
       bendGoal: {fileID: 0}
       positionWeight: 1
       rotationWeight: 1
@@ -10370,17 +10454,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421728042}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 776adaaacdc5c4e8ab0395120a6e972b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fixTransforms: 1
   solver:
-    IKPosition: {x: 302.65335, y: 22.4, z: 152.70047}
+    IKPosition: {x: 336.9349, y: 31.511276, z: 179.42967}
     IKPositionWeight: 1
     root: {fileID: 1421728058}
-    target: {fileID: 0}
+    target: {fileID: 1856443963}
     spine:
     - transform: {fileID: 1797648063}
       weight: 0
@@ -10393,27 +10477,17 @@ MonoBehaviour:
       sqrMag: 0
       axis: {x: -3.9551695e-16, y: -0.00000029802328, z: 1.0000002}
       baseForwardOffsetEuler: {x: 0, y: 0, z: 0}
-    - transform: {fileID: 1421728058}
-      weight: 0
-      solverPosition: {x: 0, y: 0, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0, w: 0}
-      defaultLocalPosition: {x: 302.6, y: 22.4, z: 155.7}
-      defaultLocalRotation: {x: -0, y: 0.9999605, z: -0, w: 0.008893202}
-      length: 0
-      sqrMag: 0
-      axis: {x: 0, y: 0, z: 1.0000002}
-      baseForwardOffsetEuler: {x: 0, y: 0, z: 0}
     head:
       transform: {fileID: 936719157}
       weight: 1
       solverPosition: {x: 0, y: 0, z: 0}
       solverRotation: {x: 0, y: 0, z: 0, w: 1}
-      defaultLocalPosition: {x: 1.9431963e-10, y: 0.0016649454, z: -2.962749e-10}
-      defaultLocalRotation: {x: -0.009623827, y: -0.00020381801, z: -0.00032723875,
-        w: 0.9999536}
+      defaultLocalPosition: {x: -0, y: 0.00142, z: 0}
+      defaultLocalRotation: {x: -0.009821996, y: -0.00020801491, z: -0.00033397708,
+        w: 0.9999517}
       length: 0
       sqrMag: 0
-      axis: {x: 0.0004142174, y: -0.019246986, z: 0.99981505}
+      axis: {x: 0.0004228667, y: -0.019643355, z: 0.9998073}
       baseForwardOffsetEuler: {x: 0, y: 0, z: 0}
     eyes: []
     bodyWeight: 0.5
@@ -10455,7 +10529,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421728042}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10b95caf3db40469ea480cfafd454bab, type: 3}
   m_Name: 
@@ -10818,7 +10892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476694866}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.0000014305115, z: 0}
+  m_LocalPosition: {x: 374.21878, y: -0.0000014305115, z: 208.7891}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1536714967}
@@ -11949,22 +12023,22 @@ MonoBehaviour:
   IncludeVegetationType: 0
   Nodes:
   - Selected: 0
-    Position: {x: 0.5001156, y: -1.2417603, z: 0.5000997}
+    Position: {x: 0.50011593, y: -1.2417603, z: 0.50009984}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.5001721, y: -1.2417603, z: -0.5000744}
+    Position: {x: 0.50017256, y: -1.2417603, z: -0.5000753}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5001324, y: -0.47839275, z: -0.5001739}
+    Position: {x: -0.5001363, y: -0.47839275, z: -0.5001797}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.50020057, y: -0.47839275, z: 0.50014114}
+    Position: {x: -0.5002065, y: -0.47839275, z: 0.50014114}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -12492,22 +12566,22 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.1545091, y: 0.56650734, z: 0.4755246}
+    Position: {x: 0.1545091, y: 0.5659077, z: 0.4755246}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.29389444, y: 0.17634167, z: 0.40451014}
+    Position: {x: 0.29389444, y: 0.17698501, z: 0.40451014}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.40449914, y: -0.1578668, z: 0.293897}
+    Position: {x: 0.40449914, y: -0.15675813, z: 0.293897}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.47553194, y: -0.19467539, z: 0.1545069}
+    Position: {x: 0.47553194, y: -0.19467561, z: 0.1545069}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -12547,7 +12621,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.2938948, y: 0.42371836, z: -0.40451014}
+    Position: {x: -0.2938948, y: 0.4225252, z: -0.40451014}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -13298,7 +13372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &1856443960
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13367,7 +13441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856443959}
   m_LocalRotation: {x: 0.028269852, y: -0.4405886, z: 0.013883135, w: 0.8971565}
-  m_LocalPosition: {x: 391.75, y: 43.29, z: 119.14}
+  m_LocalPosition: {x: 338.1, y: 34.3, z: 180.2}
   m_LocalScale: {x: 1.1551648, y: 1.1551648, z: 1.1551648}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14444,41 +14518,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037772529}
   m_CullTransparentMesh: 0
---- !u!84 &2042636329
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 57
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &2063162855
 GameObject:
   m_ObjectHideFlags: 0
@@ -14565,6 +14604,7 @@ Texture2D:
   m_TextureFormat: 4
   m_MipCount: 2
   m_IsReadable: 1
+  m_IgnoreMasterTextureLimit: 0
   m_StreamingMipmaps: 0
   m_StreamingMipmapsPriority: 0
   m_AlphaIsTransparency: 0
@@ -14697,7 +14737,7 @@ PrefabInstance:
     - target: {fileID: 1693407923742897381, guid: 38b33583b71a64ced88cbec8bd369790,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693407923742929459, guid: 38b33583b71a64ced88cbec8bd369790,
         type: 3}

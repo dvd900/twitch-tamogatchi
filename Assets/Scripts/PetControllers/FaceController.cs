@@ -40,14 +40,14 @@ public class FaceController : MonoBehaviour {
         _lEyeNormalMat = _skin.renderer.materials[0];
         _rEyeNormalMat = _skin.renderer.materials[1];
 
-        _lEyeBlinkAnim = new TexOffsetAnimation(_skin.renderer, 0,
-            VBShaderUtils.P_MAIN_TEX, _blinkTime, 3, _timeBetweenBlinks);
+        _lEyeBlinkAnim = new TexOffsetAnimation(_skin.lEyeRend, 0,
+            VBShaderUtils.P_MAIN_TEX, _blinkTime, 4, 2, _timeBetweenBlinks);
 
-        _rEyeBlinkAnim = new TexOffsetAnimation(_skin.renderer, 1,
-            VBShaderUtils.P_MAIN_TEX, _blinkTime, 3, _timeBetweenBlinks);
+        _rEyeBlinkAnim = new TexOffsetAnimation(_skin.rEyeRend, 0,
+            VBShaderUtils.P_MAIN_TEX, _blinkTime, 4, 2, _timeBetweenBlinks);
 
         _chewAnim = new TexOffsetAnimation(_skin.renderer, 2, 
-            VBShaderUtils.P_DETAIL_TEX, _chewFrameLength, 2, 0);
+            VBShaderUtils.P_DETAIL_TEX, _chewFrameLength, 2, 1, 0);
 
         DoNormalEyes();
     }
@@ -75,10 +75,12 @@ public class FaceController : MonoBehaviour {
         d.Normalize();
         Vector3 dLocal = transform.InverseTransformVector(d);
 
-        Vector2 offset = _lookTexOffset * new Vector2(-dLocal.x, -dLocal.z);
+        Vector2 lOffset = _lookTexOffset * new Vector2(-dLocal.x, -dLocal.z);
+        Vector2 rOffset = lOffset;
+        rOffset.x = 1.0f - rOffset.x;
 
-        _skin.renderer.materials[0].SetTextureOffset(VBShaderUtils.P_DETAIL_TEX, offset);
-        _skin.renderer.materials[1].SetTextureOffset(VBShaderUtils.P_DETAIL_TEX, offset);
+        _skin.lEyeRend.materials[0].SetTextureOffset(VBShaderUtils.P_DETAIL_TEX, lOffset);
+        _skin.rEyeRend.materials[0].SetTextureOffset(VBShaderUtils.P_DETAIL_TEX, rOffset);
 
         //_headBone.LookAt(_lookAtPoint);
         //_headBone.rotation = Quaternion.FromToRotation(-transform.right, d);
