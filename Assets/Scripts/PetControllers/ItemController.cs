@@ -33,8 +33,8 @@ public class ItemController : MonoBehaviour {
     private void Start() {
         _skin = GetComponent<Skin>();
 
-        _defaultArmStiffness = _skin.lArmBone.m_Stiffness;
-        _defaultArmDamping = _skin.lArmBone.m_Damping;
+//        _defaultArmStiffness = _skin.lArmBone.m_Stiffness;
+//        _defaultArmDamping = _skin.lArmBone.m_Damping;
     }
 
     private void LateUpdate() {
@@ -66,13 +66,13 @@ public class ItemController : MonoBehaviour {
 
         _skin.animator.SetBool("pickup", false);
 
-        _skin.lArmBone.m_Damping = 1f;
-        _skin.lArmBone.m_Stiffness = 1f;
-        _skin.lArmBone.UpdateParameters();
+        //_skin.lArmBone.m_Damping = 1f;
+        //_skin.lArmBone.m_Stiffness = 1f;
+        //_skin.lArmBone.UpdateParameters();
 
-        _skin.rArmBone.m_Damping = 1f;
-        _skin.rArmBone.m_Stiffness = 1f;
-        _skin.rArmBone.UpdateParameters();
+        //_skin.rArmBone.m_Damping = 1f;
+        //_skin.rArmBone.m_Stiffness = 1f;
+        //_skin.rArmBone.UpdateParameters();
 
         _heldItem = _itemToPickup;
         _itemToPickup = null;
