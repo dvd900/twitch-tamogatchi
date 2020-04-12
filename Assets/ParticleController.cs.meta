@@ -1,0 +1,44 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ParticleController : MonoBehaviour
+{
+    public Animator ac_crumbs;
+    public ParticleSystem Crumbs;
+    public GameObject AnimeCrumbs;
+    void Start()
+    {
+        // You can use particleSystem instead of
+        // gameObject.particleSystem.
+        // They are the same, if I may say so
+        Gust1.GetComponent<ParticleSystem>().emissionRate = 0;
+        Gust2.GetComponent<ParticleSystem>().emissionRate = 0;
+        Crumbs.GetComponent<ParticleSystem>().emissionRate = 0;
+        AnimeCrumbs.SetActive(false);
+
+    }
+
+    void Update()
+    {
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    Gust1.Emit(1);
+        //    Gust2.Emit(1);
+        //    Crumbs.Emit(7);
+        //}
+    }
+    public void Crunch()
+    {
+       // Gust1.Emit(1);
+       // Gust2.Emit(1);
+        Crumbs.Emit(3);
+        AnimeCrumbs.SetActive(true);
+        ac_crumbs.Play("animeCrumbs", 0, 0.23f);
+
+    }
+    public void EndEat()
+    {
+        AnimeCrumbs.SetActive(false);
+    }
+}
