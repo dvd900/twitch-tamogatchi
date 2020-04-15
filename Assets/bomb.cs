@@ -6,6 +6,8 @@ public class bomb : MonoBehaviour
 {
     public ParticleSystem explosion;
     public GameObject bomba;
+    public AudioSource aSource;
+    public AudioClip aClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,8 @@ public class bomb : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         explosion.time = 0;
         explosion.Play();
+        aSource.pitch = Random.Range(0.8f, 1.1f);
+        aSource.PlayOneShot(aClip, 1f);
         bomba.SetActive(false);
         StartCoroutine(UnExplode(1f));
     }
