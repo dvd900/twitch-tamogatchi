@@ -17,6 +17,7 @@ public class Skin : MonoBehaviour {
     new public SkinnedMeshRenderer renderer;
     public SkinnedMeshRenderer lEyeRend;
     public SkinnedMeshRenderer rEyeRend;
+    public SkinnedMeshRenderer mouthRend;
 
     public DynamicBone spineBone;
     public DynamicBone lArmBone;

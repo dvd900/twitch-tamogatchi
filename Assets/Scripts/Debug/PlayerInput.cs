@@ -6,6 +6,7 @@ public class PlayerInput : MonoBehaviour {
     public Skin _skin;
     public Planner _planner;
     public ItemSpawner _itemSpawner;
+    public GameObject _walkDestPrefab;
 
     private void Update() {
         Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -50,8 +51,11 @@ public class PlayerInput : MonoBehaviour {
 
     public void DoClick(Vector2 screenPos) {
         Vector3 worldPoint = CoordsUtils.ScreenToWorldPos(screenPos);
+        var marker = Instantiate<GameObject>(_walkDestPrefab, worldPoint, Quaternion.identity);
+
         WalkToAction action = new WalkToAction(_skin);
         action.dest = worldPoint;
+        action._debugMarker = marker;
         _skin.actionController.DoAction(action);
         //Ray ray = Camera.main.ScreenPointToRay(screenPos);
         //RaycastHit hit;

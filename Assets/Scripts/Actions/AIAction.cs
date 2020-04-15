@@ -1,4 +1,6 @@
 ﻿
+using UnityEngine;
+
 public abstract class AIAction {
 
     protected AIAction(Skin skin) {
@@ -6,6 +8,13 @@ public abstract class AIAction {
     }
 
     protected Skin _skin;
+    public GameObject _debugMarker;
+
+    public void FinishAction() {
+        if(_debugMarker != null) {
+            GameObject.Destroy(_debugMarker);
+        }
+    }
 
     public abstract void StartAction();
     public abstract void UpdateAction();

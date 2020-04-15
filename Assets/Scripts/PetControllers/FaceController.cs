@@ -37,8 +37,8 @@ public class FaceController : MonoBehaviour {
     private void Start() {
         _skin = GetComponent<Skin>();
 
-        _lEyeNormalMat = _skin.renderer.materials[0];
-        _rEyeNormalMat = _skin.renderer.materials[1];
+        _lEyeNormalMat = _skin.lEyeRend.materials[0];
+        _rEyeNormalMat = _skin.rEyeRend.materials[0];
 
         _lEyeBlinkAnim = new TexOffsetAnimation(_skin.lEyeRend, 0,
             VBShaderUtils.P_MAIN_TEX, _blinkTime, 4, 2, _timeBetweenBlinks);
@@ -46,7 +46,7 @@ public class FaceController : MonoBehaviour {
         _rEyeBlinkAnim = new TexOffsetAnimation(_skin.rEyeRend, 0,
             VBShaderUtils.P_MAIN_TEX, _blinkTime, 4, 2, _timeBetweenBlinks);
 
-        _chewAnim = new TexOffsetAnimation(_skin.renderer, 2, 
+        _chewAnim = new TexOffsetAnimation(_skin.mouthRend, 2, 
             VBShaderUtils.P_DETAIL_TEX, _chewFrameLength, 2, 1, 0);
 
         DoNormalEyes();
@@ -71,6 +71,7 @@ public class FaceController : MonoBehaviour {
     }
 
     private void DoLooking() {
+        return;
         Vector3 d = transform.position - _lookTarget.position;
         d.Normalize();
         Vector3 dLocal = transform.InverseTransformVector(d);
@@ -144,9 +145,12 @@ public class FaceController : MonoBehaviour {
     }
 
     private void SetEyeMats(Material lMat, Material rMat) {
-        Material[] mats = _skin.renderer.materials;
-        mats[0] = lMat;
-        mats[1] = rMat;
-        _skin.renderer.materials = mats;
+        _skin.lEyeRend.material = lMat;
+        _skin.rEyeRend.material = rMat;
+
+        //Material[] mats = _skin.renderer.materials;
+        //mats[0] = lMat;
+        //mats[1] = rMat;
+        //_skin.renderer.materials = mats;
     }
 }

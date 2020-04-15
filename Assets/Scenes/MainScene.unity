@@ -268,7 +268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &28797625
 Transform:
   m_ObjectHideFlags: 0
@@ -722,7 +722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &37110852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,10 +735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6114847e2729d4cb624f168583b0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VegetationSystemList:
-  - {fileID: 1121568678}
-  TerrainSystemList:
-  - {fileID: 1121568673}
+  VegetationSystemList: []
+  TerrainSystemList: []
 --- !u!4 &37110853
 Transform:
   m_ObjectHideFlags: 0
@@ -793,41 +791,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2129423785}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &114719781
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 57
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &122740482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,7 +985,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 114719781}
+  m_Cookie: {fileID: 748783722}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -1584,7 +1547,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.4044991, y: 0.63465846, z: 0.29389623}
+    Position: {x: -0.4044991, y: 0.6274978, z: 0.29389623}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -1614,42 +1577,42 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.40449643, y: 0.6471881, z: 0.29389623}
+    Position: {x: 0.40449643, y: 0.6472498, z: 0.29389623}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.4755303, y: -0.09206972, z: 0.15450732}
+    Position: {x: 0.4755303, y: -0.09149864, z: 0.15450732}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.4999987, y: -0.21794745, z: 0}
+    Position: {x: 0.4999987, y: -0.21748394, z: 0}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.4755303, y: -0.18829204, z: -0.15450732}
+    Position: {x: 0.4755303, y: -0.18857773, z: -0.15450732}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.40449643, y: -0.09413757, z: -0.29389623}
+    Position: {x: 0.40449643, y: -0.09419927, z: -0.29389623}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.29389447, y: -0.13782132, z: -0.40450978}
+    Position: {x: 0.29389447, y: -0.13782105, z: -0.40450978}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.15451178, y: -0.19722278, z: -0.47552404}
+    Position: {x: 0.15451178, y: -0.19747385, z: -0.47552404}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0, y: -0.23002839, z: -0.50000405}
+    Position: {x: 0, y: -0.22986047, z: -0.50000405}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -3207,6 +3170,7 @@ MonoBehaviour:
   renderer: {fileID: 307093151}
   lEyeRend: {fileID: 8327006}
   rEyeRend: {fileID: 1466275340}
+  mouthRend: {fileID: 307093151}
   spineBone: {fileID: 0}
   lArmBone: {fileID: 0}
   rArmBone: {fileID: 0}
@@ -3724,17 +3688,17 @@ MonoBehaviour:
   IncludeVegetationType: 0
   Nodes:
   - Selected: 0
-    Position: {x: 0.0020619957, y: -0.0103307525, z: 0.0063713393}
+    Position: {x: 0.0020619957, y: -0.0103307525, z: 0.0063755517}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.00591933, y: -0.008820091, z: 0.0064877463}
+    Position: {x: 0.00591933, y: -0.008820091, z: 0.0065222057}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.009910764, y: -0.0041054124, z: 0.006557189}
+    Position: {x: 0.009910764, y: -0.0041054124, z: 0.006570196}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -3744,22 +3708,22 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.009818119, y: 0.0040997965, z: 0.0063436152}
+    Position: {x: 0.009818119, y: 0.0040997965, z: 0.0063126814}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0075547886, y: 0.0075546955, z: 0.0064366926}
+    Position: {x: 0.0075547886, y: 0.0075546955, z: 0.006471736}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0040785274, y: 0.009785209, z: 0.0059322934}
+    Position: {x: 0.0040785274, y: 0.009785209, z: 0.005910687}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0020622718, y: 0.010005963, z: 0.0057610082}
+    Position: {x: -0.0020622718, y: 0.010005963, z: 0.0057439324}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -3774,27 +3738,27 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.01023164, y: 0.000063525455, z: 0.005350866}
+    Position: {x: -0.01023164, y: 0.000063525455, z: 0.0053567183}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.009500554, y: -0.003961649, z: 0.005853326}
+    Position: {x: -0.009500554, y: -0.003961649, z: 0.005855099}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.007575515, y: -0.007562196, z: 0.0058484366}
+    Position: {x: -0.007575515, y: -0.007562196, z: 0.0058684647}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0040646135, y: -0.009874116, z: 0.0060846843}
+    Position: {x: -0.0040646135, y: -0.009874116, z: 0.0060702013}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0020815, y: -0.010374594, z: 0.0062803}
+    Position: {x: -0.0020815, y: -0.010374594, z: 0.0062909494}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -4125,12 +4089,12 @@ MonoBehaviour:
   IncludeVegetationType: 0
   Nodes:
   - Selected: 0
-    Position: {x: 0.0050252075, y: -0.001532575, z: 0.007910665}
+    Position: {x: 0.0050252075, y: -0.001532575, z: 0.007910651}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.008277041, y: -0.0018186187, z: 0.008594437}
+    Position: {x: 0.008277041, y: -0.0018186187, z: 0.008600095}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -4145,17 +4109,17 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.009076169, y: 0.0018954391, z: 0.008213871}
+    Position: {x: 0.009076169, y: 0.0018954391, z: 0.008266582}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0062443535, y: 0.0036627185, z: 0.008021431}
+    Position: {x: 0.0062443535, y: 0.0036627185, z: 0.008017487}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0025701781, y: 0.005305514, z: 0.007443067}
+    Position: {x: 0.0025701781, y: 0.005305514, z: 0.0074430807}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -4165,37 +4129,37 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.006642717, y: 0.0068272646, z: 0.0067861443}
+    Position: {x: -0.006642717, y: 0.0068272646, z: 0.006820995}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.008760553, y: 0.0059126876, z: 0.007021839}
+    Position: {x: -0.008760553, y: 0.0059126876, z: 0.0070105214}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.008701839, y: 0.004605412, z: 0.0069887163}
+    Position: {x: -0.008701839, y: 0.004605412, z: 0.0069462345}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0071457867, y: 0.0030306682, z: 0.0068434523}
+    Position: {x: -0.0071457867, y: 0.0030306682, z: 0.0068385415}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.004544053, y: 0.001439506, z: 0.006777794}
+    Position: {x: -0.004544053, y: 0.001439506, z: 0.006825771}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0008004525, y: -0.00018140826, z: 0.007056599}
+    Position: {x: -0.0008004525, y: -0.00018140826, z: 0.007086131}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0011383534, y: -0.000812956, z: 0.0072355173}
+    Position: {x: 0.0011383534, y: -0.000812956, z: 0.00727706}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -4504,6 +4468,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b15ea613f499442787b7ccfe2a51430, type: 3}
+--- !u!84 &748783722
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 57
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &756593313
 GameObject:
   m_ObjectHideFlags: 0
@@ -4980,7 +4979,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.50018525, y: -0.4783927, z: 0.5002055}
+    Position: {x: -0.50018775, y: -0.4783927, z: 0.50020796}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5197,22 +5196,22 @@ MonoBehaviour:
   IncludeVegetationType: 0
   Nodes:
   - Selected: 0
-    Position: {x: -0.47553116, y: 0.6824902, z: 0.1545073}
+    Position: {x: -0.47553116, y: 0.6821937, z: 0.1545073}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.4044996, y: 0.68287694, z: 0.29389715}
+    Position: {x: -0.4044996, y: 0.68287724, z: 0.29389715}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.29389504, y: 0.68417263, z: 0.40451008}
+    Position: {x: -0.29389504, y: 0.68386054, z: 0.40451008}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.1545094, y: 0.6884078, z: 0.47552484}
+    Position: {x: -0.1545094, y: 0.68902117, z: 0.47552484}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5222,22 +5221,22 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.1545094, y: 0.68413687, z: 0.47552484}
+    Position: {x: 0.1545094, y: 0.6846165, z: 0.47552484}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.29389504, y: 0.6842194, z: 0.40451008}
+    Position: {x: 0.29389504, y: 0.68500006, z: 0.40451008}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.4044996, y: 0.68386054, z: 0.29389715}
+    Position: {x: 0.4044996, y: 0.68326175, z: 0.29389715}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.47553116, y: 0.68386054, z: 0.1545073}
+    Position: {x: 0.47553116, y: 0.68356365, z: 0.1545073}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5247,7 +5246,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.47553116, y: 0.68125653, z: -0.1545073}
+    Position: {x: 0.47553116, y: 0.680825, z: -0.1545073}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5262,7 +5261,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.1545094, y: 0.6818968, z: -0.47552484}
+    Position: {x: 0.1545094, y: 0.68237615, z: -0.47552484}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5272,7 +5271,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.1545094, y: 0.54826975, z: -0.47552484}
+    Position: {x: -0.1545094, y: 0.5488828, z: -0.47552484}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5282,12 +5281,12 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.4044996, y: 0.6180638, z: -0.29389715}
+    Position: {x: -0.4044996, y: 0.61819345, z: -0.29389715}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.47553116, y: 0.56410754, z: -0.1545073}
+    Position: {x: -0.47553116, y: 0.56367624, z: -0.1545073}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -5638,7 +5637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8742c37b52ba140ac868cb156352106a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skin: {fileID: 0}
+  _skin: {fileID: 477695828}
   _planner: {fileID: 1897182176}
   _itemSpawner: {fileID: 1897103333}
 --- !u!4 &998515104
@@ -6068,47 +6067,47 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.40450808, y: 0.48780602, z: 0.29389325}
+    Position: {x: -0.40450808, y: 0.48745227, z: 0.29389325}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.29389325, y: 0.48808068, z: 0.40450883}
+    Position: {x: -0.29389325, y: 0.4888724, z: 0.40450883}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.15450731, y: 0.4888181, z: 0.47552782}
+    Position: {x: -0.15450731, y: 0.48921558, z: 0.47552782}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0, y: 0.48869938, z: 0.50000006}
+    Position: {x: 0, y: 0.48863268, z: 0.50000006}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.15450731, y: 0.38944495, z: 0.47552782}
+    Position: {x: 0.15450731, y: 0.38950196, z: 0.47552782}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.29389325, y: 0.4235439, z: 0.40450883}
+    Position: {x: 0.29389325, y: 0.4249591, z: 0.40450883}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.40450808, y: 0.42857784, z: 0.29389325}
+    Position: {x: 0.40450808, y: 0.42822388, z: 0.29389325}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.47552782, y: 0.37490976, z: 0.15450954}
+    Position: {x: 0.47552782, y: 0.37485296, z: 0.15450954}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.5000008, y: 0.48740292, z: 0}
+    Position: {x: 0.5000008, y: 0.48733646, z: 0}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -6123,7 +6122,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.29389325, y: 0.48914573, z: -0.40450844}
+    Position: {x: 0.29389325, y: 0.48949948, z: -0.40450844}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -6133,12 +6132,12 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0, y: 0.48949948, z: -0.50000006}
+    Position: {x: 0, y: 0.48993206, z: -0.50000006}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.15450731, y: 0.49042168, z: -0.4755282}
+    Position: {x: -0.15450731, y: 0.49042144, z: -0.4755282}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -6148,12 +6147,12 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.40450883, y: 0.4916627, z: -0.29389325}
+    Position: {x: -0.40450883, y: 0.49213225, z: -0.29389325}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.47552782, y: 0.48949948, z: -0.15450805}
+    Position: {x: -0.47552782, y: 0.48863786, z: -0.15450805}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -6662,6 +6661,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8836307811999869005, guid: 6fb5be9de7c854fc9ac9bf840f9db69e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 8836307811999869010, guid: 6fb5be9de7c854fc9ac9bf840f9db69e,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -7105,6 +7109,7 @@ Texture2D:
   m_TextureFormat: 4
   m_MipCount: 2
   m_IsReadable: 1
+  m_IgnoreMasterTextureLimit: 0
   m_StreamingMipmaps: 0
   m_StreamingMipmapsPriority: 0
   m_AlphaIsTransparency: 0
@@ -7342,32 +7347,32 @@ MonoBehaviour:
   IncludeVegetationType: 0
   Nodes:
   - Selected: 0
-    Position: {x: 0.0033046193, y: -0.006641593, z: 0.011166231}
+    Position: {x: 0.0033046193, y: -0.006641593, z: 0.010046906}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0061629047, y: -0.008096637, z: 0.011832672}
+    Position: {x: 0.0061629047, y: -0.008096637, z: 0.011829786}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.0092293555, y: -0.0061288136, z: 0.011571129}
+    Position: {x: 0.0092293555, y: -0.0061288136, z: 0.01084088}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.009109957, y: -0.004216975, z: 0.008389579}
+    Position: {x: 0.009109957, y: -0.004216975, z: 0.009045901}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.007754548, y: -0.002027068, z: 0.006043874}
+    Position: {x: 0.007754548, y: -0.002027068, z: 0.005998622}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.005039396, y: 0.00008611111, z: 0.006130254}
+    Position: {x: 0.005039396, y: 0.00008611111, z: 0.0061223605}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -7382,7 +7387,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0077537675, y: 0.0035289465, z: 0.0062763887}
+    Position: {x: -0.0077537675, y: 0.0035289465, z: 0.006281101}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -7397,22 +7402,22 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.008718133, y: -0.0016384952, z: 0.0059309625}
+    Position: {x: -0.008718133, y: -0.0016384952, z: 0.0059372303}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.006295069, y: -0.0037594852, z: 0.0058353343}
+    Position: {x: -0.006295069, y: -0.0037594852, z: 0.0059352037}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.0025733851, y: -0.0054470478, z: 0.007921817}
+    Position: {x: -0.0025733851, y: -0.0054470478, z: 0.007871958}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.00061626174, y: -0.0060232086, z: 0.0093590105}
+    Position: {x: -0.00061626174, y: -0.0060232086, z: 0.009570532}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -8140,7 +8145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476694866}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 340.13675, y: -0.0000014305115, z: 87.792984}
+  m_LocalPosition: {x: 334.08206, y: -0.0000014305115, z: 163.37894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1536714967}
@@ -8729,12 +8734,12 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5001768, y: -0.4783927, z: -0.5002377}
+    Position: {x: -0.5001785, y: -0.4783927, z: -0.5002402}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5002668, y: -0.4783927, z: 0.5001414}
+    Position: {x: -0.500269, y: -0.4783927, z: 0.5001414}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -9088,22 +9093,22 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.1545091, y: 0.56650734, z: 0.4755246}
+    Position: {x: 0.1545091, y: 0.5659077, z: 0.4755246}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.29389444, y: 0.17634167, z: 0.40451014}
+    Position: {x: 0.29389444, y: 0.17698501, z: 0.40451014}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.40449914, y: -0.15786658, z: 0.29389665}
+    Position: {x: 0.40449914, y: -0.15675768, z: 0.29389665}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: 0.47553194, y: -0.19467539, z: 0.1545069}
+    Position: {x: 0.47553194, y: -0.19467561, z: 0.1545069}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -9143,7 +9148,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.2938948, y: 0.42371836, z: -0.40451014}
+    Position: {x: -0.2938948, y: 0.4225252, z: -0.40451014}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -11836,6 +11841,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: p.bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 7926336462071839522, guid: 8d82e35eeb7354732a0e2d124f6a7d54,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2099218463872958483, guid: 8d82e35eeb7354732a0e2d124f6a7d54, type: 3}
     - {fileID: 2099218463872958482, guid: 8d82e35eeb7354732a0e2d124f6a7d54, type: 3}
@@ -12234,6 +12244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ps_cheer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162362721802380723, guid: 9628051f05868408abb8625a48747b1f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9628051f05868408abb8625a48747b1f, type: 3}
