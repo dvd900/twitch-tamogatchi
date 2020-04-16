@@ -7,6 +7,7 @@ public class EmoteController : MonoBehaviour {
 
     [SerializeField] private float _discomfortTime;
     [SerializeField] private float _chewTime;
+    [SerializeField] private float _cheerTime;
     [SerializeField] private float _chewDelay;
 
     private Skin _skin;
@@ -26,6 +27,17 @@ public class EmoteController : MonoBehaviour {
         _eyeTimer = _discomfortTime;
 
         Debug.Log("OW!!!");
+    }
+
+    public void Cheer() {
+        _skin.animator.SetTrigger("cheer");
+
+        _skin.faceController.DoHappyClosedEyes();
+        _eyeTimer = _cheerTime;
+    }
+
+    public void Wave() {
+        _skin.animator.SetTrigger("wave");
     }
 
     public void ChewEmote() {

@@ -13,6 +13,8 @@ public class FaceController : MonoBehaviour {
     [SerializeField] private Material _lEyeClosedMat;
     [SerializeField] private Material _rEyeClosedMat;
 
+    [SerializeField] private Material _eyeHappyClosedMat;
+
     [SerializeField] private Transform _headBone;
 
     [SerializeField] private float _lookTexOffset;
@@ -53,6 +55,7 @@ public class FaceController : MonoBehaviour {
     }
 
     private void Update() {
+        Debug.Log("blink enabled: " + _blinkEnabled + " frame: " + _lEyeBlinkAnim.CurrFrame);
         if (_blinkEnabled) {
             _lEyeBlinkAnim.UpdateAnim();
             _rEyeBlinkAnim.UpdateAnim();
@@ -106,6 +109,12 @@ public class FaceController : MonoBehaviour {
         StopBlink();
 
         SetEyeMats(_lEyeClosedMat, _rEyeClosedMat);
+    }
+
+    public void DoHappyClosedEyes() {
+        StopBlink();
+
+        SetEyeMats(_eyeHappyClosedMat, _eyeHappyClosedMat);
     }
 
     public void SetLookAt(Transform target) {

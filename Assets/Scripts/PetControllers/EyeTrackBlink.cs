@@ -33,29 +33,29 @@ public class EyeTrackBlink : MonoBehaviour
     }
     void Update()
     {
-        if (isEmoting == false)
-        {
-            blinkTimerR -= Time.deltaTime;
-            shiftTimerR -= Time.deltaTime;
-            if (blinkTimerR <= 0.0f)
-            {
-                StartCoroutine(Blink());
-            }
+        //if (isEmoting == false)
+        //{
+        //    blinkTimerR -= Time.deltaTime;
+        //    shiftTimerR -= Time.deltaTime;
+        //    if (blinkTimerR <= 0.0f)
+        //    {
+        //        StartCoroutine(Blink());
+        //    }
 
-            eyeOffset = new Vector2(transform.localPosition.x, -transform.localPosition.z);
-            // clamp so the eye doesnt disappear  
-            if (eyeOffset.x < -eyeMaxOffset || eyeOffset.x > eyeMaxOffset)
-            {
-                eyeOffset.x = Mathf.Clamp(eyeOffset.x, -eyeMaxOffset, eyeMaxOffset);
-            }
-            if (eyeOffset.y < -eyeMaxOffset || eyeOffset.y > eyeMaxOffset)
-            {
-                eyeOffset.y = Mathf.Clamp(eyeOffset.y, -eyeMaxOffset, eyeMaxOffset);
-            }
-            // send offset to shader
-            //eyeRend.material.SetTextureOffset("_DetailAlbedoMap", eyeOffset);
-            //eyeRend2.material.SetTextureOffset("_DetailAlbedoMap", eyeOffset);
-        }
+        //    eyeOffset = new Vector2(transform.localPosition.x, -transform.localPosition.z);
+        //    // clamp so the eye doesnt disappear  
+        //    if (eyeOffset.x < -eyeMaxOffset || eyeOffset.x > eyeMaxOffset)
+        //    {
+        //        eyeOffset.x = Mathf.Clamp(eyeOffset.x, -eyeMaxOffset, eyeMaxOffset);
+        //    }
+        //    if (eyeOffset.y < -eyeMaxOffset || eyeOffset.y > eyeMaxOffset)
+        //    {
+        //        eyeOffset.y = Mathf.Clamp(eyeOffset.y, -eyeMaxOffset, eyeMaxOffset);
+        //    }
+        //    // send offset to shader
+        //    //eyeRend.material.SetTextureOffset("_DetailAlbedoMap", eyeOffset);
+        //    //eyeRend2.material.SetTextureOffset("_DetailAlbedoMap", eyeOffset);
+        //}
 
     }
 

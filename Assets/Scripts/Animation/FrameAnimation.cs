@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class FrameAnimation {
 
+    public int CurrFrame { get { return _frameNum; } }
+
     private float _frameLength;
     private float _loopDelay;
     protected int _numFrames;

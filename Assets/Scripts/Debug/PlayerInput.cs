@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour {
 
     private void Update() {
         Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        Vector2 viewMousePos = new Vector2(mousePos.x / Screen.width, mousePos.y / Screen.height);
 
         if (Input.GetButtonDown("Interact")) {
             if (_skin.itemController.heldItem != null) {
@@ -22,16 +23,31 @@ public class PlayerInput : MonoBehaviour {
             }
         }
 
+        if(Input.GetButtonDown("Emote")) {
+            int emoteNum = Random.Range(0, 3);
+            switch(emoteNum) {
+                case 0:
+                    _skin.emoteController.DiscomfortEmote();
+                    break;
+                case 1:
+                    _skin.emoteController.Wave();
+                    break;
+                case 2:
+                    _skin.emoteController.Cheer();
+                    break;
+            }
+        }
+
         if(Input.GetButtonDown("Idle")) {
             DoIdle();
         }
 
         if (Input.GetButtonDown("Fire1")) {
-            DoClick(mousePos);
+            DoClick(viewMousePos);
         }
 
         if(Input.GetButtonDown("Fire2")) {
-            DoRightClick(mousePos);
+            DoRightClick(viewMousePos);
         }
 
         //_skin.faceController.DoLookAt(CoordsUtils.ScreenToWorldPos(mousePos));
@@ -43,14 +59,16 @@ public class PlayerInput : MonoBehaviour {
         _skin.actionController.DoAction(action);
     }
 
-    public void DoRightClick(Vector2 screenPos) {
-        Vector3 worldPos = CoordsUtils.ScreenToWorldPos(screenPos);
+    public void DoRightClick(Vector2 viewPos) {
+        Vector3 worldPos = CoordsUtils.ViewToWorldPos(viewPos);
         //_itemSpawner.SpawnItem(3, worldPos);
         _itemSpawner.SpawnRandomItem(worldPos);
     }
 
-    public void DoClick(Vector2 screenPos) {
-        Vector3 worldPoint = CoordsUtils.ScreenToWorldPos(screenPos);
+    public void DoClick(Vector2 viewPos) {
+        Debug.Log(viewPos);
+
+        Vector3 worldPoint = CoordsUtils.ViewToWorldPos(viewPos);
         var marker = Instantiate<GameObject>(_walkDestPrefab, worldPoint, Quaternion.identity);
 
         WalkToAction action = new WalkToAction(_skin);

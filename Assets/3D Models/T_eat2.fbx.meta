@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: c4d04a1487f744e64b37c33b7998d412
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Body
+    100004: Elbow_IK.L
+    100006: Elbow_IK.L_end
+    100008: Elbow_IK.R
+    100010: Elbow_IK.R_end
+    100012: Foot.L
+    100014: Foot.R
+    100016: Hand.L
+    100018: Hand.L_end
+    100020: Hand.R
+    100022: Hand.R_end
+    100024: Hand_IK.L
+    100026: Hand_IK.L_end
+    100028: Hand_IK.R
+    100030: Hand_IK.R_end
+    100032: Head
+    100034: headSquash
+    100036: headSquash_end
+    100038: jiggle_root
+    100040: LowerArm.L
+    100042: LowerArm.R
+    100044: Pole.L
+    100046: Pole.L_end
+    100048: Pole.R
+    100050: Pole.R_end
+    100052: Root
+    100054: Shin.L
+    100056: Shin.L.001
+    100058: Shin.L_end
+    100060: Shin.R
+    100062: Shin.R.001
+    100064: Shin.R_end
+    100066: Spine1
+    100068: Spine2
+    100070: stomach_jiggle_floater
+    100072: stomach_jiggle_floater_l
+    100074: stomach_jiggle_floater_l_end
+    100076: stomach_jiggle_floater_r
+    100078: stomach_jiggle_floater_r_end
+    100080: //RootNode
+    100082: Thigh.L
+    100084: Thigh.R
+    100086: Toes.L
+    100088: Toes.L_end
+    100090: Toes.R
+    100092: Toes.R_end
+    100094: UpperArm.L
+    100096: UpperArm.R
+    400000: Armature
+    400002: Body
+    400004: Elbow_IK.L
+    400006: Elbow_IK.L_end
+    400008: Elbow_IK.R
+    400010: Elbow_IK.R_end
+    400012: Foot.L
+    400014: Foot.R
+    400016: Hand.L
+    400018: Hand.L_end
+    400020: Hand.R
+    400022: Hand.R_end
+    400024: Hand_IK.L
+    400026: Hand_IK.L_end
+    400028: Hand_IK.R
+    400030: Hand_IK.R_end
+    400032: Head
+    400034: headSquash
+    400036: headSquash_end
+    400038: jiggle_root
+    400040: LowerArm.L
+    400042: LowerArm.R
+    400044: Pole.L
+    400046: Pole.L_end
+    400048: Pole.R
+    400050: Pole.R_end
+    400052: Root
+    400054: Shin.L
+    400056: Shin.L.001
+    400058: Shin.L_end
+    400060: Shin.R
+    400062: Shin.R.001
+    400064: Shin.R_end
+    400066: Spine1
+    400068: Spine2
+    400070: stomach_jiggle_floater
+    400072: stomach_jiggle_floater_l
+    400074: stomach_jiggle_floater_l_end
+    400076: stomach_jiggle_floater_r
+    400078: stomach_jiggle_floater_r_end
+    400080: //RootNode
+    400082: Thigh.L
+    400084: Thigh.R
+    400086: Toes.L
+    400088: Toes.L_end
+    400090: Toes.R
+    400092: Toes.R_end
+    400094: UpperArm.L
+    400096: UpperArm.R
+    2100000: Eye.L
+    2100002: Eye.R
+    2100004: Head
+    2100006: Body
+    4300000: Body
+    7400000: Armature|Eat_A
+    7400002: Armature|Idle
+    7400004: Armature|pickup
+    7400006: Armature|PickUp
+    7400008: Armature|PickUp.001
+    7400010: Armature|Pickup_A
+    7400012: Armature|PickUp_A
+    7400014: Armature|Pickup_A.001
+    7400016: Armature|Run
+    7400018: Armature|Run.001
+    7400020: Armature|Sit
+    7400022: Armature|Sun.001Action
+    9500000: //RootNode
+    13700000: Body
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 8ba4918187fa74c5292abbe97a26de2e,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

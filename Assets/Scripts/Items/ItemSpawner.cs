@@ -22,14 +22,14 @@ public class ItemSpawner : MonoBehaviour
 
     private void OnClickMessage(NetMsg msg) {
         ClickMessage click = (ClickMessage)msg;
-        Vector3 screenPos = new Vector3(click.x * Screen.width, click.y * Screen.height, 0);
-        SpawnRandomItem(CoordsUtils.ScreenToWorldPos(screenPos));
+        Vector3 viewPos = new Vector3(click.x, click.y, 0);
+        SpawnRandomItem(CoordsUtils.ViewToWorldPos(viewPos));
 
     }
 
     private void OnSpawnMessage(NetMsg msg) {
         SpawnMessage spawnMsg = (SpawnMessage)msg;
-        SpawnItem(spawnMsg.itemInd, CoordsUtils.ScreenToWorldPos(new Vector3(spawnMsg.x, spawnMsg.y, 0)));
+        SpawnItem(spawnMsg.itemInd, CoordsUtils.ViewToWorldPos(new Vector3(spawnMsg.x, spawnMsg.y, 0)));
     }
 
     void Update() {
