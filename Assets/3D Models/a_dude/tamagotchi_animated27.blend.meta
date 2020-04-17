@@ -1,106 +1,299 @@
 fileFormatVersion: 2
 guid: 65e73ca01afcd4be584fde8a150c6075
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Armature
-    100002: Foot_L
-    100004: Foot_R
-    100006: Hand_L
-    100008: Hand_R
-    100010: Head
-    100012: LowerArm_L
-    100014: LowerArm_R
-    100016: Root
-    100018: Shin_L
-    100020: Shin_L_001
-    100022: Shin_R
-    100024: Shin_R_001
-    100026: Sphere
-    100028: Sphere_001
-    100030: Sphere_002
-    100032: Sphere_003
-    100034: Sphere_004
-    100036: Spine1
-    100038: Spine2
-    100040: //RootNode
-    100042: Thigh_L
-    100044: Thigh_R
-    100046: Toes_L
-    100048: Toes_R
-    100050: UpperArm_L
-    100052: UpperArm_R
-    100054: Body
-    100056: Eye_L
-    100058: Eye_R
-    400000: Armature
-    400002: Foot_L
-    400004: Foot_R
-    400006: Hand_L
-    400008: Hand_R
-    400010: Head
-    400012: LowerArm_L
-    400014: LowerArm_R
-    400016: Root
-    400018: Shin_L
-    400020: Shin_L_001
-    400022: Shin_R
-    400024: Shin_R_001
-    400026: Sphere
-    400028: Sphere_001
-    400030: Sphere_002
-    400032: Sphere_003
-    400034: Sphere_004
-    400036: Spine1
-    400038: Spine2
-    400040: //RootNode
-    400042: Thigh_L
-    400044: Thigh_R
-    400046: Toes_L
-    400048: Toes_R
-    400050: UpperArm_L
-    400052: UpperArm_R
-    400054: Body
-    400056: Eye_L
-    400058: Eye_R
-    2100000: Eye_R__Untitled_004
-    2100002: Head__Untitled_004
-    2100004: Body__Untitled_004
-    2100006: Eye_L__Untitled_004
-    2300000: Sphere_003
-    2300002: Sphere_004
-    2300004: Sphere_001
-    2300006: Eye_L
-    2300008: Eye_R
-    3300000: Sphere_003
-    3300002: Sphere_004
-    3300004: Sphere_001
-    3300006: Eye_L
-    3300008: Eye_R
-    4300000: Sphere_002
-    4300002: Sphere_001
-    4300004: Sphere
-    4300006: Sphere_004
-    4300008: Sphere_003
-    4300010: Eye_L
-    4300012: Eye_R
-    4300014: Body
-    7400000: Default Take
-    7400002: Idle
-    7400004: Run
-    7400006: Run_001
-    9500000: //RootNode
-    13700000: Sphere
-    13700002: Sphere_001
-    13700004: Sphere_002
-    13700006: Sphere_003
-    13700008: Body
-    13700010: Eye_L
-    13700012: Eye_R
-    2186277476908879412: ImportLogs
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Armature
+  - first:
+      1: 100002
+    second: Foot_L
+  - first:
+      1: 100004
+    second: Foot_R
+  - first:
+      1: 100006
+    second: Hand_L
+  - first:
+      1: 100008
+    second: Hand_R
+  - first:
+      1: 100010
+    second: Head
+  - first:
+      1: 100012
+    second: LowerArm_L
+  - first:
+      1: 100014
+    second: LowerArm_R
+  - first:
+      1: 100016
+    second: Root
+  - first:
+      1: 100018
+    second: Shin_L
+  - first:
+      1: 100020
+    second: Shin_L_001
+  - first:
+      1: 100022
+    second: Shin_R
+  - first:
+      1: 100024
+    second: Shin_R_001
+  - first:
+      1: 100026
+    second: Sphere
+  - first:
+      1: 100028
+    second: Sphere_001
+  - first:
+      1: 100030
+    second: Sphere_002
+  - first:
+      1: 100032
+    second: Sphere_003
+  - first:
+      1: 100034
+    second: Sphere_004
+  - first:
+      1: 100036
+    second: Spine1
+  - first:
+      1: 100038
+    second: Spine2
+  - first:
+      1: 100040
+    second: //RootNode
+  - first:
+      1: 100042
+    second: Thigh_L
+  - first:
+      1: 100044
+    second: Thigh_R
+  - first:
+      1: 100046
+    second: Toes_L
+  - first:
+      1: 100048
+    second: Toes_R
+  - first:
+      1: 100050
+    second: UpperArm_L
+  - first:
+      1: 100052
+    second: UpperArm_R
+  - first:
+      1: 100054
+    second: Body
+  - first:
+      1: 100056
+    second: Eye_L
+  - first:
+      1: 100058
+    second: Eye_R
+  - first:
+      4: 400000
+    second: Armature
+  - first:
+      4: 400002
+    second: Foot_L
+  - first:
+      4: 400004
+    second: Foot_R
+  - first:
+      4: 400006
+    second: Hand_L
+  - first:
+      4: 400008
+    second: Hand_R
+  - first:
+      4: 400010
+    second: Head
+  - first:
+      4: 400012
+    second: LowerArm_L
+  - first:
+      4: 400014
+    second: LowerArm_R
+  - first:
+      4: 400016
+    second: Root
+  - first:
+      4: 400018
+    second: Shin_L
+  - first:
+      4: 400020
+    second: Shin_L_001
+  - first:
+      4: 400022
+    second: Shin_R
+  - first:
+      4: 400024
+    second: Shin_R_001
+  - first:
+      4: 400026
+    second: Sphere
+  - first:
+      4: 400028
+    second: Sphere_001
+  - first:
+      4: 400030
+    second: Sphere_002
+  - first:
+      4: 400032
+    second: Sphere_003
+  - first:
+      4: 400034
+    second: Sphere_004
+  - first:
+      4: 400036
+    second: Spine1
+  - first:
+      4: 400038
+    second: Spine2
+  - first:
+      4: 400040
+    second: //RootNode
+  - first:
+      4: 400042
+    second: Thigh_L
+  - first:
+      4: 400044
+    second: Thigh_R
+  - first:
+      4: 400046
+    second: Toes_L
+  - first:
+      4: 400048
+    second: Toes_R
+  - first:
+      4: 400050
+    second: UpperArm_L
+  - first:
+      4: 400052
+    second: UpperArm_R
+  - first:
+      4: 400054
+    second: Body
+  - first:
+      4: 400056
+    second: Eye_L
+  - first:
+      4: 400058
+    second: Eye_R
+  - first:
+      21: 2100000
+    second: Eye_R__Untitled_004
+  - first:
+      21: 2100002
+    second: Head__Untitled_004
+  - first:
+      21: 2100004
+    second: Body__Untitled_004
+  - first:
+      21: 2100006
+    second: Eye_L__Untitled_004
+  - first:
+      23: 2300000
+    second: Sphere_003
+  - first:
+      23: 2300002
+    second: Sphere_004
+  - first:
+      23: 2300004
+    second: Sphere_001
+  - first:
+      23: 2300006
+    second: Eye_L
+  - first:
+      23: 2300008
+    second: Eye_R
+  - first:
+      33: 3300000
+    second: Sphere_003
+  - first:
+      33: 3300002
+    second: Sphere_004
+  - first:
+      33: 3300004
+    second: Sphere_001
+  - first:
+      33: 3300006
+    second: Eye_L
+  - first:
+      33: 3300008
+    second: Eye_R
+  - first:
+      43: 4300000
+    second: Sphere_002
+  - first:
+      43: 4300002
+    second: Sphere_001
+  - first:
+      43: 4300004
+    second: Sphere
+  - first:
+      43: 4300006
+    second: Sphere_004
+  - first:
+      43: 4300008
+    second: Sphere_003
+  - first:
+      43: 4300010
+    second: Eye_L
+  - first:
+      43: 4300012
+    second: Eye_R
+  - first:
+      43: 4300014
+    second: Body
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      74: 7400002
+    second: Idle
+  - first:
+      74: 7400004
+    second: Run
+  - first:
+      74: 7400006
+    second: Run_001
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Sphere
+  - first:
+      137: 13700002
+    second: Sphere_001
+  - first:
+      137: 13700004
+    second: Sphere_002
+  - first:
+      137: 13700006
+    second: Sphere_003
+  - first:
+      137: 13700008
+    second: Body
+  - first:
+      137: 13700010
+    second: Eye_L
+  - first:
+      137: 13700012
+    second: Eye_R
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  - first:
+      74: -623603649343465320
+    second: Scene
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -133,6 +326,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -140,18 +334,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -160,10 +355,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -173,13 +368,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
