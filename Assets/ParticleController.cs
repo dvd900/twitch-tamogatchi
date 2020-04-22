@@ -5,11 +5,14 @@ using UnityEngine;
 public class ParticleController : MonoBehaviour
 {
     public Animator ac_crumbs;
-    public ParticleSystem Crumbs, psSurprise, psStars, psSparkles;
+    public ParticleSystem Crumbs, psSurprise, psStars, psSparkles, psEgg;
     public GameObject AnimeCrumbs;
+	public GameObject SweeTango;
     void Start()
     {
-        psSparkles.Stop();
+		SweeTango.SetActive(false);
+		psEgg.Stop();
+		psSparkles.Stop();
         Crumbs.GetComponent<ParticleSystem>().emissionRate = 0;
         AnimeCrumbs.SetActive(false);
     }
@@ -41,4 +44,10 @@ public class ParticleController : MonoBehaviour
     {
         AnimeCrumbs.SetActive(false);
     }
+    public void BreakEgg()
+	{
+		psEgg.Play();
+		SweeTango.SetActive(true);
+		SweeTango.GetComponent<Animator>().Rebind();
+	}
 }
