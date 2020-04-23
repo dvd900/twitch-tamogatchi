@@ -48,8 +48,8 @@ public class FaceController : MonoBehaviour {
         _rEyeBlinkAnim = new TexOffsetAnimation(_skin.rEyeRend, 0,
             VBShaderUtils.P_MAIN_TEX, _blinkTime, 4, 2, _timeBetweenBlinks);
 
-        _chewAnim = new TexOffsetAnimation(_skin.mouthRend, 2, 
-            VBShaderUtils.P_DETAIL_TEX, _chewFrameLength, 2, 1, 0);
+        _chewAnim = new TexOffsetAnimation(_skin.mouthRend, 0, 
+            VBShaderUtils.P_MAIN_TEX, _chewFrameLength, 2, 2, 0);
 
         DoNormalEyes();
     }

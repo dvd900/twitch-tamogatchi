@@ -48,7 +48,7 @@ public class EmoteController : MonoBehaviour {
         _skin.animator.SetTrigger("chew");
         //_skin.faceController.DoClosedEyes();
         //_eyeTimer = _chewTime;
-        //_mouthTimer = _chewTime;
+        _mouthTimer = _chewTime;
     }
 
     private void Update() {

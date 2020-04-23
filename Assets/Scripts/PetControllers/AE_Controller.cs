@@ -8,6 +8,13 @@ public class AE_Controller : MonoBehaviour
     [SerializeField] private ParticleSystem _cheer;
     [SerializeField] private ParticleSystem _cheer2;
     [SerializeField] private ParticleSystem _eat;
+    [SerializeField] private ParticleSystem _crumbs;
+    [SerializeField] private Animator _crumbAnimator;
+
+    private void Update()
+    {
+        //_crumbs.Emit(3);
+    }
 
     public void AE_StartSparkles()
     {
@@ -28,6 +35,10 @@ public class AE_Controller : MonoBehaviour
     public void AE_TakeBite()
     {
         _skin.itemController.DoBiteItem();
+        _crumbs.Emit(3);
+        _crumbAnimator.SetTrigger("crumbs");
+        //AnimeCrumbs.SetActive(true);
+        //ac_crumbs.Play("animeCrumbs", 0, 0.23f);
     }
 
     public void AE_PutItemInHand()
