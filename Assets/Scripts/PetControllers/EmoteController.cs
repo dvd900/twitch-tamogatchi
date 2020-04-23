@@ -30,20 +30,25 @@ public class EmoteController : MonoBehaviour {
     }
 
     public void Cheer() {
+        _skin.movementController.StopWalking();
         _skin.animator.SetTrigger("cheer");
 
         _skin.faceController.DoHappyClosedEyes();
         _eyeTimer = _cheerTime;
     }
 
-    public void Wave() {
+    public void Wave()
+    {
+        _skin.movementController.StopWalking();
         _skin.animator.SetTrigger("wave");
     }
 
-    public void ChewEmote() {
-        _skin.faceController.DoClosedEyes();
-        _eyeTimer = _chewTime;
-        _mouthTimer = _chewTime;
+    public void ChewEmote()
+    {
+        _skin.animator.SetTrigger("chew");
+        //_skin.faceController.DoClosedEyes();
+        //_eyeTimer = _chewTime;
+        //_mouthTimer = _chewTime;
     }
 
     private void Update() {

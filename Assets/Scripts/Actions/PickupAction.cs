@@ -15,6 +15,11 @@ public class PickupAction : AIAction {
         _item = bestItem;
     }
 
+    public PickupAction(Skin skin, Item item) : base(skin)
+    {
+        _item = item;
+    }
+
     public override AIAction Generate() {
         return new PickupAction(_skin);
     }
@@ -24,7 +29,7 @@ public class PickupAction : AIAction {
     }
 
     public override bool IsFinished() {
-        return _skin.itemController.heldItem == _item && !_skin.itemController.isPickingUp;
+        return _skin.itemController.HeldItem == _item && !_skin.itemController.IsPickingUp;
     }
 
     public override void StartAction() {
@@ -32,8 +37,8 @@ public class PickupAction : AIAction {
     }
 
     public override void UpdateAction() {
-        if (!_skin.movementController.IsWalking && !_skin.itemController.isPickingUp 
-            && _skin.itemController.heldItem != _item) {
+        if (!_skin.movementController.IsWalking && !_skin.itemController.IsPickingUp 
+            && _skin.itemController.HeldItem != _item) {
 
             if(_skin.itemController.IsInRange(_item)) {
                 if(_turnStarted && !_skin.movementController.IsTurning) {
@@ -83,10 +88,10 @@ public class PickupAction : AIAction {
 
     private float ScoreItem(Item item) {
         float d = (item.transform.position - _skin.transform.position).magnitude;
-        float distMult = .3f + .2f * (1.0f - d / _skin.itemController.pickupRange);
+        float distMult = .3f + .2f * (1.0f - d / _skin.itemController.PickupRange);
 
         float heldItemMod = 0.0f;
-        if(_skin.itemController.heldItem != null) {
+        if(_skin.itemController.HeldItem != null) {
             heldItemMod += .2f;
 
             // eventually incorporate modifier for same type item

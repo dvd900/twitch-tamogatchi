@@ -74,7 +74,7 @@ public class Item : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "ground")
+        if (collision.gameObject.tag == VBLayerMask.GroundTag)
         {
             if (dustOff == false)
             {
@@ -87,7 +87,7 @@ public class Item : MonoBehaviour
         }
         foreach (ContactPoint c in collision.contacts)
         {
-            if(c.otherCollider.tag == "Head")
+            if(c.otherCollider.tag == VBLayerMask.SweeTangoTag)
             {
                 EmoteController emote = c.otherCollider.gameObject.GetComponentInParent<EmoteController>();
 

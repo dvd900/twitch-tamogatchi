@@ -28,7 +28,7 @@ public class AIWorldData {
         _closestItem = null;
 
         int numHits = Physics.OverlapSphereNonAlloc(_pet.feetTransform.position,
-            _pet.itemController.pickupRange, _castColliders, VBLayerMask.Item);
+            _pet.itemController.PickupRange, _castColliders, VBLayerMask.ItemLayerMask);
 
         if(numHits == _castColliders.Length) {
             Debug.LogWarning("Ran out of space in cast colliders array! " +

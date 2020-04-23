@@ -8,12 +8,16 @@ public class PlayerInput : MonoBehaviour {
     public ItemSpawner _itemSpawner;
     public GameObject _walkDestPrefab;
 
+    [SerializeField] private LayerMask _clickLayerMask;
+
+    private int _emoteNum;
+
     private void Update() {
         Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 viewMousePos = new Vector2(mousePos.x / Screen.width, mousePos.y / Screen.height);
 
         if (Input.GetButtonDown("Interact")) {
-            if (_skin.itemController.heldItem != null) {
+            if (_skin.itemController.HeldItem != null) {
                 _skin.actionController.DoAction(new EatAction(_skin));
             } else {
                 Item item = _planner.worldData.closestItem;
@@ -24,18 +28,7 @@ public class PlayerInput : MonoBehaviour {
         }
 
         if(Input.GetButtonDown("Emote")) {
-            int emoteNum = Random.Range(0, 3);
-            switch(emoteNum) {
-                case 0:
-                    _skin.emoteController.DiscomfortEmote();
-                    break;
-                case 1:
-                    _skin.emoteController.Wave();
-                    break;
-                case 2:
-                    _skin.emoteController.Cheer();
-                    break;
-            }
+            DoEmote();
         }
 
         if(Input.GetButtonDown("Idle")) {
@@ -53,28 +46,80 @@ public class PlayerInput : MonoBehaviour {
         //_skin.faceController.DoLookAt(CoordsUtils.ScreenToWorldPos(mousePos));
     }
 
-    public void DoIdle() {
+    private void DoEmote()
+    {
+        switch (_emoteNum)
+        {
+            case 0:
+                _skin.emoteController.DiscomfortEmote();
+                break;
+            case 1:
+                _skin.emoteController.Wave();
+                break;
+            case 2:
+                _skin.emoteController.Cheer();
+                break;
+        }
+
+        _emoteNum++;
+        if (_emoteNum > 2)
+        {
+            _emoteNum = 0;
+        }
+    }
+
+    private void DoIdle() {
         IdleAction action = new IdleAction(_skin);
         action.waitTime = 5.0f;
         _skin.actionController.DoAction(action);
     }
 
-    public void DoRightClick(Vector2 viewPos) {
+    private void DoRightClick(Vector2 viewPos) {
         Vector3 worldPos = CoordsUtils.ViewToWorldPos(viewPos);
         //_itemSpawner.SpawnItem(3, worldPos);
         _itemSpawner.SpawnRandomItem(worldPos);
     }
 
-    public void DoClick(Vector2 viewPos) {
-        Debug.Log(viewPos);
+    private void DoClick(Vector2 viewPos) {
+        Ray ray = LevelRefs.singleton.worldCam.ViewportPointToRay(viewPos);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 1000f, _clickLayerMask))
+        {
+            Debug.Log("Hit tag: " + hit.collider.tag);
+            if(hit.collider.tag == VBLayerMask.ItemTag)
+            {
+                var item = hit.collider.GetComponent<Item>();
+                PickupAction action = new PickupAction(_skin, item);
+                _skin.actionController.DoAction(action);
+            }
+            else if(hit.collider.tag == VBLayerMask.SweeTangoTag)
+            {
+                if(_skin.itemController.HeldItem != null)
+                {
+                    EatAction action = new EatAction(_skin);
+                    _skin.actionController.DoAction(action);
+                }
+                else
+                {
+                    DoEmote();
+                }
+            }
+            else if(hit.collider.tag == VBLayerMask.GroundTag)
+            {
+                var marker = Instantiate<GameObject>(_walkDestPrefab, hit.point, Quaternion.identity);
 
+                WalkToAction action = new WalkToAction(_skin);
+                action.dest = hit.point;
+                action._debugMarker = marker;
+                _skin.actionController.DoAction(action);
+            }
+        }
+        else
+        {
+            Debug.Log("Didn't hit anything");
+        }
         Vector3 worldPoint = CoordsUtils.ViewToWorldPos(viewPos);
-        var marker = Instantiate<GameObject>(_walkDestPrefab, worldPoint, Quaternion.identity);
-
-        WalkToAction action = new WalkToAction(_skin);
-        action.dest = worldPoint;
-        action._debugMarker = marker;
-        _skin.actionController.DoAction(action);
+        
         //Ray ray = Camera.main.ScreenPointToRay(screenPos);
         //RaycastHit hit;
 

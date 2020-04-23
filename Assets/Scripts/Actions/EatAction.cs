@@ -16,7 +16,7 @@ public class EatAction : AIAction {
     }
 
     public override bool IsFinished() {
-        return !_skin.itemController.isEating;
+        return !_skin.itemController.IsEating;
     }
 
     public override void StartAction() {
@@ -27,7 +27,7 @@ public class EatAction : AIAction {
     }
 
     public override float Score(AIWorldData data) {
-        if(_skin.itemController.heldItem != null && _skin.itemController.heldItem is Consumable) {
+        if(_skin.itemController.HeldItem != null && _skin.itemController.HeldItem is Consumable) {
             return .55f;
         } else {
             return 0.0f;

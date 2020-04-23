@@ -55,7 +55,7 @@ public class FaceController : MonoBehaviour {
     }
 
     private void Update() {
-        Debug.Log("blink enabled: " + _blinkEnabled + " frame: " + _lEyeBlinkAnim.CurrFrame);
+
         if (_blinkEnabled) {
             _lEyeBlinkAnim.UpdateAnim();
             _rEyeBlinkAnim.UpdateAnim();
