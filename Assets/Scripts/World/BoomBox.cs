@@ -9,6 +9,8 @@ public class BoomBox : MonoBehaviour
 
     public bool IsOn { get { return _source.isPlaying; } }
 
+    private bool _justToggled;
+
     private void Toggle()
     {
         if(IsOn)
@@ -20,11 +22,20 @@ public class BoomBox : MonoBehaviour
             int index = Random.Range(0, _clips.Length);
             _source.PlayOneShot(_clips[index]);
         }
+
+        _justToggled = true;
+        StartCoroutine(JustToggledTimer());
+    }
+
+    private IEnumerator JustToggledTimer()
+    {
+        yield return new WaitForSeconds(1.0f);
+        _justToggled = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == VBLayerMask.ItemTag)
+        if (collision.gameObject.tag == VBLayerMask.ItemTag && !_justToggled)
         {
             Toggle();
         }

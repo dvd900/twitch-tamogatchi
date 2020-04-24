@@ -60,8 +60,6 @@ public class ItemSpawner : MonoBehaviour
             itemPos.y = itemPrefab.transform.position.y;
         }
 
-        Debug.Log("Itempos: " + itemPos + ", " + itemPrefab.transform.position);
-
         Quaternion itemRot = Quaternion.AngleAxis(360 * UnityEngine.Random.value, Vector3.up) *
             itemPrefab.transform.rotation;
 

@@ -36,7 +36,7 @@ public class FaceController : MonoBehaviour {
 
     public bool IsChewing { get { return _chewing; } }
 
-    private void Start() {
+    private void Awake() {
         _skin = GetComponent<Skin>();
 
         _lEyeNormalMat = _skin.lEyeRend.materials[0];
@@ -50,6 +50,10 @@ public class FaceController : MonoBehaviour {
 
         _chewAnim = new TexOffsetAnimation(_skin.mouthRend, 0, 
             VBShaderUtils.P_MAIN_TEX, _chewFrameLength, 2, 2, 0);
+    }
+
+    private void Start()
+    {
 
         DoNormalEyes();
     }

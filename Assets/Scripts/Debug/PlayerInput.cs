@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerInput : MonoBehaviour {
 
+    public static PlayerInput Instance;
+
     public Skin _skin;
     public Planner _planner;
     public ItemSpawner _itemSpawner;
@@ -11,6 +13,11 @@ public class PlayerInput : MonoBehaviour {
     [SerializeField] private LayerMask _clickLayerMask;
 
     private int _emoteNum = 1;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Update() {
         Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);

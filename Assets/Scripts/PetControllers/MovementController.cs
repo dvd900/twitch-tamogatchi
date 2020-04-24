@@ -27,7 +27,7 @@ public class MovementController : MonoBehaviour
 
     private Skin _skin;
 
-    private void Start() {
+    private void Awake() {
         _skin = GetComponent<Skin>();
     }
 
@@ -66,8 +66,12 @@ public class MovementController : MonoBehaviour
 
     public void LookAtPosition(Vector3 dest) {
         Quaternion endRot = Quaternion.LookRotation(dest - transform.position, Vector3.up);
-        _turnTimer = Quaternion.Angle(transform.rotation, endRot) / _turnSpeed;
         float da = Mathf.DeltaAngle(endRot.eulerAngles.y, transform.rotation.eulerAngles.y);
+        if(da < 15)
+        {
+            return;
+        }
+        _turnTimer = Quaternion.Angle(transform.rotation, endRot) / _turnSpeed;
         _rotDir = -(int)Mathf.Sign(da);
         Debug.Log("Turning, time: " + _turnTimer);
     }

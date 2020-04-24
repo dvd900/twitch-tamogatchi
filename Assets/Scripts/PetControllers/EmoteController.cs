@@ -15,7 +15,7 @@ public class EmoteController : MonoBehaviour {
     private float _eyeTimer;
     private float _mouthTimer;
 
-    void Start() {
+    void Awake() {
         _skin = GetComponent<Skin>();
     }
 
