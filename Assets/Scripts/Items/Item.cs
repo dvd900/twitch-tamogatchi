@@ -80,6 +80,7 @@ public class Item : MonoBehaviour
             {
                 dustOff = true;
                 clone = ItemSpawner.singleton.MakeDust();
+                clone.transform.position = transform.position;
                 ps = clone.GetComponent<ParticleSystem>();
                 life = ps.startLifetime/3; //divide by simulation speed
             }

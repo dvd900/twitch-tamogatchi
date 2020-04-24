@@ -38,6 +38,11 @@ public class EmoteController : MonoBehaviour {
         _eyeTimer = _cheerTime;
     }
 
+    public void SpawnCheer()
+    {
+        _skin.animator.SetTrigger("spawncheer");
+    }
+
     public void Wave()
     {
         _skin.movementController.StopWalking();

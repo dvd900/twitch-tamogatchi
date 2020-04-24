@@ -38,7 +38,7 @@ public class TangoSpawner : MonoBehaviour
             GameObject sweeT = GameObject.Instantiate(_sweeTango, hit.position, Quaternion.AngleAxis(180, Vector3.up));
             var skin = sweeT.GetComponent<Skin>();
             PlayerInput.Instance._skin = skin;
-            skin.emoteController.Cheer();
+            skin.emoteController.SpawnCheer();
         }
         else
         {
