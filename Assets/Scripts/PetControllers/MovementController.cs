@@ -45,6 +45,11 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    public void FaceCamera()
+    {
+        LookAtPosition(LevelRefs.singleton.worldCam.transform.position);
+    }
+
     public void StopWalking() {
         _navMeshAgent.SetDestination(transform.position);
         _skin.animator.SetBool("isIdle", true);

@@ -31,6 +31,7 @@ public class EmoteController : MonoBehaviour {
 
     public void Cheer() {
         _skin.movementController.StopWalking();
+        _skin.movementController.FaceCamera();
         _skin.animator.SetTrigger("cheer");
 
         _skin.faceController.DoHappyClosedEyes();
@@ -40,6 +41,7 @@ public class EmoteController : MonoBehaviour {
     public void Wave()
     {
         _skin.movementController.StopWalking();
+        _skin.movementController.FaceCamera();
         _skin.animator.SetTrigger("wave");
     }
 

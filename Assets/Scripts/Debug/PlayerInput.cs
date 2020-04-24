@@ -10,7 +10,7 @@ public class PlayerInput : MonoBehaviour {
 
     [SerializeField] private LayerMask _clickLayerMask;
 
-    private int _emoteNum;
+    private int _emoteNum = 1;
 
     private void Update() {
         Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);

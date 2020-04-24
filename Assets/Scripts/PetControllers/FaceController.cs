@@ -56,14 +56,14 @@ public class FaceController : MonoBehaviour {
 
     private void Update() {
 
-        if (_blinkEnabled) {
-            _lEyeBlinkAnim.UpdateAnim();
-            _rEyeBlinkAnim.UpdateAnim();
-        }
+        //if (_blinkEnabled) {
+        //    _lEyeBlinkAnim.UpdateAnim();
+        //    _rEyeBlinkAnim.UpdateAnim();
+        //}
 
-        if(_chewing) {
-            _chewAnim.UpdateAnim();
-        }
+        //if(_chewing) {
+        //    _chewAnim.UpdateAnim();
+        //}
     }
 
     //look in late update so the animator doesn't override head rotation
