@@ -10,6 +10,8 @@ public class AE_Controller : MonoBehaviour
     [SerializeField] private ParticleSystem _eat;
     [SerializeField] private ParticleSystem _crumbs;
     [SerializeField] private Animator _crumbAnimator;
+	public AudioSource aSource;
+	public AudioClip aHello;
 
     private void Update()
     {
@@ -19,6 +21,7 @@ public class AE_Controller : MonoBehaviour
     public void AE_StartSparkles()
     {
         _sparkles.Play();
+		aSource.PlayOneShot(aHello, 1f);
     }
 
     public void AE_StopSparkles()
