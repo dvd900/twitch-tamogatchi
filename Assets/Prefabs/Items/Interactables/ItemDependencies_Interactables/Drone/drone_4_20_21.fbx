@@ -10,10 +10,10 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2020
 		Month: 04
-		Day: 24
-		Hour: 23
-		Minute: 58
-		Second: 15
+		Day: 25
+		Hour: 01
+		Minute: 02
+		Second: 55
 		Millisecond: 0
 	}
 	Creator: "FBX SDK/FBX Plugins build 20070228"
@@ -21,7 +21,7 @@ FBXHeaderExtension:  {
 		FlagPLE: 0
 	}
 }
-CreationTime: "2020-04-24 23:58:15:000"
+CreationTime: "2020-04-25 01:02:55:000"
 Creator: "Blender version 2.79 (sub 0)"
 
 ; Object definitions
@@ -29,15 +29,15 @@ Creator: "Blender version 2.79 (sub 0)"
 
 Definitions:  {
 	Version: 100
-	Count: 69
+	Count: 92
 	ObjectType: "Model" {
-		Count: 26
+		Count: 27
 	}
 	ObjectType: "Geometry" {
-		Count: 2
+		Count: 3
 	}
 	ObjectType: "Material" {
-		Count: 8
+		Count: 9
 	}
 	ObjectType: "Texture" {
 		Count: 6
@@ -46,7 +46,7 @@ Definitions:  {
 		Count: 6
 	}
 	ObjectType: "Deformer" {
-		Count: 24
+		Count: 46
 	}
 	ObjectType: "Pose" {
 		Count: 1
@@ -5479,6 +5479,174 @@ Objects:  {
 			}
 		}
 	}
+	Model: "Model::_screen", "Mesh" {
+		Version: 232
+		Properties60:  {
+			Property: "QuaternionInterpolate", "bool", "",0
+			Property: "Visibility", "Visibility", "A+",1
+			Property: "Lcl Translation", "Lcl Translation", "A+",0.074779681861401,0.019962610676885,0.286761969327927
+			Property: "Lcl Rotation", "Lcl Rotation", "A+",0.000000000000000,-0.000000000000000,0.000000000000000
+			Property: "Lcl Scaling", "Lcl Scaling", "A+",1.000000000000000,1.000000000000000,1.000000000000000
+			Property: "RotationOffset", "Vector3D", "",0,0,0
+			Property: "RotationPivot", "Vector3D", "",0,0,0
+			Property: "ScalingOffset", "Vector3D", "",0,0,0
+			Property: "ScalingPivot", "Vector3D", "",0,0,0
+			Property: "TranslationActive", "bool", "",0
+			Property: "TranslationMin", "Vector3D", "",0,0,0
+			Property: "TranslationMax", "Vector3D", "",0,0,0
+			Property: "TranslationMinX", "bool", "",0
+			Property: "TranslationMinY", "bool", "",0
+			Property: "TranslationMinZ", "bool", "",0
+			Property: "TranslationMaxX", "bool", "",0
+			Property: "TranslationMaxY", "bool", "",0
+			Property: "TranslationMaxZ", "bool", "",0
+			Property: "RotationOrder", "enum", "",0
+			Property: "RotationSpaceForLimitOnly", "bool", "",0
+			Property: "AxisLen", "double", "",10
+			Property: "PreRotation", "Vector3D", "",0,0,0
+			Property: "PostRotation", "Vector3D", "",0,0,0
+			Property: "RotationActive", "bool", "",0
+			Property: "RotationMin", "Vector3D", "",0,0,0
+			Property: "RotationMax", "Vector3D", "",0,0,0
+			Property: "RotationMinX", "bool", "",0
+			Property: "RotationMinY", "bool", "",0
+			Property: "RotationMinZ", "bool", "",0
+			Property: "RotationMaxX", "bool", "",0
+			Property: "RotationMaxY", "bool", "",0
+			Property: "RotationMaxZ", "bool", "",0
+			Property: "RotationStiffnessX", "double", "",0
+			Property: "RotationStiffnessY", "double", "",0
+			Property: "RotationStiffnessZ", "double", "",0
+			Property: "MinDampRangeX", "double", "",0
+			Property: "MinDampRangeY", "double", "",0
+			Property: "MinDampRangeZ", "double", "",0
+			Property: "MaxDampRangeX", "double", "",0
+			Property: "MaxDampRangeY", "double", "",0
+			Property: "MaxDampRangeZ", "double", "",0
+			Property: "MinDampStrengthX", "double", "",0
+			Property: "MinDampStrengthY", "double", "",0
+			Property: "MinDampStrengthZ", "double", "",0
+			Property: "MaxDampStrengthX", "double", "",0
+			Property: "MaxDampStrengthY", "double", "",0
+			Property: "MaxDampStrengthZ", "double", "",0
+			Property: "PreferedAngleX", "double", "",0
+			Property: "PreferedAngleY", "double", "",0
+			Property: "PreferedAngleZ", "double", "",0
+			Property: "InheritType", "enum", "",0
+			Property: "ScalingActive", "bool", "",0
+			Property: "ScalingMin", "Vector3D", "",1,1,1
+			Property: "ScalingMax", "Vector3D", "",1,1,1
+			Property: "ScalingMinX", "bool", "",0
+			Property: "ScalingMinY", "bool", "",0
+			Property: "ScalingMinZ", "bool", "",0
+			Property: "ScalingMaxX", "bool", "",0
+			Property: "ScalingMaxY", "bool", "",0
+			Property: "ScalingMaxZ", "bool", "",0
+			Property: "GeometricTranslation", "Vector3D", "",0,0,0
+			Property: "GeometricRotation", "Vector3D", "",0,0,0
+			Property: "GeometricScaling", "Vector3D", "",1,1,1
+			Property: "LookAtProperty", "object", ""
+			Property: "UpVectorProperty", "object", ""
+			Property: "Show", "bool", "",1
+			Property: "NegativePercentShapeSupport", "bool", "",1
+			Property: "DefaultAttributeIndex", "int", "",0
+			Property: "Color", "Color", "A",0.8,0.8,0.8
+			Property: "Size", "double", "",100
+			Property: "Look", "enum", "",1
+		}
+		MultiLayer: 0
+		MultiTake: 1
+		Shading: Y
+		Culling: "CullingOff"
+		Vertices: 0.698887,0.535751,0.274200,0.779989,0.396825,0.271776,0.839409,0.230772,0.270090,0.866468,0.056726,0.269186,
+		          0.860591,-0.119181,0.269346,0.821921,-0.291063,0.270560,0.751422,-0.452973,0.272730,0.661284,-0.586033,0.275497,
+		          0.476696,0.365593,0.403694,0.450336,-0.399703,0.404757,0.741212,0.583003,0.170702,0.827793,0.430721,0.169337,
+		          0.891456,0.249918,0.168607,0.920553,0.060490,0.168233,0.914483,-0.130927,0.168247,0.873432,-0.317752,0.168670,
+		          0.798598,-0.493474,0.169565,0.702576,-0.638955,0.171131,0.712683,-0.659308,-0.060937,0.809421,-0.509251,-0.060263,
+		          0.884733,-0.328288,-0.059845,0.925735,-0.135892,-0.059589,0.931406,0.061161,-0.059531,0.901578,0.256109,-0.059675,
+		          0.837302,0.442301,-0.060128,0.749073,0.599004,-0.060529,0.511026,-0.313241,0.401714,0.561453,-0.201684,0.400749,
+		          0.589222,-0.082548,0.400074,0.593415,0.039688,0.399994,0.573879,0.160445,0.400509,0.531403,0.275182,0.401813
+		PolygonVertexIndex: 3,2,30,-30,4,3,29,-29,5,4,28,-28,6,5,27,-27,7,6,26,-10,1,0,8,-32,16,6,7,-18,15,5,6,-17,
+		                    14,4,5,-16,13,3,4,-15,12,2,3,-14,11,1,2,-13,10,0,1,-12,11,24,25,-11,12,23,24,-12,13,22,23,-13,
+		                    14,21,22,-14,15,20,21,-15,16,19,20,-16,17,18,19,-17,2,1,31,-31
+		GeometryVersion: 124
+		LayerElementNormal: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "Direct"
+			Normals: 0.698569,0.041108,0.714347,0.677236,0.165868,0.716788,0.417005,0.100589,0.903317,0.430189,0.024689,0.902371,
+			         0.692679,-0.084780,0.716208,0.698569,0.041108,0.714347,0.430189,0.024689,0.902371,0.427259,-0.052095,0.902615,
+			         0.659932,-0.206946,0.722221,0.692679,-0.084780,0.716208,0.427259,-0.052095,0.902615,0.407636,-0.127018,0.904233,
+			         0.604205,-0.316385,0.731284,0.659932,-0.206946,0.722221,0.407636,-0.127018,0.904233,0.376019,-0.192969,0.906278,
+			         0.576556,-0.372478,0.727195,0.604205,-0.316385,0.731284,0.376019,-0.192969,0.906278,0.358287,-0.222175,0.906766,
+			         0.630512,0.281075,0.723441,0.606494,0.340312,0.718558,0.372753,0.203742,0.905271,0.389721,0.170873,0.904904,
+			         0.842524,-0.450636,0.295022,0.604205,-0.316385,0.731284,0.576556,-0.372478,0.727195,0.800531,-0.523667,0.291360,
+			         0.914914,-0.291452,0.279153,0.659932,-0.206946,0.722221,0.604205,-0.316385,0.731284,0.842524,-0.450636,0.295022,
+			         0.955992,-0.118595,0.268319,0.692679,-0.084780,0.716208,0.659932,-0.206946,0.722221,0.914914,-0.291452,0.279153,
+			         0.962706,0.058229,0.264138,0.698569,0.041108,0.714347,0.692679,-0.084780,0.716208,0.955992,-0.118595,0.268319,
+			         0.934751,0.233589,0.267617,0.677236,0.165868,0.716788,0.698569,0.041108,0.714347,0.962706,0.058229,0.264138,
+			         0.874142,0.397931,0.278359,0.630512,0.281075,0.723441,0.677236,0.165868,0.716788,0.934751,0.233589,0.267617,
+			         0.837001,0.473952,0.273354,0.606494,0.340312,0.718558,0.630512,0.281075,0.723441,0.874142,0.397931,0.278359,
+			         0.874142,0.397931,0.278359,0.908750,0.413251,0.057985,0.868740,0.491287,0.062166,0.837001,0.473952,0.273354,
+			         0.934751,0.233589,0.267617,0.968932,0.241981,0.050661,0.908750,0.413251,0.057985,0.874142,0.397931,0.278359,
+			         0.962706,0.058229,0.264138,0.996948,0.060823,0.048402,0.968932,0.241981,0.050661,0.934751,0.233589,0.267617,
+			         0.955992,-0.118595,0.268319,0.991119,-0.122105,0.052309,0.996948,0.060823,0.048402,0.962706,0.058229,0.264138,
+			         0.914914,-0.291452,0.279153,0.951292,-0.302103,0.061373,0.991119,-0.122105,0.052309,0.955992,-0.118595,0.268319,
+			         0.842524,-0.450636,0.295022,0.879727,-0.469649,0.073977,0.951292,-0.302103,0.061373,0.914914,-0.291452,0.279153,
+			         0.800531,-0.523667,0.291360,0.834956,-0.544359,0.080386,0.879727,-0.469649,0.073977,0.842524,-0.450636,0.295022,
+			         0.677236,0.165868,0.716788,0.630512,0.281075,0.723441,0.389721,0.170873,0.904904,0.417005,0.100589,0.903317
+		}
+		LayerElementUV: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "IndexToDirect"
+			UV: 0.202159,0.531015,0.799553,0.285842,0.911053,0.325201,0.798714,0.531013,0.725400,0.498513,0.171044,0.204461,
+			    0.433664,0.165865,0.565117,0.167185,0.696572,0.180230,0.302430,0.178593,0.546434,0.460334,0.636789,0.473395,
+			    0.560424,0.245502,0.455298,0.461123,0.679743,0.258524,0.441117,0.244495,0.321559,0.257509,0.364534,0.473749,
+			    0.201342,0.284670,0.275569,0.498487,0.129428,0.042407,0.000073,0.072457,0.048323,0.239051,0.089718,0.323700,
+			    0.828352,0.206939,0.951558,0.242388,0.869670,0.044859,0.999927,0.076444,0.723817,0.016682,0.573807,0.000073,
+			    0.422660,0.000935,0.274266,0.015838
+			UVIndex: 12,14,11,10,15,12,10,13,16,15,13,17,18,16,17,19,23,18,19,0,1,2,3,4,5,18,23,22,9,16,18,5,6,15,16,9,7,12,15,6,8,14,12,7,24,1,14,8,25,2,1,24,24,26,27,25,8,28,26,24,7,29,28,8,
+			         6,30,29,7,9,31,30,6,5,20,31,9,22,21,20,5,14,1,4,11
+		}
+		LayerElementTexture: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			BlendMode: "Translucent"
+			TextureAlpha: 1
+			TextureId: 0
+		}
+		LayerElementMaterial: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			Materials: 0
+		}
+		Layer: 0 {
+			Version: 100
+			LayerElement:  {
+				Type: "LayerElementNormal"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementUV"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementTexture"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementMaterial"
+				TypedIndex: 0
+			}
+		}
+	}
 	Model: "Model::egg", "Mesh" {
 		Version: 232
 		Properties60:  {
@@ -8425,6 +8593,36 @@ Objects:  {
 			Property: "Reflectivity", "double", "",0
 		}
 	}
+	Material: "Material::m_screen__Untitled_007", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties60:  {
+			Property: "ShadingModel", "KString", "", "Lambert"
+			Property: "MultiLayer", "bool", "",0
+			Property: "EmissiveColor", "ColorRGB", "",0.8000,0.8000,0.8000
+			Property: "EmissiveFactor", "double", "",0.0000
+			Property: "AmbientColor", "ColorRGB", "",1.0000,1.0000,1.0000
+			Property: "AmbientFactor", "double", "",1.0000
+			Property: "DiffuseColor", "ColorRGB", "",0.8000,0.8000,0.8000
+			Property: "DiffuseFactor", "double", "",0.8000
+			Property: "Bump", "Vector3D", "",0,0,0
+			Property: "TransparentColor", "ColorRGB", "",1,1,1
+			Property: "TransparencyFactor", "double", "",0.0000
+			Property: "SpecularColor", "ColorRGB", "",1.0000,1.0000,1.0000
+			Property: "SpecularFactor", "double", "",0.5000
+			Property: "ShininessExponent", "double", "",12.3
+			Property: "ReflectionColor", "ColorRGB", "",0,0,0
+			Property: "ReflectionFactor", "double", "",1
+			Property: "Emissive", "ColorRGB", "",0,0,0
+			Property: "Ambient", "ColorRGB", "",1.0,1.0,1.0
+			Property: "Diffuse", "ColorRGB", "",0.8,0.8,0.8
+			Property: "Specular", "ColorRGB", "",1.0,1.0,1.0
+			Property: "Shininess", "double", "",12.3
+			Property: "Opacity", "double", "",1.0
+			Property: "Reflectivity", "double", "",0
+		}
+	}
 	Material: "Material::unnamed", "" {
 		Version: 102
 		ShadingModel: "phong"
@@ -9296,6 +9494,323 @@ Objects:  {
 		Transform: 0.000000075497901,-1.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,-1.000000000000000,0.000000000000000,1.000000000000000,0.000000075497901,0.000000000000000,0.000000000000000,3.256956577301025,-0.002158945892006,-0.020961983129382,1.000000000000000
 		TransformLink: 0.000000075497901,1.000000000000000,0.000000000000000,0.000000000000000,-1.000000000000000,0.000000075497901,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,1.000000000000000,0.000000000000000,-0.000000033717480,-3.394666433334351,0.000000164772572,1.000000000000000
 	}
+	Deformer: "Deformer::Skin _screen", "Skin" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Skin"
+		Properties60:  {
+		}
+		Link_DeformAcuracy: 50
+	}
+	Deformer: "SubDeformer::Cluster _screen root", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+		,23,24,25,26,27,28,29,30,31
+		Weights: 1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000,1.00000000
+		Transform: 0.000000268126769,0.596612274646759,-0.802529633045197,0.000000000000000,0.000000416449240,0.802529633045197,0.596612274646759,0.000000000000000,1.000000119209290,-0.000000494180483,-0.000000033152862,0.000000000000000,0.006576188374311,0.060635179281235,-0.048102937638760,1.000000000000000
+		TransformLink: 0.000000268227978,0.999999940395355,-0.000000416373837,0.000000000000000,0.596612274646759,-0.000000494180540,-0.802529633045197,0.000000000000000,-0.802529633045197,-0.000000033279065,-0.596612274646759,0.000000000000000,0.002159107476473,0.142476022243500,-0.020961727946997,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen root_001", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: 0.337108641862869,0.941465795040131,0.000000521885113,0.000000000000000,-0.941465795040131,0.337108612060547,0.000000203565236,0.000000000000000,0.000000091318228,-0.000000507301252,1.000000119209290,0.000000000000000,-0.882901132106781,0.063430078327656,-0.043849568814039,1.000000000000000
+		TransformLink: 0.337108582258224,0.000000015717738,0.941465735435486,0.000000000000000,0.941465735435486,-0.000000559960483,-0.337108612060547,0.000000000000000,0.000000446822526,0.999999880790710,-0.000000256988585,0.000000000000000,0.314855158329010,0.192901790142059,0.811679542064667,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen root_004", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: 0.000000150560567,-1.000000000000000,0.000000000000115,0.000000000000000,-0.000000025532483,0.000000029802422,-1.000000000000000,0.000000000000000,1.000000238418579,0.000000075497915,0.000000000000000,0.000000000000000,-0.580371379852295,0.391808032989502,-1.282387495040894,1.000000000000000
+		TransformLink: 0.000000075497901,0.999999821186066,-0.000000000000000,0.000000000000000,-1.000000000000000,0.000000150560538,0.000000000000115,0.000000000000000,-0.000000029802425,-0.000000025532472,1.000000000000000,0.000000000000000,0.468746870756149,0.729423344135284,1.241463065147400,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen root_002", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.999870002269745,0.016117075458169,-0.000000008849280,0.000000000000000,-0.016117075458169,-0.999870002269745,0.000000114173531,0.000000000000000,0.000000035763932,0.000000052019850,1.000000000000000,0.000000000000000,-0.998445332050323,0.003823503153399,-0.043849583715200,1.000000000000000
+		TransformLink: -0.999870181083679,-0.000000007007987,0.016117079183459,0.000000000000000,0.016117079183459,0.000000114301329,0.999870181083679,0.000000000000000,0.000000034920880,0.999999940395355,-0.000000052589506,0.000000000000000,-0.921438574790955,0.192901760339737,-0.028655435889959,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen root_005", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: 0.000000031727751,-0.999999880790710,0.000000048428767,0.000000000000000,0.000000025820123,-0.000000048428756,-0.999999880790710,0.000000000000000,1.000000119209290,0.000000075497923,-0.000000000000000,0.000000000000000,-0.580371141433716,-1.463483929634094,-0.019766112789512,1.000000000000000
+		TransformLink: 0.000000075497923,0.999999940395355,-0.000000000000004,0.000000000000000,-1.000000119209290,0.000000031727751,0.000000048428777,0.000000000000000,0.000000048428770,0.000000025820121,1.000000119209290,0.000000000000000,-1.386545181274414,0.729423344135284,-0.021158266812563,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen root_003", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: 0.526176333427429,-0.850375652313232,0.000000018551630,0.000000000000000,0.850375592708588,0.526176273822784,-0.000000041585793,0.000000000000000,0.000000015577307,0.000000047651127,1.000000119209290,0.000000000000000,-0.858598530292511,-0.207202345132828,-0.043849542737007,1.000000000000000
+		TransformLink: 0.526176154613495,0.000000025602109,-0.850375473499298,0.000000000000000,-0.850375413894653,0.000000037657298,-0.526176214218140,0.000000000000000,0.000000032324934,0.999999880790710,0.000000038319445,0.000000000000000,0.352513074874878,0.192901730537415,-0.880080521106720,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen root_006", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: 0.000000061724627,-1.000000119209290,-0.000000119209318,0.000000000000000,0.000000100365646,0.000000119209318,-1.000000119209290,0.000000000000000,1.000000238418579,0.000000075497930,-0.000000000000007,0.000000000000000,-0.580371499061584,0.536619126796722,1.261042356491089,1.000000000000000
+		TransformLink: 0.000000075497908,0.999999821186066,0.000000000000016,0.000000000000000,-0.999999880790710,0.000000061724592,-0.000000119209290,0.000000000000000,-0.000000119209282,0.000000100365625,0.999999880790710,0.000000000000000,0.613558113574982,0.729423344135284,-1.301966428756714,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000188588217,0.346751630306244,-0.937956988811493,0.000000000000000,0.000000356873755,-0.937956988811493,-0.346751630306244,0.000000000000000,-1.000000119209290,-0.000000400125487,-0.000000000000043,0.000000000000000,-0.284869343042374,0.007205747067928,-0.077062189579010,1.000000000000000
+		TransformLink: -0.000000138744113,-0.999999940395355,-0.000000375300488,0.000000000000000,0.346751630306244,-0.000000400125487,0.937956988811493,0.000000000000000,-0.937956988811493,0.000000053141065,0.346751630306244,0.000000000000000,0.002159166149795,-0.135817140340805,-0.020961800590158,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_002", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000175045429,0.346751600503922,-0.937956988811493,0.000000000000000,0.000000320240730,-0.937956988811493,-0.346751600503922,0.000000000000000,-1.000000119209290,-0.000000361069254,-0.000000000000007,0.000000000000000,-0.352194756269455,0.007205752655864,-0.077062189579010,1.000000000000000
+		TransformLink: -0.000000125201325,-0.999999940395355,-0.000000338667405,0.000000000000000,0.346751600503922,-0.000000361069283,0.937956988811493,0.000000000000000,-0.937956988811493,0.000000053141097,0.346751600503922,0.000000000000000,0.002159158699214,-0.203142553567886,-0.020961821079254,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_001", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000174606626,0.346751570701599,-0.937957048416138,0.000000000000000,0.000000319053811,-0.937957048416138,-0.346751570701599,0.000000000000000,-1.000000119209290,-0.000000359803863,-0.000000000000021,0.000000000000000,-0.428728014230728,0.007205743808299,-0.077062197029591,1.000000000000000
+		TransformLink: -0.000000124762522,-0.999999940395355,-0.000000337480515,0.000000000000000,0.346751570701599,-0.000000359803863,0.937956988811493,0.000000000000000,-0.937956988811493,0.000000053141097,0.346751570701599,0.000000000000000,0.002159151015803,-0.279675781726837,-0.020961841568351,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_003", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000087673662,0.346751451492310,-0.937957048416138,0.000000000000000,0.000000083901696,-0.937957048416138,-0.346751451492310,0.000000000000000,-1.000000119209290,-0.000000109097087,-0.000000000000011,0.000000000000000,-0.505601823329926,0.007205855567008,-0.077062189579010,1.000000000000000
+		TransformLink: -0.000000037829562,-0.999999940395355,-0.000000102328379,0.000000000000000,0.346751451492310,-0.000000109097151,0.937957048416138,0.000000000000000,-0.937957048416138,0.000000053141097,0.346751451492310,0.000000000000000,0.002159143332392,-0.356549620628357,-0.020961862057447,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_007", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000088625050,0.346751481294632,-0.937957048416138,0.000000000000000,0.000000086475133,-0.937957048416138,-0.346751481294632,0.000000000000000,-1.000000119209290,-0.000000111840755,0.000000000000000,0.000000000000000,-0.586912274360657,0.007205849513412,-0.077062189579010,1.000000000000000
+		TransformLink: -0.000000038780939,-0.999999880790710,-0.000000104901808,0.000000000000000,0.346751481294632,-0.000000111840812,0.937957048416138,0.000000000000000,-0.937957048416138,0.000000053141108,0.346751481294632,0.000000000000000,0.002159142401069,-0.437860012054443,-0.020961863920093,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_005", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000087249894,0.346751481294632,-0.937957048416138,0.000000000000000,0.000000082755349,-0.937957048416138,-0.346751481294632,0.000000000000000,-1.000000119209290,-0.000000107874925,0.000000000000011,0.000000000000000,-0.662084221839905,0.007205848116428,-0.077062189579010,1.000000000000000
+		TransformLink: -0.000000037405790,-0.999999880790710,-0.000000101182025,0.000000000000000,0.346751481294632,-0.000000107874982,0.937957048416138,0.000000000000000,-0.937957048416138,0.000000053141115,0.346751481294632,0.000000000000000,0.002159141469747,-0.513031959533691,-0.020961867645383,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_009", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000087249902,0.346751481294632,-0.937957048416138,0.000000000000000,0.000000082755371,-0.937957048416138,-0.346751481294632,0.000000000000000,-1.000000119209290,-0.000000107874961,-0.000000000000004,0.000000000000000,-0.746463775634766,0.007205842528492,-0.077062189579010,1.000000000000000
+		TransformLink: -0.000000037405794,-0.999999880790710,-0.000000101182060,0.000000000000000,0.346751481294632,-0.000000107875010,0.937957048416138,0.000000000000000,-0.937957048416138,0.000000053141108,0.346751481294632,0.000000000000000,0.002159140538424,-0.597411513328552,-0.020961869508028,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_004", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000087249909,0.346751481294632,-0.937957048416138,0.000000000000000,0.000000082755413,-0.937957048416138,-0.346751481294632,0.000000000000000,-1.000000119209290,-0.000000107874982,-0.000000000000007,0.000000000000000,-0.830843389034271,0.007205835077912,-0.077062189579010,1.000000000000000
+		TransformLink: -0.000000037405801,-0.999999880790710,-0.000000101182088,0.000000000000000,0.346751481294632,-0.000000107875046,0.937957048416138,0.000000000000000,-0.937957048416138,0.000000053141104,0.346751481294632,0.000000000000000,0.002159139607102,-0.681791126728058,-0.020961873233318,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_008", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000087457877,0.346751481294632,-0.937957048416138,0.000000000000000,0.000000083317900,-0.937957048416138,-0.346751481294632,0.000000000000000,-1.000000238418579,-0.000000108474687,0.000000000000011,0.000000000000000,-0.915223121643066,0.007205829489976,-0.077062189579010,1.000000000000000
+		TransformLink: -0.000000037613759,-0.999999821186066,-0.000000101744575,0.000000000000000,0.346751481294632,-0.000000108474737,0.937957048416138,0.000000000000000,-0.937957048416138,0.000000053141118,0.346751481294632,0.000000000000000,0.002159138675779,-0.766170740127563,-0.020961875095963,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_006", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000086669047,0.346751481294632,-0.937957048416138,0.000000000000000,0.000000081184169,-0.937957048416138,-0.346751481294632,0.000000000000000,-1.000000238418579,-0.000000106199813,0.000000000000000,0.000000000000000,-0.998068213462830,0.007205822505057,-0.077062189579010,1.000000000000000
+		TransformLink: -0.000000036824936,-0.999999821186066,-0.000000099610844,0.000000000000000,0.346751481294632,-0.000000106199863,0.937957048416138,0.000000000000000,-0.937957048416138,0.000000053141108,0.346751481294632,0.000000000000000,0.002159137744457,-0.849015772342682,-0.020961876958609,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_010", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000085980410,0.346751719713211,-0.937956988811493,0.000000000000000,0.000000079321289,-0.937956988811493,-0.346751719713211,0.000000000000000,-1.000000238418579,-0.000000104213726,0.000000000000000,0.000000000000000,-1.087051749229431,0.007205841597170,-0.077062189579010,1.000000000000000
+		TransformLink: -0.000000036136282,-0.999999761581421,-0.000000097747957,0.000000000000000,0.346751719713211,-0.000000104213782,0.937956929206848,0.000000000000000,-0.937956929206848,0.000000053141111,0.346751719713211,0.000000000000000,0.002159136813134,-0.937999248504639,-0.020961880683899,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_011", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: 0.000000025653781,-1.000000119209290,0.000000029802326,0.000000000000000,-0.000000018426670,0.000000029802326,1.000000119209290,0.000000000000000,-1.000000357627869,-0.000000075497915,0.000000000000001,0.000000000000000,-1.182189583778381,-0.074779793620110,0.019962573423982,1.000000000000000
+		TransformLink: 0.000000075497894,-0.999999701976776,0.000000000000001,0.000000000000000,-0.999999940395355,-0.000000025653772,-0.000000029802322,0.000000000000000,0.000000029802322,-0.000000018426665,-0.999999940395355,0.000000000000000,0.002159135881811,-1.033137083053589,-0.020961882546544,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_013", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: 0.000000025560102,-1.000000000000000,0.000000023686715,0.000000000000000,0.569407761096954,0.000000034025906,0.822055220603943,0.000000000000000,-0.822055399417877,-0.000000057368545,0.569407880306244,0.000000000000000,-1.355165719985962,-0.074779786169529,0.701837301254272,1.000000000000000
+		TransformLink: 0.000000066534710,-0.822054982185364,-0.569407761096954,0.000000000000000,-0.999999940395355,-0.000000007524413,-0.000000034025906,0.000000000000000,-0.000000004694915,0.569407641887665,-0.822055160999298,0.000000000000000,0.002159135881811,-1.364600181579590,-0.235617309808731,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_012", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: -0.000000117197061,1.000000119209290,0.000001103059958,0.000000000000000,-0.562571704387665,0.000000846021408,-0.826748490333557,0.000000000000000,-0.826748430728912,-0.000000667598897,0.562572002410889,0.000000000000000,-1.386261463165283,0.074778884649277,0.659516274929047,1.000000000000000
+		TransformLink: -0.000000075988439,-0.826748371124268,0.562571942806244,0.000000000000000,0.999999940395355,-0.000000717442674,-0.000000846021123,0.000000000000000,0.000001075018872,0.562571644783020,0.826748311519623,0.000000000000000,0.002159135881811,-1.368062496185303,0.193693548440933,1.000000000000000
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_0", "Cluster" {
+		Version: 100
+		MultiLayer: 0
+		Type: "Cluster"
+		Properties60:  {
+			Property: "SrcModel", "object", ""
+			Property: "SrcModelReference", "object", ""
+		}
+		UserData: "", ""
+		Indexes: 
+		Weights: 
+		Transform: 0.000000075497901,-1.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,-1.000000000000000,0.000000000000000,1.000000000000000,0.000000075497901,0.000000000000000,0.000000000000000,3.543718576431274,-0.076938599348068,-0.040924616158009,1.000000000000000
+		TransformLink: 0.000000075497901,1.000000000000000,0.000000000000000,0.000000000000000,-1.000000000000000,0.000000075497901,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,1.000000000000000,0.000000000000000,-0.000000033717480,-3.394666433334351,0.000000164772572,1.000000000000000
+	}
 	Deformer: "Deformer::Skin egg", "Skin" {
 		Version: 100
 		MultiLayer: 0
@@ -9681,7 +10196,7 @@ Objects:  {
 		Version: 100
 		Properties60:  {
 		}
-		NbPoseNodes: 26
+		NbPoseNodes: 27
 		PoseNode:  {
 			Node: "Model::Armature"
 			Matrix: 1.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,-1.000000000000000,0.000000000000000,0.000000000000000,1.000000000000000,0.000000000000000,0.000000000000000,0.002159151015803,-0.137709796428680,-0.020961841568351,1.000000000000000
@@ -9693,6 +10208,10 @@ Objects:  {
 		PoseNode:  {
 			Node: "Model::Cylinder"
 			Matrix: 0.000000075497901,0.000000000000000,-1.000000000000000,0.000000000000000,-1.000000000000000,0.000000000000000,-0.000000075497901,0.000000000000000,0.000000000000000,1.000000000000000,0.000000000000000,0.000000000000000,0.002159158000723,-0.137709766626358,-0.020961819216609,1.000000000000000
+		}
+		PoseNode:  {
+			Node: "Model::_screen"
+			Matrix: 0.000000075497901,0.000000000000000,-1.000000000000000,0.000000000000000,-1.000000000000000,0.000000000000000,-0.000000075497901,0.000000000000000,0.000000000000000,1.000000000000000,0.000000000000000,0.000000000000000,0.076938830316067,0.149052172899246,-0.040924452245235,1.000000000000000
 		}
 		PoseNode:  {
 			Node: "Model::egg"
@@ -9811,6 +10330,8 @@ Relations:  {
 	}
 	Model: "Model::Cylinder", "Mesh" {
 	}
+	Model: "Model::_screen", "Mesh" {
+	}
 	Model: "Model::egg", "Mesh" {
 	}
 	Model: "Model::root", "Limb" {
@@ -9887,6 +10408,8 @@ Relations:  {
 	}
 	Material: "Material::m_rope", "" {
 	}
+	Material: "Material::m_screen__Untitled_007", "" {
+	}
 	Material: "Material::unnamed", "" {
 	}
 	Texture: "Texture::Untitled", "TextureVideoClip" {
@@ -9915,49 +10438,93 @@ Relations:  {
 	}
 	Deformer: "Deformer::Skin Cylinder", "Skin" {
 	}
+	Deformer: "Deformer::Skin _screen", "Skin" {
+	}
 	Deformer: "Deformer::Skin egg", "Skin" {
 	}
 	Deformer: "SubDeformer::Cluster Cylinder root", "Cluster" {
 	}
+	Deformer: "SubDeformer::Cluster _screen root", "Cluster" {
+	}
 	Deformer: "SubDeformer::Cluster Cylinder root_001", "Cluster" {
+	}
+	Deformer: "SubDeformer::Cluster _screen root_001", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster Cylinder root_004", "Cluster" {
 	}
+	Deformer: "SubDeformer::Cluster _screen root_004", "Cluster" {
+	}
 	Deformer: "SubDeformer::Cluster Cylinder root_002", "Cluster" {
+	}
+	Deformer: "SubDeformer::Cluster _screen root_002", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster Cylinder root_005", "Cluster" {
 	}
+	Deformer: "SubDeformer::Cluster _screen root_005", "Cluster" {
+	}
 	Deformer: "SubDeformer::Cluster Cylinder root_003", "Cluster" {
+	}
+	Deformer: "SubDeformer::Cluster _screen root_003", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster Cylinder root_006", "Cluster" {
 	}
+	Deformer: "SubDeformer::Cluster _screen root_006", "Cluster" {
+	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone", "Cluster" {
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_002", "Cluster" {
 	}
+	Deformer: "SubDeformer::Cluster _screen Bone_002", "Cluster" {
+	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_001", "Cluster" {
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_001", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_003", "Cluster" {
 	}
+	Deformer: "SubDeformer::Cluster _screen Bone_003", "Cluster" {
+	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_007", "Cluster" {
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_007", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_005", "Cluster" {
 	}
+	Deformer: "SubDeformer::Cluster _screen Bone_005", "Cluster" {
+	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_009", "Cluster" {
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_009", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_004", "Cluster" {
 	}
+	Deformer: "SubDeformer::Cluster _screen Bone_004", "Cluster" {
+	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_008", "Cluster" {
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_008", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_006", "Cluster" {
 	}
+	Deformer: "SubDeformer::Cluster _screen Bone_006", "Cluster" {
+	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_010", "Cluster" {
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_010", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_011", "Cluster" {
 	}
+	Deformer: "SubDeformer::Cluster _screen Bone_011", "Cluster" {
+	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_013", "Cluster" {
 	}
+	Deformer: "SubDeformer::Cluster _screen Bone_013", "Cluster" {
+	}
 	Deformer: "SubDeformer::Cluster Cylinder Bone_012", "Cluster" {
+	}
+	Deformer: "SubDeformer::Cluster _screen Bone_012", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster egg Bone_0", "Cluster" {
 	}
@@ -9968,6 +10535,7 @@ Relations:  {
 
 Connections:  {
 	Connect: "OO", "Model::Cylinder", "Model::Scene"
+	Connect: "OO", "Model::_screen", "Model::Scene"
 	Connect: "OO", "Model::egg", "Model::Scene"
 	Connect: "OO", "Model::Armature", "Model::Scene"
 	Connect: "OO", "Model::Armature_001", "Model::Scene"
@@ -9978,6 +10546,7 @@ Connections:  {
 	Connect: "OO", "Material::m_drone__Untitled_004", "Model::Cylinder"
 	Connect: "OO", "Material::m_propeller_track__Untitled_007", "Model::Cylinder"
 	Connect: "OO", "Material::m_rope", "Model::Cylinder"
+	Connect: "OO", "Material::m_screen__Untitled_007", "Model::_screen"
 	Connect: "OO", "Material::unnamed", "Model::egg"
 	Connect: "OO", "Texture::Untitled", "Model::Cylinder"
 	Connect: "OO", "Texture::Untitled_002", "Model::Cylinder"
@@ -9985,6 +10554,7 @@ Connections:  {
 	Connect: "OO", "Texture::Untitled_004", "Model::Cylinder"
 	Connect: "OO", "Texture::Untitled_005", "Model::Cylinder"
 	Connect: "OO", "Texture::Untitled_007", "Model::Cylinder"
+	Connect: "OO", "Texture::Untitled_007", "Model::_screen"
 	Connect: "OO", "Video::Untitled", "Texture::Untitled"
 	Connect: "OO", "Video::Untitled_002", "Texture::Untitled_002"
 	Connect: "OO", "Video::Untitled_003", "Texture::Untitled_003"
@@ -9992,50 +10562,93 @@ Connections:  {
 	Connect: "OO", "Video::Untitled_005", "Texture::Untitled_005"
 	Connect: "OO", "Video::Untitled_007", "Texture::Untitled_007"
 	Connect: "OO", "Deformer::Skin Cylinder", "Model::Cylinder"
+	Connect: "OO", "Deformer::Skin _screen", "Model::_screen"
 	Connect: "OO", "Deformer::Skin egg", "Model::egg"
 	Connect: "OO", "SubDeformer::Cluster Cylinder root", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen root", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder root_001", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen root_001", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder root_004", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen root_004", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder root_002", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen root_002", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder root_005", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen root_005", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder root_003", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen root_003", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder root_006", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen root_006", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_002", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_002", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_001", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_001", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_003", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_003", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_007", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_007", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_005", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_005", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_009", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_009", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_004", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_004", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_008", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_008", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_006", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_006", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_010", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_010", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_011", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_011", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_013", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_013", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_012", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster _screen Bone_012", "Deformer::Skin _screen"
 	Connect: "OO", "SubDeformer::Cluster egg Bone_0", "Deformer::Skin egg"
 	Connect: "OO", "Model::root", "SubDeformer::Cluster Cylinder root"
+	Connect: "OO", "Model::root", "SubDeformer::Cluster _screen root"
 	Connect: "OO", "Model::root_001", "SubDeformer::Cluster Cylinder root_001"
+	Connect: "OO", "Model::root_001", "SubDeformer::Cluster _screen root_001"
 	Connect: "OO", "Model::root_004", "SubDeformer::Cluster Cylinder root_004"
+	Connect: "OO", "Model::root_004", "SubDeformer::Cluster _screen root_004"
 	Connect: "OO", "Model::root_002", "SubDeformer::Cluster Cylinder root_002"
+	Connect: "OO", "Model::root_002", "SubDeformer::Cluster _screen root_002"
 	Connect: "OO", "Model::root_005", "SubDeformer::Cluster Cylinder root_005"
+	Connect: "OO", "Model::root_005", "SubDeformer::Cluster _screen root_005"
 	Connect: "OO", "Model::root_003", "SubDeformer::Cluster Cylinder root_003"
+	Connect: "OO", "Model::root_003", "SubDeformer::Cluster _screen root_003"
 	Connect: "OO", "Model::root_006", "SubDeformer::Cluster Cylinder root_006"
+	Connect: "OO", "Model::root_006", "SubDeformer::Cluster _screen root_006"
 	Connect: "OO", "Model::Bone", "SubDeformer::Cluster Cylinder Bone"
+	Connect: "OO", "Model::Bone", "SubDeformer::Cluster _screen Bone"
 	Connect: "OO", "Model::Bone_002", "SubDeformer::Cluster Cylinder Bone_002"
+	Connect: "OO", "Model::Bone_002", "SubDeformer::Cluster _screen Bone_002"
 	Connect: "OO", "Model::Bone_001", "SubDeformer::Cluster Cylinder Bone_001"
+	Connect: "OO", "Model::Bone_001", "SubDeformer::Cluster _screen Bone_001"
 	Connect: "OO", "Model::Bone_003", "SubDeformer::Cluster Cylinder Bone_003"
+	Connect: "OO", "Model::Bone_003", "SubDeformer::Cluster _screen Bone_003"
 	Connect: "OO", "Model::Bone_007", "SubDeformer::Cluster Cylinder Bone_007"
+	Connect: "OO", "Model::Bone_007", "SubDeformer::Cluster _screen Bone_007"
 	Connect: "OO", "Model::Bone_005", "SubDeformer::Cluster Cylinder Bone_005"
+	Connect: "OO", "Model::Bone_005", "SubDeformer::Cluster _screen Bone_005"
 	Connect: "OO", "Model::Bone_009", "SubDeformer::Cluster Cylinder Bone_009"
+	Connect: "OO", "Model::Bone_009", "SubDeformer::Cluster _screen Bone_009"
 	Connect: "OO", "Model::Bone_004", "SubDeformer::Cluster Cylinder Bone_004"
+	Connect: "OO", "Model::Bone_004", "SubDeformer::Cluster _screen Bone_004"
 	Connect: "OO", "Model::Bone_008", "SubDeformer::Cluster Cylinder Bone_008"
+	Connect: "OO", "Model::Bone_008", "SubDeformer::Cluster _screen Bone_008"
 	Connect: "OO", "Model::Bone_006", "SubDeformer::Cluster Cylinder Bone_006"
+	Connect: "OO", "Model::Bone_006", "SubDeformer::Cluster _screen Bone_006"
 	Connect: "OO", "Model::Bone_010", "SubDeformer::Cluster Cylinder Bone_010"
+	Connect: "OO", "Model::Bone_010", "SubDeformer::Cluster _screen Bone_010"
 	Connect: "OO", "Model::Bone_011", "SubDeformer::Cluster Cylinder Bone_011"
+	Connect: "OO", "Model::Bone_011", "SubDeformer::Cluster _screen Bone_011"
 	Connect: "OO", "Model::Bone_013", "SubDeformer::Cluster Cylinder Bone_013"
+	Connect: "OO", "Model::Bone_013", "SubDeformer::Cluster _screen Bone_013"
 	Connect: "OO", "Model::Bone_012", "SubDeformer::Cluster Cylinder Bone_012"
+	Connect: "OO", "Model::Bone_012", "SubDeformer::Cluster _screen Bone_012"
 	Connect: "OO", "Model::Bone_0", "SubDeformer::Cluster egg Bone_0"
 	Connect: "OO", "Model::root", "Model::Armature"
 	Connect: "OO", "Model::root_001", "Model::root"
