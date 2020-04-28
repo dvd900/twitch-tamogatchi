@@ -5,6 +5,8 @@ using System;
 
 public class Planner : MonoBehaviour {
 
+    public static Planner Instance;
+
     [SerializeField] private Skin _pet;
     [SerializeField] private float _planDelay;
 
@@ -19,7 +21,34 @@ public class Planner : MonoBehaviour {
     // DEBUG
     private List<string> _DEBUG_LastScores;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start() {
+        if(_pet != null)
+        {
+            SetPet(_pet);
+        }
+    }
+
+    void Update() {
+        if(_pet == null)
+        {
+            return;
+        }
+
+        _planTimer -= Time.deltaTime;
+        if(_planTimer < 0) {
+            _planTimer = _planDelay;
+            Plan();
+        }
+    }
+
+    public void SetPet(Skin pet)
+    {
+        _pet = pet;
         _actions = new List<AIAction>();
         _DEBUG_LastScores = new List<string>();
 
@@ -31,14 +60,6 @@ public class Planner : MonoBehaviour {
         _worldData = new AIWorldData(_pet);
 
         _lastAction = _actions[0];
-    }
-
-    void Update() {
-        _planTimer -= Time.deltaTime;
-        if(_planTimer < 0) {
-            _planTimer = _planDelay;
-            Plan();
-        }
     }
 
     private void Plan() {
