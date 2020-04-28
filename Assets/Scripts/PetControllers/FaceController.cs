@@ -98,27 +98,27 @@ public class FaceController : MonoBehaviour {
     }
 
     public void DoNormalEyes() {
-        SetEyeMats(_lEyeNormalMat, _rEyeNormalMat);
+        //SetEyeMats(_lEyeNormalMat, _rEyeNormalMat);
 
-        StartBlink();
+        //StartBlink();
     }
 
     public void DoDiscomfortEyes() {
-        StopBlink();
+        //StopBlink();
 
-        SetEyeMats(_lEyeOuchMat, _rEyeOuchMat);
+        //SetEyeMats(_lEyeOuchMat, _rEyeOuchMat);
     }
 
     public void DoClosedEyes() {
-        StopBlink();
+        //StopBlink();
 
-        SetEyeMats(_lEyeClosedMat, _rEyeClosedMat);
+        //SetEyeMats(_lEyeClosedMat, _rEyeClosedMat);
     }
 
     public void DoHappyClosedEyes() {
-        StopBlink();
+        //StopBlink();
 
-        SetEyeMats(_eyeHappyClosedMat, _eyeHappyClosedMat);
+        //SetEyeMats(_eyeHappyClosedMat, _eyeHappyClosedMat);
     }
 
     public void SetLookAt(Transform target) {
