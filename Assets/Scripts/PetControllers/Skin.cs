@@ -7,7 +7,7 @@ public class Skin : MonoBehaviour {
     public MovementController movementController;
     public ActionController actionController;
     public EmoteController emoteController;
-    public FaceController faceController;
+    public TangoSFXController sfxController;
     public StatsController statsController;
     public SpeechController speechController;
     public IKController ikController;

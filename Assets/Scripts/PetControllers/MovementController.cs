@@ -53,7 +53,6 @@ public class MovementController : MonoBehaviour
     public void StopWalking() {
         _navMeshAgent.SetDestination(transform.position);
         _skin.animator.SetBool("isIdle", true);
-        _skin.faceController.StopLookingAt();
         _isWalking = false;
     }
 

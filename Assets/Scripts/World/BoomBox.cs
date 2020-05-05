@@ -11,6 +11,11 @@ public class BoomBox : MonoBehaviour
 
     private bool _justToggled;
 
+    private void Start()
+    {
+        Toggle();
+    }
+
     private void Toggle()
     {
         if(IsOn)

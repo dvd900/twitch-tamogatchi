@@ -11,6 +11,9 @@ public class TangoSpawner : MonoBehaviour
     [SerializeField] private Transform _spawnTarget;
     [SerializeField] private Animator _animator;
 
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _fallOnGrassClip;
+
     private void Start()
     {
         Spawn();
@@ -19,6 +22,7 @@ public class TangoSpawner : MonoBehaviour
     public void Spawn()
     {
         _animator.SetTrigger("spawn");
+        _audioSource.Play();
     }
 
     private IEnumerator DoSpawnParticles()
@@ -46,10 +50,16 @@ public class TangoSpawner : MonoBehaviour
                 Planner.Instance.SetPet(skin);
             }
             skin.emoteController.SpawnCheer();
+            skin.sfxController.PlayLifeClip();
         }
         else
         {
             Debug.LogError("Could not find point on navmesh to spawn!!");
         }
+    }
+
+    public void AE_EggHitGround()
+    {
+        _audioSource.PlayOneShot(_fallOnGrassClip);
     }
 }

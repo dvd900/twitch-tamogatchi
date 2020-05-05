@@ -56,6 +56,7 @@ public class Planner : MonoBehaviour {
         _actions.Add(new WalkToAction(_pet));
         _actions.Add(new EatAction(_pet));
         _actions.Add(new IdleAction(_pet));
+        _actions.Add(new EmoteAction(_pet));
 
         _worldData = new AIWorldData(_pet);
 

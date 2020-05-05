@@ -9,6 +9,9 @@ public class ItemSpawner : MonoBehaviour
 
     [SerializeField] private GameObject[] _items;
     [SerializeField] private GameObject _dust;
+    [SerializeField] private AudioClip _itemHitGroundClip;
+    [SerializeField] private AudioClip _itemSpawnClip;
+    [SerializeField] private AudioSource _itemSFXSource;
 
     private void Awake() {
         singleton = this;
@@ -55,7 +58,7 @@ public class ItemSpawner : MonoBehaviour
 
         Vector3 itemPos = new Vector3(worldPos.x, worldPos.y, worldPos.z);
         if(itemPrefab.dropsIn) {
-            itemPos.y = itemPos.y + 30;
+            itemPos.y = itemPos.y + 40;
         } else {
             itemPos.y = itemPrefab.transform.position.y;
         }
@@ -73,6 +76,8 @@ public class ItemSpawner : MonoBehaviour
 
         iTween.RotateBy(clone.gameObject, iTween.Hash("amount", _items[spawnInd].transform.up,
             "time", 1f, "easetype", iTween.EaseType.easeOutSine));
+
+        _itemSFXSource.PlayOneShot(_itemSpawnClip);
     }
 
     public GameObject MakeDust() { 
@@ -82,6 +87,8 @@ public class ItemSpawner : MonoBehaviour
             Quaternion.Euler(new Vector3(90, 0, 0)), null) as GameObject;
 
         clone.transform.localScale = 2.0f * Vector3.one;
+
+        _itemSFXSource.PlayOneShot(_itemHitGroundClip);
 
         return clone;
     }

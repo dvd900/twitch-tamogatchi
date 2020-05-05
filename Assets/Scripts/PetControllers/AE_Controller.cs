@@ -18,6 +18,11 @@ public class AE_Controller : MonoBehaviour
         //_crumbs.Emit(3);
     }
 
+    public void AE_EmoteDone()
+    {
+        _skin.emoteController.EmoteDone();
+    }
+
     public void AE_StartSparkles()
     {
         _sparkles.Play();
@@ -40,6 +45,7 @@ public class AE_Controller : MonoBehaviour
         _skin.itemController.DoBiteItem();
         _crumbs.Emit(3);
         _crumbAnimator.SetTrigger("crumbs");
+        _skin.sfxController.PlayEatClip();
         //AnimeCrumbs.SetActive(true);
         //ac_crumbs.Play("animeCrumbs", 0, 0.23f);
     }
@@ -48,6 +54,7 @@ public class AE_Controller : MonoBehaviour
     {
         Debug.Log("AE put item in hadn");
         _skin.itemController.DoPutItemInHand();
+        _skin.sfxController.PlayPickUp();
     }
 
     public void AE_PickupDone()
