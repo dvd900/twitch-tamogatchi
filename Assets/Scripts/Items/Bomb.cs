@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bomb : MonoBehaviour
+public class Bomb : MonoBehaviour
 {
     public ParticleSystem explosion;
     public GameObject bomba;
@@ -11,14 +11,14 @@ public class bomb : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        explosion.Stop(true);
-        StartCoroutine(UnExplode(1f));
+        //explosion.Stop(true);
+        //StartCoroutine(UnExplode(1f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private IEnumerator UnExplode(float waitTime)
     {

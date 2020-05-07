@@ -55,24 +55,7 @@ public class PlayerInput : MonoBehaviour {
 
     private void DoEmote()
     {
-        switch (_emoteNum)
-        {
-            case 0:
-                _skin.emoteController.DiscomfortEmote();
-                break;
-            case 1:
-                _skin.emoteController.Wave();
-                break;
-            case 2:
-                _skin.emoteController.Cheer();
-                break;
-        }
-
-        _emoteNum++;
-        if (_emoteNum > 2)
-        {
-            _emoteNum = 0;
-        }
+        _skin.actionController.DoAction(new EmoteAction(_skin));
     }
 
     private void DoIdle() {

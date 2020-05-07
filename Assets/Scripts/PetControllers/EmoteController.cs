@@ -1,25 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum EmoteType
-{
-    None,
-    Wave,
-    Cheer,
-    Discomfort
-}
-
 public class EmoteController : MonoBehaviour {
     
     public bool IsDoingEmote
     {
-        get { return _currentEmote != EmoteType.None; }
+        get { return _isDoingEmote; }
     }
 
     private Skin _skin;
     
     private float _mouthTimer;
-    private EmoteType _currentEmote;
+    private bool _isDoingEmote;
 
     void Awake() {
         _skin = GetComponent<Skin>();
@@ -27,7 +19,7 @@ public class EmoteController : MonoBehaviour {
 
     public void EmoteDone()
     {
-        _currentEmote = EmoteType.None;
+        _isDoingEmote = false;
     }
 
     public void DiscomfortEmote() {
@@ -41,7 +33,7 @@ public class EmoteController : MonoBehaviour {
     }
 
     public void Cheer() {
-        _currentEmote = EmoteType.Cheer;
+        _isDoingEmote = true;
         _skin.movementController.StopWalking();
         _skin.movementController.FaceCamera();
         _skin.animator.SetTrigger("cheer");
@@ -49,20 +41,29 @@ public class EmoteController : MonoBehaviour {
 
     public void SpawnCheer()
     {
-        _currentEmote = EmoteType.Cheer;
+        _isDoingEmote = true;
         _skin.animator.SetTrigger("spawncheer");
     }
 
     public void Wave()
     {
-        _currentEmote = EmoteType.Wave;
+        _isDoingEmote = true;
         _skin.movementController.StopWalking();
         _skin.movementController.FaceCamera();
         _skin.animator.SetTrigger("wave");
     }
 
+    public void Dance()
+    {
+        _isDoingEmote = true;
+        _skin.movementController.StopWalking();
+        _skin.movementController.FaceCamera();
+        _skin.animator.SetTrigger("dance");
+    }
+
     public void ChewEmote()
     {
+        _isDoingEmote = true;
         _skin.animator.SetTrigger("chew");
     }
 

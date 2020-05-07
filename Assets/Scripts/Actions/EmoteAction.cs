@@ -5,12 +5,24 @@ using UnityEngine;
 
 public class EmoteAction : AIAction
 {
+    private static int LAST_EMOTE;
+
+    public enum EmoteType
+    {
+        Cheer,
+        Wave,
+        Dance
+    }
+
     private EmoteType _type;
 
     public EmoteAction(Skin skin) : base(skin)
     {
-        int emoteInd = UnityEngine.Random.Range(1, (int)Enum.GetValues(typeof(EmoteType)).Cast<EmoteType>().Max());
+        LAST_EMOTE = (LAST_EMOTE + 1) % ((int)Enum.GetValues(typeof(EmoteType)).Cast<EmoteType>().Max() + 1);
+        int emoteInd = LAST_EMOTE;
+        Debug.Log("Maxemote: " + (int)Enum.GetValues(typeof(EmoteType)).Cast<EmoteType>().Max());
         _type = (EmoteType)emoteInd;
+        Debug.Log("Made action with emote: " + emoteInd);
     }
 
     public EmoteAction(Skin skin, EmoteType type) : base(skin)
@@ -44,6 +56,9 @@ public class EmoteAction : AIAction
                 break;
             case EmoteType.Wave:
                 _skin.emoteController.Wave();
+                break;
+            case EmoteType.Dance:
+                _skin.emoteController.Dance();
                 break;
         }
     }
