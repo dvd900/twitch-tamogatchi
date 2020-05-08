@@ -39,6 +39,9 @@ ModelImporter:
   - first:
       74: 9205735806441642523
     second: anim_dance_2
+  - first:
+      74: 1265823224669533945
+    second: anim_damage
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -101,7 +104,7 @@ ModelImporter:
       takeName: anim_cheer
       internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 27.3
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -144,7 +147,7 @@ ModelImporter:
       takeName: anim_eat
       internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -180,7 +183,7 @@ ModelImporter:
       takeName: anim_Idle
       internalID: 0
       firstFrame: 0
-      lastFrame: 1.525
+      lastFrame: 61
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -209,7 +212,7 @@ ModelImporter:
       takeName: anim_grab
       internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 34
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -281,7 +284,7 @@ ModelImporter:
       takeName: anim_walk
       internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -310,7 +313,7 @@ ModelImporter:
       takeName: anim_wave
       internalID: 0
       firstFrame: 0
-      lastFrame: 1.55
+      lastFrame: 62
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -359,8 +362,8 @@ ModelImporter:
       name: anim_walk_3
       takeName: anim_walk_3
       internalID: 0
-      firstFrame: 0.04
-      lastFrame: 0.78
+      firstFrame: 1
+      lastFrame: 29.799997
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -388,8 +391,8 @@ ModelImporter:
       name: anim_dance_2
       takeName: anim_dance_2
       internalID: 0
-      firstFrame: 0.08
-      lastFrame: 1.63
+      firstFrame: 2
+      lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -416,6 +419,35 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: anim_damage
+      takeName: anim_damage2
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 71
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
