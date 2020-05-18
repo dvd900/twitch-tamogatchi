@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc3822cb97ac36429fbfb4cd8789bb5, type: 3}
   m_Name: VIDItemListsV32
   m_EditorClassIdentifier: 
-  autoItem: []
+  autoItem:
+  - itemName: Bomb
+    itemID: 387187299
+    itemIcon: {fileID: 0}
+    itemType: 0
+    _value: 0
   autoConsumable:
   - itemName: Apple
     itemID: 50413427
@@ -59,8 +64,8 @@ MonoBehaviour:
     _staminaMod: 20
     _hungerMod: 20
     _happinessMod: 20
-  usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb
-  typesOfUsedIDs: 0100000001000000010000000100000001000000
+  usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb63021417
+  typesOfUsedIDs: 010000000100000001000000010000000100000000000000
   subtypes: []
   typeGroups:
   - name: Items

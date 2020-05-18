@@ -19,6 +19,7 @@ namespace ItemSystem
 	public enum ItemItems
 	{
 		None = 0,
+		Bomb = 387187299,
 	}
 }//#VID-2ISNE
 
