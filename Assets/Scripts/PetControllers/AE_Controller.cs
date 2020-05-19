@@ -18,11 +18,6 @@ public class AE_Controller : MonoBehaviour
         //_crumbs.Emit(3);
     }
 
-    public void AE_EmoteDone()
-    {
-        _skin.emoteController.EmoteDone();
-    }
-
     public void AE_StartSparkles()
     {
         _sparkles.Play();

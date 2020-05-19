@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -49,6 +50,11 @@ public class TangoSpawner : MonoBehaviour
             {
                 Planner.Instance.SetPet(skin);
             }
+            if(StatsUI.Instance != null)
+            {
+                StatsUI.Instance.SetStatsController(skin.statsController);
+            }
+            skin.actionController.DoAction(new IdleAction(skin));
             skin.emoteController.SpawnCheer();
             skin.sfxController.PlayLifeClip();
         }

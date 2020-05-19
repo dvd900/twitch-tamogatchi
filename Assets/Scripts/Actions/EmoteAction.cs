@@ -7,13 +7,6 @@ public class EmoteAction : AIAction
 {
     private static int LAST_EMOTE;
 
-    public enum EmoteType
-    {
-        Cheer,
-        Wave,
-        Dance
-    }
-
     private EmoteType _type;
 
     public EmoteAction(Skin skin) : base(skin)
@@ -49,6 +42,7 @@ public class EmoteAction : AIAction
 
     public override void StartAction()
     {
+        Debug.Log("startign emote: " + _type);
         switch(_type)
         {
             case EmoteType.Cheer:

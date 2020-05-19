@@ -46,7 +46,8 @@ public class ItemSpawner : MonoBehaviour
     }
 
     public void SpawnRandomItem(Vector3 worldPos) {
-        SpawnItem(UnityEngine.Random.Range(0, _items.Length), worldPos);
+        //SpawnItem(UnityEngine.Random.Range(0, _items.Length), worldPos);
+        SpawnItem(_items.Length-1, worldPos);
     }
 
     public void SpawnItem(int spawnInd, Vector3 worldPos) {

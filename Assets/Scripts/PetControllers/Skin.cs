@@ -14,10 +14,12 @@ public class Skin : MonoBehaviour {
 
     public Animator animator;
 
-    new public SkinnedMeshRenderer renderer;
+    public SkinnedMeshRenderer bodyRend;
     public SkinnedMeshRenderer lEyeRend;
     public SkinnedMeshRenderer rEyeRend;
     public SkinnedMeshRenderer mouthRend;
+
+    public Transform rootBone;
 
     public DynamicBone spineBone;
     public DynamicBone lArmBone;

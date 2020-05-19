@@ -5,49 +5,63 @@ public class EmoteController : MonoBehaviour {
     
     public bool IsDoingEmote
     {
-        get { return _isDoingEmote; }
+        get { return _isDoingEmote || _startingEmote; }
     }
 
     private Skin _skin;
     
     private float _mouthTimer;
     private bool _isDoingEmote;
+    private bool _startingEmote;
 
     void Awake() {
         _skin = GetComponent<Skin>();
     }
 
-    public void EmoteDone()
+    public void EmoteStart()
     {
+        Debug.Log("EMOTE STATRTTT");
+        _startingEmote = false;
+        _isDoingEmote = true;
+    }
+
+    public void EmoteEnd()
+    {
+        Debug.Log("EMOTE DONE");
         _isDoingEmote = false;
     }
 
     public void DiscomfortEmote() {
+        _startingEmote = true;
         _skin.sfxController.PlayHitOnHeadClip();
-        //iTween.PunchScale(_skin.renderer.gameObject, iTween.Hash("amount",
-        //    new Vector3(0f, 0.2f, 0.2f), "time", _discomfortTime));
-        
+        _skin.animator.SetTrigger("ouchEyes");
+        //iTween.PunchScale(_skin.rootBone.gameObject, iTween.Hash("amount",
+        //    new Vector3(0f, 0.2f, 0.2f), "time", 1.0f));
+
         //_eyeTimer = _discomfortTime;
 
         Debug.Log("OW!!!");
     }
 
-    public void Cheer() {
-        _isDoingEmote = true;
+    public void Cheer()
+    {
+        _startingEmote = true;
         _skin.movementController.StopWalking();
         _skin.movementController.FaceCamera();
         _skin.animator.SetTrigger("cheer");
+        _skin.animator.SetTrigger("cheerEyes");
     }
 
     public void SpawnCheer()
     {
-        _isDoingEmote = true;
+        _startingEmote = true;
         _skin.animator.SetTrigger("spawncheer");
+        _skin.animator.SetTrigger("cheerEyes");
     }
 
     public void Wave()
     {
-        _isDoingEmote = true;
+        _startingEmote = true;
         _skin.movementController.StopWalking();
         _skin.movementController.FaceCamera();
         _skin.animator.SetTrigger("wave");
@@ -55,16 +69,25 @@ public class EmoteController : MonoBehaviour {
 
     public void Dance()
     {
-        _isDoingEmote = true;
+        _startingEmote = true;
         _skin.movementController.StopWalking();
         _skin.movementController.FaceCamera();
         _skin.animator.SetTrigger("dance");
+        _skin.animator.SetTrigger("danceEyes");
+    }
+
+    public void Bombed()
+    {
+        _startingEmote = true;
+        _skin.movementController.StopWalking();
+        _skin.animator.SetTrigger("bombed");
+        _skin.animator.SetTrigger("ouchEyes");
     }
 
     public void ChewEmote()
     {
-        _isDoingEmote = true;
         _skin.animator.SetTrigger("chew");
+        _skin.animator.SetTrigger("chewMouth");
     }
 
     private void Update() {
