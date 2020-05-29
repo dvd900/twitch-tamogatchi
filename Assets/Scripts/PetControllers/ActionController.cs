@@ -13,6 +13,8 @@ public class ActionController : MonoBehaviour {
     public AIAction currentAction { get { return _currentAction; } }
     private AIAction _currentAction;
 
+    public bool IsDying { get { return _currentAction is DeathAction; } }
+
     private Skin _skin;
 
     private void Start() {
@@ -23,6 +25,11 @@ public class ActionController : MonoBehaviour {
 
 
     public void DoAction(AIAction action) {
+        if(IsDying && !(action is DeathAction))
+        {
+            return;
+        }
+
         if(_currentAction != null) {
             _currentAction.Interrupt();
             _currentAction.FinishAction();

@@ -29,6 +29,7 @@ namespace UI {
         private void Update() {
             if(_lastHealth != _stats.health)
             {
+
                 //LeanTween.scale(avatarScale, new Vector3(1.7f, 1.7f, 1.7f), 5f).setEase(LeanTweenType.easeOutBounce);
                 UpdateHealth(_stats.health / 100.0f);
                 _lastHealth = _stats.health;
@@ -38,7 +39,9 @@ namespace UI {
         }
 
         private void UpdateHealth(float p) {
-            _heartIcon.localScale = new Vector3(p, p, p);
+
+            LeanTween.scale(_heartIcon.gameObject, new Vector3(p, p, p), .5f).setEaseInOutElastic();
+            //_heartIcon.localScale = new Vector3(p, p, p);
         }
 
         private void UpdateEnergy(float p) {
