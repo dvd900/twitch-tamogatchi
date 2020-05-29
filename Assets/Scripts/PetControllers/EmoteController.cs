@@ -3,6 +3,12 @@ using System.Collections;
 
 public class EmoteController : MonoBehaviour {
     
+    public static void ClearEyeTriggers(Animator animator)
+    {
+        animator.ResetTrigger("ouchEyes");
+        animator.ResetTrigger("bombedEyes");
+    }
+
     public bool IsDoingEmote
     {
         get { return _isDoingEmote || _startingEmote; }
@@ -81,7 +87,16 @@ public class EmoteController : MonoBehaviour {
         _startingEmote = true;
         _skin.movementController.StopWalking();
         _skin.animator.SetTrigger("bombed");
-        _skin.animator.SetTrigger("ouchEyes");
+        _skin.animator.SetTrigger("bombedEyes");
+    }
+
+    public void DieEmote()
+    {
+        _startingEmote = true;
+        _skin.movementController.StopWalking();
+        _skin.movementController.FaceCamera();
+        _skin.animator.SetTrigger("death");
+        _skin.animator.SetTrigger("deathEyes");
     }
 
     public void ChewEmote()

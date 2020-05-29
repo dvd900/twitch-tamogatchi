@@ -29,7 +29,9 @@ namespace UI {
         private void Update() {
             if(_lastHealth != _stats.health)
             {
+                //LeanTween.scale(avatarScale, new Vector3(1.7f, 1.7f, 1.7f), 5f).setEase(LeanTweenType.easeOutBounce);
                 UpdateHealth(_stats.health / 100.0f);
+                _lastHealth = _stats.health;
             }
             UpdateEnergy(_stats.stamina / 100.0f);
             UpdateHunger(_stats.hunger / 100.0f);

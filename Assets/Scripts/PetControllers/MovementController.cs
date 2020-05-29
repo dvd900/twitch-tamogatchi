@@ -47,7 +47,7 @@ public class MovementController : MonoBehaviour
 
     public void FaceCamera()
     {
-        LookAtPosition(LevelRefs.singleton.worldCam.transform.position);
+        LookAtPosition(LevelRefs.Instance.WorldCam.transform.position);
     }
 
     public void StopWalking() {

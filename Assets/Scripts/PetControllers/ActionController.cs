@@ -35,7 +35,6 @@ public class ActionController : MonoBehaviour {
     }
 
     private void Update() {
-
         if(_currentAction != null) {
             _currentAction.UpdateAction();
 

@@ -13,17 +13,16 @@ public class MessengerBehavior : WebSocketBehavior {
 	protected override void OnMessage (MessageEventArgs e) {
 
         MessengerServer.MsgWrapper wrapper = JsonUtility.FromJson<MessengerServer.MsgWrapper>(e.Data);
-
         MessengerServer.singleton.HandleMessage(wrapper);
     }
 }
-
 
 public class MessengerServer : MonoBehaviour {
 
     public class MsgWrapper {
         public int messageInd;
         public string data;
+        
     }
 
     public static MessengerServer singleton;

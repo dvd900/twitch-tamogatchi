@@ -2,12 +2,13 @@
 using System.Collections;
 
 public class LevelRefs : MonoBehaviour {
-    public static LevelRefs singleton;
+    public static LevelRefs Instance;
 
-    public Camera worldCam;
-    public Camera screenCam;
+    public Camera WorldCam;
+    public Camera ScreenCam;
+    public TangoSpawner Spawner;
 
     private void Awake() {
-        singleton = this;
+        Instance = this;
     }
 }

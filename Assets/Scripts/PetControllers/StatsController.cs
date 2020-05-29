@@ -50,11 +50,14 @@ public class StatsController : MonoBehaviour {
     public float happiness { get { return _happiness; } }
     private float _happiness;
 
+    private Skin _skin;
+
     private void Start() {
         _stamina = 100;
         _health = 100;
         _happiness = 100;
         _hunger = 0;
+        _skin = GetComponent<Skin>();
     }
 
     public void AddStamina(float x) {
@@ -63,6 +66,10 @@ public class StatsController : MonoBehaviour {
 
     public void AddHealth(float x) {
         AddStat(x, ref _health);
+        if(_health <= 0)
+        {
+            _skin.actionController.DoAction(new DeathAction(_skin));    
+        }
     }
 
     public void AddHunger(float x) {

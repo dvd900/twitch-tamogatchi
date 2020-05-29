@@ -17,7 +17,7 @@ public class TangoSpawner : MonoBehaviour
 
     private void Start()
     {
-        Spawn();
+        //Spawn();
     }
 
     public void Spawn()

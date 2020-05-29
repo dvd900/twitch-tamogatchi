@@ -24,7 +24,8 @@ public class Bomb : MonoBehaviour
     private IEnumerator WaitAndExplode(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-
+        explosion.transform.SetParent(null);
+        explosion.transform.rotation = Quaternion.identity;
         explosion.gameObject.SetActive(true);
         explosion.time = 0;
         explosion.Play();
@@ -52,6 +53,7 @@ public class Bomb : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);
         Destroy(gameObject);
+        Destroy(explosion.gameObject);
     }
 
     private Collider[] BombCast(SphereCollider collider)

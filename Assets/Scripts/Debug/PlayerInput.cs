@@ -71,7 +71,7 @@ public class PlayerInput : MonoBehaviour {
     }
 
     private void DoClick(Vector2 viewPos) {
-        Ray ray = LevelRefs.singleton.worldCam.ViewportPointToRay(viewPos);
+        Ray ray = LevelRefs.Instance.WorldCam.ViewportPointToRay(viewPos);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000f, _clickLayerMask))
         {
