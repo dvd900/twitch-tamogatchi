@@ -18,7 +18,7 @@ public class rotateHandler : MonoBehaviour {
 
 	// Update is called once per frame
 
-#if UNITY_EDITOR
+
 	void OnGUI() {
 		if (down == true) {
 			transform.Rotate (Vector3.down * (1 / 60.0f) * speed);
@@ -36,28 +36,7 @@ public class rotateHandler : MonoBehaviour {
 			transform.Rotate (Vector3.back * (1 / 60.0f) * speed);
 		}
 	}
-
-#else
-	#if !UNITY_STANDALONE_LINUX || UNITY_EDITOR_OSX
 	void Update () {
-		if (down == true) {
-			transform.Rotate (Vector3.down * WizTime.deltaTime * speed);
-		} else if (up == true) {
-			transform.Rotate (Vector3.up * WizTime.deltaTime * speed);
-		}
-		if (left == true) {
-			transform.Rotate (Vector3.left * WizTime.deltaTime * speed);
-		} else if (right == true) {
-			transform.Rotate (Vector3.right * WizTime.deltaTime * speed);
-		}
-		if (forward == true) {
-			transform.Rotate (Vector3.forward * WizTime.deltaTime * speed);
-		} else if (back == true) {
-			transform.Rotate (Vector3.back * WizTime.deltaTime * speed);
-		}
+
 	}
-	#endif
-#endif
-
-
 }

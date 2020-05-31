@@ -14,9 +14,9 @@ public class SpeechController : MonoBehaviour {
         MessengerServer.singleton.SetHandler(NetMsgInds.SpeechMessage, OnSpeechMessage);
     }
 
-    private void OnSpeechMessage(NetMsg msg) {
-        SpeechMessage speechMessage = (SpeechMessage)msg;
-        Speak(speechMessage.msg);
+    private void OnSpeechMessage(string msg) {
+        //SpeechMessage speechMessage = (SpeechMessage)msg;
+        //Speak(speechMessage.msg);
     }
 
     public void Speak(string text) {

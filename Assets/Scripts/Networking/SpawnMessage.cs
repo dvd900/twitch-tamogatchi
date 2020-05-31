@@ -2,6 +2,6 @@
 using System.Collections;
 
 public class SpawnMessage : NetMsg {
-    public int itemInd;
+    public int itemId;
     public float x,y;
 }

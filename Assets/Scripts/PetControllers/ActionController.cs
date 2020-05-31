@@ -19,8 +19,6 @@ public class ActionController : MonoBehaviour {
 
     private void Start() {
         _skin = GetComponent<Skin>();
-
-        MessengerServer.singleton.SetHandler(NetMsgInds.IdleMessage, OnIdleMsg);
     }
 
 

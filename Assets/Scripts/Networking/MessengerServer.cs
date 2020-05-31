@@ -4,25 +4,23 @@ using System.Collections.Generic;
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
-public delegate void OnNetMsg(NetMsg msg);
+public delegate void OnNetMsg(string msg);
 
 public class MessengerBehavior : WebSocketBehavior {
 
     public MessengerBehavior() { }
 
 	protected override void OnMessage (MessageEventArgs e) {
-
-        MessengerServer.MsgWrapper wrapper = JsonUtility.FromJson<MessengerServer.MsgWrapper>(e.Data);
-        MessengerServer.singleton.HandleMessage(wrapper);
+        MessengerServer.singleton.HandleMessage(e.Data);
     }
 }
+
 
 public class MessengerServer : MonoBehaviour {
 
     public class MsgWrapper {
         public int messageInd;
         public string data;
-        
     }
 
     public static MessengerServer singleton;
@@ -32,13 +30,13 @@ public class MessengerServer : MonoBehaviour {
 	public WebSocketServer m_server;
 
     private Dictionary<int, OnNetMsg> msgHandlers;
-    private Queue<MsgWrapper> msgQueue;
+    private Queue<string> msgQueue;
 
 	void Awake() {
 		singleton = this;
 
         msgHandlers = new Dictionary<int, OnNetMsg>();
-        msgQueue = new Queue<MsgWrapper>();
+        msgQueue = new Queue<string>();
 	}
 
 	void Start() {
@@ -47,7 +45,7 @@ public class MessengerServer : MonoBehaviour {
 		m_server.Start ();
 	}
 
-    public void HandleMessage(MsgWrapper msg) {
+    public void HandleMessage(string msg) {
         msgQueue.Enqueue(msg);
     }
 
@@ -65,12 +63,10 @@ public class MessengerServer : MonoBehaviour {
         }
 
         while (msgQueue.Count != 0) {
-            MsgWrapper wrapper = msgQueue.Dequeue();
-
-            if(msgHandlers[wrapper.messageInd] != null) {
-                NetMsg msg = JsonUtility.FromJson<NetMsg>(wrapper.data);
-                msgHandlers[wrapper.messageInd](msg);
-            }
+            string message = msgQueue.Dequeue();
+            int messageInd = int.Parse(message.Split('_')[0]);
+            message = message.Remove(0,message.IndexOf('_')+1);
+            msgHandlers[messageInd](message);
         }
     }
 
