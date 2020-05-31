@@ -20,7 +20,6 @@ public class ItemSpawner : MonoBehaviour
     void Start() {
 
         MessengerServer.singleton.SetHandler(NetMsgInds.SpawnMessage, OnSpawnMessage);
-        MessengerServer.singleton.SetHandler(NetMsgInds.ClickMessage, OnClickMessage);
     }
 
     private void OnClickMessage(NetMsg msg) {
@@ -30,9 +29,11 @@ public class ItemSpawner : MonoBehaviour
 
     }
 
-    private void OnSpawnMessage(NetMsg msg) {
-        SpawnMessage spawnMsg = (SpawnMessage)msg;
-        SpawnItem(spawnMsg.itemInd, CoordsUtils.ViewToWorldPos(new Vector3(spawnMsg.x, spawnMsg.y, 0)));
+    private void OnSpawnMessage(string msg) {
+        Debug.Log(msg + "msg");
+        SpawnMessage spawnMsg = JsonUtility.FromJson<SpawnMessage>(msg);
+        Debug.Log(spawnMsg + "spwn");
+        SpawnItem(spawnMsg.itemId, CoordsUtils.ViewToWorldPos(new Vector3(spawnMsg.x, spawnMsg.y, 0)));
     }
 
     void Update() {
