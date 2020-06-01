@@ -258,7 +258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &28797625
 Transform:
   m_ObjectHideFlags: 0
@@ -5856,7 +5856,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 1658363419}
+  m_Cookie: {fileID: 1503977822}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -26848,7 +26848,7 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5003278, y: -0.4783927, z: 0.5003558}
+    Position: {x: -0.5003291, y: -0.4783927, z: 0.5003573}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -45282,7 +45282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476694866}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 362.59772, y: -0.0000014305115, z: 4.199234}
+  m_LocalPosition: {x: 329.68753, y: -0.0000014305115, z: 63.378906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1536714967}
@@ -45395,6 +45395,41 @@ Transform:
   m_Father: {fileID: 4019544}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &1503977822
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &1507678129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55722,12 +55757,12 @@ MonoBehaviour:
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5001807, y: -0.4783927, z: -0.500388}
+    Position: {x: -0.5001807, y: -0.4783927, z: -0.5003895}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
   - Selected: 0
-    Position: {x: -0.5004005, y: -0.4783927, z: 0.5001414}
+    Position: {x: -0.5004019, y: -0.4783927, z: 0.5001414}
     OverrideWidth: 0
     CustomWidth: 2
     Active: 1
@@ -55806,41 +55841,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 210925613}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1658363419
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 57
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!4 &1687474901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3982746128853783103, guid: 2361d72d750e9459b82c572452c71c3d,
@@ -66747,7 +66747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - {fileID: 5449372084360845711, guid: 97e8065df8a6548ceb502899c523d3b9, type: 3}
-  - {fileID: 2743892668924431484, guid: ac985dff3c2444e299a1856c91a1963a, type: 3}
+  - {fileID: 502443792744257097, guid: ddfda0587d3b74ba38a1134ec8d1a695, type: 3}
   - {fileID: 321512973556274465, guid: 2216722b3640e4cb0b625aa9592e741d, type: 3}
   - {fileID: 7311390224345235806, guid: e3788238168db4f048d42f07b2519c13, type: 3}
   - {fileID: 8822956205442739575, guid: 6e6a6d0e1653a4f638a9e15753efe350, type: 3}
