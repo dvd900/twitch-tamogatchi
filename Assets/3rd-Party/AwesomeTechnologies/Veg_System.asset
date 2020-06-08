@@ -26,14 +26,14 @@ MonoBehaviour:
     VegetationType: 0
     VegetationRenderType: 2
     VegetationScaleType: 0
-    MinScale: 4
-    MaxScale: 6
-    MinVectorScale: {x: 0.8, y: 0.8, z: 0.8}
-    MaxVectorScale: {x: 1.2, y: 1.2, z: 1.2}
+    MinScale: 7
+    MaxScale: 7
+    MinVectorScale: {x: 4, y: 4, z: 4}
+    MaxVectorScale: {x: 4, y: 4, z: 4}
     UseAutomaticDensityScale: 0
     LodIndex: 2
     Seed: 34
-    LODFactor: 5.6
+    LODFactor: 9.4
     DisableLOD: 0
     DisableShadows: 1
     VegetationTumbnail: {fileID: 0}
@@ -649,13 +649,13 @@ MonoBehaviour:
     MaxCurveHeight: 1000
     AutomaticCurveMaxHeight: 1
     MinimumHeight: -500
-    MaximumHeight: 100
+    MaximumHeight: 4289.4736
     UseHeightLevel: 1
     UseAngle: 1
     RandomizePosition: 1
     RandomPositionRelativeDistance: 1
     Offset: {x: 0, y: 0, z: 0}
-    RotationOffset: {x: -0, y: 0, z: 0}
+    RotationOffset: {x: 0, y: 0, z: 0}
     Rotation: 3
     UsePerlinMask: 1
     PerlinCutoff: 0.43
