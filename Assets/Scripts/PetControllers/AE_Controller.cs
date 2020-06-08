@@ -58,4 +58,9 @@ public class AE_Controller : MonoBehaviour
         _skin.itemController.DoPickupDone();
     }
 
+    public void AE_StepSFX()
+	{
+		_skin.sfxController.PlayStepClip();
+	}
+
 }
