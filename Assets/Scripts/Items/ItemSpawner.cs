@@ -79,7 +79,8 @@ public class ItemSpawner : MonoBehaviour
         iTween.RotateBy(clone.gameObject, iTween.Hash("amount", _items[spawnInd].transform.up,
             "time", 1f, "easetype", iTween.EaseType.easeOutSine));
 
-        _itemSFXSource.PlayOneShot(_itemSpawnClip);
+		_itemSFXSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
+        _itemSFXSource.PlayOneShot(_itemSpawnClip,0.2f);
     }
 
     public GameObject MakeDust() { 
@@ -90,7 +91,8 @@ public class ItemSpawner : MonoBehaviour
 
         clone.transform.localScale = 2.0f * Vector3.one;
 
-        _itemSFXSource.PlayOneShot(_itemHitGroundClip);
+        _itemSFXSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
+		_itemSFXSource.PlayOneShot(_itemHitGroundClip,0.5f);
 
         return clone;
     }

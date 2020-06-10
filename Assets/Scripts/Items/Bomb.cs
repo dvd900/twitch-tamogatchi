@@ -7,7 +7,7 @@ public class Bomb : MonoBehaviour
     public ParticleSystem explosion;
     public GameObject bomba;
     public AudioSource aSource;
-    public AudioClip aClip;
+    public AudioClip boomCloseHit, boomFar, fuse;
     public Renderer fuseRend;
 
     public float closeDamage;
@@ -18,6 +18,8 @@ public class Bomb : MonoBehaviour
     
     void Start()
     {
+		aSource.volume = 0.1f;
+		aSource.PlayOneShot(fuse);
         StartCoroutine(WaitAndExplode(10.0f));
     }
 
@@ -29,17 +31,19 @@ public class Bomb : MonoBehaviour
         explosion.gameObject.SetActive(true);
         explosion.time = 0;
         explosion.Play();
-        aSource.pitch = Random.Range(0.8f, 1.1f);
-        aSource.PlayOneShot(aClip, 1f);
-        bomba.SetActive(false);
-        
-        var hits = BombCast(smallRange);
+		aSource.Stop();
+		aSource.pitch = Random.Range(0.8f, 1.1f);
+		bomba.SetActive(false);
+
+		var hits = BombCast(smallRange);
         if (hits.Length > 0)
         {
             var skin = hits[0].GetComponentInParent<Skin>();
             skin.emoteController.Bombed();
             skin.statsController.AddHealth(-closeDamage);
-        }
+			aSource.volume = 0.75f;
+			aSource.PlayOneShot(boomCloseHit, 0.75f);
+		}
         else
         {
             hits = BombCast(bigRange);
@@ -48,7 +52,14 @@ public class Bomb : MonoBehaviour
                 var skin = hits[0].GetComponentInParent<Skin>();
                 skin.emoteController.DiscomfortEmote();
                 skin.statsController.AddHealth(-farDamage);
-            }
+				aSource.volume = 1f;
+				aSource.PlayOneShot(boomFar,1f);
+			}
+			else
+			{
+				aSource.volume = 0.7f;
+				aSource.PlayOneShot(boomFar,0.7f);
+			}
         }
 
         yield return new WaitForSeconds(2.0f);

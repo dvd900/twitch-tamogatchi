@@ -62,5 +62,13 @@ public class AE_Controller : MonoBehaviour
 	{
 		_skin.sfxController.PlayStepClip();
 	}
+	public void AE_HurtSFX()
+	{
+		_skin.sfxController.PlayHurtClip();
+	}
+	public void AE_SquishSFX()
+	{
+		_skin.sfxController.PlayPickUp();
+	}
 
 }

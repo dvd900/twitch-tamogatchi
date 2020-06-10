@@ -5,11 +5,12 @@ public class TangoSFXController : MonoBehaviour
 {
     [SerializeField] private AudioSource _source;
 
-    [SerializeField] private AudioClip _pickupClip;
+    [SerializeField] private AudioClip[] _pickupClip;
     [SerializeField] private AudioClip _eatClip;
     [SerializeField] private AudioClip _hitOnHeadClip;
     [SerializeField] private AudioClip _lifeClip;
 	[SerializeField] private AudioClip _stepClip;
+	[SerializeField] private AudioClip[] _hurtClip;
 
 	private Skin _skin;
 
@@ -20,8 +21,8 @@ public class TangoSFXController : MonoBehaviour
 
     public void PlayPickUp()
     {
-        PlayClip(_pickupClip);
-    }
+		PlayClip(_pickupClip[UnityEngine.Random.Range(0, _pickupClip.Length)], new Vector2(1,1), new Vector2(0.9f,1.1f));
+	}
 
     public void PlayEatClip()
     {
@@ -41,8 +42,13 @@ public class TangoSFXController : MonoBehaviour
 	{
 		PlayClip(_stepClip, new Vector2(0.15f,0.25f), new Vector2(0.85f,1.2f));
 	}
+    public void PlayHurtClip()
+	{
+		PlayClip(_hurtClip[UnityEngine.Random.Range(0, _hurtClip.Length)],0.075f);
+	}
 
-    private void PlayClip(AudioClip clip)
+
+	private void PlayClip(AudioClip clip)
     {
         _source.PlayOneShot(clip);
     }

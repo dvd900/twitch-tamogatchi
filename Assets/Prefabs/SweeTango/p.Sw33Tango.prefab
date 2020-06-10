@@ -21825,10 +21825,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 8856160755865283926}
-  _pickupClip: {fileID: 8300000, guid: d5f76eb310cee984e8e4b51db85cb559, type: 3}
+  _pickupClip:
+  - {fileID: 8300000, guid: a35cb961034fe4fba940567ee0ae7fce, type: 3}
+  - {fileID: 8300000, guid: 1b710031b03c4444ba95b769378a6539, type: 3}
+  - {fileID: 8300000, guid: 5d37ed7a640bf4779b87156ab4d079a5, type: 3}
+  - {fileID: 8300000, guid: b3ebeb0900e844b30a0f5f6f31e84deb, type: 3}
+  - {fileID: 8300000, guid: 72f6577f61b094df4a56f85324e101a0, type: 3}
   _eatClip: {fileID: 8300000, guid: d53be2c2bd72c8c44accef849b872912, type: 3}
   _hitOnHeadClip: {fileID: 8300000, guid: 43b8756ad7d638342b3e32d6416919cb, type: 3}
   _lifeClip: {fileID: 8300000, guid: 67d325088acb7e54a92363ad1fc22bdb, type: 3}
+  _stepClip: {fileID: 8300000, guid: 628cf2d3c2b244624a7ef1996801348a, type: 3}
+  _hurtClip:
+  - {fileID: 8300000, guid: 08dcc2d9e2796422fa2a5a57dcc30532, type: 3}
+  - {fileID: 8300000, guid: acc5a79218aba44bbb28834bf5c8bf2a, type: 3}
+  - {fileID: 8300000, guid: 231ab9d489cc04089b590b2f1f2d49ed, type: 3}
 --- !u!82 &8856160755865283926
 AudioSource:
   m_ObjectHideFlags: 0

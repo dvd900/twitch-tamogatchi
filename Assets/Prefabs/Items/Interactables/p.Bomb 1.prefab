@@ -9697,7 +9697,9 @@ MonoBehaviour:
   explosion: {fileID: 502443793612703446}
   bomba: {fileID: 8491788755501822178}
   aSource: {fileID: 1194545200}
-  aClip: {fileID: 8300000, guid: 989605bded1401d47ad452f35e214306, type: 3}
+  boomCloseHit: {fileID: 8300000, guid: e2ecb03ecb9a34cb9b9ad0b34b4eb711, type: 3}
+  boomFar: {fileID: 8300000, guid: edf3ab7d852df4758b67eea513e4ee5e, type: 3}
+  fuse: {fileID: 8300000, guid: b7884c245687948f690248df0dd09362, type: 3}
   fuseRend: {fileID: 5567508334796499188}
   closeDamage: 70
   farDamage: 30
@@ -9713,7 +9715,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b7884c245687948f690248df0dd09362, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
