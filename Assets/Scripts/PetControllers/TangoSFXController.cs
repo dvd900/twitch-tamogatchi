@@ -5,12 +5,17 @@ public class TangoSFXController : MonoBehaviour
 {
     [SerializeField] private AudioSource _source;
 
-    [SerializeField] private AudioClip[] _pickupClip;
+  
     [SerializeField] private AudioClip _eatClip;
     [SerializeField] private AudioClip _hitOnHeadClip;
     [SerializeField] private AudioClip _lifeClip;
-	[SerializeField] private AudioClip _stepClip;
+	[SerializeField] private AudioClip _fallClip;
+	[SerializeField] private AudioClip _jumpClip;
+	[SerializeField] private AudioClip _deathClip;
+
 	[SerializeField] private AudioClip[] _hurtClip;
+	[SerializeField] private AudioClip[] _stepClip;
+	[SerializeField] private AudioClip[] _pickupClip;
 
 	private Skin _skin;
 
@@ -38,11 +43,25 @@ public class TangoSFXController : MonoBehaviour
     {
         PlayClip(_hitOnHeadClip);
     }
-    public void PlayStepClip()
+    public void PlayJumpClip()
 	{
-		PlayClip(_stepClip, new Vector2(0.15f,0.25f), new Vector2(0.85f,1.2f));
+		PlayClip(_jumpClip);
 	}
-    public void PlayHurtClip()
+	public void PlayDeathClip()
+	{
+		PlayClip(_deathClip);
+	}
+	public void PlayStepClip()
+	{
+		PlayClip(_stepClip[UnityEngine.Random.Range(0,_stepClip.Length)], new Vector2(0.9f,1f), new Vector2(0.85f,1.2f));
+	}
+
+	public void PlayFallClip()
+	{
+		PlayClip(_fallClip, new Vector2(0.35f, 0.45f), new Vector2(0.85f, 1.2f));
+	}
+
+	public void PlayHurtClip()
 	{
 		PlayClip(_hurtClip[UnityEngine.Random.Range(0, _hurtClip.Length)],0.075f);
 	}

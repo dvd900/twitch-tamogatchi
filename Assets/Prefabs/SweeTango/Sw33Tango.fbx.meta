@@ -140,6 +140,20 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.7916666
+        functionName: AE_FallSFX
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.2651515
+        functionName: AE_JumpSFX
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -458,7 +472,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.26136366
-        functionName: AE_StepSFX
+        functionName: AE_FallSFX
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -523,14 +537,21 @@ ModelImporter:
       curves: []
       events:
       - time: 0.19318181
-        functionName: AE_StepSFX
+        functionName: AE_FallSFX
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.21696971
+        functionName: AE_DeathSFX
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.9166667
-        functionName: AE_StepSFX
+        functionName: AE_FallSFX
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

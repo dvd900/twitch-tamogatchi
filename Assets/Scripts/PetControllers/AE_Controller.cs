@@ -62,6 +62,10 @@ public class AE_Controller : MonoBehaviour
 	{
 		_skin.sfxController.PlayStepClip();
 	}
+	public void AE_FallSFX()
+	{
+		_skin.sfxController.PlayFallClip();
+	}
 	public void AE_HurtSFX()
 	{
 		_skin.sfxController.PlayHurtClip();
@@ -69,6 +73,14 @@ public class AE_Controller : MonoBehaviour
 	public void AE_SquishSFX()
 	{
 		_skin.sfxController.PlayPickUp();
+	}
+	public void AE_JumpSFX()
+	{
+		_skin.sfxController.PlayJumpClip();
+	}
+    public void AE_DeathSFX()
+	{
+		_skin.sfxController.PlayDeathClip();
 	}
 
 }
