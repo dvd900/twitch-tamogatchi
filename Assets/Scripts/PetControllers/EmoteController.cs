@@ -86,7 +86,8 @@ public class EmoteController : MonoBehaviour {
     {
         _startingEmote = true;
         _skin.movementController.StopWalking();
-        _skin.animator.SetTrigger("bombed");
+		_skin.movementController.FaceCamera();
+		_skin.animator.SetTrigger("bombed");
         _skin.animator.SetTrigger("bombedEyes");
     }
 
