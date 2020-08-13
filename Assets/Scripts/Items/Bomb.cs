@@ -18,7 +18,7 @@ public class Bomb : MonoBehaviour
     
     void Start()
     {
-		aSource.volume = 0.1f;
+		aSource.volume = 0.05f;
 		aSource.PlayOneShot(fuse);
         StartCoroutine(WaitAndExplode(10.0f));
     }
