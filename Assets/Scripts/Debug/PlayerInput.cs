@@ -67,7 +67,7 @@ public class PlayerInput : MonoBehaviour {
     private void DoRightClick(Vector2 viewPos) {
         Vector3 worldPos = CoordsUtils.ViewToWorldPos(viewPos);
         //_itemSpawner.SpawnItem(3, worldPos);
-        _itemSpawner.SpawnRandomItem(worldPos);
+        _itemSpawner.SpawnRandomItem(worldPos, "local player");
     }
 
     private void DoClick(Vector2 viewPos) {

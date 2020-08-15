@@ -9,6 +9,7 @@ public class ItemSpawner : MonoBehaviour
 
     [SerializeField] private GameObject[] _items;
     [SerializeField] private GameObject _dust;
+    [SerializeField] private GameObject _nametagPrefab;
     [SerializeField] private AudioClip _itemHitGroundClip;
     [SerializeField] private AudioClip _itemSpawnClip;
     [SerializeField] private AudioSource _itemSFXSource;
@@ -25,33 +26,33 @@ public class ItemSpawner : MonoBehaviour
     private void OnClickMessage(NetMsg msg) {
         ClickMessage click = (ClickMessage)msg;
         Vector3 viewPos = new Vector3(click.x, click.y, 0);
-        SpawnRandomItem(CoordsUtils.ViewToWorldPos(viewPos));
+        SpawnRandomItem(CoordsUtils.ViewToWorldPos(viewPos), "click message");
 
     }
 
     private void OnSpawnMessage(string msg) {
         Debug.Log(msg + "msg");
         SpawnMessage spawnMsg = JsonUtility.FromJson<SpawnMessage>(msg);
-        Debug.Log(spawnMsg + "spwn");
-        SpawnItem(spawnMsg.itemId, CoordsUtils.ViewToWorldPos(new Vector3(spawnMsg.x, spawnMsg.y, 0)));
+        Debug.Log(spawnMsg + " spwn " + "username: " + spawnMsg.username);
+        SpawnItem(spawnMsg.itemId, CoordsUtils.ViewToWorldPos(new Vector3(spawnMsg.x, spawnMsg.y, 0)), spawnMsg.username);
     }
 
     void Update() {
         if(Input.GetButtonDown("Spawn")) {
-            SpawnItemAtRandomPos();
+            SpawnItemAtRandomPos("local player");
         }
     }
 
-    private void SpawnItemAtRandomPos() {
-        SpawnRandomItem(CoordsUtils.RandomWorldPointOnScreen());
+    private void SpawnItemAtRandomPos(string username) {
+        SpawnRandomItem(CoordsUtils.RandomWorldPointOnScreen(), username);
     }
 
-    public void SpawnRandomItem(Vector3 worldPos) {
-        SpawnItem(UnityEngine.Random.Range(0, _items.Length), worldPos);
+    public void SpawnRandomItem(Vector3 worldPos, string username) {
+        SpawnItem(UnityEngine.Random.Range(0, _items.Length), worldPos, username);
         //SpawnItem(_items.Length-1, worldPos);
     }
 
-    public void SpawnItem(int spawnInd, Vector3 worldPos) {
+    public void SpawnItem(int spawnInd, Vector3 worldPos, string username) {
         if(spawnInd < 0 || spawnInd >= _items.Length) {
             throw new IndexOutOfRangeException("Item ind out of range");
         }
@@ -59,6 +60,10 @@ public class ItemSpawner : MonoBehaviour
         Item itemPrefab = _items[spawnInd].GetComponent<Item>();
 
         Vector3 itemPos = new Vector3(worldPos.x, worldPos.y, worldPos.z);
+
+        var itemLabel = GameObject.Instantiate(_nametagPrefab, itemPos, Quaternion.identity);
+        itemLabel.GetComponent<LabelController>().Init(username);
+
         if(itemPrefab.dropsIn) {
             itemPos.y = itemPos.y + 40;
         } else {
