@@ -51,7 +51,8 @@ public class SpeechController : MonoBehaviour {
                 Debug.Log("Got speech access key");
                 _accessKey = www.downloadHandler.text;
 
-                Speak("Hello, this is a big test for me, manny, and my friend david.we are really hoping that this will work.") ;
+                //Speak("Hello, this is a big test for me, manny, and my friend david.we are really hoping that this will work.") ;
+                Speak("Yah yestem miel pop... zu zu zu") ;
                              
             }
         }
@@ -77,6 +78,7 @@ public class SpeechController : MonoBehaviour {
         {
             yield return null;
         }
+        yield return new WaitForSeconds(2.0f);
 
         PlayAudio(_audioStream);
     }

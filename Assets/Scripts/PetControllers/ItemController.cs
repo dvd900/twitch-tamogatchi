@@ -120,6 +120,11 @@ public class ItemController : MonoBehaviour {
         _isPickingUp = false;
     }
 
+    public void DoEatDone()
+    {
+        _isEating = false;
+    }
+
     //public void AE_EatDone() {
     //    Debug.Log("ADE eat done");
     //    _isEating = false;

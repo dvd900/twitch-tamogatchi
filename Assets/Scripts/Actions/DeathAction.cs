@@ -32,7 +32,6 @@ public class DeathAction : AIAction
 
     public override void StartAction()
     {
-        Debug.Log("Starting die actions");
         _timer = DEATH_TIME;
         _skin.emoteController.DieEmote();
     }
@@ -42,6 +41,10 @@ public class DeathAction : AIAction
         _timer -= Time.deltaTime;
         if(_timer <= 0)
         {
+            if(_skin.itemController.HeldItem != null)
+            {
+                GameObject.Destroy(_skin.itemController.HeldItem.gameObject);
+            }
             GameObject.Destroy(_skin.gameObject);
             LevelRefs.Instance.Spawner.Spawn();
         }

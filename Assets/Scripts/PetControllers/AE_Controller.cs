@@ -46,6 +46,12 @@ public class AE_Controller : MonoBehaviour
         //ac_crumbs.Play("animeCrumbs", 0, 0.23f);
     }
 
+    public void AE_EatDone()
+    {
+        Debug.Log("AE Eat done");
+        _skin.itemController.DoEatDone();
+    }
+
     public void AE_PutItemInHand()
     {
         Debug.Log("AE put item in hadn");
