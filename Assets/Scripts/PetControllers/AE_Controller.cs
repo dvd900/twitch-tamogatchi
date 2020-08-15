@@ -10,6 +10,7 @@ public class AE_Controller : MonoBehaviour
     [SerializeField] private ParticleSystem _eat;
     [SerializeField] private ParticleSystem _crumbs;
     [SerializeField] private Animator _crumbAnimator;
+    [SerializeField] private GameObject _ghostPrefab;
 	public AudioSource aSource;
 	public AudioClip aHello;
 
@@ -56,6 +57,11 @@ public class AE_Controller : MonoBehaviour
     {
         Debug.Log("AE pickup done");
         _skin.itemController.DoPickupDone();
+    }
+
+    public void AE_SpawnGhost()
+    {
+        GameObject.Instantiate(_ghostPrefab, transform.position, transform.rotation);
     }
 
     public void AE_StepSFX()

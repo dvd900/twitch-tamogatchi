@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3469631712757699148}
   - component: {fileID: 3469631712756699276}
   - component: {fileID: 3699327635641590003}
-  - component: {fileID: 7067772170015471029}
   - component: {fileID: 3043759529568718479}
+  - component: {fileID: 2362615222168726413}
   m_Layer: 18
   m_Name: p.Soda
   m_TagString: item
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8822956205442739575}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 331.65045, y: 27.203611, z: 147.5847}
   m_LocalScale: {x: 208.91533, y: 208.9155, z: 208.91534}
   m_Children: []
@@ -98,20 +98,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!64 &7067772170015471029
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8822956205442739575}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: ed65f9c401f3a4cf783635342f1f8612, type: 3}
 --- !u!114 &3043759529568718479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,3 +114,17 @@ MonoBehaviour:
     type: 3}
   _dropsIn: 1
   _consumptionStates: []
+--- !u!136 &2362615222168726413
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8822956205442739575}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.010022795
+  m_Height: 0.03861731
+  m_Direction: 2
+  m_Center: {x: 0.00005572811, y: -0.00000015520595, z: -0.0014779222}

@@ -11283,6 +11283,8 @@ MonoBehaviour:
   _eat: {fileID: 4718218143920542251}
   _crumbs: {fileID: 4718218143920542251}
   _crumbAnimator: {fileID: 4718218143684832700}
+  _ghostPrefab: {fileID: 4236165396333215722, guid: 410eb842e8330c343b3d90c6771f45f3,
+    type: 3}
   aSource: {fileID: 5094855758458311556}
   aHello: {fileID: 8300000, guid: 46fa82203327c4a38a03b952715d298c, type: 3}
 --- !u!82 &5094855758458311556
@@ -21799,6 +21801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: b029c976ca1a54093a977356f5b51ba5, type: 2}
+  _audioSource: {fileID: 8856160755865283926}
 --- !u!135 &4718218144133215517
 SphereCollider:
   m_ObjectHideFlags: 0
