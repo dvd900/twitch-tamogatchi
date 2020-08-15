@@ -39,6 +39,7 @@ public class Bomb : MonoBehaviour
         if (hits.Length > 0)
         {
             var skin = hits[0].GetComponentInParent<Skin>();
+            skin.actionController.DoAction(new IdleAction(skin, 3.0f, false));
             skin.emoteController.Bombed();
             skin.statsController.AddHealth(-closeDamage);
 			aSource.volume = 0.75f;
