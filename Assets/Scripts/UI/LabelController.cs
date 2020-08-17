@@ -18,6 +18,7 @@ public class LabelController : MonoBehaviour
 
     private void Start()
     {
+		GetComponent<Animator>().Rebind();
         if(_ttl > 0)
         {
             StartCoroutine(WaitAndDestroy(_ttl));
