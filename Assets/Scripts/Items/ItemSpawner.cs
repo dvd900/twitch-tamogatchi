@@ -91,7 +91,7 @@ public class ItemSpawner : MonoBehaviour
     public GameObject MakeDust() { 
 
         GameObject clone = Instantiate(_dust, new Vector3(transform.position.x, 
-            transform.position.y - 1.5f, transform.position.z),
+            transform.position.y - 1f, transform.position.z),
             Quaternion.Euler(new Vector3(90, 0, 0)), null) as GameObject;
 
         clone.transform.localScale = 2.0f * Vector3.one;
