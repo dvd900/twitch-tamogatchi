@@ -9,7 +9,8 @@ public class ItemSpawner : MonoBehaviour
 
     [SerializeField] private GameObject[] _items;
     [SerializeField] private GameObject _dust;
-    [SerializeField] private GameObject _nametagPrefab;
+	[SerializeField] private GameObject _spawnParticles;
+	[SerializeField] private GameObject _nametagPrefab;
     [SerializeField] private AudioClip _itemHitGroundClip;
     [SerializeField] private AudioClip _itemSpawnClip;
     [SerializeField] private AudioSource _itemSFXSource;
@@ -74,6 +75,9 @@ public class ItemSpawner : MonoBehaviour
             itemPrefab.transform.rotation;
 
         GameObject clone = Instantiate(itemPrefab.gameObject, itemPos, itemRot);
+		GameObject particleEffect = Instantiate(_spawnParticles, new Vector3(itemPos.x,itemPos.y+3,itemPos.z-9),
+	        Quaternion.Euler(new Vector3(0, 0, UnityEngine.Random.Range(0,360))), null) as GameObject;
+		Destroy(particleEffect, 1f);
 
         Vector3 originalScale = clone.transform.localScale;
         clone.transform.localScale = (1 / 2.5f) * originalScale;
