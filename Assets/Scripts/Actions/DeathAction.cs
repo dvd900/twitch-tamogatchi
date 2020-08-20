@@ -33,6 +33,8 @@ public class DeathAction : AIAction
     public override void StartAction()
     {
         _timer = DEATH_TIME;
+        _skin.movementController.StopWalking();
+        _skin.movementController.FaceCamera();
         _skin.emoteController.DieEmote();
     }
 

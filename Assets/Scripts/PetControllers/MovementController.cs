@@ -65,13 +65,20 @@ public class MovementController : MonoBehaviour
 
     public void LookAtPosition(Vector3 dest) {
         Quaternion endRot = Quaternion.LookRotation(dest - transform.position, Vector3.up);
-        float da = Mathf.DeltaAngle(endRot.eulerAngles.y, transform.rotation.eulerAngles.y);
-        if(da < 15)
-        {
-            return;
-        }
+        Vector3 endRotEuler = endRot.eulerAngles;
+        endRotEuler.x = transform.rotation.eulerAngles.x;
+        endRotEuler.z = transform.rotation.eulerAngles.z;
+        //float da = Mathf.DeltaAngle(endRot.eulerAngles.y, transform.rotation.eulerAngles.y);
+
+        //LeanTween.scale(_heartIcon.gameObject, new Vector3(p, p, p), .5f).setEaseInOutElastic();
+        //if(Mathf.Abs(da) < 15)
+        //{
+        //    return;
+        //}
         _turnTimer = Quaternion.Angle(transform.rotation, endRot) / _turnSpeed;
-        _rotDir = -(int)Mathf.Sign(da);
+
+        LeanTween.rotate(gameObject, endRotEuler, _turnTimer).setEaseInOutQuad();
+        //_rotDir = -(int)Mathf.Sign(da);
         Debug.Log("Turning, time: " + _turnTimer);
     }
 

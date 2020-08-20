@@ -26,14 +26,13 @@ public class EmoteController : MonoBehaviour {
 
     public void EmoteStart()
     {
-        Debug.Log("EMOTE STATRTTT");
         _startingEmote = false;
         _isDoingEmote = true;
     }
 
     public void EmoteEnd()
     {
-        Debug.Log("EMOTE DONE");
+        _startingEmote = false;
         _isDoingEmote = false;
     }
 
@@ -52,8 +51,6 @@ public class EmoteController : MonoBehaviour {
     public void Cheer()
     {
         _startingEmote = true;
-        _skin.movementController.StopWalking();
-        _skin.movementController.FaceCamera();
         _skin.animator.SetTrigger("cheer");
         _skin.animator.SetTrigger("cheerEyes");
     }
@@ -68,16 +65,12 @@ public class EmoteController : MonoBehaviour {
     public void Wave()
     {
         _startingEmote = true;
-        _skin.movementController.StopWalking();
-        _skin.movementController.FaceCamera();
         _skin.animator.SetTrigger("wave");
     }
 
     public void Dance()
     {
         _startingEmote = true;
-        _skin.movementController.StopWalking();
-        _skin.movementController.FaceCamera();
         _skin.animator.SetTrigger("dance");
         _skin.animator.SetTrigger("danceEyes");
     }
@@ -85,8 +78,6 @@ public class EmoteController : MonoBehaviour {
     public void Bombed()
     {
         _startingEmote = true;
-        _skin.movementController.StopWalking();
-		_skin.movementController.FaceCamera();
 		_skin.animator.SetTrigger("bombed");
         _skin.animator.SetTrigger("bombedEyes");
     }
@@ -94,8 +85,6 @@ public class EmoteController : MonoBehaviour {
     public void DieEmote()
     {
         _startingEmote = true;
-        _skin.movementController.StopWalking();
-        _skin.movementController.FaceCamera();
         _skin.animator.SetTrigger("death");
         _skin.animator.SetTrigger("deathEyes");
     }
