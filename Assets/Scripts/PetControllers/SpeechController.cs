@@ -16,11 +16,14 @@ public class SpeechController : MonoBehaviour {
 
     private static string _accessKey;
 
+    public bool IsSpeaking { get { return _audioSource.isPlaying; } }
+
     [SerializeField] private DialogueData _dialogueData;
     [SerializeField] private AudioSource _audioSource;
 
     private Skin _skin;
     private Stream _audioStream;
+    private Task _downloadTask;
 
     private void Start() {
         _skin = GetComponent<Skin>();
@@ -51,34 +54,64 @@ public class SpeechController : MonoBehaviour {
                 Debug.Log("Got speech access key");
                 _accessKey = www.downloadHandler.text;
 
-                Speak("Hello, this is a big test for me, manny, and my friend david.we are really hoping that this will work.");
+                //Speak("Hello, this is a big test for me, manny, and my friend david.we are really hoping that this will work.");
 
             }
         }
     }
 
-    private void OnSpeechMessage(string msg) {
-        Debug.LogError("Speech message handler not implemented yet");
+    private void OnSpeechMessage(string msg)
+    {
+        Speak(msg);
     }
 
-    public void Speak(string text) {
-        if(string.IsNullOrEmpty(_accessKey))
+    public void Speak(string text)
+    {
+        PrepareSpeechClip(text);
+        PlayPreparedClip();
+    }
+
+    public void PrepareSpeechClip(string text)
+    {
+        if (string.IsNullOrEmpty(_accessKey))
         {
+            Debug.LogError("Cannot speak, access key null");
             return;
         }
 
-        StartCoroutine(SpeechRoutine(text));
+        Debug.Log("Preparing clip for: " + text);
+        _downloadTask = SpeechAsync(text);
     }
 
-    private IEnumerator SpeechRoutine(string text)
+    public void PlayPreparedClip()
     {
-        var task = SpeechAsync(text);
-        while (!task.IsCompleted)
+        if(_downloadTask == null)
+        {
+            Debug.LogError("Must prepare speech clip first!");
+            return;
+        }
+
+        StartCoroutine(SpeechRoutine());
+    }
+
+    private IEnumerator SpeechRoutine()
+    {
+        while (!_downloadTask.IsCompleted)
         {
             yield return null;
         }
 
+        _skin.emoteController.StartSpeakEmote();
+
         PlayAudio(_audioStream);
+        _downloadTask = null;
+
+        while(IsSpeaking)
+        {
+            yield return null;
+        }
+
+        _skin.emoteController.StopSpeakEmote();
     }
 
     private async Task SpeechAsync(string text)
@@ -109,8 +142,6 @@ public class SpeechController : MonoBehaviour {
 
     private void PlayAudio(Stream audioStream)
     {
-        Debug.Log("Playing audio stream");
-
         // Play the audio using Unity AudioSource, allowing us to benefit from effects,
         // spatialization, mixing, etc.
 
@@ -122,27 +153,22 @@ public class SpeechController : MonoBehaviour {
         {
             try
             {
-                Debug.Log($"Creating new byte array of size {size}");
                 // Create buffer
                 byte[] buffer = new byte[size];
-
-                Debug.Log($"Reading stream to the end and putting in bytes array.");
+                
                 buffer = ReadToEnd(audioStream);
 
                 // Convert raw WAV data into Unity audio data
-                Debug.Log($"Converting raw WAV data of size {buffer.Length} into Unity audio data.");
                 int sampleCount = 0;
                 int frequency = 0;
                 var unityData = AudioWithHeaderToUnityAudio(buffer, out sampleCount, out frequency);
 
                 // Convert data to a Unity audio clip
-                Debug.Log($"Converting audio data of size {unityData.Length} to Unity audio clip with {sampleCount} samples at frequency {frequency}.");
                 var clip = ToClip("Speech", unityData, sampleCount, frequency);
 
                 // Set the source on the audio clip
                 _audioSource.clip = clip;
-
-                Debug.Log($"Trigger playback of audio clip on AudioSource.");
+                
                 // Play audio
                 _audioSource.Play();
             }
@@ -318,9 +344,9 @@ public class SpeechController : MonoBehaviour {
     }
 
 
-    public void SayRandomDialogue()
+    public void PrepareRandomDialogue()
     {
         int ind = UnityEngine.Random.Range(0, _dialogueData.IdleDialogues.Length);
-        Speak(_dialogueData.IdleDialogues[ind]);
+        PrepareSpeechClip(_dialogueData.IdleDialogues[ind]);
     }
 }

@@ -95,6 +95,16 @@ public class EmoteController : MonoBehaviour {
         _skin.animator.SetTrigger("chewMouth");
     }
 
+    public void StartSpeakEmote()
+    {
+        _skin.animator.SetBool("speakMouth", true);
+    }
+
+    public void StopSpeakEmote()
+    {
+        _skin.animator.SetBool("speakMouth", false);
+    }
+
     private void Update() {
     }
 

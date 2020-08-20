@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class IdleAction : AIAction
 {
-    private const float CHANCE_TO_SPEAK = .3f;
+    private const float CHANCE_TO_SPEAK = 1.0f;
 
     public float waitTime { get { return _waitTime; } set { _waitTime = value; } }
     private float _waitTime;
@@ -51,17 +51,18 @@ public class IdleAction : AIAction
         if(_sayDialogue)
         {
             _skin.movementController.FaceCamera();
+            _skin.speechController.PrepareRandomDialogue();
         }
     }
 
     public override void UpdateAction() {
-        if(!_sayDialogue)
+        if(!_sayDialogue && !_skin.speechController.IsSpeaking)
         {
             _timer -= Time.deltaTime;
         }
         else if(_sayDialogue && !_skin.movementController.IsTurning)
         {
-            _skin.speechController.SayRandomDialogue();
+            _skin.speechController.PlayPreparedClip();
             _sayDialogue = false;
         }
     }
