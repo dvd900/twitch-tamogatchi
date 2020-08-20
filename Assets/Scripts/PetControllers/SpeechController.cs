@@ -206,11 +206,9 @@ public class SpeechController : MonoBehaviour {
     {
         // Determine if mono or stereo
         int channelCount = wavAudio[22];  // Speech audio data is always mono but read actual header value for processing
-        Debug.Log($"Audio data has {channelCount} channel(s).");
 
         // Get the frequency
         frequency = BytesToInt(wavAudio, 24);
-        Debug.Log($"Audio data frequency is {frequency}.");
 
         // Get past all the other sub chunks to get to the data subchunk:
         int pos = 12; // First subchunk ID from 12 to 16
@@ -227,7 +225,6 @@ public class SpeechController : MonoBehaviour {
         // Pos is now positioned to start of actual sound data.
         sampleCount = (wavAudio.Length - pos) / 2;  // 2 bytes per sample (16 bit sound mono)
         if (channelCount == 2) { sampleCount /= 2; }  // 4 bytes per sample (16 bit stereo)
-        Debug.Log($"Audio data contains {sampleCount} samples. Starting conversion");
 
         // Allocate memory (supporting left channel only)
         var unityData = new float[sampleCount];

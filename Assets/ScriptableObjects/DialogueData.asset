@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DialogueData
   m_EditorClassIdentifier: 
   IdleDialogues:
-  - today is my best day
+  - today is my birthday
   - gimme an apple
   - no more soda
   - I'm an apple
