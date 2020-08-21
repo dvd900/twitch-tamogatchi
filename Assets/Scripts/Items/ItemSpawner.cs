@@ -74,22 +74,27 @@ public class ItemSpawner : MonoBehaviour
         Quaternion itemRot = Quaternion.AngleAxis(360 * UnityEngine.Random.value, Vector3.up) *
             itemPrefab.transform.rotation;
 
-        GameObject clone = Instantiate(itemPrefab.gameObject, itemPos, itemRot);
+        GameObject newItem = Instantiate(itemPrefab.gameObject, itemPos, itemRot);
 		GameObject particleEffect = Instantiate(_spawnParticles, new Vector3(itemPos.x,itemPos.y+3,itemPos.z-9),
 	        Quaternion.Euler(new Vector3(0, 0, UnityEngine.Random.Range(0,360))), null) as GameObject;
 		Destroy(particleEffect, 1f);
 
-        Vector3 originalScale = clone.transform.localScale;
-        clone.transform.localScale = (1 / 2.5f) * originalScale;
+        Vector3 originalScale = newItem.transform.localScale;
+        newItem.transform.localScale = (1 / 2.5f) * originalScale;
 
-        iTween.ScaleTo(clone.gameObject, iTween.Hash("scale", originalScale,
+        iTween.ScaleTo(newItem.gameObject, iTween.Hash("scale", originalScale,
             "time", 1.0f, "easetype", iTween.EaseType.easeOutElastic));
 
-        iTween.RotateBy(clone.gameObject, iTween.Hash("amount", _items[spawnInd].transform.up,
+        iTween.RotateBy(newItem.gameObject, iTween.Hash("amount", _items[spawnInd].transform.up,
             "time", 1f, "easetype", iTween.EaseType.easeOutSine));
 
 		_itemSFXSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
         _itemSFXSource.PlayOneShot(_itemSpawnClip,0.2f);
+
+        if(Skin.CurrentTango != null)
+        {
+            Skin.CurrentTango.headController.GlanceAtTarget(newItem.transform, true);
+        }
     }
 
     public GameObject MakeDust() { 

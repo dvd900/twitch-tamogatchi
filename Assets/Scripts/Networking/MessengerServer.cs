@@ -71,7 +71,10 @@ public class MessengerServer : MonoBehaviour {
     }
 
     void OnDestroy() {
-		m_server.Stop ();
+        if(m_server != null)
+        {
+		    m_server.Stop ();
+        }
 	}
 
 	public void SendToMessenger(string msg) {

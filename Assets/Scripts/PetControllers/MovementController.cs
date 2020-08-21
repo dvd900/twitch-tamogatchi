@@ -1,3 +1,4 @@
+using RootMotion.FinalIK;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine.AI;
 public class MovementController : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _navMeshAgent;
+    [SerializeField] private HeadController _headController;
+
     /// <summary>
     /// How close he has to be to the wp to stop
     /// </summary>
@@ -25,6 +28,8 @@ public class MovementController : MonoBehaviour
     private int _rotDir;
     private float _turnTimer;
 
+    private Coroutine _lookRoutine;
+
     private Skin _skin;
 
     private void Awake() {
@@ -40,14 +45,12 @@ public class MovementController : MonoBehaviour
     private void LateUpdate() {
         if (_turnTimer > 0) {
             _turnTimer -= Time.deltaTime;
-            float rotAmt = _turnSpeed * Time.deltaTime;
-            transform.rotation *= Quaternion.AngleAxis(rotAmt, _rotDir * Vector3.up);
         }
     }
 
     public void FaceCamera()
     {
-        LookAtPosition(LevelRefs.Instance.WorldCam.transform.position);
+        FaceTarget(LevelRefs.Instance.WorldCam.transform);
     }
 
     public void StopWalking() {
@@ -63,25 +66,22 @@ public class MovementController : MonoBehaviour
         _isWalking = true;
     }
 
-    public void LookAtPosition(Vector3 dest) {
-        Quaternion endRot = Quaternion.LookRotation(dest - transform.position, Vector3.up);
+    public void FaceTarget(Transform target) {
+        Quaternion endRot = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
         Vector3 endRotEuler = endRot.eulerAngles;
         endRotEuler.x = transform.rotation.eulerAngles.x;
         endRotEuler.z = transform.rotation.eulerAngles.z;
-        //float da = Mathf.DeltaAngle(endRot.eulerAngles.y, transform.rotation.eulerAngles.y);
-
-        //LeanTween.scale(_heartIcon.gameObject, new Vector3(p, p, p), .5f).setEaseInOutElastic();
-        //if(Mathf.Abs(da) < 15)
-        //{
-        //    return;
-        //}
+        
         _turnTimer = Quaternion.Angle(transform.rotation, endRot) / _turnSpeed;
 
-        LeanTween.rotate(gameObject, endRotEuler, _turnTimer).setEaseInOutQuad();
+        var rotTween = LeanTween.rotate(gameObject, endRotEuler, _turnTimer).setEaseInOutQuad();
+        rotTween.setOnComplete(_headController.ResetLookAtIK);
+
+        _headController.SetLookAtIK(target, true);
         //_rotDir = -(int)Mathf.Sign(da);
         Debug.Log("Turning, time: " + _turnTimer);
     }
-
+    
     private bool IsInRange() {
         return !_navMeshAgent.pathPending && 
             (_navMeshAgent.destination - transform.position).magnitude < _wpRange;

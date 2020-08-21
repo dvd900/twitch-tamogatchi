@@ -45,7 +45,7 @@ public class PickupAction : AIAction {
                     _skin.itemController.Pickup(_item);
                 }
                 else if (!_turnStarted) {
-                    _skin.movementController.LookAtPosition(_item.transform.position);
+                    _skin.movementController.FaceTarget(_item.transform);
                     _turnStarted = true;
                 }
             } else {

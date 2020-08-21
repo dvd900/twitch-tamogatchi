@@ -54,7 +54,7 @@ public class SpeechController : MonoBehaviour {
                 Debug.Log("Got speech access key");
                 _accessKey = www.downloadHandler.text;
 
-                //Speak("Hello, this is a big test for me, manny, and my friend david.we are really hoping that this will work.");
+                Speak("Hello james. My name is sweetango. I love to eat apples!");
 
             }
         }
