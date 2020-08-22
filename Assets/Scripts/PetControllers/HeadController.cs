@@ -129,13 +129,6 @@ public class HeadController : MonoBehaviour
 
     public void ResetLookAtIK()
     {
-        var tween = LeanTween.descr(_weightTweenID);
-        if(tween != null)
-        {
-            //Debug.Log("Still tweening, so return");
-            return;
-        }
-
         _weightTweenID = LeanTween.value(gameObject, UpdateLookIKWeight, _lookAtIK.solver.IKPositionWeight, 0, _lerpIKTime).setEaseInOutQuad().id;
     }
 

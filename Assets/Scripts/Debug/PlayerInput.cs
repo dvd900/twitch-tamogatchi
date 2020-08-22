@@ -75,7 +75,6 @@ public class PlayerInput : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000f, _clickLayerMask))
         {
-            Debug.Log("Hit tag: " + hit.collider.tag);
             if(hit.collider.tag == VBLayerMask.ItemTag)
             {
                 var item = hit.collider.GetComponent<Item>();
