@@ -49,7 +49,7 @@ public class Bomb : MonoBehaviour
             {
 
             }
-            else
+            else if(!hitSweetClose)
             {
                 hitSweetClose = true;
                 var skin = hit.GetComponentInParent<Skin>();
@@ -74,7 +74,7 @@ public class Bomb : MonoBehaviour
             {
 
             }
-            else
+            else if(!hitSweetFar)
             {
                 hitSweetFar = true;
                 var skin = hit.GetComponentInParent<Skin>();

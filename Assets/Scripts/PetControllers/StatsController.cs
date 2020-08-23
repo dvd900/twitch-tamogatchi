@@ -65,6 +65,7 @@ public class StatsController : MonoBehaviour {
     }
 
     public void AddHealth(float x) {
+        Debug.Log("Adding health: " + x);
         AddStat(x, ref _health);
         if(_health <= 0)
         {

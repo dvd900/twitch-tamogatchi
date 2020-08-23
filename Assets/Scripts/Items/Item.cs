@@ -6,8 +6,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public float value { get { return _profile._value; } }
-
-    [SerializeField] private ItemContainer _profilePrefab;
+    
     /// <summary>
     /// Should it drop in when spawned?
     /// </summary>
@@ -29,8 +28,8 @@ public class Item : MonoBehaviour
     protected Skin _holder;
 
     private void Awake() {
-        Debug.Log("Profile prefab: " + _profilePrefab.item.itemName + ", " + _profilePrefab.item.itemID);
-        ItemBase item = _profilePrefab.item;
+        var profileContainer = GetComponent<ItemContainer>();
+        ItemBase item = profileContainer.item;
         Debug.Log("Spawned item: " + item.itemName + " type: " + item.itemType);
         _profile = (ItemProfile)ItemSystemUtility.GetItemCopy(item.itemID, item.itemType);
         _collider = GetComponentInChildren<Collider>();
