@@ -29,7 +29,9 @@ public class Item : MonoBehaviour
     protected Skin _holder;
 
     private void Awake() {
-        ItemBase item = _profilePrefab.item as ItemBase;
+        Debug.Log("Profile prefab: " + _profilePrefab.item.itemName + ", " + _profilePrefab.item.itemID);
+        ItemBase item = _profilePrefab.item;
+        Debug.Log("Spawned item: " + item.itemName + " type: " + item.itemType);
         _profile = (ItemProfile)ItemSystemUtility.GetItemCopy(item.itemID, item.itemType);
         _collider = GetComponentInChildren<Collider>();
         _rigidbody = GetComponentInChildren<Rigidbody>();
@@ -51,9 +53,10 @@ public class Item : MonoBehaviour
         }
     }
 
-    public bool CanBePickedUp() {
-
-        return !isHeld && _rigidbody.velocity.magnitude < 3;
+    public bool CanBePickedUp()
+    {
+        Debug.Log("ITemtype: " + _profile.itemType);
+        return _profile.itemType == ItemType.Consumable && !isHeld && _rigidbody.velocity.magnitude < 3;
     }
 
     public void EnableHolding(Skin holder) 

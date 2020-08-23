@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,37 +33,70 @@ public class Bomb : MonoBehaviour
         explosion.time = 0;
         explosion.Play();
 		aSource.Stop();
-		aSource.pitch = Random.Range(0.8f, 1.1f);
+		aSource.pitch = UnityEngine.Random.Range(0.8f, 1.1f);
 		bomba.SetActive(false);
 
-		var hits = BombCast(smallRange);
-        if (hits.Length > 0)
+		var closeHits = BombCast(smallRange);
+        bool hitSweetClose = false;
+        foreach(var hit in closeHits)
         {
-            var skin = hits[0].GetComponentInParent<Skin>();
-            skin.actionController.DoAction(new IdleAction(skin, 3.0f, false));
-            skin.movementController.StopWalking();
-            skin.movementController.FaceCamera();
-            skin.emoteController.Bombed();
-            skin.statsController.AddHealth(-closeDamage);
-			aSource.volume = 0.75f;
-			aSource.PlayOneShot(boomCloseHit, 0.75f);
-		}
-        else
-        {
-            hits = BombCast(bigRange);
-            if (hits.Length > 0)
+            if (hit.gameObject == gameObject)
             {
-                var skin = hits[0].GetComponentInParent<Skin>();
+                continue;
+            }
+
+            if (hit.gameObject.layer == VBLayerMask.ItemLayer)
+            {
+
+            }
+            else
+            {
+                hitSweetClose = true;
+                var skin = hit.GetComponentInParent<Skin>();
+                skin.actionController.DoAction(new IdleAction(skin, 3.0f, false));
+                skin.movementController.StopWalking();
+                skin.movementController.FaceCamera();
+                skin.emoteController.Bombed();
+                skin.statsController.AddHealth(-closeDamage);
+            }
+        }
+
+        var farHits = BombCast(bigRange);
+        bool hitSweetFar = false;
+        foreach(var hit in farHits)
+        {
+            if(hit.gameObject == gameObject || Array.IndexOf(closeHits, hit) != -1)
+            {
+                continue;
+            }
+
+            if (hit.gameObject.layer == VBLayerMask.ItemLayer)
+            {
+
+            }
+            else
+            {
+                hitSweetFar = true;
+                var skin = hit.GetComponentInParent<Skin>();
                 skin.emoteController.DiscomfortEmote();
                 skin.statsController.AddHealth(-farDamage);
-				aSource.volume = 1f;
-				aSource.PlayOneShot(boomFar,1f);
-			}
-			else
-			{
-				aSource.volume = 0.7f;
-				aSource.PlayOneShot(boomFar,0.7f);
-			}
+            }
+        }
+
+        if(hitSweetClose)
+        {
+            aSource.volume = 0.75f;
+            aSource.PlayOneShot(boomCloseHit, 0.75f);
+        }
+        else if(hitSweetFar)
+        {
+            aSource.volume = 1f;
+            aSource.PlayOneShot(boomFar, 1f);
+        }
+        else
+        {
+            aSource.volume = 0.7f;
+            aSource.PlayOneShot(boomFar, 0.7f);
         }
 
         yield return new WaitForSeconds(2.0f);
@@ -73,6 +107,6 @@ public class Bomb : MonoBehaviour
     private Collider[] BombCast(SphereCollider collider)
     {
         return Physics.OverlapSphere(collider.transform.position,
-            collider.radius * collider.transform.lossyScale.x, VBLayerMask.SweeTangoLayerMask);
+            collider.radius * collider.transform.lossyScale.x, VBLayerMask.SweeTangoAndItemLayerMask);
     }
 }

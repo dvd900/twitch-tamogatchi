@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1761940383438395447}
   - component: {fileID: 1761940383438395440}
   - component: {fileID: 1761940383438395441}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bite1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 1761940384214037059}
   - component: {fileID: 1761940384214037436}
   - component: {fileID: 1761940384214037437}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bite2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 1761940384807640890}
   - component: {fileID: 1761940384807640891}
   - component: {fileID: 1761940384807640884}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bite3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

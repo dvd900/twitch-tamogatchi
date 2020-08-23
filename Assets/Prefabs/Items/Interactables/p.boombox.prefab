@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4601108637599200350}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Missing Prefab (Dummy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5047400837990698659}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cassette (Missing Prefab)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 8836307810591867213}
   - component: {fileID: 8836307810591867215}
   - component: {fileID: 8836307810591867214}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: sub_woofer_lp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 8836307810636312724}
   - component: {fileID: 8836307810636312726}
   - component: {fileID: 8836307810636312725}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: button_lp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 8836307810762228707}
   - component: {fileID: 8836307810762228701}
   - component: {fileID: 8836307810762228700}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: grip_lp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 8836307811425579153}
   - component: {fileID: 8836307811425579155}
   - component: {fileID: 8836307811425579154}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: button_lp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8836307811436207247}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: boombox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 8836307811720400151}
   - component: {fileID: 8836307811720400145}
   - component: {fileID: 8836307811720400144}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: handle_lp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 8836307811999869004}
   - component: {fileID: 8836307811999869011}
   - component: {fileID: 8836307811999869010}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6840019004518952648, guid: 10096b32be38b4cdab209ee79c4bbfeb, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -610,9 +610,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Euglossine - WizMUd ost
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 10096b32be38b4cdab209ee79c4bbfeb, type: 2}
-  m_sharedMaterial: {fileID: 6840019004518952648, guid: 10096b32be38b4cdab209ee79c4bbfeb,
-    type: 2}
+  m_fontAsset: {fileID: 0}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -712,7 +711,7 @@ GameObject:
   - component: {fileID: 8836307812158633585}
   - component: {fileID: 8836307812158633587}
   - component: {fileID: 8836307812158633586}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: tapeplayer_lp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +791,7 @@ GameObject:
   - component: {fileID: 8836307812189746600}
   - component: {fileID: 8836307812189746607}
   - component: {fileID: 8836307812189746606}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: TMP SubMesh [LLDOT2__ SDF Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -892,7 +891,7 @@ GameObject:
   - component: {fileID: 8836307812258456275}
   - component: {fileID: 8836307812258456269}
   - component: {fileID: 8836307812258456268}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: boombox_lp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -971,7 +970,7 @@ GameObject:
   - component: {fileID: 8836307812463983519}
   - component: {fileID: 8836307812463983513}
   - component: {fileID: 8836307812463983512}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: volume_lp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,7 +1047,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8836307812464154792}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: p.boombox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1160,6 +1159,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: mesh.cassette
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 899e4120b351f44048b4294edf1e059e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 468684548931346148, guid: 899e4120b351f44048b4294edf1e059e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1189,6 +1193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.84586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878941351908121006, guid: 899e4120b351f44048b4294edf1e059e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 899e4120b351f44048b4294edf1e059e, type: 3}

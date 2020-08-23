@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 708313901}
   - component: {fileID: 708313902}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: smallRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1573033966}
   - component: {fileID: 1573033967}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: bigRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 502443792274562381}
   - component: {fileID: 502443792274562383}
   - component: {fileID: 502443792274562380}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4862,7 +4862,7 @@ GameObject:
   - component: {fileID: 502443792364279313}
   - component: {fileID: 502443792364279315}
   - component: {fileID: 502443792364279312}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9628,7 +9628,7 @@ GameObject:
   - component: {fileID: 1194545201}
   - component: {fileID: 1194545200}
   - component: {fileID: 168251426362949067}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: p.Bomb 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9827,7 +9827,7 @@ GameObject:
   - component: {fileID: 502443792922501834}
   - component: {fileID: 502443792922501828}
   - component: {fileID: 502443792922501829}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: ps_explode (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14581,7 +14581,7 @@ GameObject:
   - component: {fileID: 502443793031146497}
   - component: {fileID: 502443793031146499}
   - component: {fileID: 502443793031146496}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19344,7 +19344,7 @@ GameObject:
   - component: {fileID: 502443793086491809}
   - component: {fileID: 502443793086491811}
   - component: {fileID: 502443793086491808}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: ps.fuse.child01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24107,7 +24107,7 @@ GameObject:
   - component: {fileID: 502443793395334579}
   - component: {fileID: 502443793395334576}
   - component: {fileID: 502443793395334577}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: ps.fuse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28868,7 +28868,7 @@ GameObject:
   - component: {fileID: 502443793744957240}
   - component: {fileID: 502443793744957242}
   - component: {fileID: 502443793744957243}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: ps.fuse.child01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33631,7 +33631,7 @@ GameObject:
   - component: {fileID: 502443793900020841}
   - component: {fileID: 502443793900020843}
   - component: {fileID: 502443793900020840}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Particle System (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38383,7 +38383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9164182712190869677}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38414,7 +38414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9164182712372423286}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38448,7 +38448,7 @@ GameObject:
   - component: {fileID: 4909142495835563475}
   - component: {fileID: 7485748234181820131}
   - component: {fileID: 3253675506998319840}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Fuse_lp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38526,7 +38526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4909142495757070088}
   - component: {fileID: 5567508334796499188}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Fuse_lp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38613,7 +38613,7 @@ GameObject:
   - component: {fileID: 3165294929501163977}
   - component: {fileID: 2426774428450276634}
   - component: {fileID: 6381319976503650794}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38692,7 +38692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7149132428365922805}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38723,7 +38723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7149132428276681518}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38753,7 +38753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2132527615962522585}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38784,7 +38784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2132527615783364866}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38815,7 +38815,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4864940076490113777}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: p.bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38847,7 +38847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4864940075492420387}
   - component: {fileID: 779142383}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: fuse 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38898,7 +38898,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4864940075371979256}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: fuse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38929,7 +38929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1792915559572383296}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38960,7 +38960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1792915559760227483}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38992,7 +38992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7993256613588992202}
   - component: {fileID: 502443792848317560}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39084,7 +39084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7993256613409573393}
   - component: {fileID: 502443792520970298}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39173,10 +39173,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 502443793612703441}
     m_Modifications:
+    - target: {fileID: 3314523433998663917, guid: 535f45f4c1cc6472da78a7b137ce5988,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314523434365438953, guid: 535f45f4c1cc6472da78a7b137ce5988,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314523434519726670, guid: 535f45f4c1cc6472da78a7b137ce5988,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314523434528626744, guid: 535f45f4c1cc6472da78a7b137ce5988,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314523434602278833, guid: 535f45f4c1cc6472da78a7b137ce5988,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314523434706418818, guid: 535f45f4c1cc6472da78a7b137ce5988,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314523434879842558, guid: 535f45f4c1cc6472da78a7b137ce5988,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3314523435476606253, guid: 535f45f4c1cc6472da78a7b137ce5988,
         type: 3}
       propertyPath: m_Name
       value: ps_explosion (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314523435476606253, guid: 535f45f4c1cc6472da78a7b137ce5988,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3314523435476606254, guid: 535f45f4c1cc6472da78a7b137ce5988,
         type: 3}
@@ -39248,6 +39288,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3314523435633376861, guid: 535f45f4c1cc6472da78a7b137ce5988,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314523435681938986, guid: 535f45f4c1cc6472da78a7b137ce5988,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 535f45f4c1cc6472da78a7b137ce5988, type: 3}
 --- !u!1001 &3722554162304634786
@@ -39257,6 +39307,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 502443792744257096}
     m_Modifications:
+    - target: {fileID: 3841608683065027090, guid: 2a87dffad8f2b44bba7bb1a8aad0b2f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841608683411729318, guid: 2a87dffad8f2b44bba7bb1a8aad0b2f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3841608683611179379, guid: 2a87dffad8f2b44bba7bb1a8aad0b2f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39336,6 +39396,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841608683611179382, guid: 2a87dffad8f2b44bba7bb1a8aad0b2f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a87dffad8f2b44bba7bb1a8aad0b2f9, type: 3}

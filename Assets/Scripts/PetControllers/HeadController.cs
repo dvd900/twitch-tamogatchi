@@ -31,7 +31,6 @@ public class HeadController : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Neutral pos: " + _lookAtIK.solver.IKPosition);
         _offsetY = _ikTarget.position.y - transform.position.y;
         _neutralPosOffset = transform.InverseTransformVector(_ikTarget.position - transform.position);
         _ikTarget.SetParent(null);
@@ -46,7 +45,7 @@ public class HeadController : MonoBehaviour
     {
         if(_ikTarget != null)
         {
-            Destroy(_ikTarget);
+            Destroy(_ikTarget.gameObject);
         }
     }
 
