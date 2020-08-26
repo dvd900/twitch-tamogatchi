@@ -10,6 +10,7 @@ public class Bomb : MonoBehaviour
     public AudioSource aSource;
     public AudioClip boomCloseHit, boomFar, fuse;
     public Renderer fuseRend;
+    public Renderer bombRend;
 
     [SerializeField] private float _closeDamage;
     [SerializeField] private float _farDamage;
@@ -26,17 +27,52 @@ public class Bomb : MonoBehaviour
     private Coroutine _explodeRoutine;
     private bool _didExplode;
     private bool _wasTriggered;
-    
+
+    #region About To Explode
+    float timePassed = 0f;
+    public Color flashColor = Color.white;
+    public Color currentColor = Color.black;
+    float flashTime = 0.5f;
+    #endregion
+
+
     void Start()
     {
-		aSource.volume = 0.05f;
+        bombRend = GetComponentInChildren<Renderer>();
+        aSource.volume = 0.05f;
 		aSource.PlayOneShot(fuse);
         _explodeRoutine = StartCoroutine(WaitAndExplode(10.0f));
     }
 
     private IEnumerator WaitAndExplode(float waitTime)
     {
-        yield return new WaitForSeconds(waitTime);
+        timePassed = 0;
+        flashTime = 0.5f;
+
+        // Bomb starts to flash when 5 seconds remain. Bomb flash gets faster as it gets closer to exploding. In the last 0.1 seconds it expands and turns bright white (looks nice).
+        do
+        {
+            timePassed += Mathf.Min(waitTime - timePassed, Time.deltaTime);
+            if(timePassed >= waitTime - 5 && timePassed <= waitTime -0.1f)
+            {
+                float t = Mathf.PingPong(Time.time, flashTime);
+                flashTime -= 0.001f;
+                currentColor = Color.Lerp(Color.black, flashColor, t);
+                bombRend.material.SetColor("_EmissionColor", currentColor);
+                bombRend.material.EnableKeyword("_EMISSION");
+            }
+            if(timePassed >= waitTime -0.1f) 
+            {
+                currentColor = Color.Lerp(Color.black, flashColor, 1);
+                bombRend.material.SetColor("_EmissionColor", currentColor);
+                iTween.ScaleBy(gameObject, iTween.Hash("amount", new Vector3(1.1f,1.1f,1.1f),
+                "time", 0.1f, "easetype", iTween.EaseType.easeInSine));
+            }
+            yield return null;
+        }
+        while (timePassed < waitTime);
+
+        //yield return new WaitForSeconds(waitTime);
 
         explosion.transform.SetParent(null);
         explosion.transform.rotation = Quaternion.identity;
