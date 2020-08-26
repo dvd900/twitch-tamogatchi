@@ -74,6 +74,11 @@ public class Item : MonoBehaviour
         _holder = null;
     }
 
+    public void Launch(Vector3 force)
+    {
+        _rigidbody.AddForce(force);
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == VBLayerMask.GroundTag)

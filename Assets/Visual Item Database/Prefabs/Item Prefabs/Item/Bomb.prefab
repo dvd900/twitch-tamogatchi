@@ -38404,8 +38404,11 @@ MonoBehaviour:
   boomFar: {fileID: 8300000, guid: edf3ab7d852df4758b67eea513e4ee5e, type: 3}
   fuse: {fileID: 8300000, guid: b7884c245687948f690248df0dd09362, type: 3}
   fuseRend: {fileID: 7512001731069773948}
-  closeDamage: 70
-  farDamage: 30
+  _closeDamage: 60
+  _farDamage: 30
+  _closeForce: 1500
+  _farForce: 500
+  _closeAngle: 60
   smallRange: {fileID: 2701102678219613094}
   bigRange: {fileID: 2701102678986487655}
 --- !u!82 &2701102678807261368
@@ -38516,7 +38519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d15c6d4436d45089b377f60fa29448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _profilePrefab: {fileID: 5450897724614088021}
   _dropsIn: 1
 --- !u!114 &5450897724614088021
 MonoBehaviour:

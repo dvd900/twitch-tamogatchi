@@ -11,22 +11,33 @@ public class Bomb : MonoBehaviour
     public AudioClip boomCloseHit, boomFar, fuse;
     public Renderer fuseRend;
 
-    public float closeDamage;
-    public float farDamage;
+    [SerializeField] private float _closeDamage;
+    [SerializeField] private float _farDamage;
+
+    [SerializeField] private float _closeForce;
+    [SerializeField] private float _farForce;
+
+    [Range(0, 90)]
+    [SerializeField] private float _closeAngle;
 
     public SphereCollider smallRange;
     public SphereCollider bigRange;
+
+    private Coroutine _explodeRoutine;
+    private bool _didExplode;
+    private bool _wasTriggered;
     
     void Start()
     {
 		aSource.volume = 0.05f;
 		aSource.PlayOneShot(fuse);
-        StartCoroutine(WaitAndExplode(10.0f));
+        _explodeRoutine = StartCoroutine(WaitAndExplode(10.0f));
     }
 
     private IEnumerator WaitAndExplode(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
+        Debug.Log("EXPLODING!");
         explosion.transform.SetParent(null);
         explosion.transform.rotation = Quaternion.identity;
         explosion.gameObject.SetActive(true);
@@ -47,7 +58,7 @@ public class Bomb : MonoBehaviour
 
             if (hit.gameObject.layer == VBLayerMask.ItemLayer)
             {
-
+                BombItem(hit.gameObject, true);
             }
             else if(!hitSweetClose)
             {
@@ -57,7 +68,7 @@ public class Bomb : MonoBehaviour
                 skin.movementController.StopWalking();
                 skin.movementController.FaceCamera();
                 skin.emoteController.Bombed();
-                skin.statsController.AddHealth(-closeDamage);
+                skin.statsController.AddHealth(-_closeDamage);
             }
         }
 
@@ -72,14 +83,14 @@ public class Bomb : MonoBehaviour
 
             if (hit.gameObject.layer == VBLayerMask.ItemLayer)
             {
-
+                BombItem(hit.gameObject, false);
             }
             else if(!hitSweetFar)
             {
                 hitSweetFar = true;
                 var skin = hit.GetComponentInParent<Skin>();
                 skin.emoteController.DiscomfortEmote();
-                skin.statsController.AddHealth(-farDamage);
+                skin.statsController.AddHealth(-_farDamage);
             }
         }
 
@@ -99,9 +110,53 @@ public class Bomb : MonoBehaviour
             aSource.PlayOneShot(boomFar, 0.7f);
         }
 
+        _didExplode = true;
+
         yield return new WaitForSeconds(2.0f);
         Destroy(gameObject);
         Destroy(explosion.gameObject);
+    }
+
+    private void BombItem(GameObject hitItem, bool closeHit)
+    {
+        Debug.Log("Bombing item: " + hitItem + ", close: " + closeHit);
+        var bomb = hitItem.GetComponent<Bomb>();
+        if(bomb != null)
+        {
+            Debug.Log("Bombing bomb: " + bomb._didExplode + ", " + bomb._wasTriggered);
+            if(!bomb._didExplode)
+            {
+                LaunchItem(hitItem, closeHit);
+                if(!bomb._wasTriggered)
+                {
+                    Debug.Log("Actually bombing this bomb");
+                    bomb.StopCoroutine(bomb._explodeRoutine);
+                    float waitTime = (closeHit) ? .2f : .4f;
+                    bomb._explodeRoutine = bomb.StartCoroutine(bomb.WaitAndExplode(waitTime));
+                    bomb._wasTriggered = true;
+                }
+            }
+        }
+        else
+        {
+            LaunchItem(hitItem, closeHit);
+        }
+    }
+
+    private void LaunchItem(GameObject hitItem, bool closeHit)
+    {
+        var item = hitItem.GetComponentInParent<Item>();
+        float angle = (closeHit) ? _closeAngle : 0;
+        var launchVec = GetLaunchVector(item.transform.position, _closeForce, angle);
+        item.Launch(launchVec);
+    }
+
+    private Vector3 GetLaunchVector(Vector3 itemPos, float force, float angle)
+    {
+        Vector3 d = itemPos - transform.position;
+        d.y = 0;
+        d.Normalize();
+        return force * Vector3.RotateTowards(d, Vector3.up, (Mathf.PI / 180) * angle, 0);
     }
 
     private Collider[] BombCast(SphereCollider collider)
