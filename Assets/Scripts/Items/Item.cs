@@ -30,7 +30,7 @@ public class Item : MonoBehaviour
     private void Awake() {
         var profileContainer = GetComponent<ItemContainer>();
         ItemBase item = profileContainer.item;
-        Debug.Log("Spawned item: " + item.itemName + " type: " + item.itemType);
+        Debug.Log("Spawned item: " + item.itemName);
         _profile = (ItemProfile)ItemSystemUtility.GetItemCopy(item.itemID, item.itemType);
         _collider = GetComponentInChildren<Collider>();
         _rigidbody = GetComponentInChildren<Rigidbody>();
@@ -75,7 +75,9 @@ public class Item : MonoBehaviour
 
     public void Launch(Vector3 force)
     {
+        float forceMag = force.magnitude;
         _rigidbody.AddForce(force);
+        _rigidbody.AddTorque(forceMag * Random.onUnitSphere);
     }
 
     void OnCollisionEnter(Collision collision)
