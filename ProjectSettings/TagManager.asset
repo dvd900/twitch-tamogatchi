@@ -8,6 +8,7 @@ TagManager:
   - item
   - sweetango
   - head
+  - grass
   layers:
   - Default
   - TransparentFX

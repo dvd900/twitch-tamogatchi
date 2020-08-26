@@ -38341,7 +38341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3336242457226440140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.4, z: 0}
+  m_LocalPosition: {x: 0, y: 2.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7978644726578858657}
@@ -38359,8 +38359,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.16051947, b: 0, a: 1}
-  m_Intensity: 7
-  m_Range: 11
+  m_Intensity: 15.99
+  m_Range: 6.8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -38396,7 +38396,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8351543
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -38497,7 +38497,7 @@ MonoBehaviour:
   boomFar: {fileID: 8300000, guid: edf3ab7d852df4758b67eea513e4ee5e, type: 3}
   fuse: {fileID: 8300000, guid: b7884c245687948f690248df0dd09362, type: 3}
   fuseRend: {fileID: 7512001731069773948}
-  _indicatorDuration: 1
+  _indicatorDuration: 3
   _indicatorLight: {fileID: 3905818393035422373}
   _closeDamage: 60
   _farDamage: 30

@@ -30,9 +30,11 @@ public class Bomb : MonoBehaviour
     private bool _didExplode;
     private bool _wasTriggered;
     private float _indicatorIntensity;
+    public Renderer bombRend;
     
     void Start()
     {
+        bombRend = gameObject.GetComponentInChildren<Renderer>();
         aSource.volume = 0.05f;
 		aSource.PlayOneShot(fuse);
         _explodeRoutine = StartCoroutine(WaitAndExplode(10.0f));
@@ -44,12 +46,19 @@ public class Bomb : MonoBehaviour
     private IEnumerator IndicatorRoutine(float duration)
     {
         _indicatorLight.enabled = true;
-
+        bool oneSecondLeft = false;
         float t = 0;
         while(t < duration)
         {
             _indicatorLight.intensity = Mathf.Lerp(0, _indicatorIntensity, t / duration);
             t += Time.deltaTime;
+            if (t > duration - 0.1f && oneSecondLeft == false)
+            {
+                oneSecondLeft = true;
+                LeanTween.scale(gameObject, 4.5f * Vector3.one, .1f).setEaseInSine();
+                bombRend.material.SetColor("_EmissionColor", Color.white);
+                bombRend.material.EnableKeyword("_EMISSION");
+            }
             yield return null;
         }
 
