@@ -37,7 +37,7 @@ public class Bomb : MonoBehaviour
     private IEnumerator WaitAndExplode(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        Debug.Log("EXPLODING!");
+
         explosion.transform.SetParent(null);
         explosion.transform.rotation = Quaternion.identity;
         explosion.gameObject.SetActive(true);
@@ -119,17 +119,14 @@ public class Bomb : MonoBehaviour
 
     private void BombItem(GameObject hitItem, bool closeHit)
     {
-        Debug.Log("Bombing item: " + hitItem + ", close: " + closeHit);
         var bomb = hitItem.GetComponent<Bomb>();
         if(bomb != null)
         {
-            Debug.Log("Bombing bomb: " + bomb._didExplode + ", " + bomb._wasTriggered);
             if(!bomb._didExplode)
             {
                 LaunchItem(hitItem, closeHit);
                 if(!bomb._wasTriggered)
                 {
-                    Debug.Log("Actually bombing this bomb");
                     bomb.StopCoroutine(bomb._explodeRoutine);
                     float waitTime = (closeHit) ? .2f : .4f;
                     bomb._explodeRoutine = bomb.StartCoroutine(bomb.WaitAndExplode(waitTime));

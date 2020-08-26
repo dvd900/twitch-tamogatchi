@@ -51,7 +51,6 @@ public class HeadController : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log("Weight: " + _lookAtIK.solver.IKPositionWeight + " switch weight: " + _switchWeight + " target: " + _target);
         if (_lookAtIK.solver.IKPositionWeight >= 0.999f) _lookAtIK.solver.IKPositionWeight = 1f;
         if (_lookAtIK.solver.IKPositionWeight <= 0.001f) _lookAtIK.solver.IKPositionWeight = 0f;
 
@@ -88,12 +87,10 @@ public class HeadController : MonoBehaviour
 
     private IEnumerator GlanceAtTargetRoutine(Transform target, bool ignoreY)
     {
-        Debug.Log("Starting glance");
         SetLookAtIK(target, ignoreY);
         yield return new WaitForSeconds(_glanceTime);
         ResetLookAtIK();
         _glanceRoutine = null;
-        Debug.Log("done glance");
     }
 
     public void SetLookAtIK(Transform target, bool ignoreY)
@@ -101,13 +98,11 @@ public class HeadController : MonoBehaviour
         if(_glanceRoutine != null)
         {
             StopCoroutine(_glanceRoutine);
-            Debug.Log("Cancelling glance routine");
         }
 
         var tween = LeanTween.descr(_weightTweenID);
         if (tween != null)
         {
-            Debug.Log("Cancelling old tween");
             LeanTween.cancel(_weightTweenID);
         }
 

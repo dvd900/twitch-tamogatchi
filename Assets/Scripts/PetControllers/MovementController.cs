@@ -79,7 +79,6 @@ public class MovementController : MonoBehaviour
 
         _headController.SetLookAtIK(target, true);
         //_rotDir = -(int)Mathf.Sign(da);
-        Debug.Log("Turning, time: " + _turnTimer);
     }
     
     private bool IsInRange() {

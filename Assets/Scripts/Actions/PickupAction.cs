@@ -56,7 +56,6 @@ public class PickupAction : AIAction {
     }
 
     private void WalkToItem() {
-        Debug.Log("WALKING TO ITEM");
         Vector3 dest = _skin.itemController.GetPickupDest(_item);
         _skin.movementController.WalkToPosition(dest);
     }

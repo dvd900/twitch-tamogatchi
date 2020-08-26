@@ -53,8 +53,6 @@ public class ItemController : MonoBehaviour {
             Drop();
         }
 
-        Debug.Log("picking up");
-
         _skin.animator.SetTrigger("pickup");
 
         _itemToPickup = item;
@@ -68,8 +66,6 @@ public class ItemController : MonoBehaviour {
             Debug.LogError("Trying to drop a null item!");
             return;
         }
-
-        Debug.Log("dropping");
 
         //_skin.lArmBone.m_Damping = _defaultArmDamping;
         //_skin.lArmBone.m_Stiffness = _defaultArmStiffness;

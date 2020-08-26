@@ -54,7 +54,6 @@ public class Item : MonoBehaviour
 
     public bool CanBePickedUp()
     {
-        Debug.Log("ITemtype: " + _profile.itemType);
         return _profile.itemType == ItemType.Consumable && !isHeld && _rigidbody.velocity.magnitude < 3;
     }
 

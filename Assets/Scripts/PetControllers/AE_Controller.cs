@@ -48,20 +48,17 @@ public class AE_Controller : MonoBehaviour
 
     public void AE_EatDone()
     {
-        Debug.Log("AE Eat done");
         _skin.itemController.DoEatDone();
     }
 
     public void AE_PutItemInHand()
     {
-        Debug.Log("AE put item in hadn");
         _skin.itemController.DoPutItemInHand();
         _skin.sfxController.PlayPickUp();
     }
 
     public void AE_PickupDone()
     {
-        Debug.Log("AE pickup done");
         _skin.itemController.DoPickupDone();
     }
 
