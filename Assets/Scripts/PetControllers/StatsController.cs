@@ -56,7 +56,7 @@ public class StatsController : MonoBehaviour {
         _stamina = 100;
         _health = 100;
         _happiness = 100;
-        _hunger = 0;
+        _hunger = 100;
         _skin = GetComponent<Skin>();
     }
 
@@ -104,7 +104,7 @@ public class StatsController : MonoBehaviour {
 
     private void Update() {
         AddStamina(-_staminaDrain * Time.deltaTime);
-        AddHunger(_hungerInc * Time.deltaTime);
+        AddHunger(-_hungerInc * Time.deltaTime);
 
         float happinessMod = 0;
 
