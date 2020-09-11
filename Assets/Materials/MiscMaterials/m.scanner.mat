@@ -32,7 +32,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShieldPatternWaves:
-        m_Texture: {fileID: 2800000, guid: 61c0b9c0523734e0e91bc6043c72a490, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShieldPatternWaves1:
+        m_Texture: {fileID: 2800000, guid: 1a1e99c7f4bb0a4479e4e5c835fd6c98, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -40,13 +48,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _EdgeDistance: 0.27
+    - _AnimationScale: 0
+    - _AnimationSpeed: 10
+    - _EdgeDistance: 0.17
     - _EdgePower: 0.76
     - _HitSize: 0.2
     - _HitTime: 0
     - _IntersectIntensity: 0.025
     - _Opacity: 0
-    - _ShieldAnimSpeed: 3
+    - _ShieldAnimSpeed: 0
+    - _ShieldAnimSpeed1: 6.2
     - _ShieldDistortion: 0.01
     - _ShieldPatternPower: 5
     - _ShieldPatternSize: 5
@@ -60,3 +71,4 @@ Material:
     - _HitPosition: {r: 0, g: 0, b: 0, a: 0}
     - _IntersectColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShieldPatternColor: {r: 0.24705866, g: 0.7764706, b: 0.9098039, a: 1}
+    - _Speed: {r: 0, g: 0.2, b: 0, a: 0}

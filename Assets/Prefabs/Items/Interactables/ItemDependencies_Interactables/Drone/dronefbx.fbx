@@ -9,11 +9,11 @@ FBXHeaderExtension:  {
 	CreationTimeStamp:  {
 		Version: 1000
 		Year: 2020
-		Month: 04
-		Day: 25
-		Hour: 01
-		Minute: 02
-		Second: 55
+		Month: 09
+		Day: 11
+		Hour: 16
+		Minute: 54
+		Second: 53
 		Millisecond: 0
 	}
 	Creator: "FBX SDK/FBX Plugins build 20070228"
@@ -21,7 +21,7 @@ FBXHeaderExtension:  {
 		FlagPLE: 0
 	}
 }
-CreationTime: "2020-04-25 01:02:55:000"
+CreationTime: "2020-09-11 16:54:53:000"
 Creator: "Blender version 2.79 (sub 0)"
 
 ; Object definitions
@@ -8672,7 +8672,7 @@ Objects:  {
 		}
 		UseMipMap: 0
 		Filename: "n.claw_base.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.claw_base.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.claw_base.png"
 	}
 	Video: "Video::Untitled_002", "Clip" {
 		Type: "Clip"
@@ -8693,7 +8693,7 @@ Objects:  {
 		}
 		UseMipMap: 0
 		Filename: "n.claw.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.claw.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.claw.png"
 	}
 	Video: "Video::Untitled_003", "Clip" {
 		Type: "Clip"
@@ -8714,7 +8714,7 @@ Objects:  {
 		}
 		UseMipMap: 0
 		Filename: "n.drone_arm.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.drone_arm.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.drone_arm.png"
 	}
 	Video: "Video::Untitled_004", "Clip" {
 		Type: "Clip"
@@ -8735,7 +8735,7 @@ Objects:  {
 		}
 		UseMipMap: 0
 		Filename: "n.drone.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.drone.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.drone.png"
 	}
 	Video: "Video::Untitled_005", "Clip" {
 		Type: "Clip"
@@ -8756,7 +8756,7 @@ Objects:  {
 		}
 		UseMipMap: 0
 		Filename: "n.drone_armtrack.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.drone_armtrack.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.drone_armtrack.png"
 	}
 	Video: "Video::Untitled_007", "Clip" {
 		Type: "Clip"
@@ -8777,7 +8777,7 @@ Objects:  {
 		}
 		UseMipMap: 0
 		Filename: "n.drone_propellortrack.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.drone_propellortrack.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.drone_propellortrack.png"
 	}
 	Texture: "Texture::Untitled", "TextureVideoClip" {
 		Type: "TextureVideoClip"
@@ -8802,7 +8802,7 @@ Objects:  {
 		}
 		Media: "Video::Untitled"
 		FileName: "n.claw_base.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.claw_base.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.claw_base.png"
 		ModelUVTranslation: 0,0
 		ModelUVScaling: 1,1
 		Texture_Alpha_Source: "None"
@@ -8831,7 +8831,7 @@ Objects:  {
 		}
 		Media: "Video::Untitled_002"
 		FileName: "n.claw.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.claw.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.claw.png"
 		ModelUVTranslation: 0,0
 		ModelUVScaling: 1,1
 		Texture_Alpha_Source: "None"
@@ -8860,7 +8860,7 @@ Objects:  {
 		}
 		Media: "Video::Untitled_003"
 		FileName: "n.drone_arm.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.drone_arm.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.drone_arm.png"
 		ModelUVTranslation: 0,0
 		ModelUVScaling: 1,1
 		Texture_Alpha_Source: "None"
@@ -8889,7 +8889,7 @@ Objects:  {
 		}
 		Media: "Video::Untitled_004"
 		FileName: "n.drone.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.drone.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.drone.png"
 		ModelUVTranslation: 0,0
 		ModelUVScaling: 1,1
 		Texture_Alpha_Source: "None"
@@ -8918,7 +8918,7 @@ Objects:  {
 		}
 		Media: "Video::Untitled_005"
 		FileName: "n.drone_armtrack.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.drone_armtrack.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.drone_armtrack.png"
 		ModelUVTranslation: 0,0
 		ModelUVScaling: 1,1
 		Texture_Alpha_Source: "None"
@@ -8947,7 +8947,7 @@ Objects:  {
 		}
 		Media: "Video::Untitled_007"
 		FileName: "n.drone_propellortrack.png"
-		RelativeFilename: "/Users/tylercauthen/Documents/a_3D/a_drone/n.drone_propellortrack.png"
+		RelativeFilename: "/Users/tylercauthen/Documents/Documents/a_3D/a_drone/n.drone_propellortrack.png"
 		ModelUVTranslation: 0,0
 		ModelUVScaling: 1,1
 		Texture_Alpha_Source: "None"
@@ -10442,89 +10442,89 @@ Relations:  {
 	}
 	Deformer: "Deformer::Skin egg", "Skin" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder root", "Cluster" {
-	}
 	Deformer: "SubDeformer::Cluster _screen root", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder root_001", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder root", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen root_001", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder root_004", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder root_001", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen root_004", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder root_002", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder root_004", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen root_002", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder root_005", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder root_002", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen root_005", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder root_003", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder root_005", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen root_003", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder root_006", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder root_003", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen root_006", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder root_006", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_002", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_002", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_001", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_002", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_001", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_003", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_001", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_003", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_007", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_003", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_007", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_005", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_007", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_005", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_009", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_005", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_009", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_004", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_009", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_004", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_008", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_004", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_008", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_006", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_008", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_006", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_010", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_006", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_010", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_011", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_010", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_011", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_013", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_011", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_013", "Cluster" {
 	}
-	Deformer: "SubDeformer::Cluster Cylinder Bone_012", "Cluster" {
+	Deformer: "SubDeformer::Cluster Cylinder Bone_013", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster _screen Bone_012", "Cluster" {
+	}
+	Deformer: "SubDeformer::Cluster Cylinder Bone_012", "Cluster" {
 	}
 	Deformer: "SubDeformer::Cluster egg Bone_0", "Cluster" {
 	}
@@ -10564,91 +10564,91 @@ Connections:  {
 	Connect: "OO", "Deformer::Skin Cylinder", "Model::Cylinder"
 	Connect: "OO", "Deformer::Skin _screen", "Model::_screen"
 	Connect: "OO", "Deformer::Skin egg", "Model::egg"
-	Connect: "OO", "SubDeformer::Cluster Cylinder root", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen root", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder root_001", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder root", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen root_001", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder root_004", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder root_001", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen root_004", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder root_002", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder root_004", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen root_002", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder root_005", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder root_002", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen root_005", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder root_003", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder root_005", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen root_003", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder root_006", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder root_003", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen root_006", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder root_006", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_002", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_002", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_001", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_002", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_001", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_003", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_001", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_003", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_007", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_003", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_007", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_005", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_007", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_005", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_009", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_005", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_009", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_004", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_009", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_004", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_008", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_004", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_008", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_006", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_008", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_006", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_010", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_006", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_010", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_011", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_010", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_011", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_013", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_011", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_013", "Deformer::Skin _screen"
-	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_012", "Deformer::Skin Cylinder"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_013", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster _screen Bone_012", "Deformer::Skin _screen"
+	Connect: "OO", "SubDeformer::Cluster Cylinder Bone_012", "Deformer::Skin Cylinder"
 	Connect: "OO", "SubDeformer::Cluster egg Bone_0", "Deformer::Skin egg"
-	Connect: "OO", "Model::root", "SubDeformer::Cluster Cylinder root"
 	Connect: "OO", "Model::root", "SubDeformer::Cluster _screen root"
-	Connect: "OO", "Model::root_001", "SubDeformer::Cluster Cylinder root_001"
+	Connect: "OO", "Model::root", "SubDeformer::Cluster Cylinder root"
 	Connect: "OO", "Model::root_001", "SubDeformer::Cluster _screen root_001"
-	Connect: "OO", "Model::root_004", "SubDeformer::Cluster Cylinder root_004"
+	Connect: "OO", "Model::root_001", "SubDeformer::Cluster Cylinder root_001"
 	Connect: "OO", "Model::root_004", "SubDeformer::Cluster _screen root_004"
-	Connect: "OO", "Model::root_002", "SubDeformer::Cluster Cylinder root_002"
+	Connect: "OO", "Model::root_004", "SubDeformer::Cluster Cylinder root_004"
 	Connect: "OO", "Model::root_002", "SubDeformer::Cluster _screen root_002"
-	Connect: "OO", "Model::root_005", "SubDeformer::Cluster Cylinder root_005"
+	Connect: "OO", "Model::root_002", "SubDeformer::Cluster Cylinder root_002"
 	Connect: "OO", "Model::root_005", "SubDeformer::Cluster _screen root_005"
-	Connect: "OO", "Model::root_003", "SubDeformer::Cluster Cylinder root_003"
+	Connect: "OO", "Model::root_005", "SubDeformer::Cluster Cylinder root_005"
 	Connect: "OO", "Model::root_003", "SubDeformer::Cluster _screen root_003"
-	Connect: "OO", "Model::root_006", "SubDeformer::Cluster Cylinder root_006"
+	Connect: "OO", "Model::root_003", "SubDeformer::Cluster Cylinder root_003"
 	Connect: "OO", "Model::root_006", "SubDeformer::Cluster _screen root_006"
-	Connect: "OO", "Model::Bone", "SubDeformer::Cluster Cylinder Bone"
+	Connect: "OO", "Model::root_006", "SubDeformer::Cluster Cylinder root_006"
 	Connect: "OO", "Model::Bone", "SubDeformer::Cluster _screen Bone"
-	Connect: "OO", "Model::Bone_002", "SubDeformer::Cluster Cylinder Bone_002"
+	Connect: "OO", "Model::Bone", "SubDeformer::Cluster Cylinder Bone"
 	Connect: "OO", "Model::Bone_002", "SubDeformer::Cluster _screen Bone_002"
-	Connect: "OO", "Model::Bone_001", "SubDeformer::Cluster Cylinder Bone_001"
+	Connect: "OO", "Model::Bone_002", "SubDeformer::Cluster Cylinder Bone_002"
 	Connect: "OO", "Model::Bone_001", "SubDeformer::Cluster _screen Bone_001"
-	Connect: "OO", "Model::Bone_003", "SubDeformer::Cluster Cylinder Bone_003"
+	Connect: "OO", "Model::Bone_001", "SubDeformer::Cluster Cylinder Bone_001"
 	Connect: "OO", "Model::Bone_003", "SubDeformer::Cluster _screen Bone_003"
-	Connect: "OO", "Model::Bone_007", "SubDeformer::Cluster Cylinder Bone_007"
+	Connect: "OO", "Model::Bone_003", "SubDeformer::Cluster Cylinder Bone_003"
 	Connect: "OO", "Model::Bone_007", "SubDeformer::Cluster _screen Bone_007"
-	Connect: "OO", "Model::Bone_005", "SubDeformer::Cluster Cylinder Bone_005"
+	Connect: "OO", "Model::Bone_007", "SubDeformer::Cluster Cylinder Bone_007"
 	Connect: "OO", "Model::Bone_005", "SubDeformer::Cluster _screen Bone_005"
-	Connect: "OO", "Model::Bone_009", "SubDeformer::Cluster Cylinder Bone_009"
+	Connect: "OO", "Model::Bone_005", "SubDeformer::Cluster Cylinder Bone_005"
 	Connect: "OO", "Model::Bone_009", "SubDeformer::Cluster _screen Bone_009"
-	Connect: "OO", "Model::Bone_004", "SubDeformer::Cluster Cylinder Bone_004"
+	Connect: "OO", "Model::Bone_009", "SubDeformer::Cluster Cylinder Bone_009"
 	Connect: "OO", "Model::Bone_004", "SubDeformer::Cluster _screen Bone_004"
-	Connect: "OO", "Model::Bone_008", "SubDeformer::Cluster Cylinder Bone_008"
+	Connect: "OO", "Model::Bone_004", "SubDeformer::Cluster Cylinder Bone_004"
 	Connect: "OO", "Model::Bone_008", "SubDeformer::Cluster _screen Bone_008"
-	Connect: "OO", "Model::Bone_006", "SubDeformer::Cluster Cylinder Bone_006"
+	Connect: "OO", "Model::Bone_008", "SubDeformer::Cluster Cylinder Bone_008"
 	Connect: "OO", "Model::Bone_006", "SubDeformer::Cluster _screen Bone_006"
-	Connect: "OO", "Model::Bone_010", "SubDeformer::Cluster Cylinder Bone_010"
+	Connect: "OO", "Model::Bone_006", "SubDeformer::Cluster Cylinder Bone_006"
 	Connect: "OO", "Model::Bone_010", "SubDeformer::Cluster _screen Bone_010"
-	Connect: "OO", "Model::Bone_011", "SubDeformer::Cluster Cylinder Bone_011"
+	Connect: "OO", "Model::Bone_010", "SubDeformer::Cluster Cylinder Bone_010"
 	Connect: "OO", "Model::Bone_011", "SubDeformer::Cluster _screen Bone_011"
-	Connect: "OO", "Model::Bone_013", "SubDeformer::Cluster Cylinder Bone_013"
+	Connect: "OO", "Model::Bone_011", "SubDeformer::Cluster Cylinder Bone_011"
 	Connect: "OO", "Model::Bone_013", "SubDeformer::Cluster _screen Bone_013"
-	Connect: "OO", "Model::Bone_012", "SubDeformer::Cluster Cylinder Bone_012"
+	Connect: "OO", "Model::Bone_013", "SubDeformer::Cluster Cylinder Bone_013"
 	Connect: "OO", "Model::Bone_012", "SubDeformer::Cluster _screen Bone_012"
+	Connect: "OO", "Model::Bone_012", "SubDeformer::Cluster Cylinder Bone_012"
 	Connect: "OO", "Model::Bone_0", "SubDeformer::Cluster egg Bone_0"
 	Connect: "OO", "Model::root", "Model::Armature"
 	Connect: "OO", "Model::root_001", "Model::root"
