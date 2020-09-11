@@ -72,14 +72,7 @@ public class Item : MonoBehaviour
 
         _holder = null;
     }
-
-    public void Launch(Vector3 force)
-    {
-        float forceMag = force.magnitude;
-        _rigidbody.AddForce(force);
-        _rigidbody.AddTorque(forceMag * Random.onUnitSphere);
-    }
-
+    
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == VBLayerMask.GroundTag)

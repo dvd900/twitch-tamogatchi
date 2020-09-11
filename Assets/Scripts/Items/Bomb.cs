@@ -181,10 +181,14 @@ public class Bomb : MonoBehaviour
 
     private void LaunchItem(GameObject hitItem, bool closeHit)
     {
-        var item = hitItem.GetComponentInParent<Item>();
+        var rigidbody = hitItem.GetComponentInParent<Rigidbody>();
         float angle = (closeHit) ? _closeAngle : 0;
-        var launchVec = GetLaunchVector(item.transform.position, _closeForce, angle);
-        item.Launch(launchVec);
+        float force = (closeHit) ? _closeForce : _farForce;
+        var launchVec = GetLaunchVector(hitItem.transform.position, force, angle);
+        
+        rigidbody.AddForce(launchVec);
+        rigidbody.AddTorque(force * UnityEngine.Random.onUnitSphere);
+        
     }
 
     private Vector3 GetLaunchVector(Vector3 itemPos, float force, float angle)

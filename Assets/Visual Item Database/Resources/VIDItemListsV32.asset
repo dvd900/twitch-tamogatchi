@@ -28,6 +28,7 @@ MonoBehaviour:
     _staminaMod: 10
     _hungerMod: 10
     _happinessMod: 10
+    _statusEffects: 00000000
   - itemName: Meat
     itemID: -1370315301
     itemIcon: {fileID: 0}
@@ -37,6 +38,7 @@ MonoBehaviour:
     _staminaMod: 50
     _hungerMod: 30
     _happinessMod: 0
+    _statusEffects: 01000000
   - itemName: Riceball
     itemID: -694024983
     itemIcon: {fileID: 0}
@@ -46,6 +48,7 @@ MonoBehaviour:
     _staminaMod: 5
     _hungerMod: 3
     _happinessMod: 20
+    _statusEffects: 
   - itemName: Soda
     itemID: 766657084
     itemIcon: {fileID: 0}
@@ -55,6 +58,7 @@ MonoBehaviour:
     _staminaMod: 60
     _hungerMod: 0
     _happinessMod: 80
+    _statusEffects: 
   - itemName: Mushroom
     itemID: -1152645558
     itemIcon: {fileID: 0}
@@ -64,6 +68,7 @@ MonoBehaviour:
     _staminaMod: 20
     _hungerMod: 20
     _happinessMod: 20
+    _statusEffects: 
   usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb63021417
   typesOfUsedIDs: 010000000100000001000000010000000100000000000000
   subtypes: []

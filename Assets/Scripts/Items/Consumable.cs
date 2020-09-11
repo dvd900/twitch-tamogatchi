@@ -21,6 +21,12 @@ public class Consumable : Item {
         _holder.statsController.AddHappiness(profile._happinessMod);
 
         if (++_biteInd >= _consumptionStates.Length) {
+            Debug.Log("Profile: " + profile + " status: " + profile._statusEffects);
+            foreach(EffectType effect in profile._statusEffects)
+            {
+                EffectFactory.Instance.AddEffect(effect, _holder.gameObject);
+            }
+
             Destroy(gameObject);
             return;
         }
