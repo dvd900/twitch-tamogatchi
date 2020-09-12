@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Arcrange: 223
+    - _Arcrange: 210
     - _Backgroundborderopacity: 1
     - _Backgroundborderradialwidth: 0
     - _Backgroundbordertangentwidth: 0
@@ -103,7 +103,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Radius: 0.062
-    - _Rotation: 306
+    - _Rotation: 25
     - _Secondaryscrollrotate: 1
     - _Secondarytexcontrast: 1
     - _Secondarytexopacity: 1

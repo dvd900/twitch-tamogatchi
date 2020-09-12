@@ -50,10 +50,10 @@ Shader "DroneScanner"
 }
 /*ASEBEGIN
 Version=18400
-600;186;1048;576;1440.049;66.93349;2.450852;True;True
-Node;AmplifyShaderEditor.RangedFloatNode;1;-993.2836,-347.8373;Inherit;False;Property;_EdgeDistance;Edge Distance;0;0;Create;True;0;0;False;0;False;1;0.45;0;3;0;1;FLOAT;0
+65;205;1048;576;1440.049;66.93349;2.450852;True;True
+Node;AmplifyShaderEditor.RangedFloatNode;1;-993.2836,-347.8373;Inherit;False;Property;_EdgeDistance;Edge Distance;0;0;Create;True;0;0;False;0;False;1;0.17;0;3;0;1;FLOAT;0
 Node;AmplifyShaderEditor.DepthFade;3;-701.8478,-349.4438;Inherit;False;True;False;True;2;1;FLOAT3;0,0,0;False;0;FLOAT;1;False;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;2;-974.3685,12.10007;Inherit;False;Property;_EdgePower;Edge Power;1;0;Create;True;0;0;False;0;False;0;0.69;0;3;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;2;-974.3685,12.10007;Inherit;False;Property;_EdgePower;Edge Power;1;0;Create;True;0;0;False;0;False;0;0.76;0;3;0;1;FLOAT;0
 Node;AmplifyShaderEditor.OneMinusNode;4;-525.6177,-227.7179;Inherit;True;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;5;-645.5267,15.73373;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.TextureCoordinatesNode;8;-1186.671,548.3752;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
@@ -80,4 +80,4 @@ WireConnection;0;0;7;0
 WireConnection;0;2;6;0
 WireConnection;0;9;6;0
 ASEEND*/
-//CHKSM=9BC7CCD958739C126080CE340B67959108045D2B
+//CHKSM=3646B1A89EFA848865BE47304155A715119F3F38

@@ -50,7 +50,7 @@ Material:
     m_Floats:
     - _AnimationScale: 0
     - _AnimationSpeed: 10
-    - _EdgeDistance: 0.17
+    - _EdgeDistance: 0.24
     - _EdgePower: 0.76
     - _HitSize: 0.2
     - _HitTime: 0
