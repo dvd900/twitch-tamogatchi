@@ -29,7 +29,7 @@ public class PickupAction : AIAction {
     }
 
     public override bool IsFinished() {
-        return _skin.itemController.HeldItem == _item && !_skin.itemController.IsPickingUp;
+        return _item == null || (_skin.itemController.HeldItem == _item && !_skin.itemController.IsPickingUp);
     }
 
     public override void StartAction() {
@@ -37,6 +37,12 @@ public class PickupAction : AIAction {
     }
 
     public override void UpdateAction() {
+        if(_item == null)
+        {
+            _skin.movementController.StopWalking();
+            return;
+        }
+
         if (!_skin.movementController.IsWalking && !_skin.itemController.IsPickingUp 
             && _skin.itemController.HeldItem != _item) {
 

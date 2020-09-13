@@ -27,13 +27,13 @@ namespace UI {
         }
 
         private void Update() {
-            if(_lastHealth != _stats.health)
+            if(_lastHealth != _stats.Health)
             {
-                UpdateHealth(_stats.health / 100.0f);
-                _lastHealth = _stats.health;
+                UpdateHealth(_stats.Health / 100.0f);
+                _lastHealth = _stats.Health;
             }
-            UpdateEnergy(_stats.stamina / 100.0f);
-            UpdateHunger(_stats.hunger / 100.0f);
+            UpdateEnergy(_stats.Stamina / 100.0f);
+            UpdateHunger(_stats.Hunger / 100.0f);
         }
 
         private void UpdateHealth(float p) {

@@ -102,8 +102,8 @@ Material:
     - _Noisetexcontrast: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Radius: 0.091
-    - _Rotation: 4
+    - _Radius: 0.062
+    - _Rotation: 112
     - _Secondaryscrollrotate: 1
     - _Secondarytexcontrast: 1
     - _Secondarytexopacity: 1

@@ -8,6 +8,7 @@ public class MovementController : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _navMeshAgent;
     [SerializeField] private HeadController _headController;
+    [SerializeField] private float _tiredSpeedMod;
 
     /// <summary>
     /// How close he has to be to the wp to stop
@@ -27,6 +28,7 @@ public class MovementController : MonoBehaviour
 
     private int _rotDir;
     private float _turnTimer;
+    private float _baseSpeed;
 
     private Coroutine _lookRoutine;
 
@@ -34,12 +36,17 @@ public class MovementController : MonoBehaviour
 
     private void Awake() {
         _skin = GetComponent<Skin>();
+        _baseSpeed = _navMeshAgent.speed;
     }
 
     private void Update() {
-        if(_isWalking && IsInRange()) {
+        if (_isWalking && IsInRange())
+        {
             StopWalking();
         }
+
+        float speed = _baseSpeed * ((_skin.statsController.IsTired) ? _tiredSpeedMod : 1.0f);
+        _navMeshAgent.speed = speed;
     }
 
     private void LateUpdate() {
