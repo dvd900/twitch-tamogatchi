@@ -21787,6 +21787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _navMeshAgent: {fileID: 4718218144133215525}
   _headController: {fileID: 788122144742080456}
+  _tiredSpeedMod: 0.3
   _wpRange: 5
   _turnSpeed: 180
 --- !u!114 &4718218144133215527
@@ -21827,7 +21828,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 15
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -21864,13 +21865,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staminaDrain: 1
-  _hungerInc: 1
-  _staminaHappinessDrain: 1
-  _hungerHappinessDrain: 1
-  _healthHappinessDrain: 1
-  _hungerThreshold: 60
-  _staminaThreshold: 30
-  _healthThreshold: 30
+  _hungerDrain: 1
+  _hungryHealthDrain: 1
 --- !u!114 &4718218144133215529
 MonoBehaviour:
   m_ObjectHideFlags: 0

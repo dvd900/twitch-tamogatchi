@@ -11,43 +11,24 @@ public class StatsController : MonoBehaviour {
     /// </summary>
     [SerializeField] private float _staminaDrain;
     /// <summary>
-    /// Rate of hunger increase
+    /// Rate of hunger drain
     /// </summary>
-    [SerializeField] private float _hungerInc;
+    [SerializeField] private float _hungerDrain;
+    /// <summary>
+    /// Rate of health decrease when hungry
+    /// </summary>
+    [SerializeField] private float _hungryHealthDrain;
 
-    /// <summary>
-    /// Rate of happiness drain when at low stamina
-    /// </summary>
-    [SerializeField] private float _staminaHappinessDrain;
-    /// <summary>
-    /// Rate of happiness drain when hungry
-    /// </summary>
-    [SerializeField] private float _hungerHappinessDrain;
-    /// <summary>
-    /// Rate of happiness drain when hp is low
-    /// </summary>
-    [SerializeField] private float _healthHappinessDrain;
+    public bool IsHungry { get { return _hunger <= 0; } }
+    public bool IsTired { get { return _stamina <= 0; } }
 
-    /// <summary>
-    /// The point above which sweetango becomes rly hungie
-    /// </summary>
-    [SerializeField] private float _hungerThreshold;
-    /// <summary>
-    /// The point below which sweetango becomes tired
-    /// </summary>
-    [SerializeField] private float _staminaThreshold;
-    /// <summary>
-    /// The point below which sweetango becomes sick
-    /// </summary>
-    [SerializeField] private float _healthThreshold;
-
-    public float stamina { get { return _stamina; } }
+    public float Stamina { get { return _stamina; } }
     private float _stamina;
-    public float health { get { return _health; } }
+    public float Health { get { return _health; } }
     private float _health;
-    public float hunger { get { return _hunger; } }
+    public float Hunger { get { return _hunger; } }
     private float _hunger;
-    public float happiness { get { return _happiness; } }
+    public float Happiness { get { return _happiness; } }
     private float _happiness;
 
     private Skin _skin;
@@ -65,9 +46,8 @@ public class StatsController : MonoBehaviour {
     }
 
     public void AddHealth(float x) {
-        Debug.Log("Adding health: " + x);
         AddStat(x, ref _health);
-        if(_health <= 0)
+        if(_health <= 0 && !_skin.actionController.IsDying)
         {
             _skin.actionController.DoAction(new DeathAction(_skin));    
         }
@@ -81,18 +61,6 @@ public class StatsController : MonoBehaviour {
         AddStat(x, ref _happiness);
     }
 
-    public bool IsHungry() {
-        return _hunger > _hungerThreshold;
-    }
-
-    public bool IsTired() {
-        return _stamina < _staminaThreshold;
-    }
-
-    public bool IsHPLow() {
-        return _health < _healthThreshold;
-    }
-
     private void AddStat(float x, ref float stat) {
         stat += x;
         if(stat < 0) {
@@ -104,22 +72,10 @@ public class StatsController : MonoBehaviour {
 
     private void Update() {
         AddStamina(-_staminaDrain * Time.deltaTime);
-        AddHunger(-_hungerInc * Time.deltaTime);
+        AddHunger(-_hungerDrain * Time.deltaTime);
 
-        float happinessMod = 0;
-
-        if(IsTired()) {
-            happinessMod += _staminaHappinessDrain;
+        if(IsHungry) {
+            AddHealth(-_hungryHealthDrain * Time.deltaTime);
         }
-
-        if(IsHungry()) {
-            happinessMod += _hungerHappinessDrain;
-        }
-
-        if(IsHPLow()) {
-            happinessMod += _healthHappinessDrain;
-        }
-
-        AddHappiness(-happinessMod * Time.deltaTime);
     }
 }
