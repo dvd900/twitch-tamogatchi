@@ -25,11 +25,11 @@ MonoBehaviour:
     VegetationTextureGuid: 
     VegetationType: 0
     VegetationRenderType: 2
-    VegetationScaleType: 0
+    VegetationScaleType: 1
     MinScale: 7
     MaxScale: 7
-    MinVectorScale: {x: 4, y: 4, z: 4}
-    MaxVectorScale: {x: 4, y: 4, z: 4}
+    MinVectorScale: {x: 4, y: 3, z: 4}
+    MaxVectorScale: {x: 4, y: 3, z: 4}
     UseAutomaticDensityScale: 0
     LodIndex: 2
     Seed: 34
