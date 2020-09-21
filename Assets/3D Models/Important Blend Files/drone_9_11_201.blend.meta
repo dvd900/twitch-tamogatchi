@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f277ac0bf21a34e55b3d3c818c233e2b
+guid: 5eb89b6754ec54f05a990c1dcbe00c21
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
@@ -7,8 +7,8 @@ ModelImporter:
       74: 1989289236423521904
     second: Default Take
   - first:
-      74: -7185408704050613754
-    second: anim_drone_hover
+      74: -212616489387719947
+    second: anim_drone_idle_scanner
   - first:
       74: 2994353735064456695
     second: anim_drone_move
