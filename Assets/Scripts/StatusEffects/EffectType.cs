@@ -2,5 +2,6 @@
 public enum EffectType
 {
     Sleep,
-    Sick
+    Sick,
+    Speed
 }

@@ -25,7 +25,7 @@ public class EffectFactory : MonoBehaviour
         }
     }
 
-    public StatusEffect AddEffect(EffectType type, GameObject target)
+    public StatusEffect CreateNewEffectOnObject(EffectType type, GameObject target)
     {
         Debug.Log("Adding effect: " + type + " to: " + target);
         var effect = _effectDictionary[type];

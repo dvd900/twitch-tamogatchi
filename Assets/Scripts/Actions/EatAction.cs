@@ -17,7 +17,7 @@ public class EatAction : AIAction {
 
     public override void Interrupt()
     {
-
+        _skin.itemController.DoEatDone();
     }
 
     public override bool IsFinished()

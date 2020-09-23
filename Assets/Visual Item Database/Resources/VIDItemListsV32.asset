@@ -38,7 +38,7 @@ MonoBehaviour:
     _staminaMod: -15
     _hungerMod: 30
     _happinessMod: 0
-    _statusEffects: 
+    _statusEffects: 00000000
   - itemName: Riceball
     itemID: -694024983
     itemIcon: {fileID: 0}
@@ -58,7 +58,7 @@ MonoBehaviour:
     _staminaMod: 60
     _hungerMod: 5
     _happinessMod: 0
-    _statusEffects: 
+    _statusEffects: 02000000
   - itemName: Mushroom
     itemID: -1152645558
     itemIcon: {fileID: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
     _staminaMod: 10
     _hungerMod: 0
     _happinessMod: 0
-    _statusEffects: 
+    _statusEffects: 01000000
   usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb63021417
   typesOfUsedIDs: 010000000100000001000000010000000100000000000000
   subtypes: []

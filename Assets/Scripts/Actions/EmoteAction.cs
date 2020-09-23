@@ -29,7 +29,7 @@ public class EmoteAction : AIAction
 
     public override void Interrupt()
     {
-        _skin.emoteController.EmoteEnd();
+        _skin.emoteController.OnEmoteEnd();
     }
 
     public override bool IsFinished()

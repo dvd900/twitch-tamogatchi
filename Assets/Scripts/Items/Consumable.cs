@@ -24,7 +24,7 @@ public class Consumable : Item {
             Debug.Log("Profile: " + profile + " status: " + profile._statusEffects);
             foreach(EffectType effect in profile._statusEffects)
             {
-                EffectFactory.Instance.AddEffect(effect, _holder.gameObject);
+                _holder.effectController.AddEffect(effect);
             }
 
             Destroy(gameObject);

@@ -7,16 +7,20 @@ public class AIWorldData {
     private Skin _pet;
 
     private Item _closestItem;
-    public Item closestItem { get { return _closestItem; } }
+    public Item ClosestItem { get { return _closestItem; } }
 
     private List<Item> _itemsInRange;
-    public List<Item> itemsInRange { get { return _itemsInRange; } }
+    public List<Item> ItemsInRange { get { return _itemsInRange; } }
+
+    private List<Item> _allItems;
+    public List<Item> AllItems { get { return _allItems; } }
 
     private Collider[] _castColliders = new Collider[100];
 
     public AIWorldData(Skin pet) {
         _pet = pet;
         _itemsInRange = new List<Item>();
+        _allItems = new List<Item>();
     }
 
     public void UpdateData() {

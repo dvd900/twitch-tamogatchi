@@ -12,7 +12,7 @@ public class Planner : MonoBehaviour {
 
     private List<AIAction> _actions;
 
-    public AIWorldData worldData { get { return _worldData; } }
+    public AIWorldData WorldData { get { return _worldData; } }
     private AIWorldData _worldData;
 
     private float _planTimer;

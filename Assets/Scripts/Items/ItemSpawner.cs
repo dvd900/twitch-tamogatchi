@@ -15,12 +15,13 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] private AudioClip _itemSpawnClip;
     [SerializeField] private AudioSource _itemSFXSource;
 
-    private void Awake() {
+    private void Awake()
+    {
         singleton = this;
     }
 
-    void Start() {
-
+    void Start()
+    {
         MessengerServer.singleton.SetHandler(NetMsgInds.SpawnMessage, OnSpawnMessage);
     }
 

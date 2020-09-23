@@ -67,15 +67,15 @@ public class PickupAction : AIAction {
     }
 
     public override float Score(AIWorldData data) {
-        if(data.closestItem == null) {
+        if(data.ClosestItem == null) {
             return 0;
         }
 
-        float bestScore = ScoreItem(data.closestItem);
-        bestItem = data.closestItem;
+        float bestScore = ScoreItem(data.ClosestItem);
+        bestItem = data.ClosestItem;
 
-        foreach(Item item in data.itemsInRange) {
-            if(item.value <= data.closestItem.value) {
+        foreach(Item item in data.ItemsInRange) {
+            if(item.value <= data.ClosestItem.value) {
                 continue;
             }
 

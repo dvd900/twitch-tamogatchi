@@ -29,6 +29,7 @@ public class MovementController : MonoBehaviour
     private int _rotDir;
     private float _turnTimer;
     private float _baseSpeed;
+    private float _speedMod;
 
     private Coroutine _lookRoutine;
 
@@ -45,7 +46,13 @@ public class MovementController : MonoBehaviour
             StopWalking();
         }
 
-        float speed = _baseSpeed * ((_skin.statsController.IsTired) ? _tiredSpeedMod : 1.0f);
+        float speedMod = 1.0f + _speedMod;
+        if(_skin.statsController.IsTired)
+        {
+            speedMod += _tiredSpeedMod;
+        }
+
+        float speed = _baseSpeed * speedMod;
         _navMeshAgent.speed = speed;
     }
 
@@ -73,12 +80,13 @@ public class MovementController : MonoBehaviour
         _isWalking = true;
     }
 
-    public void FaceTarget(Transform target) {
+    public void FaceTarget(Transform target)
+    {
         Quaternion endRot = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
         Vector3 endRotEuler = endRot.eulerAngles;
         endRotEuler.x = transform.rotation.eulerAngles.x;
         endRotEuler.z = transform.rotation.eulerAngles.z;
-        
+
         _turnTimer = Quaternion.Angle(transform.rotation, endRot) / _turnSpeed;
 
         var rotTween = LeanTween.rotate(gameObject, endRotEuler, _turnTimer).setEaseInOutQuad();
@@ -86,6 +94,11 @@ public class MovementController : MonoBehaviour
 
         _headController.SetLookAtIK(target, true);
         //_rotDir = -(int)Mathf.Sign(da);
+    }
+
+    public void AddSpeedMod(float speedMod)
+    {
+        _speedMod += speedMod;
     }
     
     private bool IsInRange() {

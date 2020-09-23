@@ -7,13 +7,13 @@ public class EmoteBehaviour : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Emote start!" + animator.transform.parent);
-        animator.GetComponentInParent<EmoteController>().EmoteStart();
+        animator.GetComponentInParent<EmoteController>().OnEmoteStart();
     }
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Emote done!" + animator.transform.parent);
         
-        animator.GetComponentInParent<EmoteController>().EmoteEnd();
+        animator.GetComponentInParent<EmoteController>().OnEmoteEnd();
     }
 }

@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class IdleAction : AIAction
 {
-    private const float CHANCE_TO_SPEAK = 1.0f;
-
-    public float waitTime { get { return _waitTime; } set { _waitTime = value; } }
+    private const float CHANCE_TO_SPEAK = 0.5f;
+    
     private float _waitTime;
     private float _timer;
     private bool _sayDialogue;

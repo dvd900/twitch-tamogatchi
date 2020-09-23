@@ -7,21 +7,55 @@ public abstract class StatusEffect : MonoBehaviour
 
     public float _ttl;
 
-    private float _timeRemaining;
+    protected Skin _skin;
 
-    protected virtual void Start()
+    protected bool _isInfinite;
+    protected float _timeRemaining;
+
+    protected abstract void DoStartEffect();
+    protected abstract void DoUpdateEffect();
+    protected abstract void DoStopEffect();
+
+    public virtual bool IsFinished { get { return _timeRemaining < 0; } }
+
+    public void StartEffect(Skin skin)
     {
-        _timeRemaining = _ttl;
+        _skin = skin;
         Debug.Log("Starting effect: " + Type);
+        if (_ttl < 0)
+        {
+            _isInfinite = true;
+        }
+        else
+        {
+            _timeRemaining = _ttl;
+        }
+
+        DoStartEffect();
     }
 
-    protected virtual void Update()
+    public void UpdateEffect()
     {
-        _timeRemaining -= Time.deltaTime;
-        if(_timeRemaining < 0)
+        if(_isInfinite)
         {
-            Debug.Log("stopping effect: " + Type);
-            Destroy(this);
+            return;
+        }
+
+        _timeRemaining -= Time.deltaTime;
+    }
+
+    public void StopEffect()
+    {
+        Debug.Log("stopping effect: " + Type);
+        DoStopEffect();
+        Destroy(this);
+    }
+
+    public virtual void StackEffect()
+    {
+        if(!_isInfinite)
+        {
+            _timeRemaining = _ttl;
         }
     }
 }

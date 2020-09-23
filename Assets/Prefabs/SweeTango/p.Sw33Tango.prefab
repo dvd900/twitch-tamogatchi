@@ -21701,6 +21701,7 @@ GameObject:
   - component: {fileID: 937740732688601855}
   - component: {fileID: 933365123}
   - component: {fileID: 8856160755865283926}
+  - component: {fileID: 1083482800617487526}
   m_Layer: 20
   m_Name: p.Sw33Tango
   m_TagString: sweetango
@@ -21757,6 +21758,7 @@ MonoBehaviour:
   movementController: {fileID: 4718218144133215526}
   actionController: {fileID: 4718218144133215527}
   emoteController: {fileID: 4718218144133215531}
+  effectController: {fileID: 1083482800617487526}
   sfxController: {fileID: 937740732688601855}
   statsController: {fileID: 4718218144133215528}
   speechController: {fileID: 4718218144133215529}
@@ -22144,6 +22146,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1083482800617487526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718218144133215534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe0cc8fc4b54ea4caf66349bc5b15cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4718218144154531331
 GameObject:
   m_ObjectHideFlags: 0

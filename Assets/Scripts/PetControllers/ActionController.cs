@@ -15,13 +15,6 @@ public class ActionController : MonoBehaviour {
 
     public bool IsDying { get { return _currentAction is DeathAction; } }
 
-    private Skin _skin;
-
-    private void Start() {
-        _skin = GetComponent<Skin>();
-    }
-
-
     public void DoAction(AIAction action) {
         if(IsDying && !(action is DeathAction))
         {
@@ -48,9 +41,5 @@ public class ActionController : MonoBehaviour {
                 _currentAction = null;
             }
         }
-    }
-
-    private void OnIdleMsg(NetMsg msg) {
-        DoAction(new IdleAction(_skin));
     }
 }

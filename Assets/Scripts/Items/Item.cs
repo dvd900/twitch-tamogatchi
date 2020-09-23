@@ -36,8 +36,14 @@ public class Item : MonoBehaviour
         _rigidbody = GetComponentInChildren<Rigidbody>();
     }
 
-    void Start()
+    private void Start()
     {
+        Planner.Instance.WorldData.AllItems.Add(this);
+    }
+
+    private void OnDestroy()
+    {
+        Planner.Instance.WorldData.AllItems.Remove(this);
     }
 
     void Update()

@@ -27,7 +27,7 @@ public class PlayerInput : MonoBehaviour {
             if (_skin.itemController.HeldItem != null) {
                 _skin.actionController.DoAction(new EatAction(_skin));
             } else {
-                Item item = _planner.worldData.closestItem;
+                Item item = _planner.WorldData.ClosestItem;
                 if (item != null) {
                     _skin.itemController.Pickup(item);
                 }
@@ -59,8 +59,7 @@ public class PlayerInput : MonoBehaviour {
     }
 
     private void DoIdle() {
-        IdleAction action = new IdleAction(_skin);
-        action.waitTime = 5.0f;
+        IdleAction action = new IdleAction(_skin, 5.0f, true);
         _skin.actionController.DoAction(action);
     }
 

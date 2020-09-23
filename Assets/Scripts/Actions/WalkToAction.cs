@@ -1,13 +1,19 @@
 ﻿
 using UnityEngine;
 
-public class WalkToAction : AIAction {
-
-    public Vector3 dest { get { return _dest; } set { _dest = value; } }
+public class WalkToAction : AIAction
+{
+    private GameObject _debugMarker;
     private Vector3 _dest;
 
     public WalkToAction(Skin skin) : base(skin) {
         _dest = CoordsUtils.RandomWorldPointOnScreen();
+    }
+
+    public WalkToAction(Skin skin, Vector3 dest, GameObject debugMarker) : base(skin)
+    {
+        _debugMarker = debugMarker;
+        _dest = dest;
     }
 
     public override AIAction Generate() {
@@ -16,6 +22,10 @@ public class WalkToAction : AIAction {
 
     public override void Interrupt() {
         _skin.movementController.StopWalking();
+        if(_debugMarker != null)
+        {
+            GameObject.Destroy(_debugMarker);
+        }
     }
 
     public override bool IsFinished() {

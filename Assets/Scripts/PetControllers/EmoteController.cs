@@ -24,13 +24,13 @@ public class EmoteController : MonoBehaviour {
         _skin = GetComponent<Skin>();
     }
 
-    public void EmoteStart()
+    public void OnEmoteStart()
     {
         _startingEmote = false;
         _isDoingEmote = true;
     }
 
-    public void EmoteEnd()
+    public void OnEmoteEnd()
     {
         _startingEmote = false;
         _isDoingEmote = false;
@@ -80,6 +80,17 @@ public class EmoteController : MonoBehaviour {
         _startingEmote = true;
 		_skin.animator.SetTrigger("bombed");
         _skin.animator.SetTrigger("bombedEyes");
+    }
+
+    public void StartSleep()
+    {
+        _startingEmote = true;
+        _skin.animator.SetBool("sleep", true);
+    }
+
+    public void StopSleep()
+    {
+        _skin.animator.SetBool("sleep", false);
     }
 
     public void DieEmote()

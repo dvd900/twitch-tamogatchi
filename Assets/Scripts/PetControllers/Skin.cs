@@ -9,6 +9,7 @@ public class Skin : MonoBehaviour
     public MovementController movementController;
     public ActionController actionController;
     public EmoteController emoteController;
+    public EffectController effectController;
     public TangoSFXController sfxController;
     public StatsController statsController;
     public SpeechController speechController;

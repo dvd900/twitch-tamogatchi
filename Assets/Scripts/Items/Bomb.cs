@@ -61,8 +61,6 @@ public class Bomb : MonoBehaviour
             }
             yield return null;
         }
-
-        _indicatorLight.enabled = false;
     }
 
     private IEnumerator WaitAndExplode(float waitTime)
@@ -76,6 +74,8 @@ public class Bomb : MonoBehaviour
             yield return new WaitForSeconds(waitTime - _indicatorDuration);
             yield return IndicatorRoutine(_indicatorDuration);
         }
+
+        _indicatorLight.enabled = false;
 
         explosion.transform.SetParent(null);
         explosion.transform.rotation = Quaternion.identity;
