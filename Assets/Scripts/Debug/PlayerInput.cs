@@ -96,9 +96,7 @@ public class PlayerInput : MonoBehaviour {
             {
                 var marker = Instantiate<GameObject>(_walkDestPrefab, hit.point, Quaternion.identity);
 
-                WalkToAction action = new WalkToAction(_skin);
-                action.dest = hit.point;
-                action._debugMarker = marker;
+                WalkToAction action = new WalkToAction(_skin, hit.point, marker);
                 _skin.actionController.DoAction(action);
             }
         }

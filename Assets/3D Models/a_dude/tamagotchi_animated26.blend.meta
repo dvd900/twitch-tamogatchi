@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 27d52b29579ac463cb2245fc96e4e717
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 26
   internalIDToNameTable:
   - first:
       1: 100000
@@ -240,9 +240,36 @@ ModelImporter:
   - first:
       74: -623603649343465320
     second: Scene
+  - first:
+      74: -8945691123924629249
+    second: Armature|Idle
+  - first:
+      74: -7551964380084998518
+    second: Armature|Run
+  - first:
+      74: -3767682975942640364
+    second: Armature|Run.001
+  - first:
+      74: -7619437594799874802
+    second: Armature|Sphere.003Action
+  - first:
+      74: -680863323721671935
+    second: Armature|Sphere.003Action.001
+  - first:
+      74: -5029772162294473076
+    second: Sphere.004|Sphere.003Action
+  - first:
+      74: -4896318718979161342
+    second: Sphere.004|Sphere.003Action.001
+  - first:
+      74: 4813486975980345074
+    second: Sphere.003|Sphere.003Action
+  - first:
+      74: -2418311331105153930
+    second: Sphere.003|Sphere.003Action.001
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -306,6 +333,7 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -323,10 +351,8 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

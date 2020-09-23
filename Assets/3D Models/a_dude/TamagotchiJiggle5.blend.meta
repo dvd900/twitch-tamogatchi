@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: ebe3970c61f33403ba3c23d678b8cafe
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 26
   internalIDToNameTable:
   - first:
       1: 100000
@@ -237,9 +237,63 @@ ModelImporter:
   - first:
       74: -623603649343465320
     second: Scene
+  - first:
+      74: 4781951162920444690
+    second: Armature|ArmatureAction
+  - first:
+      74: -8945691123924629249
+    second: Armature|Idle
+  - first:
+      74: -4930797390354863410
+    second: Armature|pickup
+  - first:
+      74: 3515170952244877179
+    second: Armature|PickUp
+  - first:
+      74: -5934649280124288633
+    second: Armature|PickUp.001
+  - first:
+      74: -7551964380084998518
+    second: Armature|Run
+  - first:
+      74: -3767682975942640364
+    second: Armature|Run.001
+  - first:
+      74: 4724887770959480615
+    second: Armature|Sit
+  - first:
+      74: -6788291789069941537
+    second: Armature|SphereAction
+  - first:
+      74: -3516530941226328899
+    second: Armature|Sun.001Action
+  - first:
+      74: 1412499783799173214
+    second: Sun.001|pickup
+  - first:
+      74: -4808163383490536522
+    second: Sun.001|PickUp.001
+  - first:
+      74: -8505232916253196666
+    second: Sun.001|SphereAction
+  - first:
+      74: 4166958313319371087
+    second: Sun.001|Sun.001Action
+  - first:
+      74: -6113206299130982734
+    second: Sphere|pickup
+  - first:
+      74: 945659089926900678
+    second: Sphere|PickUp.001
+  - first:
+      74: -3100628101864396295
+    second: Sphere|SphereAction
+  - first:
+      74: -3461193027073217558
+    second: Sphere|Sun.001Action
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -303,6 +357,7 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -320,10 +375,8 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

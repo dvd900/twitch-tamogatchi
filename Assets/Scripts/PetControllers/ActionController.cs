@@ -23,7 +23,6 @@ public class ActionController : MonoBehaviour {
 
         if(_currentAction != null) {
             _currentAction.Interrupt();
-            _currentAction.FinishAction();
         }
 
         _currentAction = action;
@@ -37,7 +36,6 @@ public class ActionController : MonoBehaviour {
             _currentAction.UpdateAction();
 
             if(_currentAction.IsFinished()) {
-                _currentAction.FinishAction();
                 _currentAction = null;
             }
         }

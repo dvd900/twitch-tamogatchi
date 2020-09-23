@@ -15,6 +15,24 @@ ModelImporter:
   - first:
       74: 7170908390544164651
     second: anim_egg_move
+  - first:
+      74: -4077314872903414462
+    second: Armature|anim.drone_idle_scanner
+  - first:
+      74: -3316969738388652590
+    second: Armature|anim.drone_move
+  - first:
+      74: 6933688101747402210
+    second: Armature|anim.egg_move
+  - first:
+      74: -8341084147217941956
+    second: Cylinder|anim.drone_move
+  - first:
+      74: -6598763217574036031
+    second: Armature.001|anim.egg_move
+  - first:
+      74: -623603649343465320
+    second: Scene
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -101,7 +119,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
