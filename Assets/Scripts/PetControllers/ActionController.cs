@@ -2,16 +2,13 @@
 using System.Collections;
 using System;
 
-public class ActionController : MonoBehaviour {
-
-    public float avgIdleTime { get { return _avgIdleTime; } }
-    [SerializeField] private float _avgIdleTime;
-
-    public float actionRandomness { get { return _actionRandomness; } }
-    [SerializeField] private float _actionRandomness;
-
-    public AIAction currentAction { get { return _currentAction; } }
+public class ActionController : MonoBehaviour
+{
+    public AIAction CurrentAction { get { return _currentAction; } }
     private AIAction _currentAction;
+
+    public AIAction LastAction { get { return _lastAction; } }
+    private AIAction _lastAction;
 
     public bool IsDying { get { return _currentAction is DeathAction; } }
 
@@ -25,6 +22,8 @@ public class ActionController : MonoBehaviour {
             _currentAction.Interrupt();
         }
 
+        _lastAction = _currentAction;
+
         _currentAction = action;
         _currentAction.StartAction();
 
@@ -36,6 +35,7 @@ public class ActionController : MonoBehaviour {
             _currentAction.UpdateAction();
 
             if(_currentAction.IsFinished()) {
+                _lastAction = _currentAction;
                 _currentAction = null;
             }
         }

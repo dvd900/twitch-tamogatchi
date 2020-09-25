@@ -27,6 +27,8 @@ public class Planner : MonoBehaviour {
     }
 
     void Start() {
+        _worldData = new AIWorldData(_pet);
+
         if(_pet != null)
         {
             SetPet(_pet);
@@ -58,13 +60,13 @@ public class Planner : MonoBehaviour {
         _actions.Add(new IdleAction(_pet));
         _actions.Add(new EmoteAction(_pet));
 
-        _worldData = new AIWorldData(_pet);
+        _worldData.SetPet(pet);
 
         _lastAction = _actions[0];
     }
 
     private void Plan() {
-        if (_pet.actionController.currentAction != null) {
+        if (_pet.actionController.CurrentAction != null) {
             return;
         }
 
@@ -85,7 +87,7 @@ public class Planner : MonoBehaviour {
                 scoreString += " * .5f";
             }
 
-            float randomAdjustment = _pet.actionController.actionRandomness * (UnityEngine.Random.value - .5f);
+            float randomAdjustment = _pet.stats.ActionRandomness * (UnityEngine.Random.value - .5f);
             score += randomAdjustment;
 
             scoreString += " + " + randomAdjustment.ToString("F1");

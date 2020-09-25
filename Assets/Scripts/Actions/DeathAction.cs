@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class DeathAction : AIAction
+public class DeathAction : SweeTangoAction
 {
     private const float DEATH_TIME = 5.5f;
 

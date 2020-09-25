@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class PickupAction : AIAction {
+public class PickupAction : SweeTangoAction {
 
     private static Item bestItem;
 

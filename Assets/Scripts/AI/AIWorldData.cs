@@ -23,6 +23,11 @@ public class AIWorldData {
         _allItems = new List<Item>();
     }
 
+    public void SetPet(Skin pet)
+    {
+        _pet = pet;
+    }
+
     public void UpdateData() {
         UpdateItems();
     }

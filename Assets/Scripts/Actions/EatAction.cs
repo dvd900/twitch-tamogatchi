@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EatAction : AIAction {
+public class EatAction : SweeTangoAction {
 
     private bool _hasEaten;
 

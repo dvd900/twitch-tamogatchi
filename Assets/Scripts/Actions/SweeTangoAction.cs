@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assets.Scripts.Actions
+﻿
+public abstract class SweeTangoAction : AIAction
 {
-    class SweeTangoAction
+    protected Skin _skin;
+    protected SweeTangoAction(Skin skin)
     {
+        _skin = skin;
     }
 }

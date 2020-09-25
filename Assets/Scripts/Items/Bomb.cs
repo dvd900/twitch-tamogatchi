@@ -175,14 +175,7 @@ public class Bomb : MonoBehaviour
         }
         else
         {
-            if(closeHit)
-            {
-                Destroy(hitItem.gameObject);
-            }
-            else
-            {
-                LaunchItem(hitItem, closeHit);
-            }
+            LaunchItem(hitItem, closeHit);
         }
     }
 

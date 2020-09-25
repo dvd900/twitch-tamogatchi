@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class SleepAction : AIAction
+public class SleepAction : SweeTangoAction
 {
     public SleepAction(Skin skin) : base(skin)
     {

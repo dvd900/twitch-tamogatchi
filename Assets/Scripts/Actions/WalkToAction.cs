@@ -1,9 +1,10 @@
 ﻿
 using UnityEngine;
 
-public class WalkToAction : AIAction
+public class WalkToAction : SweeTangoAction
 {
-    private GameObject _debugMarker;
+    private static GameObject _debugMarker;
+
     private Vector3 _dest;
 
     public WalkToAction(Skin skin) : base(skin) {
@@ -12,6 +13,11 @@ public class WalkToAction : AIAction
 
     public WalkToAction(Skin skin, Vector3 dest, GameObject debugMarker) : base(skin)
     {
+        if(_debugMarker != null)
+        {
+            GameObject.Destroy(_debugMarker);
+        }
+
         _debugMarker = debugMarker;
         _dest = dest;
     }
@@ -22,10 +28,6 @@ public class WalkToAction : AIAction
 
     public override void Interrupt() {
         _skin.movementController.StopWalking();
-        if(_debugMarker != null)
-        {
-            GameObject.Destroy(_debugMarker);
-        }
     }
 
     public override bool IsFinished() {

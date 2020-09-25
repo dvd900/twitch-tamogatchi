@@ -20,6 +20,7 @@ namespace ItemSystem
 	{
 		None = 0,
 		Bomb = 387187299,
+		BananaPeel = 1972324557,
 	}
 }//#VID-2ISNE
 

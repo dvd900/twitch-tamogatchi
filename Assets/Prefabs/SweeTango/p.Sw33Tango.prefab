@@ -16667,7 +16667,8 @@ SkinnedMeshRenderer:
   - {fileID: 4718218142945505457}
   - {fileID: 4718218143308662747}
   - {fileID: 4718218142744638991}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 100
   m_RootBone: {fileID: 4718218143343755215}
   m_AABB:
     m_Center: {x: -2.1995625, y: -0.017167091, z: -0.012124538}
@@ -21702,6 +21703,7 @@ GameObject:
   - component: {fileID: 933365123}
   - component: {fileID: 8856160755865283926}
   - component: {fileID: 1083482800617487526}
+  - component: {fileID: 1924351907}
   m_Layer: 20
   m_Name: p.Sw33Tango
   m_TagString: sweetango
@@ -21763,6 +21765,7 @@ MonoBehaviour:
   statsController: {fileID: 4718218144133215528}
   speechController: {fileID: 4718218144133215529}
   headController: {fileID: 788122144742080456}
+  stats: {fileID: 1924351907}
   animator: {fileID: 4718218143710729448}
   bodyRend: {fileID: 4718218143929366063}
   lEyeRend: {fileID: 4718218144110950987}
@@ -21804,8 +21807,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64ed178b980243359dd635585a2ebc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _avgIdleTime: 2
-  _actionRandomness: 0.1
 --- !u!114 &4718218144133215524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22158,6 +22159,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe0cc8fc4b54ea4caf66349bc5b15cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1924351907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718218144133215534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51aa5ba22deeb499e8126a01a1c763ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _avgIdleTime: 2
+  _actionRandomness: 0.1
 --- !u!1 &4718218144154531331
 GameObject:
   m_ObjectHideFlags: 0

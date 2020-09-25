@@ -10,7 +10,7 @@ public class Consumable : Item {
     public void DoEat() {
         if (gameObject == null) {
             Debug.LogError("GO null");
-            Debug.LogError("current action: " + _holder.actionController.currentAction);
+            Debug.LogError("current action: " + _holder.actionController.CurrentAction);
         }
 
         ConsumableProfile profile = _profile as ConsumableProfile;

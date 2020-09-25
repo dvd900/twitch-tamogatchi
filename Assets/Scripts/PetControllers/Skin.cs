@@ -14,6 +14,7 @@ public class Skin : MonoBehaviour
     public StatsController statsController;
     public SpeechController speechController;
     public HeadController headController;
+    public TangoStats stats;
 
     public Animator animator;
 

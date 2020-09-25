@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3728747494439838461}
   - component: {fileID: 7381237735138259905}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,8 +58,8 @@ GameObject:
   - component: {fileID: 5593430689392125778}
   - component: {fileID: 7381237733911401392}
   - component: {fileID: 7381237733911401395}
-  m_Layer: 0
-  m_Name: banana10
+  m_Layer: 18
+  m_Name: p.banana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,9 +72,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535306956535642171}
-  m_LocalRotation: {x: -0, y: 0.47492594, z: -0, w: -0.8800258}
+  m_LocalRotation: {x: 0, y: 0.47492582, z: -0, w: -0.88002586}
   m_LocalPosition: {x: 334.65, y: 39.88, z: 148.87}
-  m_LocalScale: {x: 1.6178, y: 1.6178, z: 1.6178}
+  m_LocalScale: {x: 1.0670847, y: 1.0670847, z: 1.0670847}
   m_Children:
   - {fileID: 2286653182967333286}
   - {fileID: 8829565426969562874}
@@ -138,7 +138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1043610125114321690}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3717720899976698176}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2700917323107913169}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4870516451916926292}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5115982512539574570}
   - component: {fileID: 7381237733833407800}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6564797693038230239}
   - component: {fileID: 7381237734968192130}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8829565426969562874}
   - component: {fileID: 7330874324587826725}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: BananaLP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,6 +389,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -450,7 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6449365354919057299}
   - component: {fileID: 7381237734418537126}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4762493302643578655}
   - component: {fileID: 7381237735437104278}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8020906195459831413}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 874067945079688424}
   - component: {fileID: 7381237735016418943}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 334836353672327749}
   - component: {fileID: 7381237735771913393}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -807,7 +808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2286653182967333286}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -839,7 +840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5841779987022106894}
   - component: {fileID: 7381237734873249161}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -930,7 +931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3331033455242061587}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bone.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}

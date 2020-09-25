@@ -1,0 +1,44 @@
+﻿using System;
+using UnityEngine;
+
+public class FlyToAction : AIAction
+{
+    private DroneController _controller;
+    private Vector3 _dest;
+
+    public FlyToAction(DroneController controller, Vector3 dest)
+    {
+        _controller = controller;
+        _dest = dest;
+    }
+
+    public override AIAction Generate()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void Interrupt()
+    {
+        _controller.ResetDest();
+    }
+
+    public override bool IsFinished()
+    {
+        return _controller.IsMoving;
+    }
+
+    public override float Score(AIWorldData data)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void StartAction()
+    {
+        _controller.FlyToDest(_dest);
+    }
+
+    public override void UpdateAction()
+    {
+
+    }
+}

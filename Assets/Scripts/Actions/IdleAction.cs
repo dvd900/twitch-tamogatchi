@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class IdleAction : AIAction
+public class IdleAction : SweeTangoAction
 {
     private const float CHANCE_TO_SPEAK = 0.5f;
     
@@ -14,8 +14,8 @@ public class IdleAction : AIAction
     /// </summary>
     /// <param name="skin"></param>
     public IdleAction(Skin skin) : base(skin) {
-        _waitTime = _skin.actionController.avgIdleTime
-            + _skin.actionController.avgIdleTime * (Random.value - .5f);
+        _waitTime = _skin.stats.AvgIdleTime
+            + _skin.stats.AvgIdleTime * (Random.value - .5f);
         _sayDialogue = Random.value < CHANCE_TO_SPEAK;
 
         if(_sayDialogue)

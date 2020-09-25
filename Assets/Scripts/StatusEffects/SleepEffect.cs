@@ -11,7 +11,7 @@ public class SleepEffect : StatusEffect
 
     protected override void DoStopEffect()
     {
-        if(_skin.actionController.currentAction is SleepAction)
+        if(_skin.actionController.CurrentAction is SleepAction)
         {
             _skin.actionController.DoAction(new IdleAction(_skin));
         }

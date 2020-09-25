@@ -18,6 +18,11 @@ MonoBehaviour:
     itemIcon: {fileID: 0}
     itemType: 0
     _value: 0
+  - itemName: Banana Peel
+    itemID: 1972324557
+    itemIcon: {fileID: 0}
+    itemType: 0
+    _value: 0
   autoConsumable:
   - itemName: Apple
     itemID: 50413427
@@ -69,8 +74,8 @@ MonoBehaviour:
     _hungerMod: 0
     _happinessMod: 0
     _statusEffects: 01000000
-  usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb63021417
-  typesOfUsedIDs: 010000000100000001000000010000000100000000000000
+  usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb63021417cd488f75
+  typesOfUsedIDs: 01000000010000000100000001000000010000000000000000000000
   subtypes: []
   typeGroups:
   - name: Items

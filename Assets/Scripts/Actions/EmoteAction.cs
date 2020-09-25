@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-public class EmoteAction : AIAction
+public class EmoteAction : SweeTangoAction
 {
     private static int LAST_EMOTE;
 

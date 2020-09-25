@@ -1,14 +1,8 @@
 ﻿
 using UnityEngine;
 
-public abstract class AIAction {
-
-    protected AIAction(Skin skin) {
-        _skin = skin;
-    }
-
-    protected Skin _skin;
-
+public abstract class AIAction
+{
     public abstract void StartAction();
     public abstract void UpdateAction();
     public abstract bool IsFinished();
