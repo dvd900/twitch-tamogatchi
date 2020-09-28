@@ -43,5 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbcc48074f809747a2b910741dce5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ttl: 15
-  _sickColor: {r: 0.035793543, g: 1, b: 0, a: 1}
+  _ttl: 3

@@ -115,6 +115,13 @@ public class EmoteController : MonoBehaviour {
     {
         _skin.animator.SetBool("speakMouth", false);
     }
+    public void StartPukeEmote()
+    {
+        _startingEmote = true;
+        _skin.animator.SetTrigger("puke");
+        _skin.animator.SetTrigger("pukeEyes");
+        _skin.animator.SetTrigger("pukeMouth");
+    }
 
     private void Update() {
     }
