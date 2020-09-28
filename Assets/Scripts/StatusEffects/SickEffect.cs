@@ -11,19 +11,20 @@ public class SickEffect : StatusEffect
 
     protected override void DoStartEffect()
     {
-        _originalColor = _skin.bodyRend.material.color;
-        _skin.bodyRend.material.color = _sickColor;
-
-        Debug.Log("Setting sick color to: " + _sickColor);
+        LeanTween.value(gameObject, 0, 1.5f, 1f).setOnUpdate((float val) => {
+            _skin.bodyRend.material.SetFloat("_SickAmt", val);
+        });
     }
 
     protected override void DoUpdateEffect()
     {
-
+        Debug.Log("Setting sick color to: " + _sickColor);
     }
-
     protected override void DoStopEffect()
     {
-        _skin.bodyRend.material.color = _originalColor;
+        LeanTween.value(gameObject, 1.5f, 0, 1f).setOnUpdate((float val) => {
+            _skin.bodyRend.material.SetFloat("_SickAmt", val);
+        });
     }
+
 }

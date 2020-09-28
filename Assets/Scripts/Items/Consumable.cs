@@ -25,7 +25,7 @@ public class Consumable : Item {
             foreach(EffectType effect in profile._statusEffects)
             {
                 _holder.effectController.AddEffect(effect);
-            }
+            } 
 
             Destroy(gameObject);
             return;
