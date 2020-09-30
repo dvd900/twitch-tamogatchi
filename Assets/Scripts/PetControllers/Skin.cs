@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Skin : MonoBehaviour
+public class Skin : MonoBehaviour, AISkin
 {
     public static Skin CurrentTango;
     
@@ -32,9 +32,17 @@ public class Skin : MonoBehaviour
     public Transform feetTransform;
     public Transform lHandTransform;
     public Transform rHandTransform;
+
+    public TangoWorldData WorldData;
     
     private void Awake()
     {
         CurrentTango = this;
+        WorldData = new TangoWorldData(this);
+    }
+
+    private void Update()
+    {
+        WorldData.UpdateData();
     }
 }

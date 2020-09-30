@@ -4,7 +4,7 @@ using UnityEngine;
 public static class CoordsUtils {
 
     // Percentage of the screen not used so pet doesn't go off screen
-    private const float BUFFER_PERCENTAGE = .1f;
+    private const float BUFFER_PERCENTAGE = .15f;
     public const float EPSILON = .3f;
 
     public static Vector3 RandomViewPoint() {
@@ -20,6 +20,23 @@ public static class CoordsUtils {
 
     public static Vector3 RandomWorldPointOnScreen() {
         Vector3 viewPos = RandomViewPoint();
+        return ViewToWorldPos(viewPos);
+    }
+
+    public static Vector3 RandomWorldPointOffScreen()
+    {
+        int offDir1 = (UnityEngine.Random.value > .5f) ? -1 : 1;
+        float offDir2 = (UnityEngine.Random.value > .5f) ? -1.5f : 1.5f;
+        Vector3 viewPos;
+        if(offDir1 == -1)
+        {
+            viewPos = new Vector3(offDir2, UnityEngine.Random.value, 0);
+        }
+        else
+        {
+            viewPos = new Vector3(UnityEngine.Random.value, offDir2, 0);
+        }
+
         return ViewToWorldPos(viewPos);
     }
 

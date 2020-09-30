@@ -38,12 +38,12 @@ public class Item : MonoBehaviour
 
     private void Start()
     {
-        Planner.Instance.WorldData.AllItems.Add(this);
+        AIWorldData.Instance.AllItems.Add(this);
     }
 
     private void OnDestroy()
     {
-        Planner.Instance.WorldData.AllItems.Remove(this);
+        AIWorldData.Instance.AllItems.Remove(this);
     }
 
     void Update()

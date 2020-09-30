@@ -12,11 +12,6 @@ public class FlyToAction : AIAction
         _dest = dest;
     }
 
-    public override AIAction Generate()
-    {
-        throw new NotImplementedException();
-    }
-
     public override void Interrupt()
     {
         _controller.ResetDest();
@@ -25,11 +20,6 @@ public class FlyToAction : AIAction
     public override bool IsFinished()
     {
         return _controller.IsMoving;
-    }
-
-    public override float Score(AIWorldData data)
-    {
-        throw new NotImplementedException();
     }
 
     public override void StartAction()

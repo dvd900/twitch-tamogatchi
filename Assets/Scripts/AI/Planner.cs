@@ -10,13 +10,10 @@ public class Planner : MonoBehaviour {
     [SerializeField] private Skin _pet;
     [SerializeField] private float _planDelay;
 
-    private List<AIAction> _actions;
-
-    public AIWorldData WorldData { get { return _worldData; } }
-    private AIWorldData _worldData;
+    private List<GeneratedAction> _actions;
 
     private float _planTimer;
-    private AIAction _lastAction;
+    private GeneratedAction _lastAction;
 
     // DEBUG
     private List<string> _DEBUG_LastScores;
@@ -26,9 +23,8 @@ public class Planner : MonoBehaviour {
         Instance = this;
     }
 
-    void Start() {
-        _worldData = new AIWorldData(_pet);
-
+    void Start()
+    {
         if(_pet != null)
         {
             SetPet(_pet);
@@ -51,7 +47,7 @@ public class Planner : MonoBehaviour {
     public void SetPet(Skin pet)
     {
         _pet = pet;
-        _actions = new List<AIAction>();
+        _actions = new List<GeneratedAction>();
         _DEBUG_LastScores = new List<string>();
 
         _actions.Add(new PickupAction(_pet));
@@ -59,8 +55,6 @@ public class Planner : MonoBehaviour {
         _actions.Add(new EatAction(_pet));
         _actions.Add(new IdleAction(_pet));
         _actions.Add(new EmoteAction(_pet));
-
-        _worldData.SetPet(pet);
 
         _lastAction = _actions[0];
     }
@@ -70,14 +64,12 @@ public class Planner : MonoBehaviour {
             return;
         }
 
-        _worldData.UpdateData();
-
         _DEBUG_LastScores.Clear();
 
         float maxScore = 0;
-        AIAction bestAction = null;
-        foreach(AIAction action in _actions) {
-            float score = action.Score(_worldData);
+        GeneratedAction bestAction = null;
+        foreach(GeneratedAction action in _actions) {
+            float score = action.Score(_pet);
 
             string scoreString = action.ToString() + ": " + score;
 
@@ -101,8 +93,8 @@ public class Planner : MonoBehaviour {
             _DEBUG_LastScores.Add(scoreString);
         }
 
-        AIAction newAction = bestAction.Generate();
-        _pet.actionController.DoAction(newAction);
+        GeneratedAction newAction = bestAction.Generate(_pet);
+        _pet.actionController.DoAction((AIAction) newAction);
         _lastAction = newAction;
     }
 }

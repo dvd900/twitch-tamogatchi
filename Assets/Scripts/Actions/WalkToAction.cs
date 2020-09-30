@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class WalkToAction : SweeTangoAction
+public class WalkToAction : SweeTangoAction, GeneratedAction
 {
     private static GameObject _debugMarker;
 
@@ -22,8 +22,8 @@ public class WalkToAction : SweeTangoAction
         _dest = dest;
     }
 
-    public override AIAction Generate() {
-        return new WalkToAction(_skin);
+    GeneratedAction GeneratedAction.Generate(AISkin skin) {
+        return new WalkToAction((Skin)skin);
     }
 
     public override void Interrupt() {
@@ -42,7 +42,7 @@ public class WalkToAction : SweeTangoAction
 
     }
 
-    public override float Score(AIWorldData data) {
+    float GeneratedAction.Score(AISkin data) {
         return .3f;
     }
 }

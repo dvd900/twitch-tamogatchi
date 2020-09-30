@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class ActionController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ActionController : MonoBehaviour
     private AIAction _lastAction;
 
     public bool IsDying { get { return _currentAction is DeathAction; } }
+
+    private LinkedList<AIAction> _actionList;
 
     public void DoAction(AIAction action) {
         if(IsDying && !(action is DeathAction))
@@ -28,6 +31,11 @@ public class ActionController : MonoBehaviour
         _currentAction.StartAction();
 
         Debug.Log("Doing action: " + action);
+    }
+
+    public void DoActionSequence(params AIAction[] actionSequence)
+    {
+        _actionList = new LinkedList<AIAction>(actionSequence);
     }
 
     private void Update() {

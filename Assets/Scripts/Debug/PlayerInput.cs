@@ -27,7 +27,7 @@ public class PlayerInput : MonoBehaviour {
             if (_skin.itemController.HeldItem != null) {
                 _skin.actionController.DoAction(new EatAction(_skin));
             } else {
-                Item item = _planner.WorldData.ClosestItem;
+                Item item = _skin.WorldData.ClosestItem;
                 if (item != null) {
                     _skin.itemController.Pickup(item);
                 }

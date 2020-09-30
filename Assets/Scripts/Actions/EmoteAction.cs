@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-public class EmoteAction : SweeTangoAction
+public class EmoteAction : SweeTangoAction, GeneratedAction
 {
     private static int LAST_EMOTE;
 
@@ -22,9 +22,9 @@ public class EmoteAction : SweeTangoAction
         _type = type;
     }
 
-    public override AIAction Generate()
+    GeneratedAction GeneratedAction.Generate(AISkin skin)
     {
-        return new EmoteAction(_skin);
+        return new EmoteAction((Skin)skin);
     }
 
     public override void Interrupt()
@@ -37,7 +37,7 @@ public class EmoteAction : SweeTangoAction
         return !_skin.movementController.IsTurning && !_skin.emoteController.IsDoingEmote;
     }
 
-    public override float Score(AIWorldData data)
+    float GeneratedAction.Score(AISkin skin)
     {
         return .2f;
     }

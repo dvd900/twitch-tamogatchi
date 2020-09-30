@@ -1,7 +1,8 @@
 ﻿
 using UnityEngine;
 
-public class PickupAction : SweeTangoAction {
+public class PickupAction : SweeTangoAction, GeneratedAction
+{
 
     private static Item bestItem;
 
@@ -20,8 +21,8 @@ public class PickupAction : SweeTangoAction {
         _item = item;
     }
 
-    public override AIAction Generate() {
-        return new PickupAction(_skin);
+    GeneratedAction GeneratedAction.Generate(AISkin skin) {
+        return new PickupAction((Skin)skin);
     }
 
     public override void Interrupt() {
@@ -66,7 +67,8 @@ public class PickupAction : SweeTangoAction {
         _skin.movementController.WalkToPosition(dest);
     }
 
-    public override float Score(AIWorldData data) {
+    float GeneratedAction.Score(AISkin skin) {
+        var data = ((Skin)skin).WorldData;
         if(data.ClosestItem == null) {
             return 0;
         }

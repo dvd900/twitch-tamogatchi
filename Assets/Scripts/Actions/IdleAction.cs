@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class IdleAction : SweeTangoAction
+public class IdleAction : SweeTangoAction, GeneratedAction
 {
     private const float CHANCE_TO_SPEAK = 0.5f;
     
@@ -30,8 +30,8 @@ public class IdleAction : SweeTangoAction
         _sayDialogue = sayDialogue;
     }
 
-    public override AIAction Generate() {
-        return new IdleAction(_skin);
+    GeneratedAction GeneratedAction.Generate(AISkin skin) {
+        return new IdleAction((Skin)skin);
     }
 
     public override void Interrupt() { }
@@ -40,7 +40,7 @@ public class IdleAction : SweeTangoAction
         return _timer <= 0;
     }
 
-    public override float Score(AIWorldData data) {
+    float GeneratedAction.Score(AISkin skin) {
         return .3f;
     }
 

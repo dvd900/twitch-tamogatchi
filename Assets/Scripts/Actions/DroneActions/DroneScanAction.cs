@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
-public class DroneScanAction : AIAction
+public class DroneScanAction : CoroutineAction
 {
     private DroneController _drone;
     private Item _targetItem;
@@ -15,47 +16,10 @@ public class DroneScanAction : AIAction
         _scanTimer = scanTime;
     }
 
-    public override AIAction Generate()
+    protected override IEnumerator DoAction()
     {
-        throw new NotImplementedException();
-    }
-
-    public override void Interrupt()
-    {
-        
-    }
-
-    public override bool IsFinished()
-    {
-        return _scanTimer < 0;
-    }
-
-    public override float Score(AIWorldData data)
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void StartAction()
-    {
-        _drone.FlyToDest(_targetItem.transform.position);
-    }
-
-    public override void UpdateAction()
-    {
-        _scanTimer -= Time.deltaTime;
-
-        if(_drone.IsMoving || _targetItem == null)
-        {
-            return;
-        }
-
-        if(!_hasScanned)
-        {
-            _drone.DoScan(_targetItem);
-            _hasScanned = true;
-        }
-
         _drone.HoverOver(_targetItem.transform.position);
-        
+        yield return new WaitForSeconds(1.0f);
+        _drone.DoScan(_targetItem);
     }
 }

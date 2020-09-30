@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EatAction : SweeTangoAction {
+public class EatAction : SweeTangoAction, GeneratedAction {
 
     private bool _hasEaten;
 
@@ -10,9 +10,9 @@ public class EatAction : SweeTangoAction {
 
     }
 
-    public override AIAction Generate()
+    GeneratedAction GeneratedAction.Generate(AISkin skin)
     {
-        return new EatAction(_skin);
+        return new EatAction((Skin)skin);
     }
 
     public override void Interrupt()
@@ -40,7 +40,7 @@ public class EatAction : SweeTangoAction {
         }
     }
 
-    public override float Score(AIWorldData data)
+    float GeneratedAction.Score(AISkin skin)
     {
         if (_skin.itemController.HeldItem != null && _skin.itemController.HeldItem is Consumable)
         {

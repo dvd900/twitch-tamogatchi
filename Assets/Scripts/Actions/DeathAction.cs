@@ -11,11 +11,6 @@ public class DeathAction : SweeTangoAction
     {
     }
 
-    public override AIAction Generate()
-    {
-        return new DeathAction(_skin);
-    }
-
     public override void Interrupt()
     {
     }
@@ -23,11 +18,6 @@ public class DeathAction : SweeTangoAction
     public override bool IsFinished()
     {
         return _timer <= 0;
-    }
-
-    public override float Score(AIWorldData data)
-    {
-        return -1;
     }
 
     public override void StartAction()

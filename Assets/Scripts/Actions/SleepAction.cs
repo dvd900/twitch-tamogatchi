@@ -7,11 +7,6 @@ public class SleepAction : SweeTangoAction
     {
     }
 
-    public override AIAction Generate()
-    {
-        return new SleepAction(_skin);
-    }
-
     public override void Interrupt()
     {
         _skin.emoteController.StopSleep();
@@ -20,11 +15,6 @@ public class SleepAction : SweeTangoAction
     public override bool IsFinished()
     {
         return false;
-    }
-
-    public override float Score(AIWorldData data)
-    {
-        return 0;
     }
 
     public override void StartAction()
