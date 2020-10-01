@@ -19,7 +19,7 @@ public class FlyToAction : AIAction
 
     public override bool IsFinished()
     {
-        return _controller.IsMoving;
+        return !_controller.IsMoving;
     }
 
     public override void StartAction()

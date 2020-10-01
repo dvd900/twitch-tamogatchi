@@ -17,7 +17,7 @@ public abstract class CoroutineAction : AIAction
 
     public sealed override bool IsFinished()
     {
-        return _task.Running;
+        return !_task.Running;
     }
 
     public sealed override void StartAction()

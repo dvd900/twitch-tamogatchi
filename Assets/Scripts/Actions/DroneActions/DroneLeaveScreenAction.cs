@@ -1,32 +1,31 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
-public class DroneLeaveScreenAction : AIAction
+public class DroneLeaveScreenAction : CoroutineAction
 {
     private DroneController _drone;
+    private float _cooldown;
 
-    public DroneLeaveScreenAction(DroneController drone)
+    public DroneLeaveScreenAction(DroneController drone, float cooldown)
     {
         _drone = drone;
+        _cooldown = cooldown;
     }
 
-    public override void Interrupt()
-    {
-        _drone.ResetDest();
-    }
-
-    public override bool IsFinished()
-    {
-        return _drone.IsMoving;
-    }
-
-    public override void StartAction()
+    protected override IEnumerator DoAction()
     {
         Vector3 dest = CoordsUtils.RandomWorldPointOffScreen();
         _drone.FlyToDest(dest);
+        while(_drone.IsMoving)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(_cooldown);
     }
 
-    public override void UpdateAction()
+    protected override void CancelAction()
     {
+        _drone.ResetDest();
     }
 }

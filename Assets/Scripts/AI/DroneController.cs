@@ -9,6 +9,9 @@ public class DroneController : MonoBehaviour
     [SerializeField] private float _moveTime;
     [SerializeField] private float _rotateTime;
     [SerializeField] private float _idleTime;
+    [SerializeField] private float _scanTime;
+    [SerializeField] private float _scanCooldown;
+    [SerializeField] private float _chanceToLeaveScreen;
     [SerializeField] private ActionController _actionController;
     [SerializeField] private Animator _animator;
 
@@ -16,7 +19,9 @@ public class DroneController : MonoBehaviour
 
     private int _lastCheckedIndex;
     private int _moveTween = -1;
-    private Item _scanTarget;
+
+    private Transform _hoverTarget;
+    private Vector3 _zapTarget;
 
     private void Start()
     {
@@ -27,69 +32,86 @@ public class DroneController : MonoBehaviour
     {
         _animator.SetBool("moving", IsMoving);
 
-        if(_actionController.CurrentAction == null && _actionController.LastAction is DroneLeaveScreenAction)
+        if(_hoverTarget != null)
         {
-            _lastCheckedIndex = (_lastCheckedIndex + 1) % AIWorldData.Instance.AllItems.Count;
-            var targetItem = AIWorldData.Instance.AllItems[_lastCheckedIndex];
-            if (!targetItem.isHeld && TooManyItemsInRange(targetItem.transform.position, _numItemsDestroy))
-            {
-                var moveTo = new FlyToAction(this, _scanTarget.transform.position);
-                var scan = new DroneScanAction(this, _scanTarget, _idleTime);
-                var sequence = new ActionSequence(moveTo, scan);
-                _actionController.DoAction(sequence);
-                _scanTarget = targetItem;
-            }
+            var dest = _hoverTarget.position;
+            dest.y = transform.position.y;
+            transform.position = Vector3.Lerp(transform.position, dest, .02f);
         }
 
         if (_actionController.CurrentAction == null)
         {
-            if(_actionController.LastAction is DroneIdleAction)
+            if(_actionController.LastAction is DroneLeaveScreenAction)
             {
-                if(_scanTarget != null)
+                if(AIWorldData.Instance.AllItems.Count > 0)
                 {
-                    _actionController.DoAction(new DroneScanAction(this, _scanTarget, _idleTime));
+                    _lastCheckedIndex = (_lastCheckedIndex + 1) % AIWorldData.Instance.AllItems.Count;
+                    var targetItem = AIWorldData.Instance.AllItems[_lastCheckedIndex];
+                    if (!targetItem.isHeld && TooManyItemsInRange(targetItem.transform.position, _numItemsDestroy))
+                    {
+                        var moveTo = new FlyToAction(this, targetItem.transform.position);
+                        var scan = new DroneScanAction(this, targetItem, _idleTime);
+                        _actionController.DoActionSequence(moveTo, scan);
+                    }
+                }
+            }
+            else
+            {
+                if (Random.value < _chanceToLeaveScreen)
+                {
+                    _actionController.DoAction(new DroneLeaveScreenAction(this, _scanCooldown));
                 }
                 else
                 {
                     Vector3 moveTarget = CoordsUtils.RandomWorldPointOnScreen();
                     moveTarget.y = transform.position.y;
-                    _actionController.DoAction(new FlyToAction(this, moveTarget));
+                    var flyAction = new FlyToAction(this, moveTarget);
+                    var idleAction = new DroneIdleAction(_idleTime);
+                    _actionController.DoActionSequence(flyAction, idleAction);
                 }
-            }
-            else
-            {
-                _actionController.DoAction(new DroneIdleAction(_idleTime));
             }
         }
     }
 
     public void FlyToDest(Vector3 dest)
     {
-        dest.y = transform.position.y;
         LeanTween.cancel(_moveTween);
-        _moveTween = LeanTween.move(gameObject, dest, _moveTime).setEaseInOutQuad().id;
 
+        dest.y = transform.position.y;
         var d = dest - transform.position;
+
+        float scaledMoveTime = _moveTime * (d.magnitude / 200.0f);
+        _moveTween = LeanTween.move(gameObject, dest, scaledMoveTime).setEaseInOutQuad().id;
+
         var lookTarget = Quaternion.LookRotation(d);
         LeanTween.rotate(gameObject, lookTarget.eulerAngles, _rotateTime).setEaseInOutQuad();
     }
 
-    public void HoverOver(Vector3 dest)
+    public void HoverOver(Transform target)
     {
-        dest.y = transform.position.y;
-        transform.position = Vector3.Lerp(transform.position, dest, .02f);
+        _hoverTarget = target;
+        if(target != null)
+        {
+            LeanTween.rotate(gameObject, new Vector3(0, 180, 0), _rotateTime).setEaseInOutQuad();
+        }
     }
 
     public void DoScan(Item item)
     {
-        Debug.Log("scanning");
+        Debug.Log("scanning: " + item.gameObject);
+        DebugDraw.DrawSphere(item.transform.position, _scanRange, Color.red, 1.0f);
+        if (TooManyItemsInRange(item.transform.position, _numItemsDestroy))
+        {
+            _zapTarget = item.transform.position;
+            _animator.SetTrigger("zap");
+        }
     }
 
-    public void ZapItems(Vector3 position)
+    public void DoZap()
     {
-
-        _animator.SetTrigger("zap");
-        var items = Physics.OverlapSphere(position, _scanRange, VBLayerMask.ItemLayerMask);
+        _zapTarget.x = transform.position.x;
+        _zapTarget.z = transform.position.z;
+        var items = Physics.OverlapSphere(_zapTarget, _scanRange, VBLayerMask.ItemLayerMask);
 
         Debug.Log("zapping items: #" + items.Length);
         for (int i = 0; i < items.Length; i++)
@@ -106,6 +128,6 @@ public class DroneController : MonoBehaviour
     private bool TooManyItemsInRange(Vector3 target, int numItems)
     {
         var colliders = Physics.OverlapSphere(target, _scanRange, VBLayerMask.ItemLayerMask);
-        return colliders.Length > numItems;
+        return colliders.Length >= numItems;
     }
 }

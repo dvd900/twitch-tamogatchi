@@ -13,7 +13,9 @@ public class ActionController : MonoBehaviour
 
     public bool IsDying { get { return _currentAction is DeathAction; } }
 
-    private LinkedList<AIAction> _actionList;
+    [SerializeField] private bool _logActions;
+
+    private Queue<AIAction> _actionQueue;
 
     public void DoAction(AIAction action) {
         if(IsDying && !(action is DeathAction))
@@ -25,17 +27,33 @@ public class ActionController : MonoBehaviour
             _currentAction.Interrupt();
         }
 
-        _lastAction = _currentAction;
+        _actionQueue = null;
 
-        _currentAction = action;
-        _currentAction.StartAction();
-
-        Debug.Log("Doing action: " + action);
+        StartNewAction(action);
     }
 
     public void DoActionSequence(params AIAction[] actionSequence)
     {
-        _actionList = new LinkedList<AIAction>(actionSequence);
+        _actionQueue = new Queue<AIAction>(actionSequence);
+
+        StartNewAction(_actionQueue.Dequeue());
+
+        if(_actionQueue.Count == 0)
+        {
+            _actionQueue = null;
+        }
+    }
+
+    private void StartNewAction(AIAction action)
+    {
+        _lastAction = _currentAction;
+        _currentAction = action;
+        _currentAction.StartAction();
+
+        if(_logActions)
+        {
+            Debug.Log(gameObject + " doing action: " + action);
+        }
     }
 
     private void Update() {
@@ -44,7 +62,20 @@ public class ActionController : MonoBehaviour
 
             if(_currentAction.IsFinished()) {
                 _lastAction = _currentAction;
-                _currentAction = null;
+
+                if(_actionQueue != null)
+                {
+                    StartNewAction(_actionQueue.Dequeue());
+
+                    if(_actionQueue.Count == 0)
+                    {
+                        _actionQueue = null;
+                    }
+                }
+                else
+                {
+                    _currentAction = null;
+                }
             }
         }
     }

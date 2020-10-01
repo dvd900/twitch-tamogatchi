@@ -1,6 +1,7 @@
 ﻿// Remi Gillig - http://speps.fr - 2012 - Public domain
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +25,22 @@ public class DebugDraw
         MaterialPropertyBlock block = new MaterialPropertyBlock();
         block.SetColor("_Color", color);
         Graphics.DrawMesh(solidSphere, mat, material, 0, null, 0, block);
+    }
+
+    public static void DrawSphere(Vector3 position, float radius, Color color, float time)
+    {
+        new CoroutineTask(DrawSphereRoutine(position, radius, color, time));
+    }
+
+    private static IEnumerator DrawSphereRoutine(Vector3 position, float radius, Color color, float time)
+    {
+        while(time > 0)
+        {
+            time -= Time.deltaTime;
+            DrawSphere(position, radius, color);
+            Debug.Log("Drawing sphere");
+            yield return null;
+        }
     }
 
     public static void DrawCube(Vector3 position, Quaternion rotation, float size, Color color)

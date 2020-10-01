@@ -38501,7 +38501,7 @@ MonoBehaviour:
   _indicatorLight: {fileID: 3905818393035422373}
   _closeDamage: 60
   _farDamage: 30
-  _closeForce: 1500
+  _closeForce: 2000
   _farForce: 1000
   _closeAngle: 60
   smallRange: {fileID: 2701102678219613094}
