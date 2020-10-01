@@ -25,7 +25,12 @@ public class Item : MonoBehaviour
     public bool isHeld { get { return _holder != null; } }
     public bool dropsIn { get { return _dropsIn; } }
 
+    protected virtual bool IsPickupabble { get { return false; } }
+
     protected Skin _holder;
+
+    protected virtual void OnPickup() { }
+    protected virtual void OnDrop() { }
 
     private void Awake() {
         var profileContainer = GetComponent<ItemContainer>();
@@ -60,7 +65,7 @@ public class Item : MonoBehaviour
 
     public bool CanBePickedUp()
     {
-        return _profile.itemType == ItemType.Consumable && !isHeld && _rigidbody.velocity.magnitude < 3;
+        return IsPickupabble && !isHeld && _rigidbody.velocity.magnitude < 3;
     }
 
     public void EnableHolding(Skin holder) 
@@ -69,6 +74,8 @@ public class Item : MonoBehaviour
         _rigidbody.isKinematic = true;
 
         _holder = holder;
+
+        OnPickup();
     }
 
     public void DisableHolding() 
@@ -77,6 +84,8 @@ public class Item : MonoBehaviour
         _rigidbody.isKinematic = false;
 
         _holder = null;
+
+        OnDrop();
     }
     
     void OnCollisionEnter(Collision collision)
@@ -86,7 +95,7 @@ public class Item : MonoBehaviour
             if (dustOff == false)
             {
                 dustOff = true;
-                clone = ItemSpawner.singleton.MakeDust();
+                clone = ItemSpawner.Instance.MakeDust();
                 
                 clone.transform.position = new Vector3(transform.position.x, transform.position.y-2, transform.position.z);
                 ps = clone.GetComponent<ParticleSystem>();

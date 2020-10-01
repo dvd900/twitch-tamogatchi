@@ -74,9 +74,16 @@ MonoBehaviour:
     _hungerMod: 0
     _happinessMod: 0
     _statusEffects: 01000000
-  usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb63021417cd488f75
-  typesOfUsedIDs: 01000000010000000100000001000000010000000000000000000000
+  autoCosmetic:
+  - itemName: Wizard Hat
+    itemID: -712165785
+    itemIcon: {fileID: 0}
+    itemType: 2
+    _value: 0
+    _cosmeticLocation: 0
+  usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb63021417cd488f7567368dd5
+  typesOfUsedIDs: 0100000001000000010000000100000001000000000000000000000002000000
   subtypes: []
   typeGroups:
   - name: Items
-    types: 01000000
+    types: 0100000002000000

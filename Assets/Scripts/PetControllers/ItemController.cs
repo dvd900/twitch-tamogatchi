@@ -50,7 +50,7 @@ public class ItemController : MonoBehaviour {
 
     public void Pickup(Item item) {
         if (_heldItem != null) {
-            Drop();
+            DropHeldItem();
         }
 
         _skin.animator.SetTrigger("pickup");
@@ -61,7 +61,7 @@ public class ItemController : MonoBehaviour {
 
 
 
-    public void Drop() {
+    public void DropHeldItem() {
         if (_heldItem == null) {
             Debug.LogError("Trying to drop a null item!");
             return;
@@ -114,17 +114,18 @@ public class ItemController : MonoBehaviour {
     public void DoPickupDone()
     {
         _isPickingUp = false;
+
+        if(_heldItem is Cosmetic)
+        {
+            _skin.cosmeticController.EquipItem((Cosmetic)_heldItem);
+            _heldItem = null;
+        }
     }
 
     public void DoEatDone()
     {
         _isEating = false;
     }
-
-    //public void AE_EatDone() {
-    //    Debug.Log("ADE eat done");
-    //    _isEating = false;
-    //}
 
     public void EatHeldItem() {
         if (_heldItem == null) {

@@ -68,5 +68,6 @@ namespace ItemSystem
     {//#VID-ITB,
 		Item,
 		Consumable,
+		Cosmetic,
     };//#VID-ITE
 }

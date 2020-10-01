@@ -7,6 +7,8 @@ public class Consumable : Item {
 
     private int _biteInd;
 
+    protected override bool IsPickupabble { get { return true; } }
+
     public void DoEat() {
         if (gameObject == null) {
             Debug.LogError("GO null");

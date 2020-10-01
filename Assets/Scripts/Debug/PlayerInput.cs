@@ -7,7 +7,6 @@ public class PlayerInput : MonoBehaviour {
 
     public Skin _skin;
     public Planner _planner;
-    public ItemSpawner _itemSpawner;
     public GameObject _walkDestPrefab;
 
     [SerializeField] private LayerMask _clickLayerMask;
@@ -66,7 +65,7 @@ public class PlayerInput : MonoBehaviour {
     private void DoRightClick(Vector2 viewPos) {
         Vector3 worldPos = CoordsUtils.ViewToWorldPos(viewPos);
         //_itemSpawner.SpawnItem(3, worldPos);
-        _itemSpawner.SpawnRandomItem(worldPos, "local player");
+        ItemSpawner.Instance.SpawnRandomItem(worldPos, "local player");
     }
 
     private void DoClick(Vector2 viewPos) {

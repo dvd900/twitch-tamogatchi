@@ -11,6 +11,7 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
 
 	SerializedProperty autoItem;
 	SerializedProperty autoConsumable;
+	SerializedProperty autoCosmetic;
     //#VID-SP
 
     SerializedProperty[] itemLists = new SerializedProperty[System.Enum.GetNames(typeof(ItemType)).Length];//#VID-LSP
@@ -125,12 +126,14 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
 
 		autoItem = vidListsSerialized.FindProperty("autoItem");
 		autoConsumable = vidListsSerialized.FindProperty("autoConsumable");
+		autoCosmetic = vidListsSerialized.FindProperty("autoCosmetic");
         //Get a serialized object and a property for the items list
         //#VID-ASPE
 
         //#VID-SPLAB
 		itemLists[(int)ItemType.Item] = autoItem;
 		itemLists[(int)ItemType.Consumable] = autoConsumable;
+		itemLists[(int)ItemType.Cosmetic] = autoCosmetic;
         //#VID-SPLAE
 
         UpdateGategoryData();
@@ -748,6 +751,9 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
 					case (int)ItemType.Consumable:
 						autoVidLists.autoConsumable.RemoveAt(index);
 						break;
+					case (int)ItemType.Cosmetic:
+						autoVidLists.autoCosmetic.RemoveAt(index);
+						break;
                 }//#VID-MSB
 
                 itemWasDeleted = true;
@@ -787,6 +793,9 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
 					break;
 				case ItemType.Consumable:
 					autoVidLists.autoConsumable.Insert(index, (ConsumableProfile)itemCont.item);
+					break;
+				case ItemType.Cosmetic:
+					autoVidLists.autoCosmetic.Insert(index, (CosmeticProfile)itemCont.item);
 					break;
             }//#VID-2MSB
 
@@ -961,6 +970,15 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
 				autoVidLists.autoConsumable.Add(autoConsumableVAR);
 				itemToShow.itemToShowIndex = autoVidLists.autoConsumable.Count - 1;
 				break;
+
+			case ItemType.Cosmetic:
+				CosmeticProfile autoCosmeticVAR = new CosmeticProfile();
+				autoCosmeticVAR.itemID = database.GetNewID(ItemType.Cosmetic);
+				autoCosmeticVAR.itemType = ItemType.Cosmetic;
+				
+				autoVidLists.autoCosmetic.Add(autoCosmeticVAR);
+				itemToShow.itemToShowIndex = autoVidLists.autoCosmetic.Count - 1;
+				break;
         }//#VID-AIE
 
         //First add the new item to the subtype(works since show index is now the new item and we are forcing main type) and then since we are showing a subtype
@@ -1002,6 +1020,8 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
 				return autoVidLists.autoItem[index];
 			case (int)ItemType.Consumable:
 				return autoVidLists.autoConsumable[index];
+			case (int)ItemType.Cosmetic:
+				return autoVidLists.autoCosmetic[index];
             }//#VID-GIAIE
         }
 
@@ -1333,6 +1353,23 @@ public partial class ItemDatabaseEditorWindow : EditorWindow
 					}
 					
 						itemNames.Add("\t\t" + itemName.Replace(" ", "") + " = " + autoVidLists.autoConsumable[i].itemID + ",");
+				}
+				break;
+			case ItemType.Cosmetic:
+				for (int i = 0; i < autoVidLists.autoCosmetic.Count; i++)
+				{
+					itemName = autoVidLists.autoCosmetic[i].itemName.Trim();
+					
+					if (itemName == string.Empty)
+						continue;
+					
+					if (!hash.Add(itemName) || !char.IsLetter(itemName[0]))
+					{
+						invalidList.Add(itemName);
+						continue;
+					}
+					
+						itemNames.Add("\t\t" + itemName.Replace(" ", "") + " = " + autoVidLists.autoCosmetic[i].itemID + ",");
 				}
 				break;
         }//#VID-GFNLE

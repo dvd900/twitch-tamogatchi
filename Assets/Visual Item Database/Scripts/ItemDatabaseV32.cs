@@ -140,6 +140,14 @@ namespace ItemSystem.Database
 							return i;
 					}
 					break;
+
+				case ItemType.Cosmetic:
+					for (int i = 0; i < autoVidLists.autoCosmetic.Count; i++)
+					{
+						if (autoVidLists.autoCosmetic[i].itemID == item.itemID)
+							return i;
+					}
+					break;
             }//#VID-GIIE
 
             return -1;
@@ -175,6 +183,14 @@ namespace ItemSystem.Database
 							return i;
 					}
 					break;
+
+				case ItemType.Cosmetic:
+					for (int i = 0; i < autoVidLists.autoCosmetic.Count; i++)
+					{
+						if (autoVidLists.autoCosmetic[i].itemID == id)
+							return i;
+					}
+					break;
             }//#VID-2GIIE
 
             return -1;
@@ -206,6 +222,14 @@ namespace ItemSystem.Database
 							return autoVidLists.autoConsumable[i];
 					}
 					break;
+
+				case ItemType.Cosmetic:
+					for (int i = 0; i < autoVidLists.autoCosmetic.Count; i++)
+					{
+						if (autoVidLists.autoCosmetic[i].itemID == id)
+							return autoVidLists.autoCosmetic[i];
+					}
+					break;
             }//#VID-GIE
 
             Debug.LogError(string.Format("Item of Type '{0}' and of ID '{1}' Does NOT exist", type.ToString(), id));
@@ -230,6 +254,14 @@ namespace ItemSystem.Database
 					{
 						if (autoVidLists.autoConsumable[i].itemName == itemName)
 							return autoVidLists.autoConsumable[i];
+					}
+					break;
+
+				case ItemType.Cosmetic:
+					for (int i = 0; i < autoVidLists.autoCosmetic.Count; i++)
+					{
+						if (autoVidLists.autoCosmetic[i].itemName == itemName)
+							return autoVidLists.autoCosmetic[i];
 					}
 					break;
             }//#VID-2GIE
@@ -263,6 +295,14 @@ namespace ItemSystem.Database
 						return null;
 					}
 					return autoVidLists.autoConsumable[Random.Range(0, autoVidLists.autoConsumable.Count)];
+
+				case ItemType.Cosmetic:
+					if (autoVidLists.autoCosmetic.Count == 0)
+					{
+						Debug.LogError(type.ToString() + " has no items in it");
+						return null;
+					}
+					return autoVidLists.autoCosmetic[Random.Range(0, autoVidLists.autoCosmetic.Count)];
             }//#VID-GRIE
 
             Debug.LogError(type.ToString() + " type was not found, did you forget to add a check for it?");
@@ -293,6 +333,11 @@ namespace ItemSystem.Database
 			for (int i = 0; i < autoVidLists.autoConsumable.Count; i++)
 				if (!ItemExists(autoVidLists.autoConsumable[i].itemID))
 					AddID(autoVidLists.autoConsumable[i].itemID, ItemType.Consumable);
+
+			//Cosmetic items
+			for (int i = 0; i < autoVidLists.autoCosmetic.Count; i++)
+				if (!ItemExists(autoVidLists.autoCosmetic[i].itemID))
+					AddID(autoVidLists.autoCosmetic[i].itemID, ItemType.Cosmetic);
         }//#VID-AMIDE
 
         void RemoveExtraIDs()
@@ -325,6 +370,18 @@ namespace ItemSystem.Database
 						for (int j = 0; j < autoVidLists.autoConsumable.Count; j++)
 						{
 							if (autoVidLists.autoConsumable[j].itemID == autoVidLists.usedIDs[i])
+							{
+								removeKey = false;
+								break;
+							}
+						}
+						break;
+
+					//Cosmetic
+					case ItemType.Cosmetic:
+						for (int j = 0; j < autoVidLists.autoCosmetic.Count; j++)
+						{
+							if (autoVidLists.autoCosmetic[j].itemID == autoVidLists.usedIDs[i])
 							{
 								removeKey = false;
 								break;

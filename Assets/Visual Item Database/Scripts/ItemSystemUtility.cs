@@ -45,6 +45,9 @@ namespace ItemSystem
 				case ItemType.Consumable:
 					item = new ConsumableProfile();
 					break;
+				case ItemType.Cosmetic:
+					item = new CosmeticProfile();
+					break;
             }//#VID-GICE
 
             //This is because in game we don't need this check, since we assume that the ItemSystemUtility is attached to a gameobject
@@ -83,6 +86,9 @@ namespace ItemSystem
 				case ItemType.Consumable:
 					item = new ConsumableProfile();
 					break;
+				case ItemType.Cosmetic:
+					item = new CosmeticProfile();
+					break;
             }//#VID-2GICE
 
 #if UNITY_EDITOR
@@ -120,6 +126,9 @@ namespace ItemSystem
 				case ItemType.Consumable:
 					item = new ConsumableProfile();
 					break;
+				case ItemType.Cosmetic:
+					item = new CosmeticProfile();
+					break;
             }//#VID-GRICE
 
 #if UNITY_EDITOR
@@ -155,6 +164,9 @@ namespace ItemSystem
 					break;
 				case ItemType.Consumable:
 					item = new ConsumableProfile();
+					break;
+				case ItemType.Cosmetic:
+					item = new CosmeticProfile();
 					break;
             }//#VID-2GRICE
 
@@ -344,6 +356,15 @@ namespace ItemSystem
 						items.Add(instance);
 					}
 					break;
+				case ItemType.Cosmetic:
+					for (int i = 0; i < vidLists.autoCosmetic.Count; i++)
+					{
+						instance = new T();
+						instance.UpdateGenericProperties(vidLists.autoCosmetic[i]);
+						instance.UpdateUniqueProperties(vidLists.autoCosmetic[i]);
+						items.Add(instance);
+					}
+					break;
             }//#VID-GATIE
 
             //Finally we return the wanted list, no casting required ;)
@@ -451,6 +472,21 @@ namespace ItemSystem
 							instance = new T();
 							instance.UpdateGenericProperties(vidLists.autoConsumable[i]);
 							instance.UpdateUniqueProperties(vidLists.autoConsumable[i]);
+							items.Add(instance);
+							
+							if (items.Count == vidLists.subtypes[subtypeIndex].itemIDs.Count)
+								return items;
+						}
+					}
+					break;
+				case ItemType.Cosmetic:
+					for (int i = 0; i < vidLists.autoCosmetic.Count; i++)
+					{
+						if (vidLists.subtypes[subtypeIndex].itemIDs.Contains(vidLists.autoCosmetic[i].itemID))
+						{
+							instance = new T();
+							instance.UpdateGenericProperties(vidLists.autoCosmetic[i]);
+							instance.UpdateUniqueProperties(vidLists.autoCosmetic[i]);
 							items.Add(instance);
 							
 							if (items.Count == vidLists.subtypes[subtypeIndex].itemIDs.Count)

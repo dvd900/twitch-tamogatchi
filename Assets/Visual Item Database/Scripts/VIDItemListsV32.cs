@@ -7,6 +7,11 @@ namespace ItemSystem
 
 namespace ItemSystem
 {//#VID-2ISNB
+	public enum CosmeticItems
+	{
+		None = 0,
+		WizardHat = -712165785,
+	}
 	public enum ConsumableItems
 	{
 		None = 0,
@@ -35,6 +40,7 @@ namespace ItemSystem.Database
         //#VID-ICB
 		public List<ItemProfile> autoItem = new List<ItemProfile>();
 		public List<ConsumableProfile> autoConsumable = new List<ConsumableProfile>();
+		public List<CosmeticProfile> autoCosmetic = new List<CosmeticProfile>();
         //#VID-ICE
 
         /*Those two lists are 'parallel', one shouldn't be changed without the other*/

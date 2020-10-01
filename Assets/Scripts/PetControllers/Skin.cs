@@ -14,6 +14,7 @@ public class Skin : MonoBehaviour, AISkin
     public StatsController statsController;
     public SpeechController speechController;
     public HeadController headController;
+    public CosmeticController cosmeticController;
     public TangoStats stats;
 
     public Animator animator;

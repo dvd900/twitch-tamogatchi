@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    public static ItemSpawner singleton;
+    public static ItemSpawner Instance;
 
     [SerializeField] private GameObject[] _items;
     [SerializeField] private GameObject _dust;
@@ -17,7 +17,7 @@ public class ItemSpawner : MonoBehaviour
 
     private void Awake()
     {
-        singleton = this;
+        Instance = this;
     }
 
     void Start()
