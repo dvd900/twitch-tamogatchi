@@ -7,7 +7,9 @@ namespace AwesomeTechnologies
 {
     public partial class VegetationSystem
     {
+#if !UNITY_2019_2_OR_NEWER
         private Terrain.MaterialType _originalTerrainMaterialType = Terrain.MaterialType.BuiltInStandard;
+#endif
         private Material _originalTerrainMaterial;
         private float _originalTerrainheightmapPixelError;
         private bool _originalRenderVegetation;
@@ -32,14 +34,18 @@ namespace AwesomeTechnologies
 
             if (!TerrainMaterialOverridden)
             {
+#if !UNITY_2019_2_OR_NEWER
                 _originalTerrainMaterialType = currentTerrain.materialType;
+#endif            
                 _originalTerrainMaterial = currentTerrain.materialTemplate;
                 _originalTerrainheightmapPixelError = currentTerrain.heightmapPixelError;
                 _originalRenderVegetation = RenderVegetation;
                 TerrainMaterialOverridden = true;                    
             }
 
+#if !UNITY_2019_2_OR_NEWER
             currentTerrain.materialType = Terrain.MaterialType.Custom;
+#endif
             currentTerrain.materialTemplate = material;
             currentTerrain.heightmapPixelError = 1;
             RenderVegetation = false;
@@ -48,7 +54,9 @@ namespace AwesomeTechnologies
         {
             if (!currentTerrain || !TerrainMaterialOverridden) return;
 
+#if !UNITY_2019_2_OR_NEWER
             currentTerrain.materialType = _originalTerrainMaterialType;
+#endif
             currentTerrain.materialTemplate = _originalTerrainMaterial;
             currentTerrain.heightmapPixelError = _originalTerrainheightmapPixelError;
             TerrainMaterialOverridden = false;

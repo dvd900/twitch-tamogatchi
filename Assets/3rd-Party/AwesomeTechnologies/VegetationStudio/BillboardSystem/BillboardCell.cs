@@ -123,8 +123,23 @@ namespace AwesomeTechnologies.Billboards
                 {
                     //vegetationCellList[j].Preprocess();
                     //var currentVegetationList = vegetationCellList[j].GetCurrentVegetationList(i);// = new List<Matrix4x4>();
-                    var currentVegetationList = vegetationCellList[j]
-                        .DirectSpawnVegetationLocalspace(vegetationItemInfo.VegetationItemID,true);
+                    List<Matrix4x4> currentVegetationList;
+
+                    //if (vegetationItemInfo.VegetationRenderType == VegetationRenderType.InstancedIndirect &&
+                    //    Application.isPlaying)
+                    //{
+                    //    currentVegetationList = vegetationCellList[j].DirectSpawnVegetationIndirectLocalspace(vegetationItemInfo.VegetationItemID,true);
+
+                      
+
+                    //}
+                    //else
+                    //{
+                        currentVegetationList = vegetationCellList[j].DirectSpawnVegetationLocalspace(vegetationItemInfo.VegetationItemID,true);
+                    //}      
+                    
+                    //Debug.Log("indirect" + currentVegetationList.Count.ToString());
+
                     if (currentVegetationList != null)
                     {
                         for (int k = 0; k <= currentVegetationList.Count - 1; k++)

@@ -64,7 +64,7 @@ namespace AwesomeTechnologies
 
             if (LargeLogo)
             {
-                EditorGUILayout.LabelField("Version: 1.5.1.0", LabelStyle);
+                EditorGUILayout.LabelField("Version: 1.5.3.0", LabelStyle);
                 EditorGUILayout.LabelField("", LabelStyle);
             }
 

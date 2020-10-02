@@ -966,6 +966,7 @@ namespace AwesomeTechnologies
             {
                 _vegetationSystem.RefreshVegetationModelInfoMaterials();
                 VegetationStudioManager.VegetationPackageSync_ClearVegetationSystemCellCache(_vegetationSystem);
+                SetSceneDirty();
             }
             GUILayout.EndVertical();
 

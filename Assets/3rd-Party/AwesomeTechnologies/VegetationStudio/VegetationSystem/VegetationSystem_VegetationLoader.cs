@@ -215,15 +215,20 @@ namespace AwesomeTechnologies
             else
             {
                 for (int i = 0; i <= VegetationModelInfoList.Count - 1; i++)
-                {
+                {                   
+                    if (VegetationModelInfoList[i].VegetationRenderType == VegetationRenderType.InstancedIndirect && Application.isPlaying)
+                    {
+                        continue;
+                    }
+                    
                     PrepareVegetationSplitList(VegetationModelInfoList[i].SplitVegetationInstanceList, VegetationModelInfoList[i].MatrixListPool);
                     List<Matrix4x4> newSplitList = VegetationModelInfoList[i].MatrixListPool.GetList();
 
-                    if (VegetationModelInfoList[i].VegetationRenderType == VegetationRenderType.InstancedIndirect && Application.isPlaying)
-                    {
-                        VegetationModelInfoList[i].SplitVegetationInstanceList.Add(newSplitList);
-                        continue;
-                    }
+                    //if (VegetationModelInfoList[i].VegetationRenderType == VegetationRenderType.InstancedIndirect && Application.isPlaying)
+                    //{
+                    //    VegetationModelInfoList[i].SplitVegetationInstanceList.Add(newSplitList);
+                    //    continue;
+                    //}
 
                     for (int j = 0; j <= ProcessVegetationCellList.Count - 1; j++)
                     {

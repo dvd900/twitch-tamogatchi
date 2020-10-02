@@ -133,6 +133,8 @@ namespace AwesomeTechnologies.Vegetation
                     return VegetationShaderType.VegetationStudioGrass;
                 case "Nature/SpeedTree":
                     return VegetationShaderType.Speedtree;
+                case "Nature/SpeedTree8":
+                    return VegetationShaderType.Speedtree;
                 case "AwesomeTechnologies/Custom/VS_SpeedTreeIndirect":
                     return VegetationShaderType.Speedtree;
                 case "Alloy/Nature/SpeedTree":

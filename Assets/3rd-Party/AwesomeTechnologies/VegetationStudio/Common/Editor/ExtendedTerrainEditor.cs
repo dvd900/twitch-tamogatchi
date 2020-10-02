@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿#if UNITY_2018_3_OR_NEWER
+#else
+using System.IO;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -243,3 +245,5 @@ public class ExtendedTerrainEditor : DecoratorEditor
     }
 
 }
+
+#endif

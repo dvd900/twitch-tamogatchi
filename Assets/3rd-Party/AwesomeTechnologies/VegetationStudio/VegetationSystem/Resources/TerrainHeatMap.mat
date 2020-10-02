@@ -91,8 +91,8 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TerrainMaxHeight: 8.478301
-    - _TerrainMinHeight: 0
+    - _TerrainMaxHeight: 301.56262
+    - _TerrainMinHeight: 30.5
     - _TerrainYPosition: 0
     - _UVSec: 0
     - _UseCurves: 1

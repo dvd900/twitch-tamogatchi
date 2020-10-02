@@ -59,7 +59,7 @@ namespace AwesomeTechnologies
         public bool SetUnityTerrainPixelError = true;
         public bool RenderSingleCamera;
         public bool RenderInstanced = true;
-        public bool UseComputeShaders;
+        public bool UseComputeShaders = true;
         public bool UseGPUCulling = true;
         public bool UseCPUCulling = true;
         public bool UseObjectCPUCulling = false;
@@ -143,7 +143,7 @@ namespace AwesomeTechnologies
         private bool _sleepMode;
         public bool AutomaticWakeup = false;
 
-        private readonly ObjectPool<LODVegetationInstanceInfo> _LODVegetationInstanceInfoListPool = new ObjectPool<LODVegetationInstanceInfo>();
+        private readonly Utility.ObjectPool<LODVegetationInstanceInfo> _LODVegetationInstanceInfoListPool = new Utility.ObjectPool<LODVegetationInstanceInfo>();
         private Material _windSamplerMaterial;
 
 #if UNITY_2018_1_OR_NEWER
@@ -848,16 +848,17 @@ namespace AwesomeTechnologies
             bool hasPersistentStorage = false;
             int totalCellCount = cellXCount * cellZCount;
 
-            if (persistentVegetationStorage.AutoInitPersistentVegetationStoragePackage)
-            {
-                persistentVegetationStorage.InitializePersistentStorage(totalCellCount);
-                persistentVegetationStorage.AutoInitPersistentVegetationStoragePackage = false;
-            }
+          
 
             if (persistentVegetationStorage)
             {
+                if (persistentVegetationStorage.AutoInitPersistentVegetationStoragePackage)
+                {
+                    persistentVegetationStorage.InitializePersistentStorage(totalCellCount);
+                    persistentVegetationStorage.AutoInitPersistentVegetationStoragePackage = false;
+                }
+                
                 hasPersistentStorage = persistentVegetationStorage.HasValidPersistentStorage(totalCellCount);
-
             }
 
             for (int x = 0; x <= cellXCount - 1; x++)
@@ -973,7 +974,7 @@ namespace AwesomeTechnologies
                         new VegetationItemModelInfo
                         {
                             MatrixListPool = new MatrixListPool(1, 1000),
-                            FloatListPool = new ListPool<float>(1,1000),
+                            FloatListPool = new Utility.ListPool<float>(1,1000),
                             VegetationItemInfo = CurrentVegetationPackage.VegetationInfoList[i],
                             VegetationRenderType = CurrentVegetationPackage.VegetationInfoList[i].VegetationRenderType,
                             VegetationSettings = vegetationSettings,
@@ -1044,7 +1045,7 @@ namespace AwesomeTechnologies
                         new VegetationItemModelInfo
                         {
                             MatrixListPool = new MatrixListPool(1, 1000),
-                            FloatListPool = new ListPool<float>(1,1000),
+                            FloatListPool = new Utility.ListPool<float>(1,1000),
                             VegetationItemInfo = CurrentVegetationPackage.VegetationInfoList[i],
                             VegetationRenderType = CurrentVegetationPackage.VegetationInfoList[i].VegetationRenderType,
                             VegetationSettings = vegetationSettings,
@@ -1232,7 +1233,7 @@ namespace AwesomeTechnologies
         }
 
         void InitLODVegetationInstanceInfo(LODVegetationInstanceInfo lodVegetationInstanceInfo,
-            MatrixListPool matrixListPool, ListPool<float> fadeListPool)
+            MatrixListPool matrixListPool, Utility.ListPool<float> fadeListPool)
         {
             lodVegetationInstanceInfo.LOD0InstanceList = matrixListPool.GetList();
             lodVegetationInstanceInfo.LOD1InstanceList = matrixListPool.GetList();
@@ -1249,7 +1250,7 @@ namespace AwesomeTechnologies
             lodVegetationInstanceInfo.LOD2ShadowFadeList = fadeListPool.GetList();
         }
 
-        void ClearVegetationLODSplitList(List<LODVegetationInstanceInfo> outputList, MatrixListPool matrixListPool, ListPool<float> fadeListPool)
+        void ClearVegetationLODSplitList(List<LODVegetationInstanceInfo> outputList, MatrixListPool matrixListPool, Utility.ListPool<float> fadeListPool)
         {
             for (int i = 0; i <= outputList.Count - 1; i++)
             {

@@ -719,6 +719,14 @@ namespace AwesomeTechnologies.Billboards
 
             Profiler.BeginSample("Draw billboards");
             _currentCamera = null;
+            
+#if UNITY_2018_3_OR_NEWER
+            ShadowCastingMode billboardShadowCastingMode = ShadowCastingMode.Off;
+            if (BillboardShadows)
+            {
+                billboardShadowCastingMode = ShadowCastingMode.TwoSided;
+            }
+#endif
 
             LayerMask currentLayerMask = VegetationSystem.vegetationSettings.TreeLayer;
             if (OverrideLayer) currentLayerMask = BillboardLayer;
@@ -737,9 +745,15 @@ namespace AwesomeTechnologies.Billboards
                         //   _zeroMatrix4X4, currentMaterial, VegetationSystem.vegetationSettings.TreeLayer, _currentCamera,
                         //    0, _vegetationPropertyBlock, BillboardShadows, true);
 
+#if UNITY_2018_3_OR_NEWER
+                        Graphics.DrawMesh(VisibleBillboardCellList[j].BillboardMeshGeneratorList[i].MeshList[l],
+                            translationMatrix, currentMaterial, currentLayerMask, _currentCamera,
+                            0, _vegetationPropertyBlock, billboardShadowCastingMode, true);
+#else
                         Graphics.DrawMesh(VisibleBillboardCellList[j].BillboardMeshGeneratorList[i].MeshList[l],
                             translationMatrix, currentMaterial, currentLayerMask, _currentCamera,
                             0, _vegetationPropertyBlock, BillboardShadows, true);
+#endif                       
                     }
                 }
             }

@@ -89,6 +89,7 @@
 						#define AW_windWave (tex2Dlod(_AW_WavesTex, float4(AW_wavesPos/AW_WavesSize,0,0)).r)
                     
 						float force = FORCE * AW_windWave;
+											
 						float time = _Time.y * FORCE * _Speed;
                     
 						float baseBendSin = sin(time + AG_PHASE_SHIFT * 6.28319);

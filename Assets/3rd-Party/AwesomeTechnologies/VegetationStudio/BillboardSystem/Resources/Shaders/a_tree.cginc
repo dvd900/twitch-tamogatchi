@@ -46,16 +46,16 @@
 				return screenPos;
 			}
 
-		#ifdef LOD_FADE_CROSSFADE
-			void VS_ApplyDitherCrossFade(half3 ditherScreenPos, float crossfadeValue)
-			{
-				float fadeValue = ceil(crossfadeValue * 16)/16.0;
-				//fadeValue = 0.5;
-				half2 projUV = ditherScreenPos.xy / ditherScreenPos.z;
-				projUV.y = frac(projUV.y) * 0.0625 + fadeValue; // quantized lod fade by 16 levels
-				clip(tex2D(_DitherMaskLOD2D, projUV).a - 0.5);
-			}
-		#endif
+		//#ifdef LOD_FADE_CROSSFADE
+		//	void VS_ApplyDitherCrossFade(half3 ditherScreenPos, float crossfadeValue)
+		//	{
+		//		float fadeValue = ceil(crossfadeValue * 16)/16.0;
+		//		//fadeValue = 0.5;
+		//		half2 projUV = ditherScreenPos.xy / ditherScreenPos.z;
+		//		projUV.y = frac(projUV.y) * 0.0625 + fadeValue; // quantized lod fade by 16 levels
+		//		clip(tex2D(_DitherMaskLOD2D, projUV).a - 0.5);
+		//	}
+		//#endif
 
 		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
 		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -78,7 +78,21 @@
 				float3 CORNER = v.vertex.xyz;	
 			#endif
 			
-			#define cameraPos _WorldSpaceCameraPos.xyz
+			float3 worldspaceCenter = mul(unity_ObjectToWorld, CENTER);
+            float3 modifiedCameraPos;
+            if (_InCol == 1)
+            {
+                modifiedCameraPos =  _WorldSpaceCameraPos;
+                modifiedCameraPos.y = worldspaceCenter.y;
+            }
+            else
+            {
+            modifiedCameraPos =  _WorldSpaceCameraPos.xyz;
+            }
+    
+            #define cameraPos modifiedCameraPos;
+			
+			//#define cameraPos _WorldSpaceCameraPos.xyz
 
 			float3 clipVect;
 			clipVect = (mul(unity_ObjectToWorld, CENTER).xyz + float3(0,v.texcoord3.y,0)) - _CameraPosition;
@@ -108,17 +122,17 @@
 			}
 			else
 			{
-			#ifdef LOD_FADE_CROSSFADE
-				float distance = length(clipVect) - _CullDistance;
-				if (distance < 2)
-				{
-					o.crossfade_value = 1 - (distance/2);
-				}
-				else
-				{
-					o.crossfade_value = 0.98;
-				}
-			#endif
+			//#ifdef LOD_FADE_CROSSFADE
+			//	float distance = length(clipVect) - _CullDistance;
+			//	if (distance < 2)
+			//	{
+			//		o.crossfade_value = 1 - (distance/2);
+			//	}
+			//	else
+			//	{
+			//		o.crossfade_value = 0.98;
+			//	}
+			//#endif
 
 				// Create LookAt matrix
 				float3 zaxis = normalize(camVect);			
@@ -181,9 +195,9 @@
 					o.d.y = saturate(hueVariationAmount * _HueVariation.a);
 				#endif
 
-				#ifdef LOD_FADE_CROSSFADE
-					o.dc = VS_ComputeDitherScreenPos(v.vertex);
-				#endif
+				//#ifdef LOD_FADE_CROSSFADE
+				//	o.dc = VS_ComputeDitherScreenPos(v.vertex);
+				//#endif
 
 				//float4 localSpaceLightPos = mul(unity_ObjectToWorld,_WorldSpaceLightPos0);
 				//v.normal = abs(normalize(localSpaceLightPos));
@@ -192,15 +206,15 @@
 
 		void surf (Input IN, inout SurfaceOutput o)
 		{
-			#ifdef LOD_FADE_CROSSFADE
+			//#ifdef LOD_FADE_CROSSFADE
 			//#define unity_LODFade float4(0.5,0.5,0,0)
-			if (IN.crossfade_value > 0.99)
-			{
-				VS_ApplyDitherCrossFade(IN.dc,IN.crossfade_value);
-			}
+			//if (IN.crossfade_value > 0.99)
+			//{
+			//	VS_ApplyDitherCrossFade(IN.dc,IN.crossfade_value);
+			//}
 
             //DitherCrossFade(IN.dc, IN.crossfade_value);
-			#endif
+			//#endif
 
 			//fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 			fixed4 c = tex2Dbias(_MainTex, half4(IN.uv_MainTex,0,_MipmapBias)) * _Color;

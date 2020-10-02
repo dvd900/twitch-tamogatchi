@@ -367,6 +367,9 @@ namespace AwesomeTechnologies.Utility
                     }
                 }
                 EditorUtility.ClearProgressBar();
+                
+                
+             
             }
         }
     }

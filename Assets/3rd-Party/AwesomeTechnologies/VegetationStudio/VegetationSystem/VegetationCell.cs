@@ -218,8 +218,24 @@ namespace AwesomeTechnologies
             return indirectMatrixList;
         }
 
-        public List<Matrix4x4> DirectSpawnVegetationLocalspace(string vegetationItemID, bool includePersistentStorage)
+        public List<Matrix4x4> DirectSpawnVegetationIndirectLocalspace(string vegetationItemID, bool includePersistentStorage)
         {
+            List<Matrix4x4> matrixList = new List<Matrix4x4>();
+            CustomList<Matrix4x4> indirectMatrixList =
+                DirectSpawnVegetationIndirect(vegetationItemID, includePersistentStorage);
+
+            for (int i = 0; i <= indirectMatrixList.Count - 1; i++)
+            {
+                Vector3 position = MatrixTools.ExtractTranslationFromMatrix(indirectMatrixList[i]);
+                Vector3 scale = MatrixTools.ExtractScaleFromMatrix(indirectMatrixList[i]);
+                Quaternion rotation = MatrixTools.ExtractRotationFromMatrix(indirectMatrixList[i]);
+                matrixList.Add(Matrix4x4.TRS(position - UnityTerrainData.terrainPosition,rotation,scale));
+            }
+            return matrixList;
+        }
+
+        public List<Matrix4x4> DirectSpawnVegetationLocalspace(string vegetationItemID, bool includePersistentStorage)
+        {                  
             List<Matrix4x4> matrixList = DirectSpawnVegetation(vegetationItemID, includePersistentStorage);
             for (int i = 0; i <= matrixList.Count - 1; i++)
             {
