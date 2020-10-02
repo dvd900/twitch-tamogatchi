@@ -35,7 +35,6 @@ namespace FAE
         public Vector3 size;
         public Vector3 centerPostion;
         public Vector3 originPosition;
-        public int pigmentMapSize = 1024;
 
         public Terrain[] terrains;
         public MeshRenderer[] meshes;
@@ -187,9 +186,6 @@ namespace FAE
 
             //Offset origin point by half the size to get center
             centerPostion = new Vector3(originPosition.x + (size.x / 2f), originPosition.y + (height / 2f), originPosition.z + (size.z / 2f));
-
-            //Set resolution to match the splatmap
-            pigmentMapSize = terrains[0].terrainData.alphamapResolution;
         }
 
         //Check if values are equal, has error margin for floating point precision

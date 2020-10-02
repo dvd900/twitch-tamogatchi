@@ -1,4 +1,59 @@
-Note: Substance materials are set to be removed in version 2.0!
+1.5.2
+
+Added:
+- Options to convert to Built/Universal Render Pipeline under Edit/Render Pipeline menu
+- Color (HDR) field to tree branch shader. Transmission color is now also HDR-enabled.
+
+Fixed:
+- Errors in built-in water shader when reflection probe box projection wasn't enabled
+
+1.5.1
+
+Added:
+- Pigment Map Generator now has a resolution parameter, and option to assign all active terrains
+
+Fixed:
+- (URP) Foliage shader light transmission effect is now influenced by directional light intensity
+- (URP) Particle effect materials now convert completely when installing URP shaders (materials must still be selected once, before changes apply)
+
+1.5.0
+Minimum supported version is now Unity 2017.4.0
+
+Added support for the Universal Render Pipeline in Unity 2019.3+. Shaders can be unpacked and FAE materials converted through the Help menu. 
+
+Notes:
+- Grass is not available for the URP, the Stylized Grass Shader package offers a fully fledged URP grass shader. Grass materials will automatically use the foliage shader instead.
+- LOD Crossfading is unavailable in the URP
+- Custom shader UI's aren't supported by Shader Graph, material inspectors will use default formatting
+
+Added:
+- Revised water shader for the URP with improved intersection effect and shoreline waves.
+
+Changed:
+- Improved color padding on vegetation texture atlas, no longer shows dark edges on some plants on lower mipmaps
+- (URP) Tree branches, light transmission is now masked by shadows
+- Greatly reduced file size of cliff textures with no discernible quality loss (90mb savings)
+- Shader controllers for Vegetation Studio Pro are now included in this package and support URP shaders
+
+1.4.1
+Fixed:
+- Tree branch shader turning black if Directional Light was disabled or when using Mixed lighting with baked lightmaps.
+- Shaders now receive lighting from Spot/Point lights in Forward Rendering when using Vegetation Studio
+- Removed empty LOD2 from GrassPatch prefab, which prevented it from being used with Vegetation Studio Pro
+
+1.4.0
+- Unity 2019.3 compatibility verified
+- All Substance materials have been replaced by textures
+
+Added:
+- Grass patch prefab, designed for mass placement
+
+Changed:
+- Cliff shaders now support Vegetation Studio's Instanced Indirect rendering
+- Demo scenes now have post processing set up by default (Requires Post Processing package to be installed)
+
+Fixed:
+- Improved quality of tree billboard normal maps, fixes black billboards in Unity 2019.2+
 
 1.3.1
 

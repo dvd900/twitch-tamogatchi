@@ -42,21 +42,29 @@ namespace FAE
         public float coverageTiling = 1f;
         public Texture coverageMap;
 
-        private void OnEnable()
+        public void OnEnable()
         {
             if (targetMaterials.Length == 0)
             {
                 this.enabled = false;
             }
 
-            cliffShader = Shader.Find("FAE/Cliff");
-            cliffCoverageShader = Shader.Find("FAE/Cliff coverage");
+            if (UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset == null)
+            {
+                cliffShader = Shader.Find("FAE/Cliff");
+                cliffCoverageShader = Shader.Find("FAE/Cliff coverage");
+            }
+            else
+            {
+                cliffShader = Shader.Find("Universal Render Pipeline/FAE/FAE_Cliff");
+                cliffCoverageShader = Shader.Find("Universal Render Pipeline/FAE/FAE_Cliff_Coverage");
+            }
 
             Apply();
         }
 
 
-        private void getSettings()
+        private void GetSettings()
         {
             if (!targetMaterials[0])
             {
@@ -97,6 +105,8 @@ namespace FAE
 
                 foreach (Material mat in targetMaterials)
                 {
+                    if (!mat) continue;
+
                     if (useCoverageShader)
                     {
                         mat.shader = cliffCoverageShader;

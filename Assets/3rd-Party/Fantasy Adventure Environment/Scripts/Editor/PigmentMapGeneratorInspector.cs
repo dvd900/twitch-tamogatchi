@@ -24,9 +24,12 @@ namespace FAE
         SerializedProperty terrainObjects;
 
         SerializedProperty manualInput;
+        SerializedProperty resIdx;
         SerializedProperty useCustomPigmentMap;
         SerializedProperty inputPigmentMap;
         SerializedProperty layerMask;
+
+        public static string[] reslist = new string[] { "64x64", "128x128", "256x256", "512x512", "1024x1024", "2048x2048", "4096x4096" };
 
         // Use this for initialization
         void OnEnable()
@@ -45,6 +48,7 @@ namespace FAE
             terrainObjects = serializedObject.FindProperty("terrainObjects");
 
             manualInput = serializedObject.FindProperty("manualInput");
+            resIdx = serializedObject.FindProperty("resIdx");
             useCustomPigmentMap = serializedObject.FindProperty("useCustomPigmentMap");
             inputPigmentMap = serializedObject.FindProperty("customPigmentMap");
             layerMask = serializedObject.FindProperty("layerMask");
@@ -58,6 +62,25 @@ namespace FAE
         public override void OnInspectorGUI()
         {
             DoHeader();
+
+#if UNITY_2019_3_OR_NEWER
+            if (UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset)
+            {
+                EditorGUILayout.HelpBox("Not available in the Universal Render Pipeline.\n\nThe Stylized Grass Shader package is URP compatible", MessageType.Warning);
+
+                GUILayout.Space(-32);
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    GUILayout.FlexibleSpace();
+                    if (GUILayout.Button("Open Asset Store", GUILayout.Width(120)))
+                    {
+                        Application.OpenURL("com.unity3d.kharma:content/143830");
+                    }
+                    GUILayout.Space(8);
+                }
+                GUILayout.Space(11);
+            }
+#endif
 
             EditorGUI.BeginChangeCheck();
 
@@ -98,6 +121,12 @@ namespace FAE
 
             }
 
+            //If terrain list is empty, expand it
+            if (isMultiTerrain.boolValue && terrainObjects.arraySize == 0 && !manualInput.boolValue)
+            {
+                terrainObjects.isExpanded = true;
+            }
+
             DoTerrainList();
 
             EditorGUILayout.Space();
@@ -135,7 +164,6 @@ namespace FAE
             if (isMultiTerrain.boolValue && terrainObjects.arraySize == 0 && !manualInput.boolValue)
             {
                 EditorGUILayout.HelpBox("Assign at least one terrain object", MessageType.Error);
-                terrainObjects.isExpanded = true;
             }
 
             EditorGUI.BeginDisabledGroup(isMultiTerrain.boolValue && terrainObjects.arraySize == 0 && !manualInput.boolValue);
@@ -211,6 +239,16 @@ namespace FAE
              );
 
             EditorGUILayout.HelpBox(terrainInfo, MessageType.Info);
+
+            GUILayout.Space(-32);
+            using (new EditorGUILayout.HorizontalScope())
+            {
+                GUILayout.FlexibleSpace();
+                pmg.showArea = GUILayout.Toggle(pmg.showArea, new GUIContent(" Show area", EditorGUIUtility.IconContent("Prefab Icon").image), "Button", GUILayout.MaxHeight(17f));
+                GUILayout.Space(8);
+            }
+            GUILayout.Space(11);
+
         }
 
         private void DoTerrainList()
@@ -223,9 +261,16 @@ namespace FAE
                 {
                     EditorGUILayout.HelpBox("The first object in the array must be the corner chunk, where the terrain continues on the postive X and Z axis", MessageType.Warning);
 
-                    if (GUILayout.Button("Assign all child objects"))
+                    using (new EditorGUILayout.HorizontalScope())
                     {
-                        pmg.GetChildTerrainObjects(pmg.transform);
+                        if (GUILayout.Button("Assign all child objects"))
+                        {
+                            pmg.GetChildTerrainObjects(pmg.transform);
+                        }
+                        if (GUILayout.Button("Add active terrains"))
+                        {
+                            AssignActiveTerrains();
+                        }
                     }
                 }
             }
@@ -327,6 +372,8 @@ namespace FAE
                 EditorGUILayout.HelpBox("Manual input mode requires terrains to be on a dedicated layer", MessageType.None);
             }
 
+            resIdx.intValue = EditorGUILayout.Popup("Resolution", resIdx.intValue, reslist, new GUILayoutOption[0]);
+
             pmg.useAlternativeRenderer = EditorGUILayout.ToggleLeft("Using third-party terrain shader", pmg.useAlternativeRenderer);
             if (showHelp) EditorGUILayout.HelpBox("Some third-party terrain shaders require you to use this, otherwise the result may be black.", MessageType.Info);
 
@@ -386,6 +433,17 @@ namespace FAE
                         EditorGUILayout.LabelField("The output texture file is stored next to the material file", EditorStyles.helpBox);
                     }
                 }
+            }
+        }
+
+        private void AssignActiveTerrains()
+        {
+            Terrain[] terrains = Terrain.activeTerrains;
+            pmg.terrainObjects = new GameObject[terrains.Length];
+
+            for (int i = 0; i < terrains.Length; i++)
+            {
+                pmg.terrainObjects[i] = terrains[i].gameObject;
             }
         }
 

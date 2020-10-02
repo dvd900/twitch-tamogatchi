@@ -61,20 +61,12 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d370d2b28db6b1242acde8161dfb3d35, type: 2}
   - {fileID: 2100000, guid: 98764edd700fce5438f40f258bc48927, type: 2}
   - {fileID: 2100000, guid: ec75d09494f567544851d79620d0203b, type: 2}
-  objectColor:
-    r: 0.86764705
-    g: 0.86764705
-    b: 0.86764705
-    a: 1
+  objectColor: {r: 0.86764705, g: 0.86764705, b: 0.86764705, a: 1}
   roughness: 0.276
   detailNormalMap: {fileID: 2800000, guid: 06bdf21e154425948b0978955fd687b4, type: 3}
   detailNormalStrength: 0.28
   globalColorMap: {fileID: 2800000, guid: 90c15e788b01a3646a1f0b65505c9972, type: 3}
-  globalColor:
-    r: 0.5882353
-    g: 0.5294118
-    b: 0.40784317
-    a: 1
+  globalColor: {r: 0.5882353, g: 0.5294118, b: 0.40784317, a: 1}
   globalTiling: 0.13
   useCoverageShader: 0
   coverageColorMap: {fileID: 0}
@@ -82,4 +74,3 @@ MonoBehaviour:
   coverageAmount: 0.01
   coverageTiling: 1
   coverageMap: {fileID: 0}
-  isCoverageSupported: 0

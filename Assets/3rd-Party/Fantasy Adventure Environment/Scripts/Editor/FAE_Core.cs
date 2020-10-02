@@ -8,6 +8,8 @@ using System.IO;
 //Make this entire class is editor-only without requiring it to be in an "Editor" folder
 #if UNITY_EDITOR
 using UnityEditor;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace FAE
 {
@@ -17,495 +19,312 @@ namespace FAE
         public const string ASSET_ABRV = "FAE";
         public const string ASSET_ID = "70354";
 
-        public const string PACKAGE_VERSION = "20171";
-        public static string INSTALLED_VERSION = "1.3.1";
-        public const string MIN_UNITY_VERSION = "2017.1";
+        public const string PACKAGE_VERSION = "20174";
+        public static string INSTALLED_VERSION = "1.5.2";
+        public const string MIN_UNITY_VERSION = "2017.4";
 
         public static string DOC_URL = "http://staggart.xyz/unity/fantasy-adventure-environment/fae-documentation/";
         public static string FORUM_URL = "https://forum.unity3d.com/threads/486102";
+
+        private const string UniversalShaderPackageGUID = "7c884420a5dfbaa4db9afe42d366b843";
 
         public static void OpenStorePage()
         {
             Application.OpenURL("com.unity3d.kharma:content/" + ASSET_ID);
         }
 
-#if UNITY_2018_1_OR_NEWER
-        public enum MaterialInstallation
+        public static string PACKAGE_ROOT_FOLDER
         {
-            Regular,
-            Substance
-        }
-        public static MaterialInstallation materialInstallation;
-
-        public static bool SubstanceInstalled()
-        {
-            string[] assets = AssetDatabase.FindAssets("libsubstance_sse2_blend");
-
-            return (assets.Length > 0) ? true : false;
+            get { return SessionState.GetString(ASSET_ABRV + "_BASE_FOLDER", string.Empty); }
+            set { SessionState.SetString(ASSET_ABRV + "_BASE_FOLDER", value); }
         }
 
-        public static void InstallMaterials(MaterialInstallation type)
+        public static string GetRootFolder()
         {
-            if (type == MaterialInstallation.Regular)
-            {
-                InstallRegularMaterials();
-            }
-            else
-            {
-                InstallSubstance();
-            }
+            //Get script path
+            string[] scriptGUID = AssetDatabase.FindAssets("FAE_Core t:script");
+            string scriptFilePath = AssetDatabase.GUIDToAssetPath(scriptGUID[0]);
+
+            //Truncate to get relative path
+            PACKAGE_ROOT_FOLDER = scriptFilePath.Replace("/Scripts/Editor/FAE_Core.cs", string.Empty);
+
+#if FAE_DEV
+            Debug.Log("<b>Package root</b> " + PACKAGE_ROOT_FOLDER);
+#endif
+
+            return PACKAGE_ROOT_FOLDER;
         }
 
-        public static void InstallRegularMaterials()
+        public enum ShaderInstallation
         {
-            string[] asset = AssetDatabase.FindAssets("RegularMaterials");
+            BuiltIn,
+            UniversalRP
+        }
 
-            if (asset.Length > 0)
+#if UNITY_2019_3_OR_NEWER
+        public class RunOnImport : AssetPostprocessor
+        {
+            static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
             {
-                if (EditorUtility.DisplayDialog("Warning", "All your vegetation material settings will be reverted to default", "Continue", "Cancel"))
+                foreach (string str in importedAssets)
                 {
-                    FileUtil.DeleteFileOrDirectory(SessionState.GetString("PATH", "") + "/Source/Substances");
-                    FileUtil.DeleteFileOrDirectory(SessionState.GetString("PATH", "") + "/Terrain/Substance");
+                    if (str.Contains("FAE_Core.cs"))
+                    {
+                        GetRootFolder();
 
-                    AssetDatabase.Refresh();
+                        string urpFolder = FAE_Core.PACKAGE_ROOT_FOLDER + "/Shaders/URP/";
 
-                    asset[0] = AssetDatabase.GUIDToAssetPath(asset[0]);
-                    AssetDatabase.ImportPackage(asset[0], false);
+                        var info = new DirectoryInfo(urpFolder);
+                        FileInfo[] fileInfo = info.GetFiles();
+
+                        //Only one file in the folder, shaders not yet unpacked
+                        if (fileInfo.Length <= 2 && UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset != null)
+                        {
+                            if (EditorUtility.DisplayDialog("Fantasy Adventure Environment", "The Universal Render Pipeline is in use.\n\nURP compatible shaders can be unpacked and materials upgraded through the \"Help\" window after importing has finished\n\nErrors about _GrabTexture can safely be ignored.", "OK"))
+                            {
+
+                            }
+                        }
+                    }
                 }
             }
-            else
-            {
-                Debug.LogError("[FAE] Package for regular materials could not be found! Be sure to import the complete package.");
-            }
         }
 
-        public static void InstallSubstance()
+        private const string urpName = "Universal Render Pipeline";
+
+        //Look up table to finding pipeline shader variants
+        private static Dictionary<string, string> ShaderRelations = new Dictionary<string, string>
         {
-            string[] asset = AssetDatabase.FindAssets("SubstanceMaterials");
+            //Peartickles
+            { "Legacy Shaders/Particles/Alpha Blended", urpName + "/Particles/Simple Lit" },
+            { "Particles/Alpha Blended", urpName + "/Particles/Simple Lit" },
+            { "Mobile/Particles/Alpha Blended", urpName + "/Particles/Simple Lit" },
 
-            if (asset.Length > 0)
+            { "Standard", urpName + "/Lit" },
+            { "Skybox/Cubemap","Skybox/Cubemap" },
+            { "Nature/Terrain/Standard", urpName + "/Terrain/Lit" },
+
+            { "FAE/Fog sheet", urpName + "/FAE/FAE_FogSheet" },
+            { "FAE/Sunshaft", urpName + "/FAE/FAE_Sunshaft" },
+            //{ "FAE/Sunshaft particle", urpName + "/FAE/FAE_SunshaftParticle" },
+
+            { "FAE/Cliff", urpName + "/FAE/FAE_Cliff" },
+            { "FAE/Cliff coverage", urpName + "/FAE/FAE_Cliff_Coverage" },
+
+            { "FAE/Water", urpName + "/FAE/FAE_Water" },
+            { "FAE/Waterfall", urpName + "/FAE/FAE_Waterfall" },
+            { "FAE/Waterfall foam", urpName + "/FAE/FAE_WaterfallFoam" },
+
+            { "FAE/Foliage", urpName+ "/FAE/FAE_Foliage" },
+            { "FAE/Tree Branch", urpName+ "/FAE/FAE_TreeBranch" },
+            { "FAE/Tree Trunk", urpName+ "/FAE/FAE_TreeTrunk" },
+            { "FAE/Tree Billboard", urpName+ "/FAE/FAE_TreeBillboard" }
+        };
+
+        [MenuItem("Edit/Render Pipeline/Fantasy Adventure Environment/Revert to Built-in")]
+        public static void InstallBuiltIn()
+        {
+            InstallShaders(ShaderInstallation.BuiltIn);
+        }
+
+        [MenuItem("Edit/Render Pipeline/Fantasy Adventure Environment/Convert to URP")]
+        public static void InstallURP()
+        {
+
+#if UNITY_2019_3_OR_NEWER && FAE_DEV
+            SwitchRenderPipeline.SetPipeline(ShaderInstallation.UniversalRP);
+#endif
+
+            if (UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset == null)
             {
-                if (EditorUtility.DisplayDialog("Warning", "All your vegetation material settings will be reverted to default\n\nPlease note that Substance materials are to be removed in v2 of this package.", "Continue", "Cancel"))
+                if (EditorUtility.DisplayDialog("Fantasy Adventure Environment", "No URP asset has been assigned in the Graphics settings. URP should be set up, before converting the package.", "Show me", "Cancel"))
                 {
-                    FileUtil.DeleteFileOrDirectory(SessionState.GetString("PATH", "") + "/Source/Textures");
-
-                    AssetDatabase.Refresh();
-
-                    asset[0] = AssetDatabase.GUIDToAssetPath(asset[0]);
-                    AssetDatabase.ImportPackage(asset[0], false);
+                    SettingsService.OpenProjectSettings("Project/Graphics");
+                    return;
                 }
+            }
+
+            InstallShaders(ShaderInstallation.UniversalRP);
+        }
+
+        public static void InstallShaders(ShaderInstallation config)
+        {
+            string guid = UniversalShaderPackageGUID;
+            string packagePath = AssetDatabase.GUIDToAssetPath(guid);
+
+            GetRootFolder();
+
+            //TODO: Package up current shaders
+            if (config == ShaderInstallation.BuiltIn)
+            {
+                //AssetDatabase.ExportPackage(PACKAGE_ROOT_FOLDER + "/Shaders/URP", packagePath, ExportPackageOptions.Default | ExportPackageOptions.Recurse);
+
+                UpgradeMaterials(config);
             }
             else
             {
-                Debug.LogError("[FAE] Package for Substance materials could not be found! Be sure to import the complete package.");
+                if (packagePath == string.Empty)
+                {
+                    Debug.LogError("URP Shader/material package with the GUID: " + guid + ". Could not be found in the project, was it changed or not imported? It should be located in <i>" + PACKAGE_ROOT_FOLDER + "/Shaders/URP</i>");
+                    return;
+                }
+                AssetDatabase.ImportPackage(packagePath, false);
+                AssetDatabase.importPackageCompleted += new AssetDatabase.ImportPackageCallback(ImportURPCallback);
+            }
+
+#if UNITY_2019_3_OR_NEWER && FAE_DEV
+            SwitchRenderPipeline.SetPipeline(config);
+#endif
+
+        }
+
+        static void ImportURPCallback(string packageName)
+        {
+            AssetDatabase.Refresh();
+
+            UpgradeMaterials(ShaderInstallation.UniversalRP);
+
+            AssetDatabase.importPackageCompleted -= ImportURPCallback;
+        }
+
+        public static void UpgradeMaterials(ShaderInstallation config)
+        {
+            string[] GUIDs = AssetDatabase.FindAssets("t: material", new string[] { PACKAGE_ROOT_FOLDER });
+
+            int count = 0;
+            if (GUIDs.Length > 0)
+            {
+                Material[] mats = new Material[GUIDs.Length];
+
+                for (int i = 0; i < mats.Length; i++)
+                {
+                    EditorUtility.DisplayProgressBar("Material configuration", "Converting FAE materials for " + config, (float)i / mats.Length);
+                    string path = AssetDatabase.GUIDToAssetPath(GUIDs[i]);
+
+                    mats[i] = (Material)AssetDatabase.LoadAssetAtPath(path, typeof(Material));
+
+                    string dest = string.Empty;
+                    string source = mats[i].shader.name;
+                    bool matched = ShaderRelations.TryGetValue(source, out dest);
+
+                    if (config == ShaderInstallation.BuiltIn)
+                    {
+                        //Get key by value (inverse lookup)
+                        dest = ShaderRelations.FirstOrDefault(x => x.Value == source).Key;
+
+                        matched = dest != null;
+                    }
+
+                    if (config == ShaderInstallation.UniversalRP)
+                    {
+                        //Set grass to foliage shader
+                        if (source == "FAE/Grass")
+                        {
+                            dest = urpName + "/FAE/FAE_Foliage";
+                            matched = true;
+                        }
+                    }
+                    if (config == ShaderInstallation.BuiltIn)
+                    {
+                        //Set foliage to grass shader
+                        if (mats[i].name.Contains("Grass"))
+                        {
+                            dest = "FAE/Grass";
+                            matched = true;
+                        }
+                    }
+
+                    if (source == null && dest == null) continue;
+                    if (string.Equals(dest, source)) continue;
+
+                    if (matched)
+                    {
+
+                        if (config == ShaderInstallation.UniversalRP)
+                        {
+                            Texture mainTex = null;
+                            if (mats[i].HasProperty("_MainTex")) mainTex = mats[i].GetTexture("_MainTex");
+
+                            if ((source.Contains("WindStreak") || source.Contains("Fogsheets")))
+                            {
+                                //mats[i].EnableKeyword("_ALPHATEST_ON");
+                                mats[i].EnableKeyword("_COLORADDSUBDIFF_ON");
+                                mats[i].SetFloat("_ColorMode", 1);
+                            }
+
+                            if (source.Contains("Particle") && !source.Contains("Leaf"))
+                            {
+                                //Set material to transparent
+                                mats[i].SetFloat("_Surface", 1);
+                                mats[i].EnableKeyword("_COLORADDSUBDIFF_ON");
+                                //Additive blending
+                                mats[i].SetFloat("_ColorMode", 1);
+                            }
+
+                            if (mats[i].HasProperty("_Color")) mats[i].SetColor("_BaseColor", mats[i].GetColor("_Color"));
+                            if (mats[i].HasProperty("_TintColor")) mats[i].SetColor("_BaseColor", mats[i].GetColor("_TintColor"));
+
+                            //Grass to foliage switch
+                            if (mats[i].HasProperty("_ColorTop")) mats[i].SetColor("_Color", mats[i].GetColor("_ColorTop"));
+
+                            if (mats[i].HasProperty("_MainTex"))
+                            {
+                                mats[i].SetTexture("_BaseMap", mats[i].GetTexture("_MainTex"));
+                            }
+
+                            if (mats[i].name.Contains("Grass"))
+                            {
+                                mats[i].SetFloat("_MaxWindStrength", 0.2f);
+                                mats[i].SetFloat("_AmbientOcclusion", 0.15f);
+                            }
+
+                            mats[i].shader = Shader.Find(dest);
+                            if (mainTex) mats[i].SetTexture("_BaseMap", mainTex);
+                        }
+
+                        if (mats[i].HasProperty("_TransmissionAmount"))
+                        {
+                            mats[i].SetFloat("_TransmissionAmount", Mathf.Clamp(mats[i].GetFloat("_TransmissionAmount"), 0, 10));
+                        }
+
+                        //Debug.Log("src: " + source + " dst:" + dest);
+                        mats[i].shader = Shader.Find(dest);
+
+                        EditorUtility.SetDirty(mats[i]);
+                        count++;
+                    }
+                    else
+                    {
+#if FAE_DEV
+                        Debug.LogError("No matching " + config + " shader could be found for " + mats[i].shader.name);
+#endif
+                    }
+                }
+                EditorUtility.ClearProgressBar();
+
+
+                Debug.Log(count + " materials were configured for the " + config + " render pipeline");
+
+                AssetDatabase.Refresh();
+                AssetDatabase.SaveAssets();
+
+                //If any controllers are present in the open scene, these need to be nudged to apply the correct shaders
+                CliffAppearance[] cliffConstrollers = GameObject.FindObjectsOfType<CliffAppearance>();
+                for (int i = 0; i < cliffConstrollers.Length; i++)
+                {
+                    cliffConstrollers[i].OnEnable();
+                }
+
+                if (config == ShaderInstallation.UniversalRP)
+                {
+                    if (EditorUtility.DisplayDialog("Fantasy Adventure Environment", "Ensure the Depth/Opaque Texture options are enabled in your pipeline settings, otherwise the water isn't visible in the game view", "Show me", "OK"))
+                    {
+                        Selection.activeObject = UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset;
+                    }
+                }
             }
         }
 #endif
     }
-
-    public class FAE_Window : EditorWindow
-    {
-        //Window properties
-        private static int width = 440;
-        private static int height = 300;
-
-        //Tabs
-#if UNITY_2018_1_OR_NEWER
-        private bool isTabInstallation = true;
-        private bool isTabGettingStarted = false;
-#else
-        private bool isTabGettingStarted = true;
-#endif
-        private bool isTabSupport = false;
-
-
-        [MenuItem("Help/Fantasy Adventure Environment", false, 0)]
-        public static void ShowWindow()
-        {
-            EditorWindow editorWindow = EditorWindow.GetWindow<FAE_Window>(false, "About", true);
-            editorWindow.titleContent = new GUIContent("Help " + FAE_Core.INSTALLED_VERSION);
-            editorWindow.autoRepaintOnSceneChange = true;
-
-            //Open somewhat in the center of the screen
-            editorWindow.position = new Rect((Screen.width) / 2f, (Screen.height) / 2f, width, height);
-
-            //Fixed size
-            editorWindow.maxSize = new Vector2(width, height);
-            editorWindow.minSize = new Vector2(width, 200);
-
-            Init();
-
-            editorWindow.Show();
-
-        }
-
-        private void SetWindowHeight(float height)
-        {
-            this.maxSize = new Vector2(width, height);
-            this.minSize = new Vector2(width, height);
-        }
-
-        //Store values in the volatile SessionState
-        static void Init()
-        {
-            GetRootFolder();
-
-            //Check Substance installation
-#if UNITY_2018_1_OR_NEWER
-            SessionState.SetBool("SUBSTANCE_INSTALLED", FAE_Core.SubstanceInstalled());
-#endif
-        }
-
-        public static void GetRootFolder()
-        {
-            //Get script path
-            string[] scriptGUID = AssetDatabase.FindAssets("FAE_CORE t:script");
-            string scriptFilePath = AssetDatabase.GUIDToAssetPath(scriptGUID[0]);
-
-            //Truncate to get relative path
-            string PACKAGE_ROOT_FOLDER = scriptFilePath.Replace("Scripts/Editor/FAE_Core.cs", string.Empty);
-
-            SessionState.SetString("PATH", PACKAGE_ROOT_FOLDER);
-        }
-
-        void OnGUI()
-        {
-
-            DrawHeader();
-
-            GUILayout.Space(5);
-            DrawTabs();
-            GUILayout.Space(5);
-
-            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
-
-#if UNITY_2018_1_OR_NEWER
-            if (isTabInstallation) DrawInstallation();
-#endif
-
-            if (isTabGettingStarted) DrawGettingStarted();
-
-            if (isTabSupport) DrawSupport();
-
-            //DrawActionButtons();
-
-            EditorGUILayout.EndVertical();
-
-            DrawFooter();
-
-        }
-
-        void DrawHeader()
-        {
-            EditorGUILayout.Space();
-            EditorGUILayout.LabelField("<b><size=24>Fantasy Adventure Environment</size></b>", Header);
-
-            GUILayout.Label("Version: " + FAE_Core.INSTALLED_VERSION, Footer);
-            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-        }
-
-        void DrawTabs()
-        {
-            EditorGUILayout.BeginHorizontal();
-
-#if UNITY_2018_1_OR_NEWER
-
-            if (GUILayout.Toggle(isTabInstallation, "Installation", Tab))
-            {
-                isTabInstallation = true;
-                isTabGettingStarted = false;
-                isTabSupport = false;
-            }
-#endif
-
-            if (GUILayout.Toggle(isTabGettingStarted, "Getting started", Tab))
-            {
-#if UNITY_2018_1_OR_NEWER
-                isTabInstallation = false;
-#endif
-                isTabGettingStarted = true;
-                isTabSupport = false;
-            }
-
-            if (GUILayout.Toggle(isTabSupport, "Support", Tab))
-            {
-#if UNITY_2018_1_OR_NEWER
-                isTabInstallation = false;
-#endif
-                isTabGettingStarted = false;
-                isTabSupport = true;
-            }
-
-            EditorGUILayout.EndHorizontal();
-        }
-
-#if UNITY_2018_1_OR_NEWER
-        void DrawInstallation()
-        {
-
-            //Compiling
-            if (EditorApplication.isCompiling)
-            {
-                EditorGUILayout.Space();
-                EditorGUILayout.LabelField(new GUIContent(" Compiling scripts...", EditorGUIUtility.FindTexture("cs Script Icon")), Header);
-
-                EditorGUILayout.Space();
-                return;
-            }
-
-            if (SessionState.GetBool("SUBSTANCE_INSTALLED", true)) { SetWindowHeight(400f); }
-            else { SetWindowHeight(400f); }
-
-            //Substance
-            EditorGUILayout.BeginHorizontal(EditorStyles.helpBox);
-            EditorGUILayout.LabelField("Substance support:");
-
-
-            Color defaultColor = GUI.contentColor;
-
-            if (SessionState.GetBool("SUBSTANCE_INSTALLED", true))
-            {
-                GUI.contentColor = Color.green;
-                EditorGUILayout.LabelField("Plugin Installed");
-                GUI.contentColor = defaultColor;
-            }
-            else
-            {
-                GUI.contentColor = Color.yellow;
-                EditorGUILayout.LabelField("Plugin not installed", EditorStyles.boldLabel);
-                GUI.contentColor = defaultColor;
-            }
-
-            EditorGUILayout.EndHorizontal();
-
-            EditorGUILayout.HelpBox("In version 2.0.0 of this package Substances are to be removed.", MessageType.Error);
-
-            //Substance not installed, display instructions
-            if (!SessionState.GetBool("SUBSTANCE_INSTALLED", true))
-            {
-                EditorGUILayout.HelpBox("In order to install Substance materials, the \"Substance in Unity\" plugin must be installed", MessageType.Info);
-                EditorGUILayout.Space();
-
-                if (GUILayout.Button("<b><size=16>Install free plugin</size></b>\n<i>Opens Asset Store page</i>", Button))
-                {
-                    Application.OpenURL("com.unity3d.kharma:content/110555");
-
-                    this.Close();
-                }
-
-                EditorGUILayout.Space();
-                EditorGUILayout.LabelField("Once installed, re-open this window to install the materials");
-
-                return;
-            }
-            else
-            {
-                EditorGUILayout.Space();
-
-                EditorGUILayout.HelpBox("The \"Substance in Unity\" plugin is installed.\n\nYou can choose to convert all materials to use Substance textures and enable more customization options.", MessageType.Info);
-                EditorGUILayout.Space();
-
-                EditorGUILayout.LabelField("Choose material installation:", EditorStyles.boldLabel);
-            }
-
-            EditorGUILayout.BeginHorizontal();
-
-            if (GUILayout.Button("<b><size=14>Regular</size></b>\n<i>Non-customizable Unity textures</i>", Button))
-            {
-                FAE_Core.InstallMaterials(FAE_Core.MaterialInstallation.Regular);
-            }
-            if (GUILayout.Button("<b><size=14>Substance</size></b>\n<i>Customizable procedural textures</i>", Button))
-            {
-                FAE_Core.InstallMaterials(FAE_Core.MaterialInstallation.Substance);
-            }
-
-            EditorGUILayout.EndHorizontal();
-
-        }
-#endif
-        void DrawGettingStarted()
-        {
-            SetWindowHeight(335);
-
-            EditorGUILayout.HelpBox("Please view the documentation for further details about this package and its workings.", MessageType.Info);
-
-            EditorGUILayout.Space();
-
-            if (GUILayout.Button("<b><size=16>Online documentation</size></b>\n<i>Set up, best practices and troubleshooting</i>", Button))
-            {
-                Application.OpenURL(FAE_Core.DOC_URL + "#getting-started-3");
-            }
-
-        }
-
-        void DrawSupport()
-        {
-            SetWindowHeight(350f);
-
-            EditorGUILayout.BeginVertical(); //Support box
-
-            EditorGUILayout.HelpBox("If you have any questions, or ran into issues, please get in touch!", MessageType.Info);
-
-            EditorGUILayout.Space();
-
-            //Buttons box
-            EditorGUILayout.BeginHorizontal();
-            if (GUILayout.Button("<b><size=12>Email</size></b>\n<i>Contact</i>", Button))
-            {
-                Application.OpenURL("mailto:contact@staggart.xyz");
-            }
-            if (GUILayout.Button("<b><size=12>Twitter</size></b>\n<i>Follow developments</i>", Button))
-            {
-                Application.OpenURL("https://twitter.com/search?q=staggart%20creations");
-            }
-            if (GUILayout.Button("<b><size=12>Forum</size></b>\n<i>Join the discussion</i>", Button))
-            {
-                Application.OpenURL(FAE_Core.FORUM_URL);
-            }
-            EditorGUILayout.EndHorizontal();//Buttons box
-
-            EditorGUILayout.EndVertical(); //Support box
-        }
-
-        //TODO: Implement after Beta
-        private void DrawActionButtons()
-        {
-            EditorGUILayout.Space();
-            EditorGUILayout.BeginHorizontal();
-
-
-            if (GUILayout.Button("<size=12>Rate</size>", Button))
-                Application.OpenURL("https://www.assetstore.unity3d.com/en/#!/account/downloads/search=");
-
-            if (GUILayout.Button("<size=12>Review</size>", Button))
-                Application.OpenURL("");
-
-
-            EditorGUILayout.EndHorizontal();
-            EditorGUILayout.Space();
-        }
-
-        private void DrawFooter()
-        {
-            //EditorGUILayout.Space();
-            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-            EditorGUILayout.Space();
-            GUILayout.Label("- Staggart Creations -", Footer);
-        }
-
-        #region Styles
-
-        private static GUIStyle _Footer;
-        public static GUIStyle Footer
-        {
-            get
-            {
-                if (_Footer == null)
-                {
-                    _Footer = new GUIStyle(EditorStyles.centeredGreyMiniLabel)
-                    {
-                        alignment = TextAnchor.MiddleCenter,
-                        wordWrap = true,
-                        fontSize = 12
-                    };
-                }
-
-                return _Footer;
-            }
-        }
-
-        private static GUIStyle _Button;
-        public static GUIStyle Button
-        {
-            get
-            {
-                if (_Button == null)
-                {
-                    _Button = new GUIStyle(GUI.skin.button)
-                    {
-                        alignment = TextAnchor.MiddleLeft,
-                        stretchWidth = true,
-                        richText = true,
-                        wordWrap = true,
-                        padding = new RectOffset()
-                        {
-                            left = 14,
-                            right = 14,
-                            top = 8,
-                            bottom = 8
-                        }
-                    };
-                }
-
-                return _Button;
-            }
-        }
-
-        private static GUIStyle _Header;
-        public static GUIStyle Header
-        {
-            get
-            {
-                if (_Header == null)
-                {
-                    _Header = new GUIStyle(GUI.skin.label)
-                    {
-                        richText = true,
-                        alignment = TextAnchor.MiddleCenter,
-                        wordWrap = true,
-                        fontSize = 18,
-                        fontStyle = FontStyle.Bold
-                    };
-                }
-
-                return _Header;
-            }
-        }
-
-        private static Texture _HelpIcon;
-        public static Texture HelpIcon
-        {
-            get
-            {
-                if (_HelpIcon == null)
-                {
-                    _HelpIcon = EditorGUIUtility.FindTexture("d_UnityEditor.InspectorWindow");
-                }
-                return _HelpIcon;
-            }
-        }
-
-
-        private static GUIStyle _Tab;
-        public static GUIStyle Tab
-        {
-            get
-            {
-                if (_Tab == null)
-                {
-                    _Tab = new GUIStyle(EditorStyles.miniButtonMid)
-                    {
-                        alignment = TextAnchor.MiddleCenter,
-                        stretchWidth = true,
-                        richText = true,
-                        wordWrap = true,
-                        fontSize = 12,
-                        fontStyle = FontStyle.Bold,
-                        padding = new RectOffset()
-                        {
-                            left = 14,
-                            right = 14,
-                            top = 8,
-                            bottom = 8
-                        }
-                    };
-                }
-
-                return _Tab;
-            }
-        }
-
-        #endregion //Stylies
-    }//Window Class
 }//namespace
 #endif //If Unity Editor

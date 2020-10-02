@@ -65,7 +65,6 @@ namespace FAE
 
         void OnEnable()
         {
-
 #if UNITY_5_5_OR_NEWER
             visualizeVectors = (Shader.GetGlobalFloat("_WindDebug") == 1) ? true : false;
 #endif
@@ -148,6 +147,8 @@ namespace FAE
         private void OnDisable()
         {
             VisualizeVectors(false);
+
+            Shader.SetGlobalVector("_GlobalWindParams", new Vector4(0, 0, 0, 0));
         }
 
         void OnDrawGizmos()

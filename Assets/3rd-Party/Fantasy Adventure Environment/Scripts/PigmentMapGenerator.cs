@@ -31,7 +31,8 @@ namespace FAE
         public TerrainUVUtil util;
         public Workflow workflow;
 
-        private int pigmentmapSize = 1024;
+        public int resIdx = 4;
+        private int resolution = 1024;
         public Vector3 targetSize;
         public Vector3 targetOriginPosition;
         public Vector3 targetCenterPosition;
@@ -90,6 +91,8 @@ namespace FAE
         public bool isMultiTerrain;
         public string savePath;
         private float originalTargetYPos;
+        [NonSerialized]
+        public bool showArea;
 
         //MegaSplat
         public bool hasTerrainData = true;
@@ -99,6 +102,7 @@ namespace FAE
         UnityEngine.Rendering.AmbientMode ambientMode;
         Color ambientColor;
         bool enableFog;
+        Material skyboxMat;
 
         public enum HeightmapChannel
         {
@@ -130,7 +134,7 @@ namespace FAE
 
         private void OnDrawGizmosSelected()
         {
-            if (debug || manualInput)
+            if (showArea)
             {
                 Color32 color = new Color(0f, 0.66f, 1f, 0.1f);
                 Gizmos.color = color;
@@ -139,6 +143,7 @@ namespace FAE
                 Gizmos.color = color;
                 Gizmos.DrawWireCube(targetCenterPosition, targetSize);
             }
+
         }
 
         public void Init()
@@ -244,9 +249,6 @@ namespace FAE
             //Avoid unused variable warning
             material = null;
 
-            //based on first terrain's splatmap resolution, or hardcoded to 1024px for meshes
-            pigmentmapSize = util.pigmentMapSize;
-
             //Summed size
             targetSize = util.size;
 
@@ -273,6 +275,31 @@ namespace FAE
                 //Set this at runtime to account for different instances having different pigment maps
                 Shader.SetGlobalTexture("_PigmentMap", pigmentMap);
             }
+        }
+
+        public static int IndexToResolution(int i)
+        {
+            int res = 0;
+
+            switch (i)
+            {
+                case 0:
+                    res = 64; break;
+                case 1:
+                    res = 128; break;
+                case 2:
+                    res = 256; break;
+                case 3:
+                    res = 512; break;
+                case 4:
+                    res = 1024; break;
+                case 5:
+                    res = 2048; break;
+                case 6:
+                    res = 4096; break;
+            }
+
+            return res;
         }
 
         //Editor functions
@@ -321,18 +348,21 @@ namespace FAE
             //Create camera
             if (!renderCam)
             {
-                renderCam = new GameObject().AddComponent<Camera>();
+                GameObject cameraObj = new GameObject();
+                cameraObj.name = this.name + " renderCam";
+                renderCam = cameraObj.AddComponent<Camera>();
             }
-            renderCam.name = this.name + " renderCam";
 
             //Set up a square camera rect
-            float rectWidth = pigmentmapSize;
+            float rectWidth = resolution;
             rectWidth /= Screen.width;
             renderCam.rect = new Rect(0, 0, 1, 1);
 
             //Camera set up
             renderCam.orthographic = true;
             renderCam.orthographicSize = (targetSize.x / 2);
+            renderCam.clearFlags = CameraClearFlags.Skybox;
+            renderCam.allowHDR = true;
 
             renderCam.farClipPlane = 5000f;
             renderCam.useOcclusionCulling = false;
@@ -381,14 +411,18 @@ namespace FAE
             pigmentMap = null;
 
             //If this is a terrain with no textures, abort (except in the case of MegaSplat)
+            if (workflow == Workflow.Terrain)
+            {
 #if UNITY_2018_3_OR_NEWER
-            if (workflow == Workflow.Terrain && terrains[0].terrainData.terrainLayers.Length == 0 && !isMegaSplat) return;
+            if (terrains[0].terrainData.terrainLayers.Length == 0 && !isMegaSplat) return;
 #else
-            if (workflow == Workflow.Terrain && terrains[0].terrainData.splatPrototypes.Length == 0 && !isMegaSplat) return;
+                if (terrains[0].terrainData.splatPrototypes.Length == 0 && !isMegaSplat) return;
 #endif
+            }
 
+            resolution = IndexToResolution(resIdx);
             //Set up render texture
-            RenderTexture rt = new RenderTexture(pigmentmapSize, pigmentmapSize, 0);
+            RenderTexture rt = new RenderTexture(resolution, resolution, 0);
             renderCam.targetTexture = rt;
 
             savePath = GetTargetFolder();
@@ -403,7 +437,7 @@ namespace FAE
             //Compose texture on GPU
             rt = CompositePigmentMap(rt, inputHeightmap);
 
-            render.ReadPixels(new Rect(0, 0, pigmentmapSize, pigmentmapSize), 0, 0);
+            render.ReadPixels(new Rect(0, 0, resolution, resolution), 0, 0);
 
             //Cleanup
             renderCam.targetTexture = null;
@@ -421,7 +455,7 @@ namespace FAE
             AssetDatabase.Refresh();
 
             //Load the file
-            pigmentMap = new Texture2D(pigmentmapSize, pigmentmapSize, TextureFormat.ARGB32, true);
+            pigmentMap = new Texture2D(resolution, resolution, TextureFormat.ARGB32, true);
             pigmentMap = AssetDatabase.LoadAssetAtPath(savePath, typeof(Texture2D)) as Texture2D;
 
             EditorUtility.ClearProgressBar();
@@ -586,11 +620,13 @@ namespace FAE
             ambientMode = RenderSettings.ambientMode;
             ambientColor = RenderSettings.ambientLight;
             enableFog = RenderSettings.fog;
+            skyboxMat = RenderSettings.skybox;
 
             //Flat lighting 
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
             RenderSettings.ambientLight = Color.white;
             RenderSettings.fog = false;
+            RenderSettings.skybox = null;
 
             //To account for Forward rendering being slightly darker, add a light
             if (useAlternativeRenderer)
@@ -616,8 +652,8 @@ namespace FAE
             RenderSettings.ambientMode = ambientMode;
             RenderSettings.ambientLight = ambientColor;
             RenderSettings.fog = enableFog;
-
+            RenderSettings.skybox = skyboxMat;
         }
 #endif
-        }
     }
+}

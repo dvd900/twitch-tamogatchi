@@ -157,7 +157,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PigmentMapBrightness: 1
-    - _PigmentMapHeight: 0.645
+    - _PigmentMapHeight: 0.871
     - _PigmentMapInfluence: 1
     - _PigmentMapSize: 0.05
     - _Roughness: 0.5

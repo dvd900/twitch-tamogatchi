@@ -77,11 +77,11 @@ namespace FAE
 
             if (ca.cliffShader == null)
             {
-                EditorGUILayout.HelpBox("FAE/Cliff shader could not be found!", MessageType.Error);
+                EditorGUILayout.HelpBox("Cliff shader could not be found!", MessageType.Error);
             }
             if (ca.cliffCoverageShader == null)
             {
-                EditorGUILayout.HelpBox("FAE/Cliff Coverage shader could not be found!", MessageType.Error);
+                EditorGUILayout.HelpBox("Cliff Coverage shader could not be found!", MessageType.Error);
             }
 
             serializedObject.Update();
