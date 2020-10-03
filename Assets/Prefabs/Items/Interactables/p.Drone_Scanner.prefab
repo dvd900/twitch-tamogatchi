@@ -30935,7 +30935,7 @@ MonoBehaviour:
   _rotateTime: 0.3
   _idleTime: 5
   _scanTime: 10
-  _scanCooldown: 20
+  _scanCooldown: 0
   _chanceToLeaveScreen: 1
   _actionController: {fileID: 5673410109540607519}
   _animator: {fileID: 2548600989531444741}
