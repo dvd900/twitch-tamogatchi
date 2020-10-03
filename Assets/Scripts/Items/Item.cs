@@ -19,6 +19,7 @@ public class Item : MonoBehaviour
     GameObject clone;
     ParticleSystem ps;
 
+    public Rigidbody Rigidbody { get { return _rigidbody; } }
     protected Rigidbody _rigidbody;
     protected Collider _collider;
 

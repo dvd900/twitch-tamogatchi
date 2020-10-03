@@ -188,7 +188,6 @@ public class Bomb : MonoBehaviour
         
         rigidbody.AddForce(launchVec);
         rigidbody.AddTorque(force * UnityEngine.Random.onUnitSphere);
-        
     }
 
     private Vector3 GetLaunchVector(Vector3 itemPos, float force, float angle)

@@ -11,6 +11,7 @@ public class PickupAction : SweeTangoAction, GeneratedAction
     /// Did we start turning to face the item were gona pick up?
     /// </summary>
     private bool _turnStarted;
+    private bool _pickupStarted;
 
     public PickupAction(Skin skin) : base(skin) {
         _item = bestItem;
@@ -30,7 +31,7 @@ public class PickupAction : SweeTangoAction, GeneratedAction
     }
 
     public override bool IsFinished() {
-        return _item == null || (_skin.itemController.HeldItem == _item && !_skin.itemController.IsPickingUp);
+        return _item == null || (_pickupStarted && !_skin.itemController.IsPickingUp);
     }
 
     public override void StartAction() {
@@ -44,12 +45,11 @@ public class PickupAction : SweeTangoAction, GeneratedAction
             return;
         }
 
-        if (!_skin.movementController.IsWalking && !_skin.itemController.IsPickingUp 
-            && _skin.itemController.HeldItem != _item) {
-
+        if (!_skin.movementController.IsWalking && !_skin.itemController.IsPickingUp && !_pickupStarted) {
             if(_skin.itemController.IsInRange(_item)) {
                 if(_turnStarted && !_skin.movementController.IsTurning) {
                     _skin.itemController.Pickup(_item);
+                    _pickupStarted = true;
                 }
                 else if (!_turnStarted) {
                     _skin.movementController.FaceTarget(_item.transform);

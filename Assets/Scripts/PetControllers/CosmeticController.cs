@@ -27,31 +27,40 @@ public class CosmeticController : MonoBehaviour
         switch(cosmetic.Location)
         {
             case CosmeticLocation.Head:
-                DoUnequip(_headCosmetic);
-                DoEquip(cosmetic, _headTransform);
+                DoUnequip(ref _headCosmetic);
+                DoEquip(cosmetic, _headTransform, ref _headCosmetic);
                 break;
             case CosmeticLocation.Face:
-                DoUnequip(_faceCosmetic);
-                DoEquip(cosmetic, _faceTransform);
+                DoUnequip(ref _faceCosmetic);
+                DoEquip(cosmetic, _faceTransform, ref _faceCosmetic);
                 break;
         }
     }
 
-    private void DoUnequip(Cosmetic item)
+    private void DoUnequip(ref Cosmetic slot)
     {
-        if(item == null)
+        if(slot == null)
         {
             return;
         }
 
-        item.transform.parent = null;
-        item.DisableHolding();
+        slot.transform.parent = null;
+        slot.DisableHolding();
+
+        Vector3 launchVec = _skin.transform.forward;
+        launchVec.y = 1.0f;
+
+        slot.Rigidbody.AddForce(1700 * slot.Rigidbody.mass * launchVec);
+
+        slot = null;
     }
 
-    private void DoEquip(Cosmetic item, Transform parent)
+    private void DoEquip(Cosmetic item, Transform parent, ref Cosmetic slot)
     {
-        item.transform.parent = parent;
+        item.transform.SetParent(parent, true);
         item.transform.localPosition = Vector3.zero;
-        item.transform.localRotation = Quaternion.identity;
+        item.transform.rotation = Quaternion.identity;
+        slot = item;
+
     }
 }
