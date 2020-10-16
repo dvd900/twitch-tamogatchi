@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bee : MonoBehaviour
 {
+    public GameObject psHoneySplat;
     public float speed;
     private GameObject SweeT;
     // Start is called before the first frame update
@@ -14,7 +15,8 @@ public class bee : MonoBehaviour
     }
     void Start()
     {
-        
+        Debug.Log("Bee has emerged");
+        GameObject honeyParticles = Instantiate(psHoneySplat, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), transform.rotation) as GameObject;
         gameObject.transform.localScale = new Vector3(0, 0, 0);
         LeanTween.scale(gameObject, new Vector3(1,1,1), 1f).setEase(LeanTweenType.easeOutBack);
     }

@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 3982746128853783103}
   - component: {fileID: 3982746128846339549}
   - component: {fileID: 1331305049}
+  - component: {fileID: 1837940394}
   m_Layer: 18
   m_Name: p.bee
   m_TagString: Untagged
@@ -275,4 +276,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946aae572e96c4bcabce856635b82a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  psHoneySplat: {fileID: 4059205462338156567, guid: d10c4354da4bc46f3be381babc4c61c1,
+    type: 3}
   speed: 5
+--- !u!65 &1837940394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3982746128853749279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
