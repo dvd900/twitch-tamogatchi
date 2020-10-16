@@ -220,6 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3982746128853783103}
   - component: {fileID: 3982746128846339549}
+  - component: {fileID: 1331305049}
   m_Layer: 18
   m_Name: p.bee
   m_TagString: Untagged
@@ -234,7 +235,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3982746128853749279}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 6.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -242,7 +243,7 @@ Transform:
   - {fileID: 3982746128853783095}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 65.73801, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &3982746128846339549
 Animator:
   serializedVersion: 3
@@ -256,9 +257,22 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a667d207678ce48b7879d4a54677d6e9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1331305049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3982746128853749279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946aae572e96c4bcabce856635b82a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
