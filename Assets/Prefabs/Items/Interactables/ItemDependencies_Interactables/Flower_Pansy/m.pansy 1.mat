@@ -69,7 +69,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.646
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _HeightmapInfluence: 0
     - _MaxHeight: 0
@@ -93,7 +93,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
-    - _Color: {r: 0.59816796, g: 0.735849, b: 0.3922214, a: 1}
+    - _Color: {r: 0.5913177, g: 0.6792453, b: 0.45817018, a: 1}
     - _ColorBottom: {r: 0.232, g: 0.5, b: 0, a: 1}
     - _ColorTop: {r: 0.44252872, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
