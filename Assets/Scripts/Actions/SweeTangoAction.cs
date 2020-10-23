@@ -1,9 +1,12 @@
 ﻿
-public abstract class SweeTangoAction : AIAction
+namespace AIActions
 {
-    protected Skin _skin;
-    protected SweeTangoAction(Skin skin)
+    public abstract class SweeTangoAction : AIAction
     {
-        _skin = skin;
+        protected Skin _skin;
+        protected SweeTangoAction(Skin skin)
+        {
+            _skin = skin;
+        }
     }
 }

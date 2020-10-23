@@ -1,6 +1,9 @@
 ﻿using System;
-public interface GeneratedAction
+namespace AIActions
 {
-    float Score(AISkin data);
-    GeneratedAction Generate(AISkin skin);
+    public interface GeneratedAction
+    {
+        float Score(AISkin data);
+        GeneratedAction Generate(AISkin skin);
+    }
 }

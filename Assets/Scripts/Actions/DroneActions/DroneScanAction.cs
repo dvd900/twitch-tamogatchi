@@ -2,42 +2,45 @@
 using System.Collections;
 using UnityEngine;
 
-public class DroneScanAction : CoroutineAction
+namespace AIActions
 {
-    private DroneController _drone;
-    private Item _targetItem;
-    private float _scanTime;
-
-    public DroneScanAction(DroneController drone, Item targetItem, float scanTime)
+    public class DroneScanAction : CoroutineAction
     {
-        _drone = drone;
-        _targetItem = targetItem;
-        _scanTime = scanTime;
-    }
+        private DroneController _drone;
+        private Item _targetItem;
+        private float _scanTime;
 
-    protected override IEnumerator DoAction()
-    {
-        if(_targetItem != null)
+        public DroneScanAction(DroneController drone, Item targetItem, float scanTime)
         {
-            _drone.HoverOver(_targetItem.transform);
-        }
-        
-        yield return new WaitForSeconds(_scanTime);
-
-        if(_targetItem == null)
-        {
-            yield break;
+            _drone = drone;
+            _targetItem = targetItem;
+            _scanTime = scanTime;
         }
 
-        _drone.DoScan(_targetItem);
+        protected override IEnumerator DoAction()
+        {
+            if (_targetItem != null)
+            {
+                _drone.HoverOver(_targetItem.transform);
+            }
 
-        yield return new WaitForSeconds(8.0f);
+            yield return new WaitForSeconds(_scanTime);
 
-        _drone.HoverOver(null);
-    }
+            if (_targetItem == null)
+            {
+                yield break;
+            }
 
-    protected override void CancelAction()
-    {
-        _drone.HoverOver(null);
+            _drone.DoScan(_targetItem);
+
+            yield return new WaitForSeconds(8.0f);
+
+            _drone.HoverOver(null);
+        }
+
+        protected override void CancelAction()
+        {
+            _drone.HoverOver(null);
+        }
     }
 }

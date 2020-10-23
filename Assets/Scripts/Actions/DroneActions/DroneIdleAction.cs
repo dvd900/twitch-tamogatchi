@@ -1,31 +1,34 @@
 ﻿using System;
 using UnityEngine;
 
-public class DroneIdleAction : AIAction
+namespace AIActions
 {
-    private float _idleTimer;
-
-    public DroneIdleAction(float idleTime)
+    public class DroneIdleAction : AIAction
     {
-        _idleTimer = idleTime;
-    }
+        private float _idleTimer;
 
-    public override void Interrupt()
-    {
-        
-    }
+        public DroneIdleAction(float idleTime)
+        {
+            _idleTimer = idleTime;
+        }
 
-    public override bool IsFinished()
-    {
-        return _idleTimer <= 0;
-    }
+        public override void Interrupt()
+        {
 
-    public override void StartAction()
-    {
-    }
+        }
 
-    public override void UpdateAction()
-    {
-        _idleTimer -= Time.deltaTime;
+        public override bool IsFinished()
+        {
+            return _idleTimer <= 0;
+        }
+
+        public override void StartAction()
+        {
+        }
+
+        public override void UpdateAction()
+        {
+            _idleTimer -= Time.deltaTime;
+        }
     }
 }

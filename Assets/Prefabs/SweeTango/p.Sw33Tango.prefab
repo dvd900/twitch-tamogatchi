@@ -21776,6 +21776,7 @@ MonoBehaviour:
   lEyeRend: {fileID: 4718218144110950987}
   rEyeRend: {fileID: 4718218144519510036}
   mouthRend: {fileID: 4718218144444680951}
+  headCollider: {fileID: 4718218144133215517}
   rootBone: {fileID: 4718218143787239548}
   spineBone: {fileID: 0}
   lArmBone: {fileID: 0}
@@ -21783,6 +21784,7 @@ MonoBehaviour:
   feetTransform: {fileID: 4718218143710729454}
   lHandTransform: {fileID: 4718218144460236922}
   rHandTransform: {fileID: 4718218143369227882}
+  headTransform: {fileID: 4718218144325856783}
 --- !u!114 &4718218144133215526
 MonoBehaviour:
   m_ObjectHideFlags: 0

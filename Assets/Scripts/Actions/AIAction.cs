@@ -1,10 +1,13 @@
 ﻿
 using UnityEngine;
 
-public abstract class AIAction
+namespace AIActions
 {
-    public abstract void StartAction();
-    public abstract void UpdateAction();
-    public abstract bool IsFinished();
-    public abstract void Interrupt();
+    public abstract class AIAction
+    {
+        public abstract void StartAction();
+        public abstract void UpdateAction();
+        public abstract bool IsFinished();
+        public abstract void Interrupt();
+    }
 }

@@ -1,29 +1,31 @@
 ﻿
 using UnityEngine;
 
-public class SleepAction : SweeTangoAction
+namespace AIActions
 {
-    public SleepAction(Skin skin) : base(skin)
+    public class SleepAction : SweeTangoAction
     {
-    }
+        public SleepAction(Skin skin) : base(skin)
+        {
+        }
 
-    public override void Interrupt()
-    {
-        _skin.emoteController.StopSleep();
-    }
+        public override void Interrupt()
+        {
+            _skin.emoteController.StopSleep();
+        }
 
-    public override bool IsFinished()
-    {
-        return false;
-    }
+        public override bool IsFinished()
+        {
+            return false;
+        }
 
-    public override void StartAction()
-    {
-        _skin.emoteController.StartSleep();
-    }
+        public override void StartAction()
+        {
+            _skin.emoteController.StartSleep();
+        }
 
-    public override void UpdateAction()
-    {
+        public override void UpdateAction()
+        {
+        }
     }
 }
-

@@ -1,48 +1,58 @@
 ﻿
 using UnityEngine;
 
-public class WalkToAction : SweeTangoAction, GeneratedAction
+namespace AIActions
 {
-    private static GameObject _debugMarker;
-
-    private Vector3 _dest;
-
-    public WalkToAction(Skin skin) : base(skin) {
-        _dest = CoordsUtils.RandomWorldPointOnScreen();
-    }
-
-    public WalkToAction(Skin skin, Vector3 dest, GameObject debugMarker) : base(skin)
+    public class WalkToAction : SweeTangoAction, GeneratedAction
     {
-        if(_debugMarker != null)
+        private static GameObject _debugMarker;
+
+        private Vector3 _dest;
+
+        public WalkToAction(Skin skin) : base(skin)
         {
-            GameObject.Destroy(_debugMarker);
+            _dest = CoordsUtils.RandomWorldPointOnScreen();
         }
 
-        _debugMarker = debugMarker;
-        _dest = dest;
-    }
+        public WalkToAction(Skin skin, Vector3 dest, GameObject debugMarker) : base(skin)
+        {
+            if (_debugMarker != null)
+            {
+                GameObject.Destroy(_debugMarker);
+            }
 
-    GeneratedAction GeneratedAction.Generate(AISkin skin) {
-        return new WalkToAction((Skin)skin);
-    }
+            _debugMarker = debugMarker;
+            _dest = dest;
+        }
 
-    public override void Interrupt() {
-        _skin.movementController.StopWalking();
-    }
+        GeneratedAction GeneratedAction.Generate(AISkin skin)
+        {
+            return new WalkToAction((Skin)skin);
+        }
 
-    public override bool IsFinished() {
-        return !_skin.movementController.IsWalking;
-    }
+        public override void Interrupt()
+        {
+            _skin.movementController.StopWalking();
+        }
 
-    public override void StartAction() {
-        _skin.movementController.WalkToPosition(_dest);
-    }
+        public override bool IsFinished()
+        {
+            return !_skin.movementController.IsWalking;
+        }
 
-    public override void UpdateAction() {
+        public override void StartAction()
+        {
+            _skin.movementController.WalkToPosition(_dest);
+        }
 
-    }
+        public override void UpdateAction()
+        {
 
-    float GeneratedAction.Score(AISkin data) {
-        return .3f;
+        }
+
+        float GeneratedAction.Score(AISkin data)
+        {
+            return .3f;
+        }
     }
 }

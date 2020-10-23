@@ -24,6 +24,8 @@ public class Skin : MonoBehaviour, AISkin
     public SkinnedMeshRenderer rEyeRend;
     public SkinnedMeshRenderer mouthRend;
 
+    public SphereCollider headCollider;
+
     public Transform rootBone;
 
     public DynamicBone spineBone;
@@ -33,6 +35,7 @@ public class Skin : MonoBehaviour, AISkin
     public Transform feetTransform;
     public Transform lHandTransform;
     public Transform rHandTransform;
+    public Transform headTransform;
 
     public TangoWorldData WorldData;
     
