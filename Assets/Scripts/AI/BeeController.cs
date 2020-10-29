@@ -32,6 +32,9 @@ public class BeeController : MonoBehaviour, IBombable
         gameObject.transform.localScale = new Vector3(0, 0, 0);
         LeanTween.scale(gameObject, new Vector3(1,1,1), 1f).setEase(LeanTweenType.easeOutBack);
 
+        // randomize speed slightly
+        _speed *= 1.0f + .2f * (Random.value - .5f);
+
         _spline = new GameObject("spline").AddComponent<BezierSpline>();
         yield return null;
 

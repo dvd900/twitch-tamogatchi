@@ -23,6 +23,11 @@ MonoBehaviour:
     itemIcon: {fileID: 0}
     itemType: 0
     _value: 0
+  - itemName: Beehive
+    itemID: 902158974
+    itemIcon: {fileID: 0}
+    itemType: 0
+    _value: 0
   autoConsumable:
   - itemName: Apple
     itemID: 50413427
@@ -81,8 +86,8 @@ MonoBehaviour:
     itemType: 2
     _value: 0
     _cosmeticLocation: 0
-  usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb63021417cd488f7567368dd5
-  typesOfUsedIDs: 0100000001000000010000000100000001000000000000000000000002000000
+  usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb63021417cd488f7567368dd57edac535
+  typesOfUsedIDs: 010000000100000001000000010000000100000000000000000000000200000000000000
   subtypes: []
   typeGroups:
   - name: Items
