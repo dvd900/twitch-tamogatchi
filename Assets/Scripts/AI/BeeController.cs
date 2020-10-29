@@ -4,7 +4,7 @@ using AIActions;
 using BezierSolution;
 using UnityEngine;
 
-public class BeeController : MonoBehaviour
+public class BeeController : MonoBehaviour, IBombable
 {
     [SerializeField] private GameObject _psHoneySplat;
     [SerializeField] private float _speed;
@@ -34,7 +34,7 @@ public class BeeController : MonoBehaviour
 
         _spline = new GameObject("spline").AddComponent<BezierSpline>();
         yield return null;
-        //_spline.transform.SetParent(transform);
+
         _spline.loop = true;
 
         _actionController.DoAction(new BeeIdleAction(this, _spline));
@@ -46,7 +46,6 @@ public class BeeController : MonoBehaviour
         {
             if(_actionController.LastAction is BeeIdleAction)
             {
-                Debug.Log("Chasing");
                 _actionController.DoAction(new BeeChaseAction(this, Skin.CurrentTango, _targetTransform));
             }
             else if(_actionController.LastAction is BeeReturnToHiveAction)
@@ -67,10 +66,16 @@ public class BeeController : MonoBehaviour
 
     private void OnDestroy()
     {
+        _hive.OnBeeDestroy();
         Destroy(_psHoneySplat.gameObject);
         if(_spline != null)
         {
             Destroy(_spline.gameObject);
         }
+    }
+
+    void IBombable.Bomb(bool closeHit, Vector3 direction)
+    {
+        Die();
     }
 }

@@ -30,6 +30,12 @@ namespace AIActions
             while (LeanTween.isTweening(moveTween.id))
             {
                 yield return null;
+
+                if(_tango == null)
+                {
+                    yield break;
+                }
+
                 UpdateTarget();
             }
 

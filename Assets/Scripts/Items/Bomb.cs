@@ -96,7 +96,15 @@ public class Bomb : MonoBehaviour
                 continue;
             }
 
-            if (hit.gameObject.layer == VBLayerMask.ItemLayer)
+            IBombable bombable = hit.gameObject.GetComponent<IBombable>();
+
+            Debug.Log("Is bombable: " + bombable + " obj: " + hit.gameObject);
+            if(bombable != null)
+            {
+
+                bombable.Bomb(true, GetLaunchDirection(hit.transform.position, true));
+            }
+            else if (hit.gameObject.layer == VBLayerMask.ItemLayer)
             {
                 BombItem(hit.gameObject, true);
             }
@@ -121,7 +129,12 @@ public class Bomb : MonoBehaviour
                 continue;
             }
 
-            if (hit.gameObject.layer == VBLayerMask.ItemLayer)
+            IBombable bombable = hit.gameObject.GetComponent<IBombable>();
+            if (bombable != null)
+            {
+                bombable.Bomb(false, GetLaunchDirection(hit.transform.position, false));
+            }
+            else if (hit.gameObject.layer == VBLayerMask.ItemLayer)
             {
                 BombItem(hit.gameObject, false);
             }
@@ -183,25 +196,34 @@ public class Bomb : MonoBehaviour
     private void LaunchItem(GameObject hitItem, bool closeHit)
     {
         var rigidbody = hitItem.GetComponentInParent<Rigidbody>();
-        float angle = (closeHit) ? _closeAngle : 0;
         float force = (closeHit) ? _closeForce : _farForce;
-        var launchVec = GetLaunchVector(hitItem.transform.position, force, angle);
+        var launchVec = GetLaunchVector(hitItem.transform.position, force, closeHit);
         
         rigidbody.AddForce(launchVec);
         rigidbody.AddTorque(force * UnityEngine.Random.onUnitSphere);
     }
 
-    private Vector3 GetLaunchVector(Vector3 itemPos, float force, float angle)
+    private float GetLaunchAngle(bool closeHit)
     {
-        Vector3 d = itemPos - transform.position;
+        return (closeHit) ? _closeAngle : 0;
+    }
+
+    private Vector3 GetLaunchDirection(Vector3 pos, bool closeHit)
+    {
+        Vector3 d = pos - transform.position;
         d.y = 0;
         d.Normalize();
-        return force * Vector3.RotateTowards(d, Vector3.up, (Mathf.PI / 180) * angle, 0);
+        return Vector3.RotateTowards(d, Vector3.up, (Mathf.PI / 180) * GetLaunchAngle(closeHit), 0);
+    }
+
+    private Vector3 GetLaunchVector(Vector3 itemPos, float force, bool closeHit)
+    {
+        return force * GetLaunchDirection(itemPos, closeHit);
     }
 
     private Collider[] BombCast(SphereCollider collider)
     {
         return Physics.OverlapSphere(collider.transform.position,
-            collider.radius * collider.transform.lossyScale.x, VBLayerMask.SweeTangoAndItemLayerMask);
+            collider.radius * collider.transform.lossyScale.x, VBLayerMask.SweeTangoItemBombableMask);
     }
 }

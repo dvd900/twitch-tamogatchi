@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1069776722463948112}
   - component: {fileID: 1069776722463948114}
   - component: {fileID: 1069776722463948115}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: ps.bee_emerge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4822,7 +4822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3982746128853783093}
-  m_Layer: 18
+  m_Layer: 24
   m_Name: Bone.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4853,7 +4853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3982746128853783095}
   - component: {fileID: 3982746128842179357}
-  m_Layer: 18
+  m_Layer: 24
   m_Name: Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4939,7 +4939,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3982746128853783097}
-  m_Layer: 18
+  m_Layer: 24
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4971,7 +4971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3982746128853783099}
-  m_Layer: 18
+  m_Layer: 24
   m_Name: Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5001,7 +5001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3982746128853783101}
-  m_Layer: 18
+  m_Layer: 24
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5036,7 +5036,7 @@ GameObject:
   - component: {fileID: 1331305049}
   - component: {fileID: 1837940394}
   - component: {fileID: 4909145952337852832}
-  m_Layer: 18
+  m_Layer: 24
   m_Name: p.bee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5135,7 +5135,7 @@ GameObject:
   - component: {fileID: 5228833868200730024}
   - component: {fileID: 5228833868200730026}
   - component: {fileID: 5228833868200730027}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Particle System (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9945,7 +9945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4027852850903843240}
-  m_Layer: 18
+  m_Layer: 24
   m_Name: targetTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

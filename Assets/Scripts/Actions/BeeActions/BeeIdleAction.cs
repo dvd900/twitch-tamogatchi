@@ -15,6 +15,7 @@ namespace AIActions
 
         private float _t;
         private Vector3 _spottedPos;
+        private Vector3 _hivePos;
         private bool _spotted;
         private bool _shouldChase;
         private float _spottedTimer;
@@ -23,6 +24,7 @@ namespace AIActions
         {
             _bee = bee;
             _spline = spline;
+            _hivePos = bee.Hive.transform.position;
 
             _spline.Initialize(NUM_POINTS);
 
@@ -56,9 +58,15 @@ namespace AIActions
         {
             UpdateT((_spotted) ? 1.4f * _bee.Speed : _bee.Speed);
 
-            Vector3 d = _bee.transform.position - Skin.CurrentTango.transform.position;
-            float dmag = d.magnitude;
-            if(!_spotted && d.magnitude < _bee.ChaseRange * 1.5f || _spotted && d.magnitude < _bee.ChaseRange * 1.75f)
+            float dmag = float.PositiveInfinity;
+
+            if(Skin.CurrentTango != null)
+            {
+                Vector3 d = _bee.transform.position - Skin.CurrentTango.transform.position;
+                dmag = d.magnitude;
+            }
+
+            if(!_spotted && dmag < _bee.ChaseRange * 1.5f || _spotted && dmag < _bee.ChaseRange * 1.75f)
             {
                 if(!_spotted)
                 {
@@ -86,11 +94,11 @@ namespace AIActions
                 if (_spotted)
                 {
                     _spotted = false;
-                    _spline[0].position = _bee.transform.position - _bee.Hive.transform.position;
+                    _spline[0].position = _bee.transform.position - _hivePos;
                     _t = 0;
                 }
 
-                _bee.transform.position = _bee.Hive.transform.position + _spline.GetPoint(_t);
+                _bee.transform.position = _hivePos + _spline.GetPoint(_t);
                 _bee.transform.rotation = Quaternion.LookRotation(_spline.GetTangent(_t), Vector3.up);
             }
         }
