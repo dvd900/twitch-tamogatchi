@@ -12,7 +12,7 @@ public static class CoordsUtils {
         float y = UnityEngine.Random.value;
 
         x = Mathf.Clamp(x, BUFFER_PERCENTAGE, 1.0f - BUFFER_PERCENTAGE);
-        y = Mathf.Clamp(y, BUFFER_PERCENTAGE, 1.0f - BUFFER_PERCENTAGE);
+        y = Mathf.Clamp(y, BUFFER_PERCENTAGE, 1.0f - 3 * BUFFER_PERCENTAGE);
         Vector3 viewPos = new Vector3(x, y, 0f);
 
         return viewPos;

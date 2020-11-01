@@ -11,6 +11,8 @@ namespace ItemSystem
 	{
 		None = 0,
 		WizardHat = -712165785,
+		PansyHat = -889110275,
+		LeafHat = -691767877,
 	}
 	public enum ConsumableItems
 	{

@@ -23,6 +23,8 @@ public class Beehive : MonoBehaviour, IBombable
 
     private IEnumerator SpawnRoutine()
     {
+        yield return new WaitForSeconds(3.0f);
+
         while(true)
         {
             if(_numBees < _spawnNumber)

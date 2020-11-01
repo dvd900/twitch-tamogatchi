@@ -22,6 +22,21 @@ public class CosmeticController : MonoBehaviour
         _skin = GetComponent<Skin>();
     }
 
+    private void Start()
+    {
+        InitSlot(_headTransform, ref _headCosmetic);
+        InitSlot(_faceTransform, ref _faceCosmetic);
+    }
+
+    private void InitSlot(Transform parent, ref Cosmetic slot)
+    {
+        var item = parent.GetComponentInChildren<Cosmetic>();
+        if(item != null)
+        {
+            slot = item;
+        }
+    }
+
     public void EquipItem(Cosmetic cosmetic)
     {
         switch(cosmetic.Location)
@@ -61,6 +76,5 @@ public class CosmeticController : MonoBehaviour
         item.transform.localPosition = Vector3.zero;
         item.transform.rotation = Quaternion.identity;
         slot = item;
-
     }
 }
