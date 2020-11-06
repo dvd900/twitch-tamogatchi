@@ -151,6 +151,7 @@ namespace AmplifyShaderEditor
 			{ TextureType.Texture3D, WirePortDataType.SAMPLER3D},
 			{ TextureType.Cube,WirePortDataType.SAMPLERCUBE},
 			{ TextureType.Texture2DArray,WirePortDataType.SAMPLER2DARRAY},
+			{ TextureType.ProceduralTexture,WirePortDataType.SAMPLER2D},
 		};
 
 		// STANDARD
@@ -298,6 +299,7 @@ namespace AmplifyShaderEditor
 
 		public readonly static string RenderTypeHelperStr = "RenderType";
 		public readonly static string RenderQueueHelperStr = "Queue";
+		public readonly static string DisableBatchingHelperStr = "DisableBatching";
 
 		public readonly static string DefaultShaderName = "New Amplify Shader";
 
@@ -450,6 +452,7 @@ namespace AmplifyShaderEditor
 		public readonly static string SubTitleRefNameFormatStr = "Ref( {0} )";
 
 		public readonly static string CodeWrapper = "( {0} )";
+		public readonly static string InlineCodeWrapper = "{{\n{0}\n}}";
 
 		public readonly static string NodesDumpFormat = "{0}:,{1},{2}\n";
 		public readonly static string TagFormat = " \"{0}\" = \"{1}\"";
