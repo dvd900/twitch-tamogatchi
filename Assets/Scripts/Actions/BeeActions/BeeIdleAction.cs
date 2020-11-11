@@ -50,6 +50,7 @@ namespace AIActions
 
         public override void UpdateAction()
         {
+            Animator beeAnimator = _bee.GetComponent<Animator>();
             UpdateT((_spotted) ? 1.4f * _bee.Speed : _bee.Speed);
 
             float dmag = float.PositiveInfinity;
@@ -72,6 +73,11 @@ namespace AIActions
 
                     _spottedTimer = _bee.TimeUntilChase + (Random.value - .5f) * _bee.TimeUntilChase;
                 }
+                
+                if (beeAnimator.GetBool("Angry") != true)
+                {
+                    beeAnimator.SetBool("Angry", true);
+                }
 
                 _bee.transform.position = _spline.GetPoint(_t);
                 Vector3 target = Skin.CurrentTango.transform.position;
@@ -93,6 +99,10 @@ namespace AIActions
                     _splineInd = 0;
 
                     InitSpline(_hivePos, 1.0f);
+                    if (beeAnimator.GetBool("Angry") == true)
+                    {
+                        beeAnimator.SetBool("Angry", false);
+                    }
                 }
 
                 _bee.transform.position = _spline.GetPoint(_t);

@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ea30a77629144a7bd576face61504e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _beePrefab: {fileID: 6150278913797641589, guid: 196cb226233a44f25924fcf7d13325a7,
+  _beePrefab: {fileID: 6574589832027839207, guid: 28ff395ee3a1b42dbb555f5e8c840fee,
     type: 3}
   _spawnTime: 3
   _spawnNumber: 5

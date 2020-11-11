@@ -19,6 +19,7 @@ namespace AIActions
 
         protected override IEnumerator DoAction()
         {
+
             UpdateTarget();
             Vector3 d = _targetTransform.position - _bee.transform.position;
             float dmag = d.magnitude;
@@ -53,7 +54,6 @@ namespace AIActions
             Vector3 headCenter = _tango.headCollider.transform.TransformPoint(_tango.headCollider.center);
             Vector3 normal = target - headCenter;
             normal.Normalize();
-
             _targetTransform.position = target + 3.5f * normal;
         }
     }
