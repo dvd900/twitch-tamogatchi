@@ -24,6 +24,11 @@ public class Bomb : MonoBehaviour
     [Range(0, 90)]
     [SerializeField] private float _closeAngle;
 
+    [SerializeField] private Animator _animator;
+    [SerializeField] private GameObject _fusePS;
+
+    public Renderer bombRend;
+
     public SphereCollider smallRange;
     public SphereCollider bigRange;
 
@@ -31,7 +36,7 @@ public class Bomb : MonoBehaviour
     private bool _didExplode;
     private bool _wasTriggered;
     private float _indicatorIntensity;
-    public Renderer bombRend;
+    private bool _isDefused;
     
     void Start()
     {
@@ -42,6 +47,15 @@ public class Bomb : MonoBehaviour
         _indicatorIntensity = _indicatorLight.intensity;
         _indicatorLight.intensity = 0;
         _indicatorLight.enabled = false;
+    }
+
+    public void Douse()
+    {
+        Debug.Log("DOUSING!!!");
+        StopCoroutine(_explodeRoutine);
+        _animator.enabled = false;
+        _fusePS.SetActive(false);
+        //GameObject.Destroy(gameObject);
     }
 
     private IEnumerator IndicatorRoutine(float duration)

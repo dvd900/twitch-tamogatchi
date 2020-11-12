@@ -38504,9 +38504,11 @@ MonoBehaviour:
   _closeForce: 2000
   _farForce: 1000
   _closeAngle: 60
+  _animator: {fileID: 2701102678157173863}
+  _fusePS: {fileID: 2559512869623782718}
+  bombRend: {fileID: 0}
   smallRange: {fileID: 2701102678219613094}
   bigRange: {fileID: 2701102678986487655}
-  bombRend: {fileID: 0}
 --- !u!82 &2701102678807261368
 AudioSource:
   m_ObjectHideFlags: 0
