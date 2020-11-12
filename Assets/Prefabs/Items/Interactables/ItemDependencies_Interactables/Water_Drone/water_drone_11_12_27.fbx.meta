@@ -9,6 +9,9 @@ ModelImporter:
   - first:
       74: -7083599632694225992
     second: anim_water_delivery
+  - first:
+      74: 921238592847833407
+    second: anim_water_delivery (1)
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -38,11 +41,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Default Take
-      takeName: Default Take
+      name: anim_water_delivery (1)
+      takeName: anim_water_delivery
       internalID: 0
       firstFrame: -1
-      lastFrame: 160
+      lastFrame: 132
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -61,7 +64,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.48287672
+        functionName: UnCap
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: f1c4a80f4c8584aee8994fe5fa10049e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -90,7 +101,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.4657534
+        functionName: UnCap
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: f1c4a80f4c8584aee8994fe5fa10049e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.91095895
+        functionName: DropBottle
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: f1c4a80f4c8584aee8994fe5fa10049e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -145,7 +172,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 3
+    globalScale: 300
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
