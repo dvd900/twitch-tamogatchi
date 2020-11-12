@@ -7,12 +7,14 @@ namespace AIActions
     public class BeeChaseAction : CoroutineAction
     {
         private BeeController _bee;
+        private Animator _beeAnimator;
         private Skin _tango;
         private Transform _targetTransform;
 
-        public BeeChaseAction(BeeController bee, Skin tango, Transform targetTransform)
+        public BeeChaseAction(BeeController bee, Animator beeAnimator, Skin tango, Transform targetTransform)
         {
             _bee = bee;
+            _beeAnimator = beeAnimator;
             _tango = tango;
             _targetTransform = targetTransform;
         }
@@ -27,6 +29,8 @@ namespace AIActions
             float t = dmag / (25 * _bee.Speed);
             var moveTween = LeanTween.move(_bee.gameObject, _targetTransform, t).setEaseInQuad();
             _bee.transform.LookAt(_targetTransform);
+
+            _beeAnimator.SetBool("Angry", true);
 
             while (LeanTween.isTweening(moveTween.id))
             {
@@ -45,6 +49,8 @@ namespace AIActions
             _tango.emoteController.DiscomfortEmote();
             _tango.statsController.AddHealth(-10);
 
+            yield return new WaitForSeconds(.1f);
+
             _bee.Die();
         }
 
@@ -54,7 +60,7 @@ namespace AIActions
             Vector3 headCenter = _tango.headCollider.transform.TransformPoint(_tango.headCollider.center);
             Vector3 normal = target - headCenter;
             normal.Normalize();
-            _targetTransform.position = target + 3.5f * normal;
+            _targetTransform.position = target + 1.5f * normal;
         }
     }
 }

@@ -10034,6 +10034,7 @@ MonoBehaviour:
   _chaseRange: 30
   _timeUntilChase: 8
   _actionController: {fileID: 6574589832027839206}
+  _animator: {fileID: 6574589832027839204}
   _targetTransform: {fileID: 4620931883418478329}
 --- !u!114 &6574589832027839206
 MonoBehaviour:
