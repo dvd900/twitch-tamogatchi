@@ -100,7 +100,7 @@ public class DroneController : MonoBehaviour
     public void DoScan(Item item)
     {
         Debug.Log("scanning: " + item.gameObject);
-        DebugDraw.DrawSphere(item.transform.position, _scanRange, Color.red, 1.0f);
+        //DebugDraw.DrawSphere(item.transform.position, _scanRange, Color.red, 1.0f);
         if (TooManyItemsInRange(item.transform.position, _numItemsDestroy))
         {
             _zapTarget = item.transform.position;
