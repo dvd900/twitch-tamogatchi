@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 182041d8b46264b7996d9949cd9b378a
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: 1989289236423521904
@@ -18,6 +18,9 @@ ModelImporter:
   - first:
       74: 4998555761657262203
     second: anim_drone_propel
+  - first:
+      74: 8011563424673631493
+    second: anim_drone_idle_scanner (1)
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -47,10 +50,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Default Take
-      takeName: Default Take
+      name: anim_drone_idle_scanner (1)
+      takeName: anim_drone_idle_scanner
       internalID: 0
-      firstFrame: 0
+      firstFrame: -1
       lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
@@ -58,7 +61,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -87,7 +90,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -203,6 +206,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -240,7 +244,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 6
+    globalScale: 600
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
