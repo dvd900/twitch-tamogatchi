@@ -33,6 +33,7 @@ public class WaterDroneTester : MonoBehaviour
     {
         BottleRB.isKinematic = false;
         BottleRB.gameObject.transform.parent = null;
+        BottleRB.AddForce(Random.RandomRange(-10, 10), thrust/2, Random.RandomRange(-10, 10), ForceMode.Impulse);
         //CapRB.AddForce(Random.RandomRange(-10, 10), thrust, Random.RandomRange(-10, 10), ForceMode.Impulse);
         WaterStream.enableEmission = false;
     }
