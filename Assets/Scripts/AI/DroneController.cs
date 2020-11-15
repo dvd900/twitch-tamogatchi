@@ -85,9 +85,9 @@ public class DroneController : MonoBehaviour
         _moveTween = LeanTween.move(gameObject, dest, scaledMoveTime).setEaseInOutQuad().id;
 
         var lookTarget = Quaternion.LookRotation(d);
+
         LeanTween.rotate(gameObject, lookTarget.eulerAngles, _rotateTime).setEaseInOutQuad();
     }
-
     public void HoverOver(Transform target)
     {
         _hoverTarget = target;
