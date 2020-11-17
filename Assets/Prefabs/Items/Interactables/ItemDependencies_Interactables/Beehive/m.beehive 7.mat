@@ -43,7 +43,23 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Emission:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: c4616dceb5d6043ccaac0c28b1fde7fe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap1:
+        m_Texture: {fileID: 2800000, guid: c4616dceb5d6043ccaac0c28b1fde7fe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Heightmap:
+        m_Texture: {fileID: 2800000, guid: 2bdbb83edf10d4f55ad87f3b754b36d5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Heightmapp:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -68,11 +84,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicSmoothness_stage_2:
-        m_Texture: {fileID: 2800000, guid: 2919ebc556f0648cfb76d9fcbbd10ea4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 53e02d90622264aa19b4c62b215b0689, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicSmoothness_stage_3:
-        m_Texture: {fileID: 2800000, guid: e8aa91499df2e40f7910516bf97a68a1, type: 3}
+        m_Texture: {fileID: 2800000, guid: b7ab0c650c4eb403ba8a89617a852297, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
@@ -88,7 +104,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture0:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture1:
+        m_Texture: {fileID: 2800000, guid: 8d3b4be377d794137b08a104b8b8caef, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample1:
@@ -108,7 +128,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _albedo_stage_3:
-        m_Texture: {fileID: 2800000, guid: 861ce8d85d8904297b4c43289fb607c9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 328e2f9baf1064875ad7e518167554e7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normal:
@@ -120,11 +140,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normal_stage_2:
-        m_Texture: {fileID: 2800000, guid: 6c8d144a06e3a4c26aef2ec8ab027ae9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 284ae2f03765a4613964093de185269d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normal_stage_3:
-        m_Texture: {fileID: 2800000, guid: 73825b051300f469483ff4f19ae4fcd8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 284ae2f03765a4613964093de185269d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -133,24 +153,35 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _Crack_emission: 10.23
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EdgeLength: 2
+    - _Float0: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.845
     - _GlossyReflections: 1
+    - _HeightAmt: 2.97
     - _Metallic: 0
     - _Mode: 0
-    - _NormalIntensity: 2
+    - _NormalIntensity: 1.58
+    - _NormalIntensity1: 0.18246387
+    - _Normalintensity: 5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Reveal: 0.0015772253
     - _SickAmt: 0
-    - _Smoothness: -1
+    - _Smoothness: -0.51
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Stage2: 1
+    - _Stage2: 0
     - _Stage3: 1
+    - _TessMax: 25
+    - _TessMin: 10
+    - _TessPhongStrength: 1
+    - _TessValue: 32
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
@@ -159,6 +190,8 @@ Material:
     - _Emission: {r: 1, g: 0.26011038, b: 0, a: 0}
     - _EmissionColor: {r: 0.7830189, g: 0.08574791, b: 0, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 0}
-    - _albedo_tint: {r: 0.8588235, g: 0.8470588, b: 0.6862744, a: 0}
+    - _Vector0: {r: 0, g: 1.18, b: 0, a: 0}
+    - _albedo_tint: {r: 0.8018868, g: 0.74193263, b: 0, a: 0}
     - _albedo_tint1: {r: 0.8207547, g: 0.79198253, b: 0.3987629, a: 0}
-    - _emission: {r: 0, g: 0, b: 0, a: 0}
+    - _emission: {r: 1, g: 0.422351, b: 0.061320618, a: 0}
+    - _vectorr: {r: 0, g: 0.05, b: 0, a: 0}
