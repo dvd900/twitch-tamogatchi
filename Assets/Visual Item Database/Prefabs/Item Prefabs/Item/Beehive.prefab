@@ -134,7 +134,7 @@ MonoBehaviour:
     type: 3}
   _spawnTime: 3
   _spawnNumber: 5
-  _numBombsToDestroy: 3
+  _numBombsToDestroy: 6
   _renderer: {fileID: 8032804877390671503}
 --- !u!114 &5297086277820640414
 MonoBehaviour:

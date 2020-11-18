@@ -84,7 +84,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicSmoothness_stage_2:
-        m_Texture: {fileID: 2800000, guid: 53e02d90622264aa19b4c62b215b0689, type: 3}
+        m_Texture: {fileID: 2800000, guid: b7ab0c650c4eb403ba8a89617a852297, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicSmoothness_stage_3:
@@ -116,7 +116,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample7:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: bf0563a484de94ee59b91fbfa7a7a92e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _albedo:
@@ -132,7 +132,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _albedo_stage_3:
-        m_Texture: {fileID: 2800000, guid: 328e2f9baf1064875ad7e518167554e7, type: 3}
+        m_Texture: {fileID: 2800000, guid: c05885493e11d41bca222dae3c6f2910, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normal:
@@ -157,7 +157,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _Crack_emission: 6.43
+    - _Crack_emission: 6
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -195,7 +195,7 @@ Material:
     - _EmissionColor: {r: 0.7830189, g: 0.08574791, b: 0, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 0}
     - _Vector0: {r: 0, g: 1.18, b: 0, a: 0}
-    - _albedo_tint: {r: 0.8018868, g: 0.74193263, b: 0, a: 0}
+    - _albedo_tint: {r: 1, g: 0.91143465, b: 0.42924508, a: 0}
     - _albedo_tint1: {r: 0.8207547, g: 0.79198253, b: 0.3987629, a: 0}
-    - _emission: {r: 1, g: 0.4223508, b: 0.061320454, a: 0}
+    - _emission: {r: 1, g: 0.37878782, b: 0, a: 0}
     - _vectorr: {r: 0, g: 0, b: 0, a: 0}

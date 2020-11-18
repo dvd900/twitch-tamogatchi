@@ -13,10 +13,12 @@ public class Beehive : MonoBehaviour, IBombable
     private int _numBees;
     private int _numBombHits;
     private Color _startColor;
+    private float _startStage;
 
     void Start()
     {
-        _startColor = _renderer.material.color;
+        _startColor = _renderer.material.GetColor("emission");
+        _startStage = 0;
 
         StartCoroutine(SpawnRoutine());
     }
@@ -65,7 +67,12 @@ public class Beehive : MonoBehaviour, IBombable
         }
         else
         {
-            _renderer.material.color = Color.Lerp(_startColor, Color.black, (_numBombHits / ((float)_numBombsToDestroy)));
+            Color col = new Color(145,55,0);
+            //_renderer.material.SetColor("_emission", Color.Lerp(_startColor, Color.black, (_numBombHits / ((float)_numBombsToDestroy))));
+            _renderer.material.SetFloat("_Stage3", Mathf.Lerp(_startStage, 1, (_numBombHits / ((float)_numBombsToDestroy))));
+            //_renderer.material.SetFloat("_Crack_emission", Mathf.Lerp(_startStage, 31.7f, (_numBombHits / ((float)_numBombsToDestroy))));
+            //_renderer.material.color = Color.Lerp(_startColor, Color.black, (_numBombHits / ((float)_numBombsToDestroy)));
+            //45E950
         }
     }
 }

@@ -35,7 +35,7 @@ public class BeeController : MonoBehaviour, IBombable
     {
         _psHoneySplat.transform.SetParent(null);
         gameObject.transform.localScale = new Vector3(0, 0, 0);
-        LeanTween.scale(gameObject, new Vector3(1,1,1), 1f).setEase(LeanTweenType.easeOutBack);
+        LeanTween.scale(gameObject, new Vector3(0.5f,0.5f,0.5f), 1f).setEase(LeanTweenType.easeOutBack);
 
         // randomize speed slightly
         _speed *= 1.0f + .2f * (Random.value - .5f);

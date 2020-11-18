@@ -9989,7 +9989,7 @@ Transform:
   m_GameObject: {fileID: 6574589832027839207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 332.07, y: 33.621, z: 158.08}
-  m_LocalScale: {x: 0.99724627, y: 0.99724627, z: 0.99724627}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 3226450214721261763}
   - {fileID: 5041705279624544342}
@@ -10036,6 +10036,9 @@ MonoBehaviour:
   _actionController: {fileID: 6574589832027839206}
   _animator: {fileID: 6574589832027839204}
   _targetTransform: {fileID: 4620931883418478329}
+  _rigidbody: {fileID: 0}
+  _collider: {fileID: 0}
+  _renderer: {fileID: 0}
 --- !u!114 &6574589832027839206
 MonoBehaviour:
   m_ObjectHideFlags: 0
