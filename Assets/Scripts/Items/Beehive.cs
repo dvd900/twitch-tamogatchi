@@ -42,9 +42,9 @@ public class Beehive : MonoBehaviour, IBombable
                     bee.GetComponent<BeeController>().Init(this);
                 }
 
-                LeanTween.scaleX(gameObject, (transform.localScale * 0.9f).x, 1f).setEase(LeanTweenType.punch);
-                LeanTween.scaleY(gameObject, (transform.localScale * 0.9f).y, 1f).setEase(LeanTweenType.punch);
-                LeanTween.scaleZ(gameObject, (transform.localScale * 1.075f).z, 0.75f).setEase(LeanTweenType.punch);
+                LeanTween.scaleX(gameObject, (transform.localScale * 0.97f).x, 1f).setEase(LeanTweenType.punch);
+                LeanTween.scaleY(gameObject, (transform.localScale * 0.97f).y, 1f).setEase(LeanTweenType.punch);
+                LeanTween.scaleZ(gameObject, (transform.localScale * 1.015f).z, 0.75f).setEase(LeanTweenType.punch);
 
                 _numBees += numToSpawn;
             }
@@ -68,9 +68,11 @@ public class Beehive : MonoBehaviour, IBombable
         else
         {
             Color col = new Color(145,55,0);
-            //_renderer.material.SetColor("_emission", Color.Lerp(_startColor, Color.black, (_numBombHits / ((float)_numBombsToDestroy))));
             _renderer.material.SetFloat("_Stage3", Mathf.Lerp(_startStage, 1, (_numBombHits / ((float)_numBombsToDestroy))));
-            //_renderer.material.SetFloat("_Crack_emission", Mathf.Lerp(_startStage, 31.7f, (_numBombHits / ((float)_numBombsToDestroy))));
+
+            LeanTween.scaleX(gameObject, (transform.localScale * 0.91f).x, 1f).setEase(LeanTweenType.punch);
+            LeanTween.scaleY(gameObject, (transform.localScale * 0.91f).y, 1f).setEase(LeanTweenType.punch);
+            LeanTween.scaleZ(gameObject, (transform.localScale * 1.075f).z, 0.75f).setEase(LeanTweenType.punch);
             //_renderer.material.color = Color.Lerp(_startColor, Color.black, (_numBombHits / ((float)_numBombsToDestroy)));
             //45E950
         }

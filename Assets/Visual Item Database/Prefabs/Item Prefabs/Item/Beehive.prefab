@@ -59,12 +59,12 @@ MeshRenderer:
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 0
+  m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 26f16e1a6dcd848b0801c1fc32b147c8, type: 2}
+  - {fileID: 2100000, guid: 194a9a240e2ac406e9d8488c66672f08, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ea30a77629144a7bd576face61504e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _beePrefab: {fileID: 6574589832027839207, guid: 28ff395ee3a1b42dbb555f5e8c840fee,
+  _beePrefab: {fileID: 3982746128853749279, guid: 2361d72d750e9459b82c572452c71c3d,
     type: 3}
   _spawnTime: 3
   _spawnNumber: 5

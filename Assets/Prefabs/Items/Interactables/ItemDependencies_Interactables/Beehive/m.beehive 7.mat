@@ -132,11 +132,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _albedo_stage_3:
-        m_Texture: {fileID: 2800000, guid: c05885493e11d41bca222dae3c6f2910, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7ea262a0f13f744008a38bc5d0222806, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normal:
         m_Texture: {fileID: 2800000, guid: be6e0c004b82146cc91c5365cbd02917, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _normal_scratches:
+        m_Texture: {fileID: 2800000, guid: 6c8d144a06e3a4c26aef2ec8ab027ae9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normal_stage_1:
@@ -181,7 +185,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Stage2: 0
-    - _Stage3: 1
+    - _Stage3: 0
     - _TessMax: 25
     - _TessMin: 10
     - _TessPhongStrength: 1
@@ -189,13 +193,14 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
+    - _normalintensity: 0.22
     m_Colors:
     - _Color: {r: 0.8584906, g: 0.84824777, b: 0.68436277, a: 1}
     - _Emission: {r: 1, g: 0.26011038, b: 0, a: 0}
     - _EmissionColor: {r: 0.7830189, g: 0.08574791, b: 0, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 0}
     - _Vector0: {r: 0, g: 1.18, b: 0, a: 0}
-    - _albedo_tint: {r: 1, g: 0.91143465, b: 0.42924508, a: 0}
+    - _albedo_tint: {r: 1, g: 0.91143465, b: 0.42924482, a: 0}
     - _albedo_tint1: {r: 0.8207547, g: 0.79198253, b: 0.3987629, a: 0}
-    - _emission: {r: 1, g: 0.37878782, b: 0, a: 0}
+    - _emission: {r: 1, g: 0.37878755, b: 0, a: 0}
     - _vectorr: {r: 0, g: 0, b: 0, a: 0}
