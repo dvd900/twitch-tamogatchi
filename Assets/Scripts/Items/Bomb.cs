@@ -187,7 +187,7 @@ public class Bomb : MonoBehaviour
     private void BombItem(GameObject hitItem, bool closeHit)
     {
         var bomb = hitItem.GetComponent<Bomb>();
-        if(bomb != null)
+        if(bomb != null && closeHit)
         {
             if(!bomb._didExplode)
             {

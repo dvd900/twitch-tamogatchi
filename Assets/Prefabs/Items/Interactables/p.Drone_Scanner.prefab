@@ -30929,7 +30929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f37813cd3291b6459e3bdfd3401b8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numItemsDestroy: 5
+  _numItemsDestroy: 8
   _scanRange: 30
   _moveTime: 3
   _rotateTime: 0.3
