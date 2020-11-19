@@ -5,6 +5,7 @@ using UnityEngine;
 public class Beehive : MonoBehaviour, IBombable
 {
     [SerializeField] private GameObject _beePrefab;
+    [SerializeField] private GameObject _destroyedParticles;
     [SerializeField] private float _spawnTime;
     [SerializeField] private int _spawnNumber;
     [SerializeField] private int _numBombsToDestroy;
@@ -63,7 +64,11 @@ public class Beehive : MonoBehaviour, IBombable
         _numBombHits++;
         if(_numBombHits == _numBombsToDestroy)
         {
-            Destroy(gameObject);
+            Vector3 spawnCenter = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            LeanTween.scale(gameObject, new Vector3(0,0,0), 0.1f).setEase(LeanTweenType.easeInBack);
+            StartCoroutine(WaitAndDestroy(0.1f));
+            
+
         }
         else
         {
@@ -76,5 +81,13 @@ public class Beehive : MonoBehaviour, IBombable
             //_renderer.material.color = Color.Lerp(_startColor, Color.black, (_numBombHits / ((float)_numBombsToDestroy)));
             //45E950
         }
+    }
+    private IEnumerator WaitAndDestroy(float waitTime)
+    {
+        Vector3 spawnCenter = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        yield return new WaitForSeconds(waitTime);
+
+        var destroyedSplash = Instantiate(_destroyedParticles, spawnCenter, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

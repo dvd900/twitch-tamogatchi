@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: m.beehive 7
+  m_Name: m.beehive 9
   m_Shader: {fileID: 4800000, guid: fdb4536b5877c4978aec84511b247855, type: 3}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 2
@@ -185,7 +185,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Stage2: 0
-    - _Stage3: 0
+    - _Stage3: 0.887
     - _TessMax: 25
     - _TessMin: 10
     - _TessPhongStrength: 1
@@ -200,7 +200,7 @@ Material:
     - _EmissionColor: {r: 0.7830189, g: 0.08574791, b: 0, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 0}
     - _Vector0: {r: 0, g: 1.18, b: 0, a: 0}
-    - _albedo_tint: {r: 1, g: 0.91143465, b: 0.4292447, a: 0}
+    - _albedo_tint: {r: 1, g: 0.91143465, b: 0.42924473, a: 0}
     - _albedo_tint1: {r: 0.8207547, g: 0.79198253, b: 0.3987629, a: 0}
-    - _emission: {r: 1, g: 0.37878743, b: 0, a: 0}
+    - _emission: {r: 1, g: 0.37878746, b: 0, a: 0}
     - _vectorr: {r: 0, g: 0, b: 0, a: 0}

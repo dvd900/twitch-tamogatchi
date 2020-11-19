@@ -132,6 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beePrefab: {fileID: 3982746128853749279, guid: 2361d72d750e9459b82c572452c71c3d,
     type: 3}
+  _destroyedParticles: {fileID: 3261001723981447749, guid: 7209898d9ee1f4840b3dc4ad387938f0,
+    type: 3}
   _spawnTime: 3
   _spawnNumber: 5
   _numBombsToDestroy: 6
