@@ -84,7 +84,7 @@ public class Beehive : MonoBehaviour, IBombable
     }
     private IEnumerator WaitAndDestroy(float waitTime)
     {
-        Vector3 spawnCenter = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 spawnCenter = new Vector3(transform.position.x, transform.position.y+10, transform.position.z);
         yield return new WaitForSeconds(waitTime);
 
         var destroyedSplash = Instantiate(_destroyedParticles, spawnCenter, Quaternion.identity);
