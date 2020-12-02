@@ -786,7 +786,8 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3815447101568484190}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 1105311910214450627}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1513,6 +1514,18 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &1105311910214450627
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097e4d8504d005c4790775b3020dc579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1107 &1107418878746020648
 AnimatorStateMachine:
   serializedVersion: 5
@@ -1569,7 +1582,7 @@ AnimatorStateMachine:
     m_Position: {x: -180, y: 480, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3416149176678790086}
-    m_Position: {x: 150, y: 440, z: 0}
+    m_Position: {x: 120, y: 420, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -3790847208147007073}
