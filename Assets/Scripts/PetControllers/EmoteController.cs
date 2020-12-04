@@ -91,7 +91,12 @@ public class EmoteController : MonoBehaviour
         _startingEmote = true;
         _skin.animator.SetTrigger("startSleep");
         _skin.animator.SetBool("isSleeping", true);
-        _snot.SetActive(true);
+    
+        LeanTween.delayedCall(gameObject,4.2f,()=>{
+            _snot.SetActive(true);
+            LeanTween.scale(_snot, new Vector3(0.24f, 0.24f, 0.24f), 3f).setEase(LeanTweenType.easeOutBack);
+        });
+
     }
 
     public void StopSleep()
