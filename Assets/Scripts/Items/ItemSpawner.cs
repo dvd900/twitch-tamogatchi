@@ -8,12 +8,19 @@ public class ItemSpawner : MonoBehaviour
     public static ItemSpawner Instance;
 
     [SerializeField] private GameObject[] _items;
+    [SerializeField] private GameObject[] _hazards;
+
     [SerializeField] private GameObject _dust;
 	[SerializeField] private GameObject _spawnParticles;
 	[SerializeField] private GameObject _nametagPrefab;
     [SerializeField] private AudioClip _itemHitGroundClip;
     [SerializeField] private AudioClip _itemSpawnClip;
     [SerializeField] private AudioSource _itemSFXSource;
+
+    [SerializeField] private float _hazardSpawnTime;
+
+    private GameObject _currentHazard;
+    private float _timerHazardSpawn;
 
     private void Awake()
     {
@@ -36,12 +43,23 @@ public class ItemSpawner : MonoBehaviour
         Debug.Log(msg + "msg");
         SpawnMessage spawnMsg = JsonUtility.FromJson<SpawnMessage>(msg);
         Debug.Log(spawnMsg + " spwn " + "username: " + spawnMsg.username);
-        SpawnItem(spawnMsg.itemId, CoordsUtils.ViewToWorldPos(new Vector3(spawnMsg.x, spawnMsg.y, 0)), spawnMsg.username);
+        SpawnItem(_items[spawnMsg.itemId], CoordsUtils.ViewToWorldPos(new Vector3(spawnMsg.x, spawnMsg.y, 0)), spawnMsg.username);
     }
 
     void Update() {
         if(Input.GetButtonDown("Spawn")) {
             SpawnItemAtRandomPos("local player");
+        }
+
+        if(_currentHazard == null)
+        {
+            _timerHazardSpawn -= Time.deltaTime;
+            if(_timerHazardSpawn < 0)
+            {
+                int hazardInd = UnityEngine.Random.Range(0, _hazards.Length);
+                _currentHazard = SpawnItem(_hazards[hazardInd], CoordsUtils.RandomWorldPointOnScreen(), null);
+                _timerHazardSpawn = _hazardSpawnTime;
+            }
         }
     }
 
@@ -50,21 +68,21 @@ public class ItemSpawner : MonoBehaviour
     }
 
     public void SpawnRandomItem(Vector3 worldPos, string username) {
-        SpawnItem(UnityEngine.Random.Range(0, _items.Length), worldPos, username);
+        SpawnItem(_items[UnityEngine.Random.Range(0, _items.Length)], worldPos, username);
         //SpawnItem(_items.Length-1, worldPos);
     }
 
-    public void SpawnItem(int spawnInd, Vector3 worldPos, string username) {
-        if(spawnInd < 0 || spawnInd >= _items.Length) {
-            throw new IndexOutOfRangeException("Item ind out of range");
-        }
+    public GameObject SpawnItem(GameObject prefab, Vector3 worldPos, string username) {
 
-        Item itemPrefab = _items[spawnInd].GetComponent<Item>();
+        Item itemPrefab = prefab.GetComponent<Item>();
 
         Vector3 itemPos = new Vector3(worldPos.x, worldPos.y, worldPos.z);
 
-        var itemLabel = GameObject.Instantiate(_nametagPrefab, itemPos, Quaternion.identity);
-        itemLabel.GetComponent<LabelController>().Init(username);
+        if(!string.IsNullOrEmpty(username))
+        {
+            var itemLabel = GameObject.Instantiate(_nametagPrefab, itemPos, Quaternion.identity);
+            itemLabel.GetComponent<LabelController>().Init(username);
+        }
 
         if(itemPrefab.dropsIn) {
             itemPos.y = itemPos.y + 40;
@@ -86,7 +104,7 @@ public class ItemSpawner : MonoBehaviour
         iTween.ScaleTo(newItem.gameObject, iTween.Hash("scale", originalScale,
             "time", 1.0f, "easetype", iTween.EaseType.easeOutElastic));
 
-        iTween.RotateBy(newItem.gameObject, iTween.Hash("amount", _items[spawnInd].transform.up,
+        iTween.RotateBy(newItem.gameObject, iTween.Hash("amount", itemPrefab.transform.up,
             "time", 1f, "easetype", iTween.EaseType.easeOutSine));
 
 		_itemSFXSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
@@ -96,6 +114,8 @@ public class ItemSpawner : MonoBehaviour
         {
             Skin.CurrentTango.headController.GlanceAtTarget(newItem.transform, true);
         }
+
+        return newItem;
     }
 
     public GameObject MakeDust() { 
