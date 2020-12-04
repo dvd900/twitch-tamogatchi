@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using AIActions;
 
 public class Skin : MonoBehaviour, AISkin
 {
@@ -38,7 +39,10 @@ public class Skin : MonoBehaviour, AISkin
     public Transform headTransform;
 
     public TangoWorldData WorldData;
-    
+
+    public bool IsDying { get { return actionController.CurrentAction is DeathAction; } }
+    public bool IsSleeping { get { return actionController.CurrentAction is SleepAction; } }
+
     private void Awake()
     {
         CurrentTango = this;

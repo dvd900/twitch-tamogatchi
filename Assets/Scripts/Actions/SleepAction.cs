@@ -1,31 +1,31 @@
 ﻿
+using System.Collections;
 using UnityEngine;
 
 namespace AIActions
 {
-    public class SleepAction : SweeTangoAction
+    public class SleepAction : CoroutineAction
     {
-        public SleepAction(Skin skin) : base(skin)
+        private Skin _skin;
+
+        public SleepAction(Skin skin)
         {
+            _skin = skin;
         }
 
-        public override void Interrupt()
+        protected override IEnumerator DoAction()
+        {
+            yield return new WaitForSeconds(.4f);
+            _skin.emoteController.StartSleep();
+            while (true)
+            {
+                yield return null;
+            }
+        }
+
+        protected override void CancelAction()
         {
             _skin.emoteController.StopSleep();
-        }
-
-        public override bool IsFinished()
-        {
-            return false;
-        }
-
-        public override void StartAction()
-        {
-            _skin.emoteController.StartSleep();
-        }
-
-        public override void UpdateAction()
-        {
         }
     }
 }

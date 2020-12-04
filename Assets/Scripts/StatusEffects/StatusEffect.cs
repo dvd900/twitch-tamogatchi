@@ -21,7 +21,7 @@ public abstract class StatusEffect : MonoBehaviour
     public void StartEffect(Skin skin)
     {
         _skin = skin;
-        Debug.Log("Starting effect: " + Type);
+
         if (_ttl < 0)
         {
             _isInfinite = true;
@@ -46,7 +46,6 @@ public abstract class StatusEffect : MonoBehaviour
 
     public void StopEffect()
     {
-        Debug.Log("stopping effect: " + Type);
         DoStopEffect();
         Destroy(this);
     }

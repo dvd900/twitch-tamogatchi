@@ -85,12 +85,15 @@ public class EmoteController : MonoBehaviour {
     public void StartSleep()
     {
         _startingEmote = true;
-        _skin.animator.SetBool("sleep", true);
+        _skin.animator.SetTrigger("startSleep");
+        _skin.animator.SetBool("isSleeping", true);
     }
 
     public void StopSleep()
     {
-        _skin.animator.SetBool("sleep", false);
+
+        _skin.animator.SetTrigger("stopSleep");
+        _skin.animator.SetBool("isSleeping", false);
     }
 
     public void DieEmote()

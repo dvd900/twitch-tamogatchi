@@ -126,11 +126,14 @@ public class Bomb : MonoBehaviour
             {
                 hitSweetClose = true;
                 var skin = hit.GetComponentInParent<Skin>();
-                skin.actionController.DoAction(new IdleAction(skin, 3.0f, false));
-                skin.movementController.StopWalking();
-                skin.movementController.FaceCamera();
-                skin.emoteController.Bombed();
-                skin.statsController.AddHealth(-_closeDamage);
+                if(!skin.IsDying)
+                {
+                    skin.actionController.DoAction(new IdleAction(skin, 3.0f, false));
+                    skin.movementController.StopWalking();
+                    skin.movementController.FaceCamera();
+                    skin.emoteController.Bombed();
+                    skin.statsController.AddHealth(-_closeDamage);
+                }
             }
         }
 
@@ -156,8 +159,11 @@ public class Bomb : MonoBehaviour
             {
                 hitSweetFar = true;
                 var skin = hit.GetComponentInParent<Skin>();
-                skin.emoteController.DiscomfortEmote();
-                skin.statsController.AddHealth(-_farDamage);
+                if(!skin.IsDying)
+                {
+                    skin.emoteController.DiscomfortEmote();
+                    skin.statsController.AddHealth(-_farDamage);
+                }
             }
         }
 

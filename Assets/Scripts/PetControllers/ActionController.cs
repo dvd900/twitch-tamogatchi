@@ -12,17 +12,11 @@ public class ActionController : MonoBehaviour
     public AIAction LastAction { get { return _lastAction; } }
     private AIAction _lastAction;
 
-    public bool IsDying { get { return _currentAction is DeathAction; } }
-
     [SerializeField] private bool _logActions;
 
     private Queue<AIAction> _actionQueue;
 
     public void DoAction(AIAction action) {
-        if(IsDying && !(action is DeathAction))
-        {
-            return;
-        }
 
         if(_currentAction != null) {
             _currentAction.Interrupt();
