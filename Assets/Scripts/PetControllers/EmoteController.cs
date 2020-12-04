@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EmoteController : MonoBehaviour {
+public class EmoteController : MonoBehaviour
+{
     
     public static void ClearEyeTriggers(Animator animator)
     {
@@ -13,6 +14,9 @@ public class EmoteController : MonoBehaviour {
     {
         get { return _isDoingEmote || _startingEmote; }
     }
+
+
+    [SerializeField] private GameObject _snot;
 
     private Skin _skin;
     
@@ -87,6 +91,7 @@ public class EmoteController : MonoBehaviour {
         _startingEmote = true;
         _skin.animator.SetTrigger("startSleep");
         _skin.animator.SetBool("isSleeping", true);
+        _snot.SetActive(true);
     }
 
     public void StopSleep()
@@ -94,6 +99,7 @@ public class EmoteController : MonoBehaviour {
 
         _skin.animator.SetTrigger("stopSleep");
         _skin.animator.SetBool("isSleeping", false);
+        _snot.SetActive(false);
     }
 
     public void DieEmote()
