@@ -967,7 +967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &37110852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,10 +980,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6114847e2729d4cb624f168583b0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VegetationSystemList:
-  - {fileID: 1121568678}
-  TerrainSystemList:
-  - {fileID: 1121568673}
+  VegetationSystemList: []
+  TerrainSystemList: []
 --- !u!4 &37110853
 Transform:
   m_ObjectHideFlags: 0
@@ -6767,7 +6765,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 504406763}
+  m_Cookie: {fileID: 428495444}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -18229,6 +18227,41 @@ SkinnedMeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 713755590}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &428495444
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 57
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &456332650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18480,41 +18513,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 565868682}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &504406763
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 57
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1001 &513861122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18526,6 +18524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wizard Hat (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394396419169999489, guid: f15276591b1d3405d96272025a009f4a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9194446087507468901, guid: f15276591b1d3405d96272025a009f4a,
         type: 3}
@@ -99335,7 +99338,8 @@ MonoBehaviour:
   - {fileID: 3226433050365265056, guid: 3218b55234af045c8977b6b66a705f38, type: 3}
   - {fileID: 2541067410254112154, guid: 534862cd2a2de45c98e30bbf49e21df3, type: 3}
   - {fileID: 2541067410254112154, guid: 80eb588b1a062452a8a5a179b16ba477, type: 3}
-  _hazards: []
+  _hazards:
+  - {fileID: 183397460325926519, guid: 22f88e8e3bde04f4891850875c21c560, type: 3}
   _dust: {fileID: 193270998811095793, guid: b7b8f4ee2be284c89977a22aeb701158, type: 3}
   _spawnParticles: {fileID: 5803091005232545835, guid: 2c6778f3fc82b44a7b6e4166d4e6af7d,
     type: 3}
@@ -99769,6 +99773,11 @@ PrefabInstance:
       propertyPath: CollisionModule.plane0
       value: 
       objectReference: {fileID: 495760071}
+    - target: {fileID: 518902897884528119, guid: 3616a00771f4ed94182b100a16b5be56,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2576353090876115480, guid: 3616a00771f4ed94182b100a16b5be56,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -111241,7 +111250,7 @@ PrefabInstance:
     - target: {fileID: 8067101605868420554, guid: 4aa551bcce1e346a0a37490eaa3684e6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa551bcce1e346a0a37490eaa3684e6, type: 3}
@@ -111607,6 +111616,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 1828683900437252034, guid: 625baa08deb654c4db007187bd627918,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2545152452717456739, guid: 625baa08deb654c4db007187bd627918,
         type: 3}
       propertyPath: m_Layer
@@ -111879,6 +111893,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: item
       objectReference: {fileID: 0}
+    - target: {fileID: 952810532927499368, guid: 9463ea5e0963d40b3b97fef7d2915056,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1002660763260547855, guid: 9463ea5e0963d40b3b97fef7d2915056,
         type: 3}
       propertyPath: m_Layer
@@ -112137,6 +112156,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: water_drone_11_12_27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305986000808732149, guid: 00eb2924e65384f17aa67246d36caba1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00eb2924e65384f17aa67246d36caba1, type: 3}
