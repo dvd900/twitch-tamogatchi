@@ -25,10 +25,12 @@ public class BeeController : MonoBehaviour, IBombable
     private Beehive _hive;
     private BezierSpline _spline;
     private bool _isDying;
+    private bool _isDebugBee;
 
-    public void Init(Beehive hive)
+    public void Init(Beehive hive, bool isDebugBee)
     {
         _hive = hive;
+        _isDebugBee = isDebugBee;
     }
 
     private IEnumerator Start()
@@ -45,7 +47,14 @@ public class BeeController : MonoBehaviour, IBombable
 
         _spline.loop = true;
 
-        _actionController.DoAction(new BeeIdleAction(this, _spline));
+        if (_isDebugBee)
+        {
+            _actionController.DoAction(new BeeChaseAction(this, _animator, Skin.CurrentTango, _targetTransform));
+        }
+        else
+        {
+            _actionController.DoAction(new BeeIdleAction(this, _spline));
+        }
     }
 
     void Update()

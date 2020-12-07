@@ -10,6 +10,7 @@ public class Beehive : MonoBehaviour, IBombable
     [SerializeField] private int _spawnNumber;
     [SerializeField] private int _numBombsToDestroy;
     [SerializeField] private Renderer _renderer;
+    [SerializeField] private bool _isDebugHive;
 
     private int _numBees;
     private int _numBombHits;
@@ -30,28 +31,43 @@ public class Beehive : MonoBehaviour, IBombable
 
         while(true)
         {
-            if(_numBees < _spawnNumber)
+            if(_isDebugHive)
+            {
+                SpawnBee();
+                DoSpawnAnimation();
+            }
+            else if(_numBees < _spawnNumber)
             {
                 int numToSpawn = _spawnNumber - _numBees;
 
-                Vector3 spawnCenter = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z - 4);
                 for (int i = 0; i < numToSpawn; i++)
                 {
-                    Vector3 offset = 6 * Random.onUnitSphere;
-                    offset.y = Mathf.Abs(offset.y);
-                    var bee = GameObject.Instantiate(_beePrefab, spawnCenter + offset, transform.rotation);
-                    bee.GetComponent<BeeController>().Init(this);
+                    SpawnBee();
                 }
 
-                LeanTween.scaleX(gameObject, (transform.localScale * 0.97f).x, 1f).setEase(LeanTweenType.punch);
-                LeanTween.scaleY(gameObject, (transform.localScale * 0.97f).y, 1f).setEase(LeanTweenType.punch);
-                LeanTween.scaleZ(gameObject, (transform.localScale * 1.015f).z, 0.75f).setEase(LeanTweenType.punch);
+                DoSpawnAnimation();
 
                 _numBees += numToSpawn;
             }
 
             yield return new WaitForSeconds(_spawnTime);
         }
+    }
+
+    private void DoSpawnAnimation()
+    {
+        LeanTween.scaleX(gameObject, (transform.localScale * 0.97f).x, 1f).setEase(LeanTweenType.punch);
+        LeanTween.scaleY(gameObject, (transform.localScale * 0.97f).y, 1f).setEase(LeanTweenType.punch);
+        LeanTween.scaleZ(gameObject, (transform.localScale * 1.015f).z, 0.75f).setEase(LeanTweenType.punch);
+    }
+
+    private void SpawnBee()
+    {
+        Vector3 spawnCenter = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z - 4);
+        Vector3 offset = 6 * Random.onUnitSphere;
+        offset.y = Mathf.Abs(offset.y);
+        var bee = GameObject.Instantiate(_beePrefab, spawnCenter + offset, transform.rotation);
+        bee.GetComponent<BeeController>().Init(this, _isDebugHive);
     }
 
     public void OnBeeDestroy()
