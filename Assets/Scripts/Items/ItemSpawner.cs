@@ -51,8 +51,8 @@ public class ItemSpawner : MonoBehaviour
             SpawnItemAtRandomPos("local player");
         }
 
-        if(_currentHazard == null)
-        {
+        //if(_currentHazard == null)
+        //{
             _timerHazardSpawn -= Time.deltaTime;
             if(_timerHazardSpawn < 0)
             {
@@ -60,7 +60,7 @@ public class ItemSpawner : MonoBehaviour
                 _currentHazard = SpawnItem(_hazards[hazardInd], CoordsUtils.RandomWorldPointOnScreen(), null);
                 _timerHazardSpawn = _hazardSpawnTime;
             }
-        }
+        //}
     }
 
     private void SpawnItemAtRandomPos(string username) {

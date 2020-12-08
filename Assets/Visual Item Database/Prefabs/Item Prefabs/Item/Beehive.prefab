@@ -117,7 +117,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 158e72b16d95e4432853e796489f5f0e, type: 3}
+  m_Mesh: {fileID: -2999742894865447228, guid: 925fb87de6a434881bcdccae7fc812a7, type: 3}
 --- !u!114 &3176331920346618628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,11 +134,11 @@ MonoBehaviour:
     type: 3}
   _destroyedParticles: {fileID: 3261001723981447749, guid: 7209898d9ee1f4840b3dc4ad387938f0,
     type: 3}
-  _spawnTime: 3
+  _spawnTime: 5
   _spawnNumber: 5
-  _numBombsToDestroy: 6
+  _numBombsToDestroy: 1
   _renderer: {fileID: 8032804877390671503}
-  _isDebugHive: 0
+  _isDebugHive: 1
 --- !u!114 &5297086277820640414
 MonoBehaviour:
   m_ObjectHideFlags: 0

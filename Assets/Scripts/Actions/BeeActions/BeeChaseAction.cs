@@ -47,7 +47,7 @@ namespace AIActions
             _tango.movementController.StopWalking();
             _tango.movementController.FaceCamera();
             _tango.emoteController.DiscomfortEmote();
-            _tango.statsController.AddHealth(-10);
+            _tango.statsController.AddHealth(-3);
 
             yield return new WaitForSeconds(.1f);
 
