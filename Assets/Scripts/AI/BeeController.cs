@@ -85,12 +85,23 @@ public class BeeController : MonoBehaviour, IBombable
     {
         StartCoroutine(DieRoutine());
     }
+    public void Sting()
+    {
+        _animator.SetBool("Sting", true);
+        gameObject.transform.Rotate(180f, 0.0f, 0.0f, Space.Self);
+        LeanTween.scaleZ(gameObject, (transform.localScale * 3f).z, 0.3f).setEase(LeanTweenType.punch);
+        LeanTween.scaleX(gameObject, (transform.localScale * 2f).x, 0.75f).setEase(LeanTweenType.punch);
+        LeanTween.scaleY(gameObject, (transform.localScale * 2f).y, 0.75f).setEase(LeanTweenType.punch);
+    }
 
     private IEnumerator DieRoutine()
     {
+        _animator.SetBool("Sting", false);
         _isDying = true;
         _collider.enabled = true;
         _rigidbody.isKinematic = false;
+        _rigidbody.constraints = RigidbodyConstraints.None;
+        _rigidbody.AddTorque(Vector3.back * 2500, ForceMode.Impulse);
 
         yield return new WaitForSeconds(1.0f);
 

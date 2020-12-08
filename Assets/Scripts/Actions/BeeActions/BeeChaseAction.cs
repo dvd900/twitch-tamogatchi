@@ -43,7 +43,7 @@ namespace AIActions
 
                 UpdateTarget();
             }
-
+            _bee.Sting();
             _tango.movementController.StopWalking();
             _tango.movementController.FaceCamera();
             _tango.emoteController.DiscomfortEmote();

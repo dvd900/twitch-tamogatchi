@@ -58,7 +58,7 @@ public class Beehive : MonoBehaviour, IBombable
     {
         LeanTween.scaleX(gameObject, (transform.localScale * 0.97f).x, 1f).setEase(LeanTweenType.punch);
         LeanTween.scaleY(gameObject, (transform.localScale * 0.97f).y, 1f).setEase(LeanTweenType.punch);
-        LeanTween.scaleZ(gameObject, (transform.localScale * 1.015f).z, 0.75f).setEase(LeanTweenType.punch);
+    
     }
 
     private void SpawnBee()
