@@ -27,7 +27,7 @@ namespace AIActions
             float dmag = d.magnitude;
 
             float t = dmag / (25 * _bee.Speed);
-            var moveTween = LeanTween.move(_bee.gameObject, _targetTransform, t).setEaseInQuad();
+            var moveTween = LeanTween.move(_bee.gameObject, _targetTransform, t).setEaseInBack();
             _bee.transform.LookAt(_targetTransform);
 
             _beeAnimator.SetBool("Angry", true);
