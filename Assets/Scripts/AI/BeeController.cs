@@ -7,6 +7,7 @@ using UnityEngine;
 public class BeeController : MonoBehaviour, IBombable
 {
     [SerializeField] private GameObject _psHoneySplat;
+    [SerializeField] private GameObject _psSting;
     [SerializeField] private float _speed;
     [SerializeField] private float _chaseRange;
     [SerializeField] private float _timeUntilChase;
@@ -92,6 +93,8 @@ public class BeeController : MonoBehaviour, IBombable
         LeanTween.scaleZ(gameObject, (transform.localScale * 3f).z, 0.3f).setEase(LeanTweenType.punch);
         LeanTween.scaleX(gameObject, (transform.localScale * 2f).x, 0.75f).setEase(LeanTweenType.punch);
         LeanTween.scaleY(gameObject, (transform.localScale * 2f).y, 0.75f).setEase(LeanTweenType.punch);
+        _psSting.transform.SetParent(null);
+        _psSting.SetActive(true);
     }
 
     private IEnumerator DieRoutine()
@@ -101,9 +104,9 @@ public class BeeController : MonoBehaviour, IBombable
         _collider.enabled = true;
         _rigidbody.isKinematic = false;
         _rigidbody.constraints = RigidbodyConstraints.None;
-        _rigidbody.AddTorque(Vector3.back * 2500, ForceMode.Impulse);
+        _rigidbody.AddTorque(Vector3.back * 9500, ForceMode.Impulse);
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.25f);
 
         var fadeTween = LeanTween.alpha(_renderer.gameObject, 0, 1.0f);
         while(LeanTween.isTweening(fadeTween.id))
@@ -127,6 +130,7 @@ public class BeeController : MonoBehaviour, IBombable
         }
 
         Destroy(_psHoneySplat.gameObject);
+        Destroy(_psSting.gameObject);
     }
 
     void IBombable.Bomb(bool closeHit, Vector3 direction)
