@@ -342,9 +342,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.4675802
   m_TransitionOffset: 0
-  m_ExitTime: 0.75
+  m_ExitTime: 0.7665731
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -622,7 +622,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Pickup
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3985736033261728606}
@@ -1914,9 +1914,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.08803284
-  m_TransitionOffset: 0.10620808
-  m_ExitTime: 0.91196716
+  m_TransitionDuration: 0.32329434
+  m_TransitionOffset: 0
+  m_ExitTime: 0.6005917
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
