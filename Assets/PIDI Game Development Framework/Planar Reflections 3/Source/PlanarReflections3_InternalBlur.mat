@@ -30,5 +30,5 @@ Material:
     m_Floats:
     - _HasDepth: 1
     - _KernelSize: 8
-    - _Radius: 1.2
+    - _Radius: 0.8
     m_Colors: []
