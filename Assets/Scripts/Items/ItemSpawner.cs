@@ -110,7 +110,10 @@ public class ItemSpawner : MonoBehaviour
 		_itemSFXSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
         _itemSFXSource.PlayOneShot(_itemSpawnClip,0.2f);
 
-        if(Skin.CurrentTango != null && !Skin.CurrentTango.IsSleeping)
+        if(Skin.CurrentTango != null
+            && !Skin.CurrentTango.IsSleeping
+            && !Skin.CurrentTango.IsDying
+            && !Skin.CurrentTango.emoteController.IsDoingEmote)
         {
             Skin.CurrentTango.headController.GlanceAtTarget(newItem.transform, true);
         }
