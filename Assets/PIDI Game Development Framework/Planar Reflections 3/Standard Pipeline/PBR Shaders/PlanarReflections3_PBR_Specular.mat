@@ -88,7 +88,7 @@ Material:
     - _Glossiness: 1
     - _HasBlurMap: 0
     - _MetSource: 0
-    - _Metallic: 0.876
+    - _Metallic: 0.72
     - _NormalDist: 0
     - _OcclusionStrength: 0
     - _Parallax: 0.005
