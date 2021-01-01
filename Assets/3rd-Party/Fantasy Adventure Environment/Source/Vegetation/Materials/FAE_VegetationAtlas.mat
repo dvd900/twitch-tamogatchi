@@ -121,8 +121,8 @@ Material:
     - _Mode: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PigmentMapHeight: 1
-    - _PigmentMapInfluence: 1
+    - _PigmentMapHeight: 0.896
+    - _PigmentMapInfluence: 0.705
     - _PigmentMapSize: 1024
     - _SSSAmount: 0
     - _SSSSize: 1
