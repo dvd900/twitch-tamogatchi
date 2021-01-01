@@ -24,6 +24,7 @@ public class SpeechController : MonoBehaviour {
     private Skin _skin;
     private Stream _audioStream;
     private Task _downloadTask;
+    private Coroutine _speechRoutine;
 
     private void Start() {
         _skin = GetComponent<Skin>();
@@ -89,7 +90,18 @@ public class SpeechController : MonoBehaviour {
             return;
         }
 
-        StartCoroutine(SpeechRoutine());
+        _speechRoutine = StartCoroutine(SpeechRoutine());
+    }
+
+    public void StopSpeaking()
+    {
+        if(_speechRoutine != null)
+        {
+            StopCoroutine(_speechRoutine);
+        }
+        
+        _audioSource.Stop();
+        _skin.emoteController.StopSpeakEmote();
     }
 
     private IEnumerator SpeechRoutine()
@@ -110,6 +122,7 @@ public class SpeechController : MonoBehaviour {
         }
 
         _skin.emoteController.StopSpeakEmote();
+        _speechRoutine = null;
     }
 
     private async Task SpeechAsync(string text)

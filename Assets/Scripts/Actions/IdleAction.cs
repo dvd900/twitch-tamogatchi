@@ -5,7 +5,7 @@ namespace AIActions
 {
     public class IdleAction : SweeTangoAction, GeneratedAction
     {
-        private const float CHANCE_TO_SPEAK = 0.5f;
+        private const float CHANCE_TO_SPEAK = 0.2f;
 
         private float _waitTime;
         private float _timer;

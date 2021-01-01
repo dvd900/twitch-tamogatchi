@@ -5,9 +5,12 @@ namespace AIActions
 {
     public class WalkToAction : SweeTangoAction, GeneratedAction
     {
+        private const float CHANCE_TO_SPEAK = .1f;
+
         private static GameObject _debugMarker;
 
         private Vector3 _dest;
+        private bool _sayDialogue;
 
         public WalkToAction(Skin skin) : base(skin)
         {
@@ -43,11 +46,16 @@ namespace AIActions
         public override void StartAction()
         {
             _skin.movementController.WalkToPosition(_dest);
+
+            if(!_skin.speechController.IsSpeaking && Random.value < CHANCE_TO_SPEAK)
+            {
+                _skin.speechController.PrepareRandomDialogue();
+                _skin.speechController.PlayPreparedClip();
+            }
         }
 
         public override void UpdateAction()
         {
-
         }
 
         float GeneratedAction.Score(AISkin data)

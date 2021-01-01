@@ -42,8 +42,13 @@ public class EmoteController : MonoBehaviour
 
     public void DiscomfortEmote() {
         _startingEmote = true;
+        if(_skin.speechController.IsSpeaking)
+        {
+            _skin.speechController.StopSpeaking();
+        }
         _skin.sfxController.PlayHitOnHeadClip();
         _skin.animator.SetTrigger("ouchEyes");
+
         //iTween.PunchScale(_skin.rootBone.gameObject, iTween.Hash("amount",
         //    new Vector3(0f, 0.2f, 0.2f), "time", 1.0f));
 
@@ -81,6 +86,10 @@ public class EmoteController : MonoBehaviour
 
     public void Bombed()
     {
+        if (_skin.speechController.IsSpeaking)
+        {
+            _skin.speechController.StopSpeaking();
+        }
         _startingEmote = true;
 		_skin.animator.SetTrigger("bombed");
         _skin.animator.SetTrigger("bombedEyes");
@@ -109,6 +118,10 @@ public class EmoteController : MonoBehaviour
 
     public void DieEmote()
     {
+        if (_skin.speechController.IsSpeaking)
+        {
+            _skin.speechController.StopSpeaking();
+        }
         _startingEmote = true;
         _skin.animator.SetTrigger("death");
         _skin.animator.SetTrigger("deathEyes");

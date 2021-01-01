@@ -30,6 +30,7 @@ public class ItemSpawner : MonoBehaviour
     void Start()
     {
         MessengerServer.singleton.SetHandler(NetMsgInds.SpawnMessage, OnSpawnMessage);
+        _timerHazardSpawn = _hazardSpawnTime;
     }
 
     private void OnClickMessage(NetMsg msg) {
