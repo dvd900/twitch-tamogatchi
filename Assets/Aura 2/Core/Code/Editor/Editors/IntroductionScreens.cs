@@ -173,6 +173,7 @@ namespace Aura2API
         /// <param name="sceneView"></param>
         private static void DrawGUI(SceneView sceneView)
         {
+            return;
             Handles.BeginGUI();
 
             Rect spashScreenRect = Rect.zero;
@@ -188,6 +189,7 @@ namespace Aura2API
         /// <param name="controlId"></param>
         private static void DrawIntroductionScreens(int controlId)
         {
+            return;
             GUILayout.BeginVertical();
             GUILayout.BeginArea(new Rect(0, 0, _size.x, _size.y));
             GUILayout.BeginVertical();
@@ -199,7 +201,7 @@ namespace Aura2API
                     _mainIntroductionScreenId = 1;
                 }
                 
-                DrawMainIntroductionScreen();
+//                DrawMainIntroductionScreen();
 
                 AuraEditorPrefs.DisplayMainIntroductionScreen = false;
             }
@@ -210,7 +212,7 @@ namespace Aura2API
                     _cameraIntroductionScreenId = 1;
                 }
 
-                DrawCameraIntroductionScreen();
+                //DrawCameraIntroductionScreen();
 
                 AuraEditorPrefs.DisplayCameraIntroductionScreen = false;
             }
@@ -221,7 +223,7 @@ namespace Aura2API
                     _lightIntroductionScreenId = 1;
                 }
 
-                DrawLightIntroductionScreen();
+                //DrawLightIntroductionScreen();
 
                 AuraEditorPrefs.DisplayLightIntroductionScreen = false;
             }
@@ -232,7 +234,7 @@ namespace Aura2API
                     _volumeIntroductionScreenId = 1;
                 }
 
-                DrawVolumeIntroductionScreen();
+                //DrawVolumeIntroductionScreen();
 
                 AuraEditorPrefs.DisplayVolumeIntroductionScreen = false;
             }
