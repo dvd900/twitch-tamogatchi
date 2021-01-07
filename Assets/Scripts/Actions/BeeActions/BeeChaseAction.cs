@@ -44,10 +44,14 @@ namespace AIActions
                 UpdateTarget();
             }
             _bee.Sting();
-            _tango.movementController.StopWalking();
-            _tango.movementController.FaceCamera();
-            _tango.emoteController.DiscomfortEmote();
-            _tango.statsController.AddHealth(-3);
+
+            if(!_tango.IsDying)
+            {
+                _tango.movementController.StopWalking();
+                _tango.movementController.FaceCamera();
+                _tango.emoteController.DiscomfortEmote();
+                _tango.statsController.AddHealth(-3);
+            }
 
             yield return new WaitForSeconds(.1f);
 
@@ -56,6 +60,12 @@ namespace AIActions
 
         private void UpdateTarget()
         {
+            if(_tango == null)
+            {
+                _bee.Die();
+                return;
+            }
+
             Vector3 target = _tango.headCollider.ClosestPoint(_bee.transform.position);
             Vector3 headCenter = _tango.headCollider.transform.TransformPoint(_tango.headCollider.center);
             Vector3 normal = target - headCenter;

@@ -15,6 +15,12 @@ namespace AIActions
 
         protected override IEnumerator DoAction()
         {
+            if(_bee.Hive == null)
+            {
+                _bee.Die();
+                yield break;
+            }
+
             Vector3 target = _bee.Hive.transform.position;
             target.y += 6;
             Vector3 d = target - _bee.transform.position;

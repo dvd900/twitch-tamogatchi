@@ -19,7 +19,7 @@ public class Beehive : MonoBehaviour, IBombable
 
     void Start()
     {
-        _startColor = _renderer.material.GetColor("emission");
+        //_startColor = _renderer.material.GetColor("emission");
         _startStage = 0;
 
         StartCoroutine(SpawnRoutine());

@@ -28,9 +28,15 @@ namespace AIActions
         {
             _bee = bee;
             _spline = spline;
-            _hivePos = bee.Hive.transform.position;
 
-            InitSpline(_hivePos, 1);
+            if(bee.Hive == null)
+            {
+                bee.Die();
+            }
+            {
+                _hivePos = bee.Hive.transform.position;
+                InitSpline(_hivePos, 1);
+            }
         }
 
         public override void Interrupt()

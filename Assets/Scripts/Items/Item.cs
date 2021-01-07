@@ -108,9 +108,12 @@ public class Item : MonoBehaviour
         {
             if(c.otherCollider.tag == VBLayerMask.SweeTangoTag)
             {
-                EmoteController emote = c.otherCollider.gameObject.GetComponentInParent<EmoteController>();
+                var skin = c.otherCollider.gameObject.GetComponentInParent<Skin>();
 
-                emote.DiscomfortEmote();
+                if(!skin.IsDying)
+                {
+                    skin.emoteController.DiscomfortEmote();
+                }
             }
  
         }

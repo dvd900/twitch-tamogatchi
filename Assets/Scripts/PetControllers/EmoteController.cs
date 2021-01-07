@@ -53,8 +53,6 @@ public class EmoteController : MonoBehaviour
         //    new Vector3(0f, 0.2f, 0.2f), "time", 1.0f));
 
         //_eyeTimer = _discomfortTime;
-
-        Debug.Log("OW!!!");
     }
 
     public void Cheer()
