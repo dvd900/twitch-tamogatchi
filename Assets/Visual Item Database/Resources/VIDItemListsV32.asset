@@ -33,6 +33,11 @@ MonoBehaviour:
     itemIcon: {fileID: 0}
     itemType: 0
     _value: 0
+  - itemName: Beehive Stream
+    itemID: 1675582863
+    itemIcon: {fileID: 0}
+    itemType: 0
+    _value: 0
   autoConsumable:
   - itemName: Apple
     itemID: 50413427
@@ -103,8 +108,8 @@ MonoBehaviour:
     itemType: 2
     _value: 0
     _cosmeticLocation: 0
-  usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb63021417cd488f7567368dd57edac535fd4001cbbb75c4d63cbf4cff
-  typesOfUsedIDs: 010000000100000001000000010000000100000000000000000000000200000000000000020000000200000000000000
+  usedIDs: 733f0103dba552aee904a2d63c42b22d4a064cbb63021417cd488f7567368dd57edac535fd4001cbbb75c4d63cbf4cff8f5ddf63
+  typesOfUsedIDs: 01000000010000000100000001000000010000000000000000000000020000000000000002000000020000000000000000000000
   subtypes: []
   typeGroups:
   - name: Items

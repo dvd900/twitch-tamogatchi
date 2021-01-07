@@ -30,6 +30,7 @@ namespace ItemSystem
 		BananaPeel = 1972324557,
 		Beehive = 902158974,
 		WaterDrone = -11747524,
+		BeehiveStream = 1675582863,
 	}
 }//#VID-2ISNE
 
