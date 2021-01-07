@@ -12,7 +12,6 @@ public class AE_Controller : MonoBehaviour
     [SerializeField] private Animator _crumbAnimator;
     [SerializeField] private GameObject _ghostPrefab;
 	public AudioSource aSource;
-	public AudioClip aHello;
 
     private void Update()
     {
@@ -22,7 +21,10 @@ public class AE_Controller : MonoBehaviour
     public void AE_StartSparkles()
     {
         _sparkles.Play();
-		aSource.PlayOneShot(aHello, 1f);
+      //  if(!_skin.speechController.IsSpeaking)
+      //  {
+		    //aSource.PlayOneShot(aHello, 1f);
+      //  }
     }
 
     public void AE_StopSparkles()

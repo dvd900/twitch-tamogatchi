@@ -58,6 +58,7 @@ public class TangoSpawner : MonoBehaviour
             skin.actionController.DoAction(new IdleAction(skin));
             skin.emoteController.SpawnCheer();
             skin.sfxController.PlayLifeClip();
+            skin.sfxController.PlaySpawnVoiceLine();
         }
         else
         {

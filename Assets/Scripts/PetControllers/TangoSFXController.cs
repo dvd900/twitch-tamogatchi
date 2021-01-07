@@ -12,10 +12,12 @@ public class TangoSFXController : MonoBehaviour
 	[SerializeField] private AudioClip _fallClip;
 	[SerializeField] private AudioClip _jumpClip;
 	[SerializeField] private AudioClip _deathClip;
+	[SerializeField] private AudioClip _spawnVoiceLine;
 
 	[SerializeField] private AudioClip[] _hurtClip;
 	[SerializeField] private AudioClip[] _stepClip;
-	[SerializeField] private AudioClip[] _pickupClip;
+    [SerializeField] private AudioClip[] _pickupClip;
+
 
 	private Skin _skin;
 
@@ -81,4 +83,8 @@ public class TangoSFXController : MonoBehaviour
 		_source.PlayOneShot(clip, UnityEngine.Random.Range(volumeRange.x, volumeRange.y));
 	}
 
+    public void PlaySpawnVoiceLine()
+    {
+        _source.PlayOneShot(_spawnVoiceLine, 1f);
+    }
 }

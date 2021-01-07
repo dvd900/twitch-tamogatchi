@@ -4913,66 +4913,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3.6
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2883604039011436606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3406810862605215469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ac8d30c6a0d9642a11e5be4c440740, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Root: {fileID: 3156131733759786833}
-  m_UpdateRate: 60
-  m_UpdateMode: 0
-  m_Damping: 0.1
-  m_DampingDistrib:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Elasticity: 0.1
-  m_ElasticityDistrib:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Stiffness: 0.1
-  m_StiffnessDistrib:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Inert: 0
-  m_InertDistrib:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_Radius: 0
-  m_RadiusDistrib:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_EndLength: 0
-  m_EndOffset: {x: 0, y: 0, z: 0}
-  m_Gravity: {x: 0, y: 0, z: 0}
-  m_Force: {x: 0, y: 0, z: 0}
-  m_Colliders: []
-  m_Exclusions: []
-  m_FreezeAxis: 0
-  m_DistantDisable: 0
-  m_ReferenceObject: {fileID: 0}
-  m_DistanceToObject: 20
 --- !u!1 &4657850657389626183
 GameObject:
   m_ObjectHideFlags: 0
@@ -10293,7 +10233,7 @@ Transform:
   m_LocalPosition: {x: -2.135607, y: 0.00000016008562, z: 0.000000008249913}
   m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999976}
   m_Children:
-  - {fileID: 8581735016463600803}
+  - {fileID: 3884494541868023890}
   m_Father: {fileID: 4718218144325856783}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.000013659024, y: 0.000000025700102, z: 0.0000000036998244}
@@ -21835,6 +21775,7 @@ MonoBehaviour:
   _fallClip: {fileID: 8300000, guid: 628cf2d3c2b244624a7ef1996801348a, type: 3}
   _jumpClip: {fileID: 8300000, guid: 7387886a584a848c5b244bfe0f501a5e, type: 3}
   _deathClip: {fileID: 8300000, guid: 960df8e577c684b4b82c380aa66845ef, type: 3}
+  _spawnVoiceLine: {fileID: 8300000, guid: 46fa82203327c4a38a03b952715d298c, type: 3}
   _hurtClip:
   - {fileID: 8300000, guid: 08dcc2d9e2796422fa2a5a57dcc30532, type: 3}
   - {fileID: 8300000, guid: acc5a79218aba44bbb28834bf5c8bf2a, type: 3}
@@ -27519,21 +27460,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a0e180793e57471cb01ad44ad4722c6, type: 3}
---- !u!4 &8581735016463600803 stripped
+--- !u!4 &3884494541868023890 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0a0e180793e57471cb01ad44ad4722c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 8111770157516680008}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3406810862605215469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6905609870639353253, guid: 0a0e180793e57471cb01ad44ad4722c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 8111770157516680008}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &3156131733759786833 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -2639638324218457063, guid: 0a0e180793e57471cb01ad44ad4722c6,
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 0a0e180793e57471cb01ad44ad4722c6,
     type: 3}
   m_PrefabInstance: {fileID: 8111770157516680008}
   m_PrefabAsset: {fileID: 0}

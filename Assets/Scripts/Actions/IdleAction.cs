@@ -19,7 +19,11 @@ namespace AIActions
         {
             _waitTime = _skin.stats.AvgIdleTime
                 + _skin.stats.AvgIdleTime * (Random.value - .5f);
-            _sayDialogue = Random.value < CHANCE_TO_SPEAK;
+
+            if(!_skin.speechController.IsSpeaking)
+            {
+                _sayDialogue = Random.value < CHANCE_TO_SPEAK;
+            }
 
             if (_sayDialogue)
             {

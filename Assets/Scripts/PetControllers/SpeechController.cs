@@ -16,7 +16,7 @@ public class SpeechController : MonoBehaviour {
 
     private static string _accessKey;
 
-    public bool IsSpeaking { get { return _audioSource.isPlaying; } }
+    public bool IsSpeaking { get { return _audioSource.isPlaying || _speechRoutine != null; } }
 
     [SerializeField] private DialogueData _dialogueData;
     [SerializeField] private AudioSource _audioSource;
@@ -116,7 +116,7 @@ public class SpeechController : MonoBehaviour {
         PlayAudio(_audioStream);
         _downloadTask = null;
 
-        while(IsSpeaking)
+        while(_audioSource.isPlaying)
         {
             yield return null;
         }
