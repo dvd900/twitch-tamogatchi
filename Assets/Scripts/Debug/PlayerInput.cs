@@ -43,11 +43,12 @@ public class PlayerInput : MonoBehaviour {
         }
 
         if (Input.GetButtonDown("Fire1")) {
-            DoClick(viewMousePos);
+            //DoClick(viewMousePos);
         }
 
         if(Input.GetButtonDown("Fire2")) {
-            DoRightClick(viewMousePos);
+            //DoRightClick(viewMousePos);
+            DoClick(viewMousePos);
         }
 
         //_skin.faceController.DoLookAt(CoordsUtils.ScreenToWorldPos(mousePos));

@@ -9,6 +9,7 @@ TagManager:
   - sweetango
   - head
   - grass
+  - MainCanvas
   layers:
   - Default
   - TransparentFX

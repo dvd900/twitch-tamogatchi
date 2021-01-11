@@ -7,6 +7,9 @@ public class ItemSpawner : MonoBehaviour
 {
     public static ItemSpawner Instance;
 
+    [SerializeField] private Canvas _myCanvas;
+    [SerializeField] private GameObject[] _icons;
+
     [SerializeField] private GameObject[] _items;
     [SerializeField] private GameObject[] _hazards;
 
@@ -72,6 +75,11 @@ public class ItemSpawner : MonoBehaviour
         SpawnItem(_items[UnityEngine.Random.Range(0, _items.Length)], worldPos, username);
         //SpawnItem(_items.Length-1, worldPos);
     }
+    public void SpawnIconItem(Vector3 worldPos, string username, int itemArrayNum)
+    {
+        SpawnItem(_items[itemArrayNum], worldPos, username);
+        //SpawnItem(_items.Length-1, worldPos);
+    }
 
     public GameObject SpawnItem(GameObject prefab, Vector3 worldPos, string username) {
 
@@ -134,5 +142,12 @@ public class ItemSpawner : MonoBehaviour
 		_itemSFXSource.PlayOneShot(_itemHitGroundClip,0.5f);
 
         return clone;
+    }
+    public void HotbarSpawn(int itemNum)
+    {
+        Vector2 pos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(_myCanvas.transform as RectTransform, Input.mousePosition, _myCanvas.worldCamera, out pos);
+        Instantiate(_icons[itemNum], pos, Quaternion.identity);
+        
     }
 }
