@@ -9,6 +9,8 @@ public class ItemSpawner : MonoBehaviour
 
     [SerializeField] private Canvas _myCanvas;
     [SerializeField] private GameObject[] _icons;
+    [SerializeField] private int _itemCost;
+    [SerializeField] private SweetokenGenerator _playerTokens;
 
     [SerializeField] private GameObject[] _items;
     [SerializeField] private GameObject[] _hazards;
@@ -77,7 +79,15 @@ public class ItemSpawner : MonoBehaviour
     }
     public void SpawnIconItem(Vector3 worldPos, string username, int itemArrayNum)
     {
-        SpawnItem(_items[itemArrayNum], worldPos, username);
+        if (_playerTokens.tokensCount >= _itemCost)
+        {
+            SpawnItem(_items[itemArrayNum], worldPos, username);
+            _playerTokens.tokensCount -= _itemCost;
+        }
+        else
+        {
+            Debug.Log("You dont have enough SweeTokens!");
+        }
         //SpawnItem(_items.Length-1, worldPos);
     }
 
@@ -143,11 +153,15 @@ public class ItemSpawner : MonoBehaviour
 
         return clone;
     }
+
     public void HotbarSpawn(int itemNum)
     {
         Vector2 pos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(_myCanvas.transform as RectTransform, Input.mousePosition, _myCanvas.worldCamera, out pos);
         Instantiate(_icons[itemNum], pos, Quaternion.identity);
-        
+    }
+    public void GetCost(int itemCost)
+    {
+        _itemCost = itemCost;
     }
 }

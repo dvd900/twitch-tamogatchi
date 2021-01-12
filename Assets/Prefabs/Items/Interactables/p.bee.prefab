@@ -80,7 +80,7 @@ MonoBehaviour:
   _psHoneySplat: {fileID: 1532802382212440974}
   _psSting: {fileID: 7832838962445934602}
   _speed: 1.2
-  _chaseRange: 30
+  _chaseRange: 25
   _timeUntilChase: 8
   _actionController: {fileID: 4909145952337852832}
   _animator: {fileID: 1838861131969009435}
