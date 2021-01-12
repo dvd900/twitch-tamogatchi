@@ -1,0 +1,2120 @@
+fileFormatVersion: 2
+guid: 40897dec2d7584522be3d2b4444fabe6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -617352125599835767
+    second: ss_meat_sheet_0
+  - first:
+      213: -7219327344538180770
+    second: ss_meat_sheet_1
+  - first:
+      213: 7655461949693379825
+    second: ss_meat_sheet_2
+  - first:
+      213: -2999004025459015722
+    second: ss_meat_sheet_3
+  - first:
+      213: -1933973000470415582
+    second: ss_meat_sheet_4
+  - first:
+      213: -8457917141984663574
+    second: ss_meat_sheet_5
+  - first:
+      213: 7675106515916476420
+    second: ss_meat_sheet_6
+  - first:
+      213: 6991610764380774948
+    second: ss_meat_sheet_7
+  - first:
+      213: 5186441283213050613
+    second: ss_meat_sheet_8
+  - first:
+      213: 6576773638441055904
+    second: ss_meat_sheet_9
+  - first:
+      213: -4040295347566171589
+    second: ss_meat_sheet_10
+  - first:
+      213: 8518942749734087970
+    second: ss_meat_sheet_11
+  - first:
+      213: -5617101055182031570
+    second: ss_meat_sheet_12
+  - first:
+      213: 3473821031887795907
+    second: ss_meat_sheet_13
+  - first:
+      213: -417838538901349676
+    second: ss_meat_sheet_14
+  - first:
+      213: -4525006117412421836
+    second: ss_meat_sheet_15
+  - first:
+      213: -6423253260647194709
+    second: ss_meat_sheet_16
+  - first:
+      213: -367016323066729909
+    second: ss_meat_sheet_17
+  - first:
+      213: 8108655901317072698
+    second: ss_meat_sheet_18
+  - first:
+      213: 5166589973452624149
+    second: ss_meat_sheet_19
+  - first:
+      213: 7957356129250565641
+    second: ss_meat_sheet_20
+  - first:
+      213: 1052805280113256197
+    second: ss_meat_sheet_21
+  - first:
+      213: 3240966841544833472
+    second: ss_meat_sheet_22
+  - first:
+      213: 7599793711686330513
+    second: ss_meat_sheet_23
+  - first:
+      213: -3100633429534475625
+    second: ss_meat_sheet_24
+  - first:
+      213: -4296116837018640667
+    second: ss_meat_sheet_25
+  - first:
+      213: -8720026579643114462
+    second: ss_meat_sheet_26
+  - first:
+      213: 3468903645002802835
+    second: ss_meat_sheet_27
+  - first:
+      213: -3597243382477974945
+    second: ss_meat_sheet_28
+  - first:
+      213: 5907419274619274418
+    second: ss_meat_sheet_29
+  - first:
+      213: -2893679542467164321
+    second: ss_meat_sheet_30
+  - first:
+      213: 3499694705893684832
+    second: ss_meat_sheet_31
+  - first:
+      213: -5015253470828657559
+    second: ss_meat_sheet_32
+  - first:
+      213: 260613838412498489
+    second: ss_meat_sheet_33
+  - first:
+      213: -4015077390795197203
+    second: ss_meat_sheet_34
+  - first:
+      213: 834857878143194303
+    second: ss_meat_sheet_35
+  - first:
+      213: 5905496187352889750
+    second: ss_meat_sheet_36
+  - first:
+      213: 8048216875687172056
+    second: ss_meat_sheet_37
+  - first:
+      213: 1478771698055940784
+    second: ss_meat_sheet_38
+  - first:
+      213: -8725031678287824007
+    second: ss_meat_sheet_39
+  - first:
+      213: -3778544903274239265
+    second: ss_meat_sheet_40
+  - first:
+      213: 7074619226203758173
+    second: ss_meat_sheet_41
+  - first:
+      213: -6809278919762715208
+    second: ss_meat_sheet_42
+  - first:
+      213: -3548043572675973115
+    second: ss_meat_sheet_43
+  - first:
+      213: -7257265298088946350
+    second: ss_meat_sheet_44
+  - first:
+      213: -2661581791714180876
+    second: ss_meat_sheet_45
+  - first:
+      213: 6547836988405524060
+    second: ss_meat_sheet_46
+  - first:
+      213: -8861777121432130986
+    second: ss_meat_sheet_47
+  - first:
+      213: 4799620480382591151
+    second: ss_meat_sheet_48
+  - first:
+      213: 2006382872477672796
+    second: ss_meat_sheet_49
+  - first:
+      213: -6127236181478479831
+    second: ss_meat_sheet_50
+  - first:
+      213: 7481586756765593874
+    second: ss_meat_sheet_51
+  - first:
+      213: -2423935034635987318
+    second: ss_meat_sheet_52
+  - first:
+      213: 8487392188541275101
+    second: ss_meat_sheet_53
+  - first:
+      213: 3532672937793137709
+    second: ss_meat_sheet_54
+  - first:
+      213: 5152356719912038092
+    second: ss_meat_sheet_55
+  - first:
+      213: -6420227259603120558
+    second: ss_meat_sheet_56
+  - first:
+      213: 4904827518087069356
+    second: ss_meat_sheet_57
+  - first:
+      213: -3310431399583478854
+    second: ss_meat_sheet_58
+  - first:
+      213: -5222756527990505773
+    second: ss_meat_sheet_59
+  - first:
+      213: -1275416463702243353
+    second: ss_meat_sheet_60
+  - first:
+      213: 76367365855927627
+    second: ss_meat_sheet_61
+  - first:
+      213: 4209401055848389228
+    second: ss_meat_sheet_62
+  - first:
+      213: -4726257966854274907
+    second: ss_meat_sheet_63
+  - first:
+      213: -6080185564769613272
+    second: ss_meat_sheet_64
+  - first:
+      213: -3420071439014033950
+    second: ss_meat_sheet_65
+  - first:
+      213: -2455080082742381277
+    second: ss_meat_sheet_66
+  - first:
+      213: 923916821548532110
+    second: ss_meat_sheet_67
+  - first:
+      213: 8980996582651308565
+    second: ss_meat_sheet_68
+  - first:
+      213: -7536495179036593365
+    second: ss_meat_sheet_69
+  - first:
+      213: 2502678138428999826
+    second: ss_meat_sheet_70
+  - first:
+      213: -5850431014035678327
+    second: ss_meat_sheet_71
+  - first:
+      213: -7783909208464766880
+    second: ss_meat_sheet_72
+  - first:
+      213: -5363279112673712396
+    second: ss_meat_sheet_73
+  - first:
+      213: -3246228619661929250
+    second: ss_meat_sheet_74
+  - first:
+      213: -4277880343077831618
+    second: ss_meat_sheet_75
+  - first:
+      213: -6773390089890954163
+    second: ss_meat_sheet_76
+  - first:
+      213: -6033241974464440611
+    second: ss_meat_sheet_77
+  - first:
+      213: 8355830467115346715
+    second: ss_meat_sheet_78
+  - first:
+      213: -2879974145378264342
+    second: ss_meat_sheet_79
+  - first:
+      213: 5798432692314545936
+    second: ss_meat_sheet_80
+  - first:
+      213: -3953880392905128449
+    second: ss_meat_sheet_81
+  - first:
+      213: -5723711162598778216
+    second: ss_meat_sheet_82
+  - first:
+      213: -3537001585697013276
+    second: ss_meat_sheet_83
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ss_meat_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9891a4c3389be67f0800000000000000
+      internalID: -617352125599835767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53a98f970ccfcb90800000000000000
+      internalID: -7219327344538180770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f44ef6351aad3a60800000000000000
+      internalID: 7655461949693379825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df7c8e6ab56166d0800000000000000
+      internalID: -2999004025459015722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227b3cd7dc52925e0800000000000000
+      internalID: -1933973000470415582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7215cdb217f9a80800000000000000
+      internalID: -8457917141984663574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 400dc7636b4738a60800000000000000
+      internalID: 7675106515916476420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422a6b272f0370160800000000000000
+      internalID: 6991610764380774948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2c55e3ed0f9f740800000000000000
+      internalID: 5186441283213050613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6be6767c4654b50800000000000000
+      internalID: 6576773638441055904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3aa7aca9ccfde7c0800000000000000
+      internalID: -4040295347566171589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d2acbab4d593670800000000000000
+      internalID: 8518942749734087970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25376ad95c0c02b0800000000000000
+      internalID: -5617101055182031570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6f3fac2dd753030800000000000000
+      internalID: 3473821031887795907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da115b001a833af0800000000000000
+      internalID: -417838538901349676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 461
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43fb92529e2f331c0800000000000000
+      internalID: -4525006117412421836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf11c8f0350cd6a0800000000000000
+      internalID: -6423253260647194709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4a66d4499818eaf0800000000000000
+      internalID: -367016323066729909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3701eba49bb78070800000000000000
+      internalID: 8108655901317072698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5111db3053a63b740800000000000000
+      internalID: 5166589973452624149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ed14b5d353e6e60800000000000000
+      internalID: 7957356129250565641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5076ec203d05c9e00800000000000000
+      internalID: 1052805280113256197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c97917cb2a3afc20800000000000000
+      internalID: 3240966841544833472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 198af478d14e77960800000000000000
+      internalID: 7599793711686330513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a75edd25658f4d0800000000000000
+      internalID: -3100633429534475625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eeddef9f702164c0800000000000000
+      internalID: -4296116837018640667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c5868c60e3cf680800000000000000
+      internalID: -8720026579643114462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39623707c75042030800000000000000
+      internalID: 3468903645002802835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5296c0e336041ec0800000000000000
+      internalID: -3597243382477974945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b44afa088e5bf150800000000000000
+      internalID: 5907419274619274418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f570e6999c597d7d0800000000000000
+      internalID: -2893679542467164321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 410
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066bb17fac9619030800000000000000
+      internalID: 3499694705893684832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96486bc4a8d366ab0800000000000000
+      internalID: -5015253470828657559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 936c02eb7e2ed9300800000000000000
+      internalID: 260613838412498489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de433f7c2649748c0800000000000000
+      internalID: -4015077390795197203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_35
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb459a021d2069b00800000000000000
+      internalID: 834857878143194303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_36
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 699b7956e7984f150800000000000000
+      internalID: 5905496187352889750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_37
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d753ae6b9201bf60800000000000000
+      internalID: 8048216875687172056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba86864607a58410800000000000000
+      internalID: 1478771698055940784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_39
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97bbf917ae57ae680800000000000000
+      internalID: -8725031678287824007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_40
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdae9781e69ef8bc0800000000000000
+      internalID: -3778544903274239265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_41
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e160b04b81e2260800000000000000
+      internalID: 7074619226203758173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_42
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bddcfa46e49081a0800000000000000
+      internalID: -6809278919762715208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_43
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5007a034b21d2cec0800000000000000
+      internalID: -3548043572675973115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_44
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25593aa79a3094b90800000000000000
+      internalID: -7257265298088946350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_45
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f08a3c4679201bd0800000000000000
+      internalID: -2661581791714180876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_46
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56231d8c079eda50800000000000000
+      internalID: 6547836988405524060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_47
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 359
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65aaa56e8a4a40580800000000000000
+      internalID: -8861777121432130986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0e4edb56dab9240800000000000000
+      internalID: 4799620480382591151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c55a57d979a18db10800000000000000
+      internalID: 2006382872477672796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_50
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928ed0c082fa7faa0800000000000000
+      internalID: -6127236181478479831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_51
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211b741248fe3d760800000000000000
+      internalID: 7481586756765593874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_52
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86d5e5bde37c5ed0800000000000000
+      internalID: -2423935034635987318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_53
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb8d633a3649c570800000000000000
+      internalID: 8487392188541275101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_54
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2cabcce153960130800000000000000
+      internalID: 3532672937793137709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_55
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce247e6329d08740800000000000000
+      internalID: 5152356719912038092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_56
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e831eb255c6e6a0800000000000000
+      internalID: -6420227259603120558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_57
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caef32c04a2711440800000000000000
+      internalID: 4904827518087069356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_58
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb07867e2cfe02d0800000000000000
+      internalID: -3310431399583478854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_59
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3def5c0fb9a0587b0800000000000000
+      internalID: -5222756527990505773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_60
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7c754db7fcc4ee0800000000000000
+      internalID: -1275416463702243353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_61
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d5642f6bf4f0100800000000000000
+      internalID: 76367365855927627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_62
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a5ffa35fbca6a30800000000000000
+      internalID: 4209401055848389228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_63
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 308
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a08ac08b65f86eb0800000000000000
+      internalID: -4726257966854274907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a037b6177de9ba0800000000000000
+      internalID: -6080185564769613272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_65
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e50c1385277980d0800000000000000
+      internalID: -3420071439014033950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_66
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325f00d1cadcdedd0800000000000000
+      internalID: -2455080082742381277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_67
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81886e347962dc00800000000000000
+      internalID: 923916821548532110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_68
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51aadedfec8e2ac70800000000000000
+      internalID: 8980996582651308565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_69
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b237412909df86790800000000000000
+      internalID: -7536495179036593365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_70
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2984234d18c4bb220800000000000000
+      internalID: 2502678138428999826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_71
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b99795df71fcea0800000000000000
+      internalID: -5850431014035678327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_72
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 068c099d0dff9f390800000000000000
+      internalID: -7783909208464766880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_73
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6afc9101ec195b0800000000000000
+      internalID: -5363279112673712396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_74
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed41859054413f2d0800000000000000
+      internalID: -3246228619661929250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_75
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c383f3e7ae1a4c0800000000000000
+      internalID: -4277880343077831618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_76
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4406e6a9951002a0800000000000000
+      internalID: -6773390089890954163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_77
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd61214c36e954ca0800000000000000
+      internalID: -6033241974464440611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_78
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1bebcbe98fd5f370800000000000000
+      internalID: 8355830467115346715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_79
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 257
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea5b6606c64808d0800000000000000
+      internalID: -2879974145378264342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 206
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f9b6fefcb287050800000000000000
+      internalID: 5798432692314545936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_81
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 206
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff502803bbef029c0800000000000000
+      internalID: -3953880392905128449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_82
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 206
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89a9c5ce50b4190b0800000000000000
+      internalID: -5723711162598778216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ss_meat_sheet_83
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 206
+        width: 64
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e149823ccb0aeec0800000000000000
+      internalID: -3537001585697013276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

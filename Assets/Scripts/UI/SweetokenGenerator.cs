@@ -6,6 +6,7 @@ using TMPro;
 public class SweetokenGenerator : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
+    public float accrueRate = 1;
     public float tokensCount;
     private int minuteCount;
     private int hourCount;
@@ -16,22 +17,9 @@ public class SweetokenGenerator : MonoBehaviour
     //call this on update
     public void UpdateTimerUI()
     {
-        //set timer UI
-
-        //timerText.text = hourCount + "h:" + minuteCount + "m:" + (int)tokensCount + "s";
-        //if (tokensCount >= 60)
-        //{
-        //    minuteCount++;
-        //    tokensCount = 0;
-        //}
-        //else if (minuteCount >= 60)
-        //{
-        //    hourCount++;
-        //    minuteCount = 0;
-        //}
         if(tokensCount < 100)
         {
-            tokensCount += Time.deltaTime;
+            tokensCount += Time.deltaTime * accrueRate;
         }
         timerText.text = tokensCount.ToString("F0");
     }
