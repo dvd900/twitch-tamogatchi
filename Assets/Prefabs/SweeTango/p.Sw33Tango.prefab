@@ -96,7 +96,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1741291115
 Transform:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -944,7 +944,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5253,7 +5253,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -10233,7 +10233,7 @@ Transform:
   m_LocalPosition: {x: -2.135607, y: 0.00000016008562, z: 0.000000008249913}
   m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999976}
   m_Children:
-  - {fileID: 3884494541868023890}
+  - {fileID: 8581735016463600803}
   m_Father: {fileID: 4718218144325856783}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.000013659024, y: 0.000000025700102, z: 0.0000000036998244}
@@ -11198,11 +11198,11 @@ MonoBehaviour:
   _cheer2: {fileID: 4718218142576528862}
   _eat: {fileID: 4718218143920542251}
   _crumbs: {fileID: 4718218143920542251}
+  _dizzy: {fileID: 1741291114}
   _crumbAnimator: {fileID: 4718218143684832700}
   _ghostPrefab: {fileID: 4236165396333215722, guid: 410eb842e8330c343b3d90c6771f45f3,
     type: 3}
   aSource: {fileID: 5094855758458311556}
-  aHello: {fileID: 8300000, guid: 46fa82203327c4a38a03b952715d298c, type: 3}
 --- !u!82 &5094855758458311556
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16739,7 +16739,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -27460,9 +27460,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a0e180793e57471cb01ad44ad4722c6, type: 3}
---- !u!4 &3884494541868023890 stripped
+--- !u!4 &8581735016463600803 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 0a0e180793e57471cb01ad44ad4722c6,
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0a0e180793e57471cb01ad44ad4722c6,
     type: 3}
   m_PrefabInstance: {fileID: 8111770157516680008}
   m_PrefabAsset: {fileID: 0}
