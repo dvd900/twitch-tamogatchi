@@ -63,8 +63,19 @@ public class Beehive : MonoBehaviour, IBombable
 
     private void SpawnBee()
     {
-        Vector3 spawnCenter = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z - 4);
-        Vector3 offset = 6 * Random.onUnitSphere;
+        Vector3 spawnCenter;
+        Vector3 offset;
+
+        if(_isDebugHive == false)
+        {
+            spawnCenter = new Vector3(transform.position.x, transform.position.y + 4, transform.position.z - 4);
+            offset = 6 * Random.onUnitSphere;
+        }
+        else
+        {
+            spawnCenter = new Vector3(transform.position.x, transform.position.y+2, transform.position.z-4);
+            offset = new Vector3(0,0,0);
+        }
         offset.y = Mathf.Abs(offset.y);
         var bee = GameObject.Instantiate(_beePrefab, spawnCenter + offset, transform.rotation);
         bee.GetComponent<BeeController>().Init(this, _isDebugHive);
