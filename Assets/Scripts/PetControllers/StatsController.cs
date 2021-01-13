@@ -12,6 +12,10 @@ public class StatsController : MonoBehaviour {
     /// </summary>
     [SerializeField] private float _staminaDrain;
     /// <summary>
+    /// Rate of stamina recharge when sleeping
+    /// </summary>
+    [SerializeField] private float _staminaRecharge;
+    /// <summary>
     /// Rate of hunger drain
     /// </summary>
     [SerializeField] private float _hungerDrain;
@@ -72,10 +76,28 @@ public class StatsController : MonoBehaviour {
     }
 
     private void Update() {
-        AddStamina(-_staminaDrain * Time.deltaTime);
+        if (_skin.IsDying)
+        {
+            return;
+        }
+       
+        if(_skin.IsSleeping)
+        {
+            AddStamina(_staminaRecharge * Time.deltaTime);
+        }
+        else
+        {
+            AddStamina(-_staminaDrain * Time.deltaTime);
+            if (IsTired)
+            {
+                _skin.actionController.DoAction(new SleepAction(_skin));
+            }
+        }
+
         AddHunger(-_hungerDrain * Time.deltaTime);
 
-        if(IsHungry) {
+        if (IsHungry)
+        {
             AddHealth(-_hungryHealthDrain * Time.deltaTime);
         }
     }

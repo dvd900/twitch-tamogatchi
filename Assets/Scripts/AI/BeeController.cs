@@ -22,6 +22,7 @@ public class BeeController : MonoBehaviour, IBombable
     public float ChaseRange { get { return _chaseRange; } }
     public float TimeUntilChase { get { return _timeUntilChase; } }
     public Beehive Hive { get { return _hive; } }
+    public bool IsDying { get { return _isDying; } }
 
     private Beehive _hive;
     private BezierSpline _spline;
@@ -84,6 +85,12 @@ public class BeeController : MonoBehaviour, IBombable
 
     public void Die()
     {
+        if(IsDying)
+        {
+            return;
+        }
+
+        Debug.Log("Dying!");
         StartCoroutine(DieRoutine());
     }
     public void Sting()
@@ -101,7 +108,7 @@ public class BeeController : MonoBehaviour, IBombable
     {
         _animator.SetBool("Sting", false);
         _isDying = true;
-        _collider.enabled = true;
+        _collider.isTrigger = false;
         _rigidbody.isKinematic = false;
         _rigidbody.constraints = RigidbodyConstraints.None;
         _rigidbody.AddTorque(Vector3.back * 9500, ForceMode.Impulse);

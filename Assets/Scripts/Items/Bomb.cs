@@ -128,10 +128,12 @@ public class Bomb : MonoBehaviour
                 var skin = hit.GetComponentInParent<Skin>();
                 if(!skin.IsDying)
                 {
-                    skin.actionController.DoAction(new IdleAction(skin, 3.0f, false));
-                    skin.movementController.StopWalking();
-                    skin.movementController.FaceCamera();
-                    skin.emoteController.Bombed();
+                    //skin.actionController.DoAction(new IdleAction(skin, 3.0f, false));
+                    //skin.movementController.StopWalking();
+                    //skin.movementController.FaceCamera();
+                    //skin.emoteController.Bombed();
+                    Debug.Log("Close bombed!");
+                    skin.actionController.DoAction(new DamageAction(skin, DamageType.Bombed, 5.0f));
                     skin.statsController.AddHealth(-_closeDamage);
                 }
             }
@@ -161,7 +163,14 @@ public class Bomb : MonoBehaviour
                 var skin = hit.GetComponentInParent<Skin>();
                 if(!skin.IsDying)
                 {
-                    skin.emoteController.DiscomfortEmote();
+                    //if(skin.IsSleeping)
+                    //{
+                    //    skin.actionController.DoAction(new IdleAction(skin, .2f, false));
+                    //}
+
+                    //skin.emoteController.DiscomfortEmote();
+                    Debug.Log("far bombed!");
+                    skin.actionController.DoAction(new DamageAction(skin, DamageType.Discomfort, 1.0f));
                     skin.statsController.AddHealth(-_farDamage);
                 }
             }
@@ -244,6 +253,6 @@ public class Bomb : MonoBehaviour
     private Collider[] BombCast(SphereCollider collider)
     {
         return Physics.OverlapSphere(collider.transform.position,
-            collider.radius * collider.transform.lossyScale.x, VBLayerMask.SweeTangoItemBombableMask);
+            collider.radius * collider.transform.lossyScale.x, VBLayerMask.SweeTangoItemBombableMask, QueryTriggerInteraction.Collide);
     }
 }

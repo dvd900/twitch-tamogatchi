@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using AIActions;
 using ItemSystem;
 using UnityEngine;
 
@@ -112,7 +113,8 @@ public class Item : MonoBehaviour
 
                 if(!skin.IsDying)
                 {
-                    skin.emoteController.DiscomfortEmote();
+                    skin.actionController.DoAction(new DamageAction(skin, DamageType.Discomfort, .2f));
+                    //skin.emoteController.DiscomfortEmote();
                 }
             }
  

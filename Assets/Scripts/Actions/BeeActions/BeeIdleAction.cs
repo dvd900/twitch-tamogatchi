@@ -33,6 +33,7 @@ namespace AIActions
             {
                 bee.Die();
             }
+            else
             {
                 _hivePos = bee.Hive.transform.position;
                 InitSpline(_hivePos, 1);
@@ -46,7 +47,7 @@ namespace AIActions
 
         public override bool IsFinished()
         {
-            return _shouldChase;
+            return _shouldChase || _bee.IsDying;
         }
 
         public override void StartAction()
@@ -56,6 +57,12 @@ namespace AIActions
 
         public override void UpdateAction()
         {
+            if(_bee.Hive == null)
+            {
+                _bee.Die();
+                return;
+            }
+
             UpdateT((_spotted) ? 1.4f * _bee.Speed : _bee.Speed);
 
             float dmag = float.PositiveInfinity;

@@ -42,10 +42,10 @@ public class EmoteController : MonoBehaviour
 
     public void DiscomfortEmote() {
         _startingEmote = true;
-        if(_skin.speechController.IsSpeaking)
-        {
-            _skin.speechController.StopSpeaking();
-        }
+        //if(_skin.speechController.IsSpeaking)
+        //{
+        //    _skin.speechController.StopSpeaking();
+        //}
         _skin.sfxController.PlayHitOnHeadClip();
         _skin.animator.SetTrigger("ouchEyes");
 
@@ -84,10 +84,10 @@ public class EmoteController : MonoBehaviour
 
     public void Bombed()
     {
-        if (_skin.speechController.IsSpeaking)
-        {
-            _skin.speechController.StopSpeaking();
-        }
+        //if (_skin.speechController.IsSpeaking)
+        //{
+        //    _skin.speechController.StopSpeaking();
+        //}
         _startingEmote = true;
 		_skin.animator.SetTrigger("bombed");
         _skin.animator.SetTrigger("bombedEyes");
@@ -108,7 +108,7 @@ public class EmoteController : MonoBehaviour
 
     public void StopSleep()
     {
-
+        Debug.Log("Stopping sleep");
         _skin.animator.SetTrigger("stopSleep");
         _skin.animator.SetBool("isSleeping", false);
         _snot.SetActive(false);

@@ -32,6 +32,12 @@ namespace AIActions
             while(LeanTween.isTweening(moveTween.id))
             {
                 yield return null;
+
+                if(_bee.IsDying)
+                {
+                    LeanTween.cancel(moveTween.id);
+                    yield break;
+                }
             }
         }
     }

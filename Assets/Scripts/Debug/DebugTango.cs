@@ -17,7 +17,7 @@ public class DebugTango : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(_timeToGreetUser);
-            if(Skin.CurrentTango != null)
+            if(Skin.CurrentTango != null && !Skin.CurrentTango.IsSleeping && !Skin.CurrentTango.IsDying)
             {
                 Skin.CurrentTango.actionController.DoAction(new GreetAction(Skin.CurrentTango, GetNewUsername()));
             }

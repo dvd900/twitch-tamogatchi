@@ -17,10 +17,12 @@ namespace AIActions
         {
             yield return new WaitForSeconds(.4f);
             _skin.emoteController.StartSleep();
-            while (true)
+            while (_skin.statsController.Stamina < 100)
             {
                 yield return null;
             }
+            _skin.emoteController.StopSleep();
+            yield return new WaitForSeconds(4.0f);
         }
 
         protected override void CancelAction()

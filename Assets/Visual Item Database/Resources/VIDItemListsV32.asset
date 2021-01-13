@@ -58,7 +58,7 @@ MonoBehaviour:
     _staminaMod: -15
     _hungerMod: 30
     _happinessMod: 0
-    _statusEffects: 00000000
+    _statusEffects: 
   - itemName: Riceball
     itemID: -694024983
     itemIcon: {fileID: 0}

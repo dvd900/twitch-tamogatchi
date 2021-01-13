@@ -36,8 +36,9 @@ namespace AIActions
             {
                 yield return null;
 
-                if(_tango == null)
+                if(_tango == null || _bee.IsDying)
                 {
+                    LeanTween.cancel(moveTween.id);
                     yield break;
                 }
 
@@ -47,9 +48,11 @@ namespace AIActions
 
             if(!_tango.IsDying)
             {
-                _tango.movementController.StopWalking();
-                _tango.movementController.FaceCamera();
-                _tango.emoteController.DiscomfortEmote();
+                _tango.actionController.DoAction(new DamageAction(_tango, DamageType.Discomfort, .2f));
+                //_tango.actionController.DoAction(new IdleAction(_tango, .2f, false));
+                //_tango.movementController.StopWalking();
+                //_tango.movementController.FaceCamera();
+                //_tango.emoteController.DiscomfortEmote();
                 _tango.statsController.AddHealth(-3);
             }
 
