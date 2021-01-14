@@ -23,6 +23,10 @@ public class StatsController : MonoBehaviour {
     /// Rate of health decrease when hungry
     /// </summary>
     [SerializeField] private float _hungryHealthDrain;
+    /// <summary>
+    /// How long until he can sleep again
+    /// </summary>
+    [SerializeField] private float _sleepCooldown;
 
     public bool IsHungry { get { return _hunger <= 0; } }
     public bool IsTired { get { return _stamina <= 0; } }
@@ -37,6 +41,7 @@ public class StatsController : MonoBehaviour {
     private float _happiness;
 
     private Skin _skin;
+    private float _sleepCooldownTimer;
 
     private void Start() {
         _stamina = 100;
@@ -88,9 +93,14 @@ public class StatsController : MonoBehaviour {
         else
         {
             AddStamina(-_staminaDrain * Time.deltaTime);
-            if (IsTired)
+            if(_sleepCooldownTimer > 0)
+            {
+                _sleepCooldownTimer -= Time.deltaTime;
+            }
+            else if (IsTired)
             {
                 _skin.actionController.DoAction(new SleepAction(_skin));
+                _sleepCooldownTimer = _sleepCooldown;
             }
         }
 

@@ -111,10 +111,13 @@ public class Item : MonoBehaviour
             {
                 var skin = c.otherCollider.gameObject.GetComponentInParent<Skin>();
 
-                if(!skin.IsDying)
+                if(skin.IsSleeping)
                 {
-                    skin.actionController.DoAction(new DamageAction(skin, DamageType.Discomfort, .2f));
-                    //skin.emoteController.DiscomfortEmote();
+                    ((SleepAction)skin.actionController.CurrentAction).OnItemHit();
+                }
+                else if(!skin.IsDying)
+                {
+                    skin.emoteController.DiscomfortEmote();
                 }
             }
  

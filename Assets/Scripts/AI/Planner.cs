@@ -14,7 +14,6 @@ public class Planner : MonoBehaviour {
     private List<GeneratedAction> _actions;
 
     private float _planTimer;
-    private GeneratedAction _lastAction;
 
     // DEBUG
     private List<string> _DEBUG_LastScores;
@@ -57,7 +56,7 @@ public class Planner : MonoBehaviour {
         _actions.Add(new IdleAction(_pet));
         _actions.Add(new EmoteAction(_pet));
 
-        _lastAction = _actions[0];
+        _pet.actionController.DoAction(new IdleAction(_pet, 2.0f, false));
     }
 
     private void Plan() {
@@ -74,7 +73,7 @@ public class Planner : MonoBehaviour {
 
             string scoreString = action.ToString() + ": " + score;
 
-            if(action.GetType() == _lastAction.GetType()) {
+            if(action.GetType() == _pet.actionController.LastAction.GetType()) {
                 score *= .5f;
 
                 scoreString += " * .5f";
@@ -96,6 +95,5 @@ public class Planner : MonoBehaviour {
 
         GeneratedAction newAction = bestAction.Generate(_pet);
         _pet.actionController.DoAction((AIAction) newAction);
-        _lastAction = newAction;
     }
 }

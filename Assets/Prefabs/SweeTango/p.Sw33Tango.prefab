@@ -21710,10 +21710,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55f8d686c1634e0b8680ce16f240dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _staminaDrain: 1
-  _staminaRecharge: 2
+  _staminaDrain: 20
+  _staminaRecharge: 5
   _hungerDrain: 1
   _hungryHealthDrain: 1
+  _sleepCooldown: 30
 --- !u!114 &4718218144133215529
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -43,6 +43,8 @@ public class Skin : MonoBehaviour, AISkin
     public bool IsDying { get { return actionController.CurrentAction is DeathAction; } }
     public bool IsSleeping { get { return actionController.CurrentAction is SleepAction; } }
 
+    ActionController AISkin.GetActionController() { return actionController; }
+
     private void Awake()
     {
         CurrentTango = this;

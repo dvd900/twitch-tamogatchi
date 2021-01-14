@@ -15,12 +15,29 @@ namespace AIActions
         private Skin _skin;
         private DamageType _damageType;
         private float _stunDuration;
+        private AIAction _actionToResume;
 
-        public DamageAction(Skin skin, DamageType damageType, float stunDuration = 1.0f)
+        public DamageAction(Skin skin, DamageType damageType, float stunDuration)
         {
             _skin = skin;
             _damageType = damageType;
             _stunDuration = stunDuration;
+
+            var currentAction = skin.actionController.CurrentAction;
+            if(currentAction is WalkToAction || currentAction is PickupAction)
+            {
+                _actionToResume = currentAction;
+            }
+            else if(currentAction is SleepAction)
+            {
+                _stunDuration = 4.0f;
+            }
+            else if(currentAction is DamageAction)
+            {
+                var prevDamageAction = (currentAction as DamageAction);
+                _actionToResume = prevDamageAction._actionToResume;
+                _stunDuration = Mathf.Max(_stunDuration, prevDamageAction._stunDuration);
+            }
         }
 
         protected override IEnumerator DoAction()
@@ -40,7 +57,16 @@ namespace AIActions
                     break;
             }
 
-            yield return new WaitForSeconds(_stunDuration);
+            while(_stunDuration > 0)
+            {
+                _stunDuration -= Time.deltaTime;
+                yield return null;
+            }
+
+            if(_actionToResume != null)
+            {
+                _skin.actionController.DoAction(_actionToResume);
+            }
         }
     }
 }

@@ -51,6 +51,10 @@ namespace AIActions
 
         float GeneratedAction.Score(AISkin skin)
         {
+            if(skin.GetActionController().LastAction is DamageAction)
+            {
+                return 0;
+            }
             return .3f;
         }
 

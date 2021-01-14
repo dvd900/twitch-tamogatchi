@@ -42,15 +42,15 @@ public class EmoteController : MonoBehaviour
 
     public void DiscomfortEmote() {
         _startingEmote = true;
-        //if(_skin.speechController.IsSpeaking)
-        //{
-        //    _skin.speechController.StopSpeaking();
-        //}
+        if (_skin.speechController.IsSpeaking)
+        {
+            _skin.speechController.StopSpeaking();
+        }
         _skin.sfxController.PlayHitOnHeadClip();
         _skin.animator.SetTrigger("ouchEyes");
 
-        //iTween.PunchScale(_skin.rootBone.gameObject, iTween.Hash("amount",
-        //    new Vector3(0f, 0.2f, 0.2f), "time", 1.0f));
+        iTween.PunchScale(_skin.rootBone.gameObject, iTween.Hash("amount",
+            new Vector3(0f, 0.2f, 0.2f), "time", 1.0f));
 
         //_eyeTimer = _discomfortTime;
     }
@@ -99,11 +99,17 @@ public class EmoteController : MonoBehaviour
         _skin.animator.SetTrigger("startSleep");
         _skin.animator.SetBool("isSleeping", true);
     
-        LeanTween.delayedCall(gameObject,4.2f,()=>{
-            _snot.SetActive(true);
-            LeanTween.scale(_snot, new Vector3(0.24f, 0.24f, 0.24f), 3f).setEase(LeanTweenType.easeOutBack);
-        });
+        //LeanTween.delayedCall(gameObject,4.2f,()=>{
+        //    _snot.SetActive(true);
+        //    LeanTween.scale(_snot, new Vector3(0.24f, 0.24f, 0.24f), 3f).setEase(LeanTweenType.easeOutBack);
+        //});
 
+    }
+
+    public void EnableSleepSnot()
+    {
+        _snot.SetActive(true);
+        LeanTween.scale(_snot, new Vector3(0.24f, 0.24f, 0.24f), 3f).setEase(LeanTweenType.easeOutBack);
     }
 
     public void StopSleep()

@@ -89,8 +89,7 @@ public class BeeController : MonoBehaviour, IBombable
         {
             return;
         }
-
-        Debug.Log("Dying!");
+        
         StartCoroutine(DieRoutine());
     }
     public void Sting()
