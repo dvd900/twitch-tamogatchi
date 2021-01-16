@@ -48,11 +48,18 @@ namespace AIActions
 
             if(!_tango.IsDying)
             {
-                _tango.actionController.DoAction(new DamageAction(_tango, DamageType.Discomfort, .3f));
+                //_tango.actionController.DoAction(new DamageAction(_tango, DamageType.Discomfort, 0));
                 //_tango.actionController.DoAction(new IdleAction(_tango, .2f, false));
                 //_tango.movementController.StopWalking();
                 //_tango.movementController.FaceCamera();
-                //_tango.emoteController.DiscomfortEmote();
+                if(_tango.IsSleeping)
+                {
+                    _tango.actionController.DoAction(new DamageAction(_tango, DamageType.Discomfort, 0));
+                }
+                else
+                {
+                    _tango.emoteController.DiscomfortEmote();
+                }
                 _tango.statsController.AddHealth(-3);
             }
 
