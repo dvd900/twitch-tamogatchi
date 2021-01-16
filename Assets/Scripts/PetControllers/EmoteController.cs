@@ -112,10 +112,17 @@ public class EmoteController : MonoBehaviour
         LeanTween.scale(_snot, new Vector3(0.24f, 0.24f, 0.24f), 3f).setEase(LeanTweenType.easeOutBack);
     }
 
-    public void StopSleep()
+    public void StopSleep(bool interrupted)
     {
         Debug.Log("Stopping sleep");
-        _skin.animator.SetTrigger("stopSleep");
+        if (interrupted)
+        {
+            _skin.animator.SetTrigger("animInterrupted");
+        }
+        else
+        {
+            _skin.animator.SetTrigger("stopSleep");
+        }
         _skin.animator.SetBool("isSleeping", false);
         _snot.SetActive(false);
     }

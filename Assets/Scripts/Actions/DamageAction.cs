@@ -30,7 +30,7 @@ namespace AIActions
             }
             else if(currentAction is SleepAction)
             {
-                _stunDuration = 4.0f;
+                _stunDuration = Mathf.Max(1.0f, stunDuration);
             }
             else if(currentAction is DamageAction)
             {

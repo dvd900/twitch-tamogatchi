@@ -19,7 +19,11 @@ namespace AIActions
             _numItemsHit++;
             if(_numItemsHit >= 3)
             {
-                _skin.actionController.DoAction(new IdleAction(_skin, 4.0f, false));
+                _skin.actionController.DoAction(new IdleAction(_skin, 1.0f, false));
+            }
+            else
+            {
+                _skin.emoteController.DiscomfortEmote();
             }
         }
 
@@ -35,13 +39,14 @@ namespace AIActions
             {
                 yield return null;
             }
-            _skin.emoteController.StopSleep();
+            _skin.emoteController.StopSleep(false);
             yield return new WaitForSeconds(4.0f);
         }
 
         protected override void CancelAction()
         {
-            _skin.emoteController.StopSleep();
+            _skin.emoteController.StopSleep(true);
+            _skin.emoteController.DiscomfortEmote();
         }
     }
 }
