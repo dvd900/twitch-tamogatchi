@@ -4913,6 +4913,36 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3.6
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2260900202246793042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875969211232888725}
+  m_Layer: 0
+  m_Name: LeftHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &875969211232888725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260900202246793042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.394, y: -0.302, z: 0.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4718218144460236922}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4657850657389626183
 GameObject:
   m_ObjectHideFlags: 0
@@ -11486,6 +11516,7 @@ Transform:
   - {fileID: 4718218143829695467}
   - {fileID: 4718218142639337965}
   - {fileID: 4718218144020895338}
+  - {fileID: 875969211232888725}
   m_Father: {fileID: 4718218144089281526}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 70.56208, y: 10.977546, z: 154.02841}
@@ -21616,7 +21647,7 @@ MonoBehaviour:
   lArmBone: {fileID: 0}
   rArmBone: {fileID: 0}
   feetTransform: {fileID: 4718218143710729454}
-  lHandTransform: {fileID: 4718218144460236922}
+  lHandTransform: {fileID: 875969211232888725}
   rHandTransform: {fileID: 4718218143369227882}
   headTransform: {fileID: 4718218144325856783}
 --- !u!114 &4718218144133215526
@@ -21710,7 +21741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55f8d686c1634e0b8680ce16f240dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _staminaDrain: 20
+  _staminaDrain: 3
   _staminaRecharge: 5
   _hungerDrain: 1
   _hungryHealthDrain: 1
