@@ -105,8 +105,9 @@ public class ItemController : MonoBehaviour {
         _heldItem = _itemToPickup;
         _itemToPickup = null;
         //_heldItemRot = Quaternion.AngleAxis(90, Vector3.right);
-        _heldItemRot = Quaternion.Inverse(_skin.lHandTransform.rotation) * _heldItem.transform.rotation;
         _heldItem.EnableHolding(_skin);
+
+        _heldItemRot = Quaternion.Inverse(_skin.lHandTransform.rotation) * _heldItem.transform.rotation;
 
         UpdateHeldItemPos();
     }

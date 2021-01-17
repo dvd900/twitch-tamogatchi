@@ -72,6 +72,7 @@ public class Item : MonoBehaviour
 
     public void EnableHolding(Skin holder) 
     {
+        transform.rotation = Quaternion.identity;
         _collider.enabled = false;
         _rigidbody.isKinematic = true;
 
