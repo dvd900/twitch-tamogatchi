@@ -21572,6 +21572,7 @@ GameObject:
   - component: {fileID: 1083482800617487526}
   - component: {fileID: 1924351907}
   - component: {fileID: 4133101031944500391}
+  - component: {fileID: 1823546426}
   m_Layer: 20
   m_Name: p.Sw33Tango
   m_TagString: sweetango
@@ -22050,6 +22051,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _headTransform: {fileID: 4718218143324900701}
   _faceTransform: {fileID: 4718218142789837780}
+--- !u!114 &1823546426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718218144133215534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19964642beb3f69459374b0f17b7692d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 80.6
+  radius: 5
 --- !u!1 &4718218144154531331
 GameObject:
   m_ObjectHideFlags: 0
