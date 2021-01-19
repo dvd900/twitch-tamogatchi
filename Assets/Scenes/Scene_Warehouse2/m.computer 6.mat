@@ -7,19 +7,39 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: m.roomba.light
-  m_Shader: {fileID: 4800000, guid: 5c0420a139d72394fb0ce7d877b7d215, type: 3}
-  m_ShaderKeywords: _MAINSCROLLROTATE_ROTATE _SECONDARYSCROLLROTATE_ROTATE
+  m_Name: m.computer 6
+  m_Shader: {fileID: 4800000, guid: f56404d5bb542874e83f2e067d9cca33, type: 3}
+  m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BlurReflectionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal0Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal0Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal1Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal1Tex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -43,15 +63,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Maintex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noisetex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -63,74 +75,46 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Secondarytex:
+    - _ReflectionDepth:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _texcoord:
+    - _ReflectionTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Arcrange: 210
-    - _Backgroundborderopacity: 1
-    - _Backgroundborderradialwidth: 0
-    - _Backgroundbordertangentwidth: 0
-    - _Backgroundopacity: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _Decal0Metallic: 0.5
+    - _Decal0Smoothness: 0.5
+    - _Decal1Metallic: 0.5
+    - _Decal1Smoothness: 0.5
+    - _DepthBlurPower: 0.15
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Fillpercentage: 0.75
-    - _Globalopacity: 1
+    - _EmissionMode: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 1
     - _GlossyReflections: 1
-    - _Invertmaintex: 0
-    - _Invertnoisetex: 0
-    - _Invertsecondarytex: 0
-    - _Mainbarborderopacity: 1
-    - _Mainborderradialwidth: 0
-    - _Mainbordertangentwidth: 0
-    - _Mainscrollrotate: 1
-    - _Maintexcontrast: 1
-    - _Maintexopacity: 1
-    - _Maintexrotationspeed: 500
+    - _HasBlurMap: 0
+    - _MetSource: 0
     - _Metallic: 0
     - _Mode: 0
-    - _Noiseintensity: 5
-    - _Noisetexcontrast: 1
+    - _NormalDist: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Radius: 0.062
-    - _Rotation: 92
-    - _Secondaryscrollrotate: 1
-    - _Secondarytexcontrast: 1
-    - _Secondarytexopacity: 1
-    - _Secondarytexrotationspeed: 300
+    - _RefDistortion: 0.25
+    - _ReflectionDepthInfluence: 0
+    - _RghSource: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - __dirty: 1
     m_Colors:
-    - _Backgroundbordercolor: {r: 0.2132353, g: 0.6418865, b: 1, a: 1}
-    - _Backgroundfillcolor: {r: 0.06493413, g: 0.062789254, b: 0.16037738, a: 0}
-    - _Barmaxcolor: {r: 1, g: 1, b: 1, a: 1}
-    - _Barmincolor: {r: 1, g: 1, b: 1, a: 1}
-    - _Barsecondarymaxcolor: {r: 1, g: 1, b: 1, a: 1}
-    - _Barsecondarymincolor: {r: 1, g: 0, b: 0, a: 1}
-    - _Bordermaxcolor: {r: 0, g: 1, b: 0.08965516, a: 1}
-    - _Bordermincolor: {r: 1, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Decal0Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _Decal1Tint: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Maintexoffset: {r: 0, g: 0, b: 0, a: 0}
-    - _Maintexscrollspeed: {r: 0, g: 0, b: 0, a: 0}
-    - _Maintextiling: {r: 0, g: 0, b: 0, a: 0}
-    - _Noisetexoffset: {r: 0, g: 0, b: 0, a: 0}
-    - _Noisetexspeed: {r: 0, g: 0, b: 0, a: 0}
-    - _Noisetextiling: {r: 0, g: 0, b: 0, a: 0}
-    - _Secondarytexoffset: {r: 0, g: 0, b: 0, a: 0}
-    - _Secondarytexscrollspeed: {r: 0, g: 0, b: 0, a: 0}
-    - _Secondarytextiling: {r: 0, g: 0, b: 0, a: 0}
+    - _ReflectionTint: {r: 1, g: 1, b: 1, a: 1}
