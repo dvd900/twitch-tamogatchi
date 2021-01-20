@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: fe909be655f4444a5adfe176cb532124, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Decal0Normal:
@@ -68,7 +68,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: aef30ac22e1ff498da75288ba691e571, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -94,22 +94,22 @@ Material:
     m_Floats:
     - _BrokenOffsetX: -0.064
     - _BrokenOffsetY: 0.092
-    - _BumpScale: 0.24
+    - _BumpScale: 0.7
     - _Decal0Metallic: 0.5
     - _Decal0Smoothness: 0.5
     - _Decal1Metallic: 0.5
     - _Decal1Smoothness: 0.5
-    - _DepthBlurPower: 0.15
+    - _DepthBlurPower: 0.288
     - _DetailNormalMapScale: 1
     - _EmissionMode: 0
     - _Glossiness: 1
     - _HasBlurMap: 0
-    - _MetSource: 0
-    - _Metallic: 0.814
-    - _NormalDist: 0.043
+    - _MetSource: 1
+    - _Metallic: 1
+    - _NormalDist: 0.038
     - _OcclusionStrength: 1
-    - _Parallax: 0.08
-    - _RefDistortion: 0.25
+    - _Parallax: 0.005
+    - _RefDistortion: 0.1
     - _ReflectionDepthInfluence: 0
     - _RghSource: 0
     - _SpecSource: 0
@@ -118,6 +118,6 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Decal0Tint: {r: 1, g: 1, b: 1, a: 1}
     - _Decal1Tint: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 0.5}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _ReflectionTint: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
