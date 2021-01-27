@@ -1,4 +1,6 @@
 ﻿
+using System;
+using System.Reflection;
 using UnityEngine;
 
 public static class UnityUtils
@@ -8,10 +10,17 @@ public static class UnityUtils
         System.Type type = original.GetType();
         var dst = destination.GetComponent(type) as T;
         if (!dst) dst = destination.AddComponent(type) as T;
-        var fields = type.GetFields();
+
+        var fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+
         foreach (var field in fields)
         {
-            if (field.IsStatic) continue;
+            if (field.IsStatic || (field.IsPrivate && !Attribute.IsDefined(field, typeof(SerializeField))))
+            {
+                continue;
+            }
+
+            Debug.Log("Setting field: " + field.Name);
             field.SetValue(dst, field.GetValue(original));
         }
         var props = type.GetProperties();

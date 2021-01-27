@@ -24,7 +24,7 @@ namespace AIActions
             _skin.speechController.PrepareSpeechClip("Hello " + _newUsername);
             yield return new WaitForSeconds(.5f);
             _skin.speechController.PlayPreparedClip();
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(2.0f);
         }
     }
 }

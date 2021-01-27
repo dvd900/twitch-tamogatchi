@@ -71,11 +71,9 @@ namespace AIActions
 
         public override void UpdateAction()
         {
-            if (!_sayDialogue && !_skin.speechController.IsSpeaking)
-            {
-                _timer -= Time.deltaTime;
-            }
-            else if (_sayDialogue && !_skin.movementController.IsTurning)
+            _timer -= Time.deltaTime;
+
+            if (_sayDialogue && !_skin.movementController.IsTurning)
             {
                 _skin.speechController.PlayPreparedClip();
                 _sayDialogue = false;

@@ -48,17 +48,17 @@ MonoBehaviour:
     _staminaMod: 3
     _hungerMod: 3
     _happinessMod: 0
-    _statusEffects: 
+    _statusEffects: []
   - itemName: Meat
     itemID: -1370315301
     itemIcon: {fileID: 0}
     itemType: 1
     _value: 20
-    _healthMod: 15
+    _healthMod: 5
     _staminaMod: -15
-    _hungerMod: 30
+    _hungerMod: 40
     _happinessMod: 0
-    _statusEffects: 
+    _statusEffects: []
   - itemName: Riceball
     itemID: -694024983
     itemIcon: {fileID: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
     _staminaMod: 0
     _hungerMod: 5
     _happinessMod: 0
-    _statusEffects: 
+    _statusEffects: []
   - itemName: Soda
     itemID: 766657084
     itemIcon: {fileID: 0}
@@ -78,17 +78,21 @@ MonoBehaviour:
     _staminaMod: 60
     _hungerMod: 5
     _happinessMod: 0
-    _statusEffects: 02000000
+    _statusEffects:
+    - EffectType: 0
+      EffectChance: 0
   - itemName: Mushroom
     itemID: -1152645558
     itemIcon: {fileID: 0}
     itemType: 1
     _value: 50
     _healthMod: 0
-    _staminaMod: 10
+    _staminaMod: 40
     _hungerMod: 0
     _happinessMod: 0
-    _statusEffects: 01000000
+    _statusEffects:
+    - EffectType: 1
+      EffectChance: 0.3
   autoCosmetic:
   - itemName: Wizard Hat
     itemID: -712165785

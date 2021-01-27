@@ -36,6 +36,8 @@ public abstract class StatusEffect : MonoBehaviour
 
     public void UpdateEffect()
     {
+        DoUpdateEffect();
+
         if(_isInfinite)
         {
             return;

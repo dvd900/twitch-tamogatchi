@@ -43,4 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbcc48074f809747a2b910741dce5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ttl: 3
+  _ttl: 60
+  _sickColor: {r: 0.031886816, g: 1, b: 0, a: 1}
+  _pukeInterval: 10
+  _healthDamage: 5
+  _hungerDamage: 10

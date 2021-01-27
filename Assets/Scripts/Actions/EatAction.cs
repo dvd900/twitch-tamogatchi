@@ -5,12 +5,12 @@ namespace AIActions
 {
     public class EatAction : SweeTangoAction, GeneratedAction
     {
-
         private bool _hasEaten;
+        private float _timer;
 
         public EatAction(Skin skin) : base(skin)
         {
-
+            _timer = 2.0f;
         }
 
         GeneratedAction GeneratedAction.Generate(AISkin skin)
@@ -25,7 +25,8 @@ namespace AIActions
 
         public override bool IsFinished()
         {
-            return !_skin.itemController.IsEating && !_skin.movementController.IsTurning;
+            return _timer <= 0;
+            //return !_skin.itemController.IsEating && !_skin.movementController.IsTurning;
         }
 
         public override void StartAction()
@@ -36,6 +37,8 @@ namespace AIActions
 
         public override void UpdateAction()
         {
+            _timer -= Time.deltaTime;
+
             if (!_hasEaten && !_skin.movementController.IsTurning)
             {
                 _skin.itemController.EatHeldItem();

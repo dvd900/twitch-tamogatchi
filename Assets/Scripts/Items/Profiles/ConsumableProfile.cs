@@ -11,7 +11,7 @@ public class ConsumableProfile : ItemProfile {
     public float _hungerMod;
     public float _happinessMod;
 
-    public EffectType[] _statusEffects;
+    public EffectProfile[] _statusEffects;
 
     public override void UpdateUniqueProperties(ItemBase itemToChangeTo) {
         base.UpdateUniqueProperties(itemToChangeTo);
@@ -24,4 +24,11 @@ public class ConsumableProfile : ItemProfile {
         _happinessMod = item._happinessMod;
         _statusEffects = item._statusEffects;
     }
+}
+
+[System.Serializable]
+public class EffectProfile
+{
+    public EffectType EffectType;
+    public float EffectChance;
 }

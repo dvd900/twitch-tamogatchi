@@ -15,6 +15,7 @@ public class EffectController: MonoBehaviour
 
     public void AddEffect(EffectType type)
     {
+        Debug.Log("ADDING: " + type);
         foreach(var effect in _effects)
         {
             if(effect.Type == type)

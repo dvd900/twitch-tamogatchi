@@ -22,13 +22,16 @@ public class Consumable : Item {
         _holder.statsController.AddHunger(profile._hungerMod);
         _holder.statsController.AddHappiness(profile._happinessMod);
 
-        if (++_biteInd >= _consumptionStates.Length) {
-            Debug.Log("Profile: " + profile + " status: " + profile._statusEffects);
-            foreach(EffectType effect in profile._statusEffects)
+        foreach (var effectProfile in profile._statusEffects)
+        {
+            if (UnityEngine.Random.value < effectProfile.EffectChance)
             {
-                _holder.effectController.AddEffect(effect);
-            } 
+                Debug.Log("Adding effect: " + effectProfile.EffectType);
+                _holder.effectController.AddEffect(effectProfile.EffectType);
+            }
+        }
 
+        if (++_biteInd >= _consumptionStates.Length) {
             Destroy(gameObject);
             return;
         }
