@@ -87,7 +87,7 @@ MonoBehaviour:
     itemType: 1
     _value: 50
     _healthMod: 0
-    _staminaMod: 40
+    _staminaMod: 50
     _hungerMod: 0
     _happinessMod: 0
     _statusEffects:

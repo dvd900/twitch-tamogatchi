@@ -15,6 +15,8 @@ namespace UI {
         [SerializeField] private Image _hungerIcon;
 
         private float _lastHealth;
+        private float _lastStamina;
+        private float _lastHunger;
 
         private void Awake()
         {
@@ -32,13 +34,39 @@ namespace UI {
                 UpdateHealth(_stats.Health / 100.0f);
                 _lastHealth = _stats.Health;
             }
-            UpdateEnergy(_stats.Stamina / 100.0f);
-            UpdateHunger(_stats.Hunger / 100.0f);
+            if(_lastStamina != _stats.Stamina)
+            {
+                UpdateImageStat(_energyIcon, _stats.Stamina, ref _lastStamina);
+            }
+            if(_lastHunger != _stats.Hunger)
+            {
+                UpdateImageStat(_hungerIcon, _stats.Hunger, ref _lastHunger);
+            }
+            //UpdateEnergy(_stats.Stamina / 100.0f);
+            //UpdateHunger(_stats.Hunger / 100.0f);
         }
 
         private void UpdateHealth(float p) {
 
             LeanTween.scale(_heartIcon.gameObject, new Vector3(p, p, p), .5f).setEaseInOutElastic();
+        }
+
+        private void UpdateImageStat(Image image, float newValue, ref float oldValue)
+        {
+            image.fillAmount = newValue / 100.0f;
+
+            // if its just a small change, just set it and return 
+            if (Mathf.Abs(newValue - oldValue) > 2)
+            {
+                Vector3 punchTarget = (newValue > oldValue) ? 1.2f * Vector3.one : .8f * Vector3.one;
+                LeanTween.scale(image.gameObject, punchTarget, .5f).setEasePunch();
+            }
+
+            oldValue = newValue;
+
+            //LeanTween.value(image.gameObject, (float val) => { image.fillAmount = val / 100.0f; }, oldValue, newValue, .5f).setEaseInOutQuad();
+
+
         }
 
         private void UpdateEnergy(float p) {
