@@ -11,10 +11,14 @@ public class AppController : MonoBehaviour
     [SerializeField] private string _mainSceneName;
     [SerializeField] private string _warehouseSceneName;
 
+    [SerializeField] private Camera _sceneCam;
+    [SerializeField] private RenderTexture _renderTexture;
+
     private void Awake()
     {
         if(_instance != null)
         {
+            _sceneCam.targetTexture = _renderTexture;
             Destroy(gameObject);
             return;
         }

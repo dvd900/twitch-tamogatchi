@@ -8,8 +8,8 @@ public class WarehouseSceneController : MonoBehaviour
     
     private void Start()
     {
-        _laptop.TurnOn();
+        AppController.Instance.AddMainScene();
 
-        //AppController.Instance.AddMainScene();
+        _laptop.TurnOn();
     }
 }
