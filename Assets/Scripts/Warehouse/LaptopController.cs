@@ -21,7 +21,7 @@ public class LaptopController : MonoBehaviour
 
     private IEnumerator TurnOnRoutine()
     {
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(3.75f);
 
         _animator.SetTrigger("turnOn");
         _isOn = true;
