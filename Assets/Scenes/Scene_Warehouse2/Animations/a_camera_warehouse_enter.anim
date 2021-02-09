@@ -569,7 +569,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 5.983333
+        time: 6.0833335
         value: 0.02
         inSlope: 0
         outSlope: 0
@@ -578,8 +578,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 6.8
-        value: 0.3
+        time: 6.45
+        value: 0.123
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -597,7 +597,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 0}
-    - time: 5.7
+    - time: 6.0833335
       value: {fileID: 0}
     attribute: _pointOfFocus
     path: 
@@ -1550,7 +1550,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 5.983333
+        time: 6.0833335
         value: 0.02
         inSlope: 0
         outSlope: 0
@@ -1559,8 +1559,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 6.8
-        value: 0.3
+        time: 6.45
+        value: 0.123
         inSlope: 0
         outSlope: 0
         tangentMode: 136
