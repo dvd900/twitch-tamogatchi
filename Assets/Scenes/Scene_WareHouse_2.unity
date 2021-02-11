@@ -35004,12 +35004,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlitchInterval: 1
-  GlitchRate: 0.9
+  GlitchRate: 0
   HorizontalResolution: 640
   VerticalResolution: 1095.7781
   WhiteNoiseIntensity: 0.019
   WaveNoiseIntensity: 0.107
-  RGBShiftIntensity: 0.035
+  RGBShiftIntensity: 0
   GlitchTint: {r: 1, g: 1, b: 1, a: 1}
   EnableScanlineGlitch: 0
   EnableBlockGlitch: 0
