@@ -26,13 +26,13 @@ public class LaptopController : MonoBehaviour
     {
         yield return new WaitForSeconds(3.75f);
 
-        _animator.SetTrigger("turnOn");
-        _isOn = true;
+        //_animator.SetTrigger("turnOn");
+        //_isOn = true;
 
 		yield return new WaitForSeconds(0.5f);
-        _aSource.PlayOneShot(_beep,1f);
+        //_aSource.PlayOneShot(_beep,1f);
         
         yield return new WaitForSeconds(3.0f);
-        TextAnimation.PrintText(_bootText, _screenText, .02f);
+        //TextAnimation.PrintText(_bootText, _screenText, .02f);
     }
 }
