@@ -1,7 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-public class Consumable : Item {
+public class Consumable : Item
+{
 
     [SerializeField] private GameObject[] _consumptionStates;
 
@@ -9,8 +10,10 @@ public class Consumable : Item {
 
     protected override bool IsPickupabble { get { return true; } }
 
-    public void DoEat() {
-        if (gameObject == null) {
+    public void DoEat()
+    {
+        if (gameObject == null)
+        {
             Debug.LogError("GO null");
             Debug.LogError("current action: " + _holder.actionController.CurrentAction);
         }
@@ -31,7 +34,13 @@ public class Consumable : Item {
             }
         }
 
-        if (++_biteInd >= _consumptionStates.Length) {
+        if (++_biteInd >= _consumptionStates.Length)
+        {
+            if(profile.itemName == "Apple")
+            {
+                HighscoreController.Instance.OnAppleEaten();
+            }
+
             Destroy(gameObject);
             return;
         }

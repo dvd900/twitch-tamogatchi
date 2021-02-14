@@ -43,23 +43,34 @@ public class StatsController : MonoBehaviour {
     private Skin _skin;
     private float _sleepCooldownTimer;
 
-    private void Start() {
+    private void Start()
+    {
         _stamina = 100;
         _health = 100;
         _happiness = 100;
         _hunger = 100;
         _skin = GetComponent<Skin>();
+
+        HighscoreController.Instance.OnTangoSpawn();
     }
 
-    public void AddStamina(float x) {
+    public void AddStamina(float x)
+    {
         AddStat(x, ref _stamina);
     }
 
-    public void AddHealth(float x) {
-        AddStat(x, ref _health);
-        if(_health <= 0 && !_skin.IsDying)
+    public void AddHealth(float x)
+    {
+        if (x < 0)
         {
-            _skin.actionController.DoAction(new DeathAction(_skin));    
+            HighscoreController.Instance.OnDamageTaken(x);
+        }
+
+        AddStat(x, ref _health);
+        if (_health <= 0 && !_skin.IsDying)
+        {
+            _skin.actionController.DoAction(new DeathAction(_skin));
+            HighscoreController.Instance.OnTangoDie();
         }
     }
 
