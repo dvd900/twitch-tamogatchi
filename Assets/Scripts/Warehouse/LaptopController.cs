@@ -5,34 +5,35 @@ using UnityEngine;
 
 public class LaptopController : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
-    [SerializeField] private TextMeshPro _screenText;
+    private const float S_CHAR_TIME = .0005f;
+    private const float S_LINE_TIME = .05f;
 
-    [SerializeField] private AudioSource _aSource;
-    [SerializeField] private AudioClip _beep;
+    [SerializeField] private RectTransform _terminal;
+    [SerializeField] private RectTransform _game;
+
+    [SerializeField] private TextMeshProUGUI _terminalText;
 
     [TextArea]
-    [SerializeField] private string _bootText;
+    [SerializeField] private string _spawnText;
 
-    private bool _isOn;
-
-    public void TurnOn()
+    public void EnterGame()
     {
-        _screenText.text = "";
-        StartCoroutine(TurnOnRoutine());
+        StartCoroutine(EnterGameRoutine());
     }
 
-    private IEnumerator TurnOnRoutine()
+    private IEnumerator EnterGameRoutine()
     {
-        yield return new WaitForSeconds(3.75f);
+        yield return TextAnimation.PrintTextRoutine(_spawnText, _terminalText, S_CHAR_TIME, S_LINE_TIME);
 
-        //_animator.SetTrigger("turnOn");
-        //_isOn = true;
 
-		yield return new WaitForSeconds(0.5f);
-        //_aSource.PlayOneShot(_beep,1f);
-        
-        yield return new WaitForSeconds(3.0f);
-        //TextAnimation.PrintText(_bootText, _screenText, .02f);
+        yield return new WaitForSeconds(2.0f);
+        LevelRefs.Instance.Spawner.Spawn();
+
+        LeanTween.scale(_terminal, Vector3.zero, 1.5f).setEaseInOutElastic();
+        LeanTween.move(_game, Vector3.zero, 2.0f);
+        yield return new WaitForSeconds(2.2f);
+        LeanTween.scale(_game, 1.27f * Vector3.one, 1.2f).setEaseInOutElastic();
+
+        yield return new WaitForSeconds(1.2f);
     }
 }
