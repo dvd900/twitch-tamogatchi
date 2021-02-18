@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8534893833139392357}
   - component: {fileID: 8534893833139392354}
+  - component: {fileID: 447363630}
   m_Layer: 0
   m_Name: AppController
   m_TagString: Untagged
@@ -43,5 +44,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c9e5c50fa2d471aaf54bd68ecd9bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainSceneName: MainScene
+  _tangoSceneName: MainScene
   _warehouseSceneName: Scene_WareHouse_2
+--- !u!114 &447363630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8534893833139392355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0734a2587d45847b3a80083a8099a6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mixer: {fileID: 24100000, guid: 7933e930a76ca4873bdbbca723afdaca, type: 2}
+  _audioListenerPrefab: {fileID: 1816115193553326292, guid: db7c66059354c4f38aff9d8bad5295ab,
+    type: 3}

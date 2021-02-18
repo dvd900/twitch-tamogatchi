@@ -4,29 +4,27 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
+public enum SceneName
+{
+    Tango,
+    Warehouse
+}
+
 public class AppController : MonoBehaviour
 {
     public static AppController Instance { get { return _instance; } }
     private static AppController _instance;
 
-    [SerializeField] private string _mainSceneName;
+    [SerializeField] private string _tangoSceneName;
     [SerializeField] private string _warehouseSceneName;
 
-    [SerializeField] private Camera _sceneCam;
-    [SerializeField] private RenderTexture _renderTexture;
-    [SerializeField] private AudioListener _audioListener;
-    [SerializeField] private AudioMixer _sceneMixer;
-
-    [SerializeField] private LayerMask _screenCameraLayerMask;
+    public SceneController ActiveScene { get { return _activeScene; } }
+    private SceneController _activeScene;
 
     private void Awake()
     {
         if(_instance != null)
         {
-            _sceneCam.targetTexture = _renderTexture;
-            _sceneCam.cullingMask &= _screenCameraLayerMask.value;
-            _audioListener.enabled = false;
-            _sceneMixer.SetFloat("MasterVolume", -80);
             Destroy(gameObject);
             return;
         }
@@ -35,8 +33,33 @@ public class AppController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void AddMainScene()
+    private void Start()
     {
-        SceneManager.LoadSceneAsync(_mainSceneName, LoadSceneMode.Additive);
+        if(WarehouseSceneController.Instance != null)
+        {
+            _activeScene = WarehouseSceneController.Instance;
+        }
+        else
+        {
+            _activeScene = TangoSceneController.Instance;
+        }
+    }
+
+    public SceneController GetSceneController(SceneName scene)
+    {
+        switch (scene)
+        {
+            case SceneName.Tango:
+                return TangoSceneController.Instance;
+            case SceneName.Warehouse:
+                return WarehouseSceneController.Instance;
+        }
+
+        return null;
+    }
+
+    public void AddTangoScene()
+    {
+        SceneManager.LoadSceneAsync(_tangoSceneName, LoadSceneMode.Additive);
     }
 }
