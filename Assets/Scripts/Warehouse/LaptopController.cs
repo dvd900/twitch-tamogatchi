@@ -54,7 +54,8 @@ public class LaptopController : MonoBehaviour
 
         yield return new WaitForSeconds(1.2f);
 
-        KillTango();
+        yield return KillTangoRoutine();
+
         AppController.Instance.ChangeActiveScene(SceneName.Tango);
     }
 
@@ -90,15 +91,22 @@ public class LaptopController : MonoBehaviour
 
     public void KillTango()
     {
-        int numBombs = 15;
+        StartCoroutine(KillTangoRoutine());
+    }
+
+    private IEnumerator KillTangoRoutine()
+    {
         Skin.CurrentTango.actionController.DoAction(new SleepAction(Skin.CurrentTango, 40));
+
+        int numBombs = 15;
         for (int i = 0; i < numBombs; i++)
         {
             Vector3 offset = 15 * Vector3.forward;
             Quaternion rot = Quaternion.AngleAxis(360 * (((float)i) / numBombs), Vector3.up);
             offset = rot * offset;
-            Debug.Log("Offset: " + offset);
             ItemSpawner.Instance.SpawnBomb(Skin.CurrentTango.transform.position + offset, "pkill SWEETANGO");
+
+            yield return null;
         }
     }
 }
