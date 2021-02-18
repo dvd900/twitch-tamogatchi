@@ -62,4 +62,13 @@ public class AppController : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(_tangoSceneName, LoadSceneMode.Additive);
     }
+
+    public void ChangeActiveScene(SceneName scene)
+    {
+        _activeScene.PutInBackground();
+        var newScene = GetSceneController(scene);
+        newScene.PutInForeground();
+
+        _activeScene = newScene;
+    }
 }

@@ -33894,7 +33894,60 @@ MonoBehaviour:
   _spawnText: "root@vb $ ./spawn\nCounting objects: 53, done.\nDelta compression
     using up to 3 threads.\nCompressing objects: 100% (12/12), done.\nWriting objects:
     100% (3/3), 2.13 KiB, done.\nTotal 18 (delta 3), reused 0 (delta 0)\nTo tango@vbdeployer.net\n\td099356..0a03dk
-    master -> master\n\nSpawning SWEETANGO\nwgt: 36 .2 kg\nhgt: 1 .23 m\neye: PPL\n"
+    master -> master\n\nSpawning SWEETANGO TANGO_ID\nwgt: 36 .2 kg\nhgt: 1 .23 m\neye:
+    PPL"
+  _deathText: 'root@vb $ ping tango@vbdeployer.net
+
+    WAIT:1.2
+
+    PING tango@vbdeployer.net
+    (216.24.394.12)
+
+    WAIT:1.3
+
+    0 bytes from tng.vb-sp-l32.9e000.net (216.24.394.12)
+
+    WAIT:.8
+
+    0
+    bytes from tng.vb-sp-l32.9e000.net (216.24.394.12)
+
+    WAIT:.9
+
+    0 bytes
+    from tng.vb-sp-l32.9e000.net (216.24.394.12)
+
+    WAIT:1.2
+
+    0 bytes from
+    tng.vb-sp-l32.9e000.net (216.24.394.12)
+
+    WAIT:.8
+
+    0 bytes from tng.vb-sp-l32.9e000.net
+    (216.24.394.12)
+
+    WAIT:.96
+
+
+    Terminated
+
+    WAIT:.6
+
+
+    root@vb $ ./stats
+
+    WAIT:.2
+
+
+    SWEETANGO
+    TANGO_ID
+
+    alive : ALIVE_TIMEs
+
+    apls : NUM_APPLES
+
+    dmg : DMG_TAKEN'
 --- !u!82 &1130723627
 AudioSource:
   m_ObjectHideFlags: 0
@@ -34112,6 +34165,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioListenerTarget: {fileID: 1254835645}
   _mainCam: {fileID: 1254835644}
+  _sceneAudioEffects:
+    FilterCutoff: 1795
+  _laptop: {fileID: 1130723626}
+  _objectsToDisable:
+  - {fileID: 1254835642}
+  - {fileID: 807893169}
+  - {fileID: 1497146602}
 --- !u!4 &1142273372
 Transform:
   m_ObjectHideFlags: 0
@@ -35653,7 +35713,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1254835645}
   - component: {fileID: 1254835644}
-  - component: {fileID: 1254835643}
   - component: {fileID: 1254835646}
   - component: {fileID: 1254835648}
   - component: {fileID: 1254835649}
@@ -35661,10 +35720,6 @@ GameObject:
   - component: {fileID: 1254835647}
   - component: {fileID: 1254835652}
   - component: {fileID: 1254835651}
-  - component: {fileID: 1254835653}
-  - component: {fileID: 1254835654}
-  - component: {fileID: 1254835655}
-  - component: {fileID: 1254835656}
   m_Layer: 25
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -35672,14 +35727,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1254835643
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254835642}
-  m_Enabled: 1
 --- !u!20 &1254835644
 Camera:
   m_ObjectHideFlags: 0
@@ -35931,75 +35978,6 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!164 &1254835653
-AudioReverbFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254835642}
-  m_Enabled: 1
-  m_DryLevel: 0
-  m_Room: -1000
-  m_RoomHF: -1000
-  m_DecayTime: 10.05
-  m_DecayHFRatio: 0.23
-  m_ReflectionsLevel: -602
-  m_ReverbLevel: 198
-  m_ReverbDelay: 0.03
-  m_Diffusion: 100
-  m_Density: 100
-  m_HFReference: 5000
-  m_RoomLF: 0
-  m_LFReference: 250
-  m_ReflectionsDelay: 0
-  m_ReverbPreset: 11
---- !u!168 &1254835654
-AudioEchoFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254835642}
-  m_Enabled: 0
-  m_Delay: 500
-  m_DecayRatio: 0.5
-  m_WetMix: 1
-  m_DryMix: 1
---- !u!170 &1254835655
-AudioDistortionFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254835642}
-  m_Enabled: 0
-  m_DistortionLevel: 0
---- !u!169 &1254835656
-AudioLowPassFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254835642}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_LowpassResonanceQ: 1
-  lowpassLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.08117326
       inSlope: 0
       outSlope: 0
       tangentMode: 0

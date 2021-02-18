@@ -5,28 +5,7 @@ using UnityEngine;
 
 public static class TextAnimation
 {
-    public static void PrintText(string text, TextMeshPro target, float charTime)
-    {
-        new CoroutineTask(PrintTextRoutine(text, target, charTime));
-    }
-
-    private static IEnumerator PrintTextRoutine(string text, TextMeshPro target, float charTime)
-    {
-        target.text = "";
-        for(int i = 0; i < text.Length; i++)
-        {
-            char nextChar = text[i];
-            target.text = target.text + nextChar;
-            if (nextChar == '\n')
-            {
-                yield return new WaitForSeconds(10 * charTime);
-            }
-            else
-            {
-                yield return new WaitForSeconds(charTime);
-            }
-        }
-    }
+    private const string WAIT_STRING = "WAIT:";
 
     public static void PrintText(string text, TextMeshProUGUI target, float charTime, float lineTime)
     {
@@ -39,6 +18,12 @@ public static class TextAnimation
         var lines = text.Split('\n');
         foreach(var line in lines)
         {
+            if(line.Contains(WAIT_STRING))
+            {
+                var waitString = line.Replace(WAIT_STRING, "");
+                yield return new WaitForSeconds(float.Parse(waitString));
+                continue;
+            }
             int numChars = (int)(Time.deltaTime / charTime);
             int numFrameChars = 0;
             for(int i = 0; i < line.Length; i++)

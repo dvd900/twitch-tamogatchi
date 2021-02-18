@@ -1,8 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Audio;
+
+[Serializable]
+public class SceneAudioEffects
+{
+    public float FilterCutoff;
+}
 
 [RequireComponent(typeof(AppController))]
 public class AudioController : MonoBehaviour
@@ -17,6 +24,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] private GameObject _audioListenerPrefab;
 
     private Transform _audioListener;
+    private AudioLowPassFilter _lowPassFilter;
 
     private void Awake()
     {
@@ -34,20 +42,26 @@ public class AudioController : MonoBehaviour
     {
         var listenerObj = GameObject.Instantiate(_audioListenerPrefab, AppController.Instance.ActiveScene.AudioListenerTarget);
         listenerObj.name = "AUDIO_LISTENER";
+
         _audioListener = listenerObj.transform;
+        _lowPassFilter = listenerObj.GetComponent<AudioLowPassFilter>();
     }
 
-    public void EnableSceneAudio(SceneName scene, float fadeTime = 0.0f)
+    public void EnableSceneAudio(SceneName scene)
     {
         var sceneController = AppController.Instance.GetSceneController(scene);
 
-        StartCoroutine(FadeVolume(GetMixerParam(scene), MAX_SCENE_DB, sceneController.AudioListenerTarget, fadeTime));
+        _mixer.SetFloat(GetMixerParam(scene), MAX_SCENE_DB);
+        _audioListener.SetParent(sceneController.AudioListenerTarget);
+        _audioListener.localPosition = Vector3.zero;
+        _lowPassFilter.cutoffFrequency = sceneController.SceneAudioEffects.FilterCutoff;
     }
 
-    public void DisableSceneAudio(SceneName scene, float fadeTime = 0.0f)
+    public void DisableSceneAudio(SceneName scene)
     {
         var sceneController = AppController.Instance.GetSceneController(scene);
-        StartCoroutine(FadeVolume(GetMixerParam(scene), MIN_SCENE_DB, sceneController.AudioListenerTarget, fadeTime));
+
+        _mixer.SetFloat(GetMixerParam(scene), MIN_SCENE_DB);
     }
 
     private IEnumerator FadeVolume(string paramName, float target, Transform listenerTarget, float fadeTime)

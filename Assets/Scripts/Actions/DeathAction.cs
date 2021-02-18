@@ -40,7 +40,15 @@ namespace AIActions
                     GameObject.Destroy(_skin.itemController.HeldItem.gameObject);
                 }
                 GameObject.Destroy(_skin.gameObject);
-                LevelRefs.Instance.Spawner.Spawn();
+
+                if(WarehouseSceneController.Instance != null)
+                {
+                    AppController.Instance.ChangeActiveScene(SceneName.Warehouse);
+                }
+                else
+                {
+                    LevelRefs.Instance.Spawner.Spawn();
+                }
             }
         }
     }

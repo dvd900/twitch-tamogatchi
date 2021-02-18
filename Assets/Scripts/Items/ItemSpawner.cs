@@ -91,6 +91,11 @@ public class ItemSpawner : MonoBehaviour
         //SpawnItem(_items.Length-1, worldPos);
     }
 
+    public void SpawnBomb(Vector3 worldPos, string username)
+    {
+        SpawnItem(_items[1], worldPos, username);
+    }
+
     public GameObject SpawnItem(GameObject prefab, Vector3 worldPos, string username) {
 
         Item itemPrefab = prefab.GetComponent<Item>();

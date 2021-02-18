@@ -33,8 +33,11 @@ public class Beehive : MonoBehaviour, IBombable
         {
             if(_isDebugHive)
             {
-                SpawnBee();
-                DoSpawnAnimation();
+                if(Skin.CurrentTango != null)
+                {
+                    SpawnBee();
+                    DoSpawnAnimation();
+                }
             }
             else if(_numBees < _spawnNumber)
             {

@@ -9,9 +9,17 @@ namespace AIActions
         private Skin _skin;
         private int _numItemsHit;
 
+        private float _sleepTime = -1;
+
         public SleepAction(Skin skin)
         {
             _skin = skin;
+        }
+
+        public SleepAction(Skin skin, float sleepTime)
+        {
+            _skin = skin;
+            _sleepTime = sleepTime;
         }
 
         public void OnItemHit()
@@ -35,10 +43,18 @@ namespace AIActions
             yield return new WaitForSeconds(3.8f);
             _skin.emoteController.EnableSleepSnot();
 
-            while (_skin.statsController.Stamina < 100)
+            if(_sleepTime == -1)
             {
-                yield return null;
+                while (_skin.statsController.Stamina < 100)
+                {
+                    yield return null;
+                }
             }
+            else
+            {
+                yield return new WaitForSeconds(_sleepTime);
+            }
+
             _skin.emoteController.StopSleep(false);
             yield return new WaitForSeconds(4.0f);
         }
