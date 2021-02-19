@@ -30,7 +30,7 @@ public class WarehouseSceneController : SceneController
             ob.SetActive(true);
         }
 
-        _laptop.ExitGame();
+        _laptop.ShowStats();
     }
 
     public override void PutInBackground()

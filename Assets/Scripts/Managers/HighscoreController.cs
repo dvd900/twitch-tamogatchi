@@ -7,6 +7,7 @@ public class Highscore
     public float TimeAlive;
     public int NumApplesEaten;
     public float DamageTaken;
+    public int TangoId;
 }
 
 public class HighscoreController
@@ -40,6 +41,7 @@ public class HighscoreController
     public void OnTangoSpawn()
     {
         _currentScore = new Highscore();
+        _currentScore.TangoId = Random.Range(1000, 9999);
         _birthTime = Time.time;
     }
 

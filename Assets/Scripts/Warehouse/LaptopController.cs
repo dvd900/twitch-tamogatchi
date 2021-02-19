@@ -6,48 +6,44 @@ using UnityEngine;
 
 public class LaptopController : MonoBehaviour
 {
-    private const float S_CHAR_TIME = .0005f;
-    private const float S_LINE_TIME = .05f;
 
     private const string TANGO_ID_KEY = "TANGO_ID";
     private const string ALIVE_TIME_KEY = "ALIVE_TIME";
     private const string NUM_APPLES_KEY = "NUM_APPLES";
     private const string DMG_TAKEN_KEY = "DMG_TAKEN";
 
-    [SerializeField] private RectTransform _terminal;
+    [SerializeField] private RectTransform _terminalTransform;
     [SerializeField] private RectTransform _game;
 
-    [SerializeField] private TextMeshProUGUI _terminalText;
+    [SerializeField] private LaptopTerminal _terminal;
+    //[SerializeField] private TextMeshProUGUI _terminalText;
 
-    [TextArea]
-    [SerializeField] private string _spawnText;
-
-    [TextArea]
-    [SerializeField] private string _deathText;
-
-    private int _tangoId;
+    //private int _tangoId;
 
     public void EnterGame()
     {
         StartCoroutine(EnterGameRoutine());
     }
 
-    public void ExitGame()
+    public void ShowStats()
     {
-        StartCoroutine(ExitGameRoutine());
+        StartCoroutine(ShowStatsRoutine());
     }
 
     private IEnumerator EnterGameRoutine()
     {
-        _tangoId = Random.Range(1000, 9999);
-        yield return TextAnimation.PrintTextRoutine(GetTermText(_spawnText), _terminalText, S_CHAR_TIME, S_LINE_TIME);
+        yield return _terminal.ClearRoutine();
+        //_tangoId = Random.Range(1000, 9999);
+        //yield return _terminal.DoCommandRoutine(GetTermText(_spawnText));
+        //yield return TextAnimation.PrintTextRoutine(GetTermText(_spawnText), _terminalText, S_CHAR_TIME, S_LINE_TIME);
 
+        yield return _terminal.PrintSpawn();
 
         yield return new WaitForSeconds(2.0f);
 
         LevelRefs.Instance.Spawner.Spawn();
 
-        LeanTween.scale(_terminal, Vector3.zero, 1.5f).setEaseInOutElastic();
+        LeanTween.scale(_terminalTransform, Vector3.zero, 1.5f).setEaseInOutElastic();
         LeanTween.move(_game, Vector3.zero, 2.0f);
         yield return new WaitForSeconds(2.2f);
         LeanTween.scale(_game, 1.27f * Vector3.one, 1.2f).setEaseInOutElastic();
@@ -59,35 +55,39 @@ public class LaptopController : MonoBehaviour
         AppController.Instance.ChangeActiveScene(SceneName.Tango);
     }
 
-    private IEnumerator ExitGameRoutine()
+    private IEnumerator ShowStatsRoutine()
     {
         yield return new WaitForSeconds(2.0f);
         LeanTween.scale(_game, Vector3.zero, 1.5f).setEaseInOutElastic();
 
         yield return new WaitForSeconds(1.2f);
 
-        _terminalText.text = "root@vb $";
-        LeanTween.scale(_terminal, Vector3.one, 1.2f).setEaseInOutElastic();
-        yield return new WaitForSeconds(2.0f);
+        //_terminalText.text = "root@vb $";
+        LeanTween.scale(_terminalTransform, Vector3.one, 1.2f).setEaseInOutElastic();
+        yield return new WaitForSeconds(.8f);
+        yield return _terminal.ClearRoutine();
+        yield return new WaitForSeconds(1.0f);
 
-        yield return TextAnimation.PrintTextRoutine(GetTermText(_deathText), _terminalText, S_CHAR_TIME, S_LINE_TIME);
+        yield return _terminal.PrintStats();
+        //yield return _terminal.DoCommandRoutine(GetTermText(_deathText));
+        //yield return TextAnimation.PrintTextRoutine(GetTermText(_deathText), _terminalText, S_CHAR_TIME, S_LINE_TIME);
     }
 
-    private string GetTermText(string text)
-    {
-        text = text.Replace(TANGO_ID_KEY, _tangoId.ToString());
+    //private string GetTermText(string text)
+    //{
+    //    text = text.Replace(TANGO_ID_KEY, _tangoId.ToString());
 
-        if(HighscoreController.Instance.Scores.Count > 0)
-        {
-            var lastScore = HighscoreController.Instance.Scores[HighscoreController.Instance.Scores.Count - 1];
-            text = text.Replace(ALIVE_TIME_KEY, lastScore.TimeAlive.ToString());
-            text = text.Replace(NUM_APPLES_KEY, lastScore.NumApplesEaten.ToString());
-            text = text.Replace(DMG_TAKEN_KEY, lastScore.DamageTaken.ToString());
+    //    if(HighscoreController.Instance.Scores.Count > 0)
+    //    {
+    //        var lastScore = HighscoreController.Instance.Scores[HighscoreController.Instance.Scores.Count - 1];
+    //        text = text.Replace(ALIVE_TIME_KEY, lastScore.TimeAlive.ToString());
+    //        text = text.Replace(NUM_APPLES_KEY, lastScore.NumApplesEaten.ToString());
+    //        text = text.Replace(DMG_TAKEN_KEY, lastScore.DamageTaken.ToString());
 
-        }
+    //    }
 
-        return text;
-    }
+    //    return text;
+    //}
 
     public void KillTango()
     {
