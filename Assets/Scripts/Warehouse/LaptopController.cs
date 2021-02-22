@@ -37,6 +37,12 @@ public class LaptopController : MonoBehaviour
         //yield return _terminal.DoCommandRoutine(GetTermText(_spawnText));
         //yield return TextAnimation.PrintTextRoutine(GetTermText(_spawnText), _terminalText, S_CHAR_TIME, S_LINE_TIME);
 
+        yield return _terminal.PrintStats();
+
+        yield return new WaitForSeconds(5.0f);
+
+        yield return _terminal.ClearRoutine();
+
         yield return _terminal.PrintSpawn();
 
         yield return new WaitForSeconds(2.0f);

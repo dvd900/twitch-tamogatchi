@@ -30,12 +30,22 @@ public class HighscoreController
     public List<Highscore> Scores { get { return _scores; } }
     private List<Highscore> _scores;
 
+    public Highscore LastScore { get { return _scores[_scores.Count - 1]; } }
+
     private Highscore _currentScore;
     private float _birthTime;
 
     private HighscoreController()
     {
         _scores = new List<Highscore>();
+
+        var dummyScore = new Highscore();
+        dummyScore.TangoId = 1234;
+        dummyScore.TimeAlive = -3000.0f;
+        dummyScore.NumApplesEaten = -100;
+        dummyScore.DamageTaken = -1000.0f;
+
+        _scores.Add(dummyScore);
     }
 
     public void OnTangoSpawn()

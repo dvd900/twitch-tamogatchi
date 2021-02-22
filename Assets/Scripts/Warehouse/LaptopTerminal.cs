@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using FIGlet.Net;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,9 @@ public class LaptopTerminal : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _terminalText;
     [SerializeField] private ScrollRect _terminalScroll;
 
+
+    [SerializeField] private string _crazyFontFileName;
+
     [TextArea]
     [SerializeField] private string _tangoAsciiArt;
 
@@ -42,10 +46,16 @@ public class LaptopTerminal : MonoBehaviour
     private bool _isShowingUsername;
     private float _flashUsernameTimer;
 
+    private Figlet _crazyFont;
+
     private void Start()
     {
         _terminalContent = "";
         _terminalText.text = "";
+
+        string path = System.IO.Path.Combine(Application.streamingAssetsPath, _crazyFontFileName);
+        _crazyFont = new Figlet();
+        _crazyFont.LoadFont(path);
     }
 
     public void DoCommand(string cmd)
@@ -74,6 +84,13 @@ public class LaptopTerminal : MonoBehaviour
             }
             int numChars = (int)(Time.deltaTime / S_CHAR_TIME);
             int numFrameChars = 0;
+
+            // if line contains richtext tags, just print the whole thing
+            if(line.Contains("<"))
+            {
+                numChars = line.Length;
+            }
+
             for (int i = 0; i < line.Length; i++)
             {
                 _terminalContent = _terminalContent + line[i];
@@ -98,9 +115,15 @@ public class LaptopTerminal : MonoBehaviour
         txt += _statsText1;
         txt += "\n";
 
-        txt += GetMSpaceEndTag() + GetMSpaceStartTag(S_M_SPACE * S_TANGO_ASCII_SIZE)
-            + GetSizeStartTag(S_TANGO_ASCII_SIZE) + _tangoAsciiArt + GetSizeEndTag()
-            + GetMSpaceEndTag() + GetMSpaceStartTag();
+        txt += GetRichTextStartTags(S_TANGO_ASCII_SIZE);
+        txt += _crazyFont.ToAsciiArt("SWEETANGO");
+        txt += GetRichTextEndTags();
+
+        txt += "\n";
+
+        txt += GetRichTextStartTags(S_TANGO_ASCII_SIZE);
+        txt += _crazyFont.ToAsciiArt("ID " + HighscoreController.Instance.LastScore.TangoId);
+        txt += GetRichTextEndTags();
 
         txt += "\n";
 
@@ -111,12 +134,13 @@ public class LaptopTerminal : MonoBehaviour
 
     public IEnumerator PrintSpawn()
     {
-        return DoCommandRoutine(_spawnText);
+        yield return DoCommandRoutine(_spawnText);
     }
 
     public IEnumerator ClearRoutine()
     {
-        while(_terminalContent != "")
+        _isDoingCommand = true;
+        while (_terminalContent != "")
         {
             int i = _terminalContent.IndexOf("\n");
             if (i == -1)
@@ -129,6 +153,7 @@ public class LaptopTerminal : MonoBehaviour
             }
             yield return new WaitForSeconds(S_LINE_TIME);
         }
+        _isDoingCommand = false;
     }
 
     void Update()
@@ -150,7 +175,7 @@ public class LaptopTerminal : MonoBehaviour
             }
 
             string usernamePrefix = (_terminalContent == "") ? "" : "\n";
-            _terminalText.text = GetMSpaceStartTag() + _terminalContent + usernamePrefix + ((_isShowingUsername) ? _username: "") + GetMSpaceEndTag();
+            _terminalText.text = GetMSpaceStartTag() + _terminalContent + usernamePrefix + ((_isShowingUsername) ? _username: " ") + GetMSpaceEndTag();
         }
         else
         {
@@ -162,17 +187,28 @@ public class LaptopTerminal : MonoBehaviour
 
     private string ReplaceTerminalTags(string text)
     {
-        if (HighscoreController.Instance.Scores.Count > 0)
-        {
-            var lastScore = HighscoreController.Instance.Scores[HighscoreController.Instance.Scores.Count - 1];
-            text = text.Replace(TANGO_ID_KEY, lastScore.TangoId.ToString());
-            text = text.Replace(ALIVE_TIME_KEY, lastScore.TimeAlive.ToString());
-            text = text.Replace(NUM_APPLES_KEY, lastScore.NumApplesEaten.ToString());
-            text = text.Replace(DMG_TAKEN_KEY, lastScore.DamageTaken.ToString());
+        var lastScore = HighscoreController.Instance.LastScore;
+        var tangoId = lastScore.TangoId;
+        var aliveTime = lastScore.TimeAlive;
+        var numApples = lastScore.NumApplesEaten;
+        var damageTaken = lastScore.DamageTaken;
 
-        }
+        text = text.Replace(TANGO_ID_KEY, tangoId.ToString());
+        text = text.Replace(ALIVE_TIME_KEY, aliveTime.ToString());
+        text = text.Replace(NUM_APPLES_KEY, numApples.ToString());
+        text = text.Replace(DMG_TAKEN_KEY, damageTaken.ToString());
 
         return text;
+    }
+
+    private string GetRichTextStartTags(float sizeMod)
+    {
+        return GetMSpaceEndTag() + GetMSpaceStartTag(S_M_SPACE * S_TANGO_ASCII_SIZE) + GetSizeStartTag(S_TANGO_ASCII_SIZE);
+    }
+
+    private string GetRichTextEndTags()
+    {
+        return GetSizeEndTag() + GetMSpaceEndTag() + GetMSpaceStartTag();
     }
 
     private string GetMSpaceStartTag(float mspace = S_M_SPACE)

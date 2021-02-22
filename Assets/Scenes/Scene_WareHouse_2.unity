@@ -34658,6 +34658,7 @@ MonoBehaviour:
   _username: root@vb $
   _terminalText: {fileID: 1666797860}
   _terminalScroll: {fileID: 948660126}
+  _crazyFontFileName: crazyAsciiFont.flf
   _tangoAsciiArt: "\n                                                                                                        
     .-'''-.     \n                                                                                                       
     '   _    \\   \n                             __.....__           __.....__                          
