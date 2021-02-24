@@ -44,7 +44,7 @@ MonoBehaviour:
     itemIcon: {fileID: 0}
     itemType: 1
     _value: 20
-    _healthMod: 10
+    _healthMod: 5
     _staminaMod: 3
     _hungerMod: 3
     _happinessMod: 0
