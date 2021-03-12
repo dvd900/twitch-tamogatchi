@@ -8,53 +8,6 @@ using UnityEngine.UI;
 
 public class LaptopTerminal : MonoBehaviour
 {
-    private class TerminalContent
-    {
-        public bool Dirty { get { return _dirty; } }
-        private bool _dirty;
-
-        public List<TextBlock> TextBlocks
-        {
-            get
-            {
-                _dirty = true;
-                return _textBlocks;
-            }
-        }
-        private List<TextBlock> _textBlocks;
-
-        public TerminalContent()
-        {
-            _dirty = true;
-            _textBlocks = new List<TextBlock>();
-        }
-
-        public string WriteText()
-        {
-            _dirty = false;
-            return "";
-        }
-    }
-
-    private class TextBlock
-    {
-        public string StartTags;
-        public string Content;
-        public string EndTags;
-
-        public TextBlock(string startTags, string content, string endTags)
-        {
-            StartTags = startTags;
-            Content = content;
-            EndTags = endTags;
-        }
-
-        public TextBlock(string content)
-        {
-            Content = content;
-        }
-    }
-
     private const string S_WAIT_STRING = "WAIT:";
     private const string TANGO_ID_KEY = "TANGO_ID";
     private const string ALIVE_TIME_KEY = "ALIVE_TIME";
@@ -63,7 +16,7 @@ public class LaptopTerminal : MonoBehaviour
 
     private const float S_FLASH_USERNAME_TIME = 4.0f;
     private const float S_CHAR_TIME = .0005f;
-    private const float S_LINE_TIME = .05f;
+    private const float S_LINE_TIME = .04f;
 
     private const float S_M_SPACE = .5f;
 
@@ -73,6 +26,8 @@ public class LaptopTerminal : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _terminalText;
     [SerializeField] private ScrollRect _terminalScroll;
 
+    [SerializeField] private Color _usernameColor;
+    [SerializeField] private Color _tangoColor;
 
     [SerializeField] private string _crazyFontFileName;
 
@@ -88,6 +43,7 @@ public class LaptopTerminal : MonoBehaviour
     [SerializeField] private string _statsText2;
 
     private string _terminalContent;
+
     private bool _isDoingCommand;
 
     private bool _isShowingUsername;
@@ -99,6 +55,7 @@ public class LaptopTerminal : MonoBehaviour
     {
         _terminalContent = "";
         _terminalText.text = "";
+        _username = GetColorStartTag(_usernameColor) + _username + GetColorEndTag();
 
         string path = System.IO.Path.Combine(Application.streamingAssetsPath, _crazyFontFileName);
         _crazyFont = new Figlet();
@@ -162,13 +119,13 @@ public class LaptopTerminal : MonoBehaviour
         txt += _statsText1;
         txt += "\n";
 
-        txt += GetRichTextStartTags(S_TANGO_ASCII_SIZE);
+        txt += GetRichTextStartTags(S_TANGO_ASCII_SIZE, _tangoColor);
         txt += _crazyFont.ToAsciiArt("SWEETANGO");
         txt += GetRichTextEndTags();
 
         txt += "\n";
 
-        txt += GetRichTextStartTags(S_TANGO_ASCII_SIZE);
+        txt += GetRichTextStartTags(S_TANGO_ASCII_SIZE * .1f, _tangoColor);
         txt += _crazyFont.ToAsciiArt("ID " + HighscoreController.Instance.LastScore.TangoId);
         txt += GetRichTextEndTags();
 
@@ -189,16 +146,22 @@ public class LaptopTerminal : MonoBehaviour
         _isDoingCommand = true;
         while (_terminalContent != "")
         {
-            int i = _terminalContent.IndexOf("\n");
+            int i = _terminalContent.LastIndexOf("\n");
             if (i == -1)
             {
                 _terminalContent = "";
             }
             else
             {
-                _terminalContent = _terminalContent.Substring(i + 1);
+                //if(_textBlocks.Count > 0 && i >= _textBlocks.Peek().StartInd)
+                //{
+                //    Debug.Log("Deleting block from " + _textBlocks.Peek().StartInd + ", to: " + _textBlocks.Peek().EndInd);
+                //    i = _textBlocks.Dequeue().EndInd;
+                //}
+
+                _terminalContent = _terminalContent.Substring(0, i);
             }
-            yield return new WaitForSeconds(S_LINE_TIME);
+            yield return new WaitForSeconds(S_LINE_TIME * .05f);
         }
         _isDoingCommand = false;
     }
@@ -248,14 +211,14 @@ public class LaptopTerminal : MonoBehaviour
         return text;
     }
 
-    private string GetRichTextStartTags(float sizeMod)
+    private string GetRichTextStartTags(float sizeMod, Color color)
     {
-        return GetMSpaceEndTag() + GetMSpaceStartTag(S_M_SPACE * S_TANGO_ASCII_SIZE) + GetSizeStartTag(S_TANGO_ASCII_SIZE);
+        return GetMSpaceEndTag() + GetMSpaceStartTag(S_M_SPACE * S_TANGO_ASCII_SIZE) + GetSizeStartTag(S_TANGO_ASCII_SIZE) + GetColorStartTag(color);
     }
 
     private string GetRichTextEndTags()
     {
-        return GetSizeEndTag() + GetMSpaceEndTag() + GetMSpaceStartTag();
+        return GetColorEndTag() + GetSizeEndTag() + GetMSpaceEndTag() + GetMSpaceStartTag();
     }
 
     private string GetMSpaceStartTag(float mspace = S_M_SPACE)
@@ -276,5 +239,15 @@ public class LaptopTerminal : MonoBehaviour
     private string GetSizeEndTag()
     {
         return "</size>";
+    }
+
+    private string GetColorStartTag(Color color)
+    {
+        return "<color=#" + ColorUtility.ToHtmlStringRGB(color) + ">";
+    }
+
+    private string GetColorEndTag()
+    {
+        return "</color>";
     }
 }
