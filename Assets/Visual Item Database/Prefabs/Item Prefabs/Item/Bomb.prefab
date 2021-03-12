@@ -38499,8 +38499,8 @@ MonoBehaviour:
   fuseRend: {fileID: 7512001731069773948}
   _indicatorDuration: 3
   _indicatorLight: {fileID: 3905818393035422373}
-  _closeDamage: 10
-  _farDamage: 5
+  _closeDamage: 5
+  _farDamage: 2
   _closeForce: 2000
   _farForce: 1000
   _closeAngle: 60
