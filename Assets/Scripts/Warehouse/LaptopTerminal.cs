@@ -8,6 +8,53 @@ using UnityEngine.UI;
 
 public class LaptopTerminal : MonoBehaviour
 {
+    private class TerminalContent
+    {
+        public bool Dirty { get { return _dirty; } }
+        private bool _dirty;
+
+        public List<TextBlock> TextBlocks
+        {
+            get
+            {
+                _dirty = true;
+                return _textBlocks;
+            }
+        }
+        private List<TextBlock> _textBlocks;
+
+        public TerminalContent()
+        {
+            _dirty = true;
+            _textBlocks = new List<TextBlock>();
+        }
+
+        public string WriteText()
+        {
+            _dirty = false;
+            return "";
+        }
+    }
+
+    private class TextBlock
+    {
+        public string StartTags;
+        public string Content;
+        public string EndTags;
+
+        public TextBlock(string startTags, string content, string endTags)
+        {
+            StartTags = startTags;
+            Content = content;
+            EndTags = endTags;
+        }
+
+        public TextBlock(string content)
+        {
+            Content = content;
+        }
+    }
+
     private const string S_WAIT_STRING = "WAIT:";
     private const string TANGO_ID_KEY = "TANGO_ID";
     private const string ALIVE_TIME_KEY = "ALIVE_TIME";
