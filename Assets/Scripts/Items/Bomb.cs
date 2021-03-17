@@ -15,6 +15,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] private float _indicatorDuration;
     [SerializeField] private Light _indicatorLight;
 
+    public void SetDamage(float damage) { _closeDamage = _farDamage = damage; }
     [SerializeField] private float _closeDamage;
     [SerializeField] private float _farDamage;
 

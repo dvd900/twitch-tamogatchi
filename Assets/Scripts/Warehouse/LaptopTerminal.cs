@@ -32,9 +32,6 @@ public class LaptopTerminal : MonoBehaviour
     [SerializeField] private string _crazyFontFileName;
 
     [TextArea]
-    [SerializeField] private string _tangoAsciiArt;
-
-    [TextArea]
     [SerializeField] private string _spawnText;
 
     [TextArea]
@@ -146,22 +143,22 @@ public class LaptopTerminal : MonoBehaviour
         _isDoingCommand = true;
         while (_terminalContent != "")
         {
-            int i = _terminalContent.LastIndexOf("\n");
-            if (i == -1)
-            {
-                _terminalContent = "";
-            }
-            else
-            {
-                //if(_textBlocks.Count > 0 && i >= _textBlocks.Peek().StartInd)
-                //{
-                //    Debug.Log("Deleting block from " + _textBlocks.Peek().StartInd + ", to: " + _textBlocks.Peek().EndInd);
-                //    i = _textBlocks.Dequeue().EndInd;
-                //}
+            float lineTime = S_LINE_TIME * .12f;
+            int numLinesThisFrame = (int)(Time.deltaTime / lineTime);
 
-                _terminalContent = _terminalContent.Substring(0, i);
+            for(int l = 0; l < numLinesThisFrame; l++)
+            {
+                int i = _terminalContent.LastIndexOf("\n");
+                if (i == -1)
+                {
+                    _terminalContent = "";
+                }
+                else
+                {
+                    _terminalContent = _terminalContent.Substring(0, i);
+                }
             }
-            yield return new WaitForSeconds(S_LINE_TIME * .05f);
+            yield return new WaitForSeconds(lineTime);
         }
         _isDoingCommand = false;
     }

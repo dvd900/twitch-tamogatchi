@@ -14357,7 +14357,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 319813469}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999756
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -34629,11 +34629,25 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: a51410e48f4104e9294e40571dd595e4, type: 2}
+    - {fileID: 11400000, guid: 8168dce744b2142c58cc2d89552a64f9, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1130723626}
           m_MethodName: EnterGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1130723626}
+          m_MethodName: ShowStats
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -34661,24 +34675,6 @@ MonoBehaviour:
   _usernameColor: {r: 0, g: 0.8948567, b: 1, a: 1}
   _tangoColor: {r: 1, g: 0, b: 0.98310184, a: 1}
   _crazyFontFileName: crazyAsciiFont.flf
-  _tangoAsciiArt: "\n                                                                                                        
-    .-'''-.     \n                                                                                                       
-    '   _    \\   \n                             __.....__           __.....__                          
-    _..._            /   /` '.   \\  \n                 _     _ .-''         '.    
-    .-''         '.                       .'     '.   .--./).   |     \\  '  \n  
-    ___  ___/\\    \\\\   ///     .-''\"'-.  `.  /     .-''\"'-.  `.      .|           
-    .   .-.   . /.''\\\\ |   '      |  ' \n  /  _  \\  `\\\\  //\\\\ ///     /________\\  
-    \\/     /________\\   \\   .' |_     __    |  '   '  || |  | |\\    \\     /
-    /  \n . .' `. ;   \\`//  \\'/ |                  ||                  | .'    
-    | .:--.'.  |  |   |  | \\`-' /  `.   ` ..' /   \n | '   | |    \\|   |/  \\   
-    .-------------'\\    .-------------''--.  .-'/ |   \\ | |  |   |  | /(\"'`     
-    '-...-'`    \n _\\_`.(___)    '        \\    '-.____...---. \\    '-.____...---.  
-    |  |  `\" __ | | |  |   |  | \\ '---.                \n(   ). '.               
-    `.             .'   `.             .'    |  |   .'.''| | |  |   |  |  /'\"\"'.\\              
-    \n | |  `\\ |                 `''-...... -'       `''-...... -'      |  '.'/
-    /   | |_|  |   |  | ||     ||              \n ; '._,' '                                                       
-    |   / \\ \\._,\\ '/|  |   |  | \\'. __//               \n  '.___.'                                                        
-    `'-'   `--'  `\" '--'   '--'  `'---'                \n"
   _spawnText: "./spawn\nCounting objects: 53, done.\nDelta compression using up to
     3 threads.\nCompressing objects: 100% (12/12), done.\nWriting objects: 100% (3/3),
     2.13 KiB, done.\nTotal 18 (delta 3), reused 0 (delta 0)\nTo tango@vbdeployer.net\n\td099356..0a03dk
@@ -34726,14 +34722,12 @@ MonoBehaviour:
     $ ./stats
 
     WAIT:.2'
-  _statsText2: 'SWEETANGO TANGO_ID
+  _statsText2: '<b>alive :</b> ALIVE_TIMEs
 
-    alive : ALIVE_TIMEs
+    <b>apls :</b> NUM_APPLES
 
-    apls : NUM_APPLES
-
-    dmg
-    : DMG_TAKEN'
+    <b>dmg
+    :</b> DMG_TAKEN'
 --- !u!1 &1142273370
 GameObject:
   m_ObjectHideFlags: 0
@@ -34767,6 +34761,8 @@ MonoBehaviour:
   _mainCam: {fileID: 1254835644}
   _sceneAudioEffects:
     FilterCutoff: 1795
+  _droneAnimator: {fileID: 1254835650}
+  _bootTimeline: {fileID: 1378494761}
   _laptop: {fileID: 1130723626}
   _objectsToDisable:
   - {fileID: 1254835642}
@@ -42775,7 +42771,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: e0b40804a6a0241d981ce602940e8572, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -52975,7 +52971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.00024414062}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1666797859

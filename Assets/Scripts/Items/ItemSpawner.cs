@@ -91,9 +91,9 @@ public class ItemSpawner : MonoBehaviour
         //SpawnItem(_items.Length-1, worldPos);
     }
 
-    public void SpawnBomb(Vector3 worldPos, string username)
+    public Bomb SpawnBomb(Vector3 worldPos, string username)
     {
-        SpawnItem(_items[1], worldPos, username);
+        return SpawnItem(_items[1], worldPos, username).GetComponent<Bomb>();
     }
 
     public GameObject SpawnItem(GameObject prefab, Vector3 worldPos, string username) {

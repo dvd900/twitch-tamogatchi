@@ -32,16 +32,17 @@ public class LaptopController : MonoBehaviour
 
     private IEnumerator EnterGameRoutine()
     {
+        Debug.Log("Showing game");
         yield return _terminal.ClearRoutine();
         //_tangoId = Random.Range(1000, 9999);
         //yield return _terminal.DoCommandRoutine(GetTermText(_spawnText));
         //yield return TextAnimation.PrintTextRoutine(GetTermText(_spawnText), _terminalText, S_CHAR_TIME, S_LINE_TIME);
 
-        yield return _terminal.PrintStats();
+        //yield return _terminal.PrintStats();
 
-        yield return new WaitForSeconds(5.0f);
+        //yield return new WaitForSeconds(5.0f);
 
-        yield return _terminal.ClearRoutine();
+        //yield return _terminal.ClearRoutine();
 
         yield return _terminal.PrintSpawn();
 
@@ -63,18 +64,21 @@ public class LaptopController : MonoBehaviour
 
     private IEnumerator ShowStatsRoutine()
     {
+        Debug.Log("Showing stats");
+        yield return _terminal.ClearRoutine();
         yield return new WaitForSeconds(2.0f);
-        LeanTween.scale(_game, Vector3.zero, 1.5f).setEaseInOutElastic();
+        LeanTween.scale(_game, 0.77172f * Vector3.one, 1.5f).setEaseInOutElastic();
 
         yield return new WaitForSeconds(1.2f);
 
         //_terminalText.text = "root@vb $";
         LeanTween.scale(_terminalTransform, Vector3.one, 1.2f).setEaseInOutElastic();
-        yield return new WaitForSeconds(.8f);
-        yield return _terminal.ClearRoutine();
-        yield return new WaitForSeconds(1.0f);
 
         yield return _terminal.PrintStats();
+        yield return new WaitForSeconds(.8f);
+        //yield return _terminal.ClearRoutine();
+        //yield return new WaitForSeconds(1.0f);
+
         //yield return _terminal.DoCommandRoutine(GetTermText(_deathText));
         //yield return TextAnimation.PrintTextRoutine(GetTermText(_deathText), _terminalText, S_CHAR_TIME, S_LINE_TIME);
     }
@@ -110,7 +114,8 @@ public class LaptopController : MonoBehaviour
             Vector3 offset = 15 * Vector3.forward;
             Quaternion rot = Quaternion.AngleAxis(360 * (((float)i) / numBombs), Vector3.up);
             offset = rot * offset;
-            ItemSpawner.Instance.SpawnBomb(Skin.CurrentTango.transform.position + offset, "pkill SWEETANGO");
+            var bomb = ItemSpawner.Instance.SpawnBomb(Skin.CurrentTango.transform.position + offset, "pkill SWEETANGO");
+            bomb.SetDamage(100 / (numBombs-1));
 
             yield return null;
         }
